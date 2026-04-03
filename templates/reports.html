@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📋 Report Management - UniPredict AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#edf4fb;--s:rgba(255,255,255,.88);--b:rgba(59,130,246,.12);
+      --p:#2563eb;--pl:#3b82f6;--ok:#16a34a;--err:#dc2626;--warn:#d97706;
+      --txt:#0f172a;--m:#64748b;
+    }
+    [data-theme="dark"]{
+      --bg:#0f172a;--s:rgba(30,41,59,.88);--b:rgba(59,130,246,.2);
+      --p:#3b82f6;--pl:#60a5fa;--ok:#22c55e;--err:#ef4444;--warn:#f59e0b;
+      --txt:#f1f5f9;--m:#94a3b8;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);min-height:100vh;color:var(--txt);position:relative;transition:background .3s ease}
+    body::before{content:'';position:fixed;inset:0;z-index:-2;pointer-events:none;
+      background:linear-gradient(135deg,#e8f4fd 0%,#edf7ee 35%,#fef9ee 70%,#f0ecfb 100%)}
+    [data-theme="dark"] body::before{background:linear-gradient(135deg,#1e293b 0%,#334155 35%,#475569 70%,#64748b 100%)}
+    
+    /* Academic Background Elements */
+    .edu-float{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+    .edu-float span{position:absolute;font-size:1.3rem;opacity:.08;animation:float 6s ease-in-out infinite;text-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .edu-float span:nth-child(odd){animation-delay:-3s}
+    .edu-float span:nth-child(3n){font-size:1.5rem;opacity:.1}
+    .edu-float span:nth-child(4n){font-size:1.1rem;opacity:.06}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(3deg)}}
+    .edu-pattern{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.03;background-image:radial-gradient(circle at 25% 25%, #2563eb 1px, transparent 1px),radial-gradient(circle at 75% 75%, #16a34a 1px, transparent 1px);background-size:50px 50px,60px 60px}
+    [data-theme="dark"] .edu-pattern{opacity:.02;background-image:radial-gradient(circle at 25% 25%, #3b82f6 1px, transparent 1px),radial-gradient(circle at 75% 75%, #22c55e 1px, transparent 1px)}
+    .edu-frame{position:fixed;inset:20px;z-index:-1;pointer-events:none;border:2px solid rgba(37,99,246,.05);border-radius:20px;background:linear-gradient(45deg,rgba(37,99,246,.02) 0%,transparent 50%,rgba(16,185,129,.02) 100%)}
+    [data-theme="dark"] .edu-frame{border-color:rgba(59,130,246,.08);background:linear-gradient(45deg,rgba(59,130,246,.04) 0%,transparent 50%,rgba(34,197,94,.04) 100%)}
+    
+    /* Navigation */
+    nav{background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:2px solid rgba(59,130,246,.13);box-shadow:0 2px 14px rgba(59,130,246,.08);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:62px;position:sticky;top:0;z-index:100}
+    .nb{font-family:'DM Serif Display',serif;font-size:1.35rem;color:#1e40af;text-decoration:none;display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1e40af 0%,#3b82f6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;font-weight:700}
+    .nb::before{content:'📋';font-size:1.8rem;position:absolute;left:-28px;background:linear-gradient(135deg,#1e40af 0%,#3b82f6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 2px 4px rgba(30,64,175,.2))}
+    .nb::after{content:'AI';font-size:.7rem;font-weight:600;position:relative;top:-2px;left:2px;color:#3b82f6;text-shadow:0 1px 2px rgba(59,130,246,.3)}
+    [data-theme="dark"] .nb{background:linear-gradient(135deg,#60a5fa 0%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    [data-theme="dark"] .nb::before{background:linear-gradient(135deg,#60a5fa 0%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 2px 4px rgba(96,165,250,.3))}
+    [data-theme="dark"] .nb::after{color:#93c5fd;text-shadow:0 1px 2px rgba(147,197,253,.4)}
+    .nl{display:flex;gap:3px}
+    .nl a{padding:7px 14px;border-radius:8px;color:var(--txt);text-decoration:none;font-size:.88rem;font-weight:600;transition:all .2s}
+    .nl a:hover,.nl a.active{background:rgba(37,99,235,.1);color:var(--p)}
+    .nr{display:flex;align-items:center;gap:10px}
+    .nb-btn{position:relative;background:var(--s);border:1px solid var(--b);border-radius:9px;padding:7px 11px;color:var(--txt);text-decoration:none;font-size:1rem;transition:all .2s}
+    .nb-btn:hover{color:var(--p)}
+    .badge{position:absolute;top:-5px;right:-5px;background:var(--err);color:#fff;font-size:.6rem;font-weight:700;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+    .theme-toggle{background:rgba(148,163,184,.1);border:1px solid rgba(148,163,184,.2);border-radius:9px;padding:7px 11px;color:var(--m);font-size:1rem;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px}
+    .theme-toggle:hover{background:rgba(148,163,184,.2);color:var(--txt)}
+    [data-theme="dark"] .theme-toggle{background:rgba(148,163,184,.2);color:var(--m)}
+    [data-theme="dark"] .theme-toggle:hover{background:rgba(148,163,184,.3);color:var(--txt)}
+    
+    /* Main Content */
+    .main{padding:28px;max-width:1380px;margin:0 auto}
+    .pt{font-family:'DM Serif Display',serif;font-size:1.9rem;color:var(--txt);margin-bottom:4px;background:linear-gradient(135deg,var(--p) 0%,var(--pl) 50%,var(--ok) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;font-weight:700}
+    .pt::before{content:'';position:absolute;bottom:-8px;left:0;width:60px;height:3px;background:linear-gradient(90deg,var(--p) 0%,var(--pl) 100%);border-radius:2px}
+    .pt::after{content:'📋';position:absolute;right:-40px;top:50%;transform:translateY(-50%);font-size:1.2rem;opacity:.3}
+    [data-theme="dark"] .pt::before{background:linear-gradient(90deg,var(--pl) 0%,var(--ok) 100%)}
+    [data-theme="dark"] .pt::after{opacity:.2}
+    .ps{color:var(--m);font-size:.88rem;margin-bottom:28px;font-weight:500}
+    
+    /* Report Management Layout */
+    .reports-grid{display:grid;grid-template-columns:1fr 2fr;gap:24px;margin-bottom:30px}
+    .stats-sidebar{display:flex;flex-direction:column;gap:16px}
+    .reports-content{display:flex;flex-direction:column;gap:20px}
+    
+    /* Stats Cards */
+    .stat-card{background:var(--s);border:1px solid var(--b);border-radius:12px;padding:20px;transition:all .2s}
+    .stat-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(59,130,246,.1)}
+    .stat-title{font-size:.9rem;font-weight:600;color:var(--txt);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+    .stat-value{font-size:2rem;font-weight:700;color:var(--p);margin-bottom:4px}
+    .stat-change{font-size:.8rem;color:var(--m);margin-top:4px}
+    .stat-change.positive{color:var(--ok)}
+    .stat-change.negative{color:var(--err)}
+    
+    /* Reports Table */
+    .reports-table{background:var(--s);border:1px solid var(--b);border-radius:12px;overflow:hidden}
+    .table-header{background:rgba(37,99,235,.06);padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+    .table-title{font-size:1.1rem;font-weight:700;color:var(--txt)}
+    .table-filters{display:flex;gap:8px}
+    .filter-btn{padding:6px 12px;border:1px solid var(--b);border-radius:6px;background:var(--s);color:var(--txt);font-size:.85rem;cursor:pointer;transition:all .2s}
+    .filter-btn:hover,.filter-btn.active{background:var(--p);color:#fff;border-color:var(--p)}
+    .table-container{max-height:500px;overflow-y:auto}
+    table{width:100%;border-collapse:collapse}
+    thead{background:rgba(37,99,235,.03);position:sticky;top:0;z-index:10}
+    th{padding:12px 16px;text-align:left;font-size:.85rem;font-weight:700;color:var(--txt);text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid var(--b)}
+    td{padding:14px 16px;border-bottom:1px solid var(--b);color:var(--txt);font-size:.9rem}
+    tr:hover td{background:rgba(37,99,235,.02)}
+    .status-badge{padding:4px 8px;border-radius:12px;font-size:.75rem;font-weight:600;text-transform:uppercase}
+    .status-badge.sent{background:rgba(34,197,94,.1);color:var(--ok)}
+    .status-badge.pending{background:rgba(245,158,11,.1);color:var(--warn)}
+    .status-badge.failed{background:rgba(239,68,68,.1);color:var(--err)}
+    
+    /* Recent Students */
+    .students-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+    .student-card{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:16px;transition:all .2s}
+    .student-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(59,130,246,.1)}
+    .student-name{font-weight:600;color:var(--txt);margin-bottom:8px}
+    .student-info{font-size:.85rem;color:var(--m);line-height:1.4}
+    
+    /* Responsive */
+    @media(max-width:1024px){.reports-grid{grid-template-columns:1fr}.stats-sidebar{order:2}.reports-content{order:1}}
+    @media(max-width:768px){.main{padding:16px}.students-grid{grid-template-columns:1fr}.table-filters{flex-wrap:wrap}}
+  </style>
+</head>
+<body>
+<div class="edu-float" aria-hidden="true">
+  <span style="top:6%;left:1.5%">📋</span>
+  <span style="top:18%;right:3%">📊</span>
+  <span style="top:38%;left:5%">📈</span>
+  <span style="top:55%;right:7%">📉</span>
+  <span style="top:72%;left:2%">📝</span>
+  <span style="bottom:10%;right:4%">📧</span>
+  <span style="bottom:22%;left:10%">🎯</span>
+  <span style="top:28%;right:20%">⚡</span>
+  <span style="top:12%;left:25%">📋</span>
+  <span style="top:45%;right:15%">📊</span>
+  <span style="bottom:30%;left:18%">📈</span>
+  <span style="top:65%;right:25%">🎯</span>
+  <span style="bottom:15%;left:35%">⚡</span>
+  <span style="top:35%;right:35%">📋</span>
+  <span style="top:85%;left:45%">📈</span>
+  <span style="bottom:5%;right:45%">📊</span>
+  <span style="top:25%;left:55%">📉</span>
+  <span style="top:75%;right:55%">📝</span>
+  <span style="bottom:25%;left:65%">📧</span>
+  <span style="top:15%;right:65%">🎯</span>
+  <span style="top:50%;left:75%">📋</span>
+  <span style="bottom:40%;right:75%">📈</span>
+  <span style="top:90%;left:85%">🎯</span>
+  <span style="bottom:8%;right:85%">⚡</span>
+</div>
+<div class="edu-pattern"></div>
+<div class="edu-frame"></div>
+
+<nav>
+  <a class="nb" href="/reports"> Report Management</a>
+  <div class="nl">
+    <a href="/reports" class="active">📋 Reports</a>
+    <a href="/analytics">📊 Analytics</a>
+    {% if user_role == 'admin' %}
+    <a href="/admin">← Admin</a>
+    {% elif user_role == 'counselor' %}
+    <a href="/counselor">← Counselor</a>
+    {% else %}
+    <a href="/teacher">← Teacher</a>
+    {% endif %}
+  </div>
+  <div class="nr">
+    {% if user_role == 'admin' %}
+    <a class="nb-btn" href="/notifications">🔔{% if notif_count > 0 %}<span class="badge">{{ notif_count if notif_count < 10 else '9+' }}</span>{% endif %}</a>
+    {% endif %}
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+      <span id="theme-icon">🌙</span>
+    </button>
+    <div class="uc">👤 {{ user_name }}</div>
+    <a class="lo" href="/logout">Sign Out</a>
+  </div>
+</nav>
+
+<div class="main">
+  <div class="pt">Report Management Dashboard</div>
+  <div class="ps">Track sent reports, monitor student communications, and analyze reporting patterns — visible to Admin, Teacher &amp; Counselor</div>
+
+  <div class="reports-grid">
+    <!-- Statistics Sidebar -->
+    <div class="stats-sidebar">
+      <div class="stat-card">
+        <div class="stat-title">📊 Total Reports</div>
+        <div class="stat-value">{{ stats.total_reports or 0 }}</div>
+        <div class="stat-change positive">All time</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-title">📅 Recent Reports</div>
+        <div class="stat-value">{{ stats.recent_reports or 0 }}</div>
+        <div class="stat-change positive">Last 7 days</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-title">✅ Sent Successfully</div>
+        <div class="stat-value">{{ stats.sent_successful or 0 }}</div>
+        <div class="stat-change positive">{{ ((stats.sent_successful or 0) / (stats.total_reports or 1) * 100)|round(1) }}%</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-title">📋 Report Types</div>
+        <div style="margin-top:12px">
+          {% for type, count in stats.reports_by_type.items() %}
+          <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:.85rem">
+            <span style="color:var(--m)">{{ type.title() }}</span>
+            <span style="font-weight:600;color:var(--txt)">{{ count }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Reports Content -->
+    <div class="reports-content">
+      <!-- Reports Table -->
+      <div class="reports-table">
+        <div class="table-header">
+          <div class="table-title">📋 Sent Reports History</div>
+          <div class="table-filters">
+            <button class="filter-btn active" onclick="filterReports('all')">All</button>
+            <button class="filter-btn" onclick="filterReports('sent')">Sent</button>
+            <button class="filter-btn" onclick="filterReports('pending')">Pending</button>
+            <button class="filter-btn" onclick="filterReports('failed')">Failed</button>
+          </div>
+        </div>
+        
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Student</th>
+                <th>Type</th>
+                <th>Parent Email</th>
+                <th>Sent By</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for report in reports %}
+              {# Map raw backend statuses to unified UI buckets for filtering #}
+              {% set ui_status = (
+                'sent' if report.status in ['sent', 'resent']
+                else 'pending' if report.status in ['simulated']
+                else 'failed' if report.status in ['failed']
+                else report.status
+              ) %}
+              <tr data-status="{{ ui_status }}">
+                <td>{{ report.created_at[:16] }}</td>
+                <td>
+                  <div style="font-weight:600">{{ report.student_name }}</div>
+                  <div style="font-size:.8rem;color:var(--m)">ID: {{ report.student_id }}</div>
+                </td>
+                <td>
+                  <span style="background:rgba(37,99,235,.1);color:var(--p);padding:4px 8px;border-radius:6px;font-size:.8rem;font-weight:600">
+                    {{ report.report_type.title() }}
+                  </span>
+                </td>
+                <td>{{ report.parent_email }}</td>
+                <td>{{ report.sent_by }}</td>
+                <td>
+                  <span class="status-badge {{ ui_status }}">
+                    {{ ui_status.title() }}
+                  </span>
+                </td>
+                <td>
+                  <button class="btn-sm" style="margin-right:5px" onclick="resendReport('{{ report.id }}')">🔁 Resend</button>
+                  <button class="btn-sm btn-del" onclick="unreport('{{ report.id }}')">🗑 Unreport</button>
+                  {% if report.status == 'revoked' %}
+                  <button class="btn-sm btn-delete" style="margin-left:5px" onclick="deleteReport('{{ report.id }}')">🗑 Delete</button>
+                  {% endif %}
+                </td>
+              </tr>
+              {% endfor %}
+              
+              {% if not reports %}
+              <tr>
+                <td colspan="6" style="text-align:center;padding:40px;color:var(--m)">
+                  No reports found. Start sending reports to see them here.
+                </td>
+              </tr>
+              {% endif %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <!-- Recent Students with Reports -->
+      {% if recent_students %}
+      <div class="reports-table">
+        <div class="table-header">
+          <div class="table-title">👥 Recently Reported Students</div>
+          <div style="font-size:.85rem;color:var(--m)">Last 30 days</div>
+        </div>
+        
+        <div class="students-grid">
+          {% for student in recent_students %}
+          <div class="student-card">
+            <div class="student-name">{{ student.student_name }}</div>
+            <div class="student-info">
+              <div>ID: {{ student.student_id }}</div>
+              <div>Grade: {{ student.final_grade }}%</div>
+              <div>Attendance: {{ student.attendance_rate }}%</div>
+              <div>Status: {{ student.pass_fail }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script>
+// Theme Toggle
+function toggleTheme(){
+  const html = document.documentElement;
+  const themeIcon = document.getElementById('theme-icon');
+  const currentTheme = html.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+  html.setAttribute('data-theme', newTheme);
+  themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+
+  localStorage.setItem('theme', newTheme);
+}
+
+// Load saved theme
+(function(){
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  const themeIcon = document.getElementById('theme-icon');
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+})();
+
+// Filter Reports
+function filterReports(status) {
+  const rows = document.querySelectorAll('tbody tr');
+  const buttons = document.querySelectorAll('.filter-btn');
+  
+  // Update button states
+  buttons.forEach(btn => btn.classList.remove('active'));
+  if (event && event.target) event.target.classList.add('active');
+  
+  // Filter rows
+  rows.forEach(row => {
+    if (status === 'all') {
+      row.style.display = '';
+    } else {
+      const rowStatus = row.getAttribute('data-status');
+      row.style.display = rowStatus === status ? '' : 'none';
+    }
+  });
+}
+
+async function unreport(reportId) {
+  if (!confirm('Are you sure you want to revoke this report?')) return;
+  const res = await fetch('/api/report/unreport', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({ report_id: reportId })
+  });
+  const data = await res.json();
+  if (data.success) {
+    showToast(data.message, 'success');
+    window.location.reload();
+  } else {
+    showToast(data.message || 'Failed to revoke report', 'error');
+  }
+}
+
+async function deleteReport(reportId) {
+  if (!confirm('Are you sure you want to permanently delete this revoked report?')) return;
+  const res = await fetch('/api/report/delete', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({ report_id: reportId })
+  });
+  const data = await res.json();
+  if (data.success) {
+    showToast(data.message, 'success');
+    window.location.reload();
+  } else {
+    showToast(data.message || 'Failed to delete report', 'error');
+  }
+}
+
+async function resendReport(reportId) {
+  const res = await fetch('/api/report/resend', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({ report_id: reportId })
+  });
+  const data = await res.json();
+  if (data.success) {
+    showToast(data.message, 'success');
+    window.location.reload();
+  } else {
+    showToast(data.message || 'Failed to resend report', 'error');
+  }
+}
+
+// Auto-refresh statistics
+function refreshStats() {
+  fetch('/api/report_statistics')
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        // Update stat values dynamically
+        const statValues = document.querySelectorAll('.stat-value');
+        if (statValues[0]) statValues[0].textContent = data.stats.total_reports;
+        if (statValues[1]) statValues[1].textContent = data.stats.recent_reports;
+        if (statValues[2]) statValues[2].textContent = data.stats.sent_successful || 0;
+      }
+    })
+    .catch(error => console.error('Error refreshing stats:', error));
+}
+
+// Refresh stats every 30 seconds
+setInterval(refreshStats, 30000);
+
+// Show toast notifications
+function showToast(message, type = 'info') {
+  const toast = document.createElement('div');
+  toast.className = `toast-item ${type}`;
+  toast.innerHTML = `
+    <span>${type === 'success' ? '✅' : type === 'error' ? '❌' : 'ℹ️'}</span>
+    <span>${message}</span>
+  `;
+  
+  const container = document.createElement('div');
+  container.className = 'toast';
+  container.style.cssText = `
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  `;
+  
+  container.appendChild(toast);
+  document.body.appendChild(container);
+  
+  // Auto-remove after 3 seconds
+  setTimeout(() => {
+    if (container.parentNode) {
+      container.parentNode.removeChild(container);
+    }
+  }, 3000);
+}
+</script>
+</body>
+</html>

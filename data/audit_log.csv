@@ -1,0 +1,179 @@
+id,user_id,action,target,detail,created_at
+1,TCH001,LOGIN,,,2026-03-26 06:39:17
+2,TCH001,LOGIN,,,2026-03-27 06:09:02
+3,TCH001,ADD_STUDENT,1001,,2026-03-27 06:10:16
+4,TCH001,EMAIL_REPORT,1001,samathoudam@gmail.com [simulated],2026-03-27 06:10:47
+5,TCH001,LOGOUT,,,2026-03-27 06:11:32
+6,ADM001,LOGIN,,,2026-03-27 06:11:49
+7,ADM001,UPDATE_EMAIL_CONFIG,,provider=gmail enabled=True,2026-03-27 06:12:43
+8,ADM001,SEND_TEST_EMAIL,samathoudam@gmail.com,Email password not set. Go to Email Settings.,2026-03-27 06:12:50
+9,ADM001,UPDATE_EMAIL_CONFIG,,provider=gmail enabled=True,2026-03-27 06:14:43
+10,ADM001,SEND_TEST_EMAIL,samathoudam@gmail.com,Email delivered to samathoudam@gmail.com,2026-03-27 06:14:57
+11,ADM001,LOGOUT,,,2026-03-27 06:15:31
+12,CSL001,LOGIN,,,2026-03-27 06:16:12
+13,CSL001,EMAIL_REPORT,6,rosemoirang1luna@gmail.com [sent],2026-03-27 06:18:01
+14,CSL001,LOGOUT,,,2026-03-27 06:19:44
+15,PAR001,LOGIN,,,2026-03-27 06:20:30
+16,TCH001,LOGIN,,,2026-03-27 10:12:42
+17,PAR0001,LOGIN,,,2026-03-29 13:25:18
+18,PAR0001,LOGOUT,,,2026-03-29 13:30:23
+19,TCH003,LOGIN,,,2026-03-29 13:30:47
+20,TCH003,LOGOUT,,,2026-03-29 14:06:09
+21,PAR0002,LOGIN,,,2026-03-29 14:08:07
+22,PAR0002,LOGIN,,,2026-03-29 21:05:28
+23,TCH003,LOGIN,,,2026-03-30 07:26:18
+24,TCH003,ADD_STUDENT,1002,,2026-03-30 07:27:19
+25,TCH003,LOGOUT,,,2026-03-30 07:27:34
+26,CSL001,LOGIN,,,2026-03-30 07:27:55
+27,PAR0001,LOGIN,,,2026-03-30 20:51:48
+28,PAR0001,LOGOUT,,,2026-03-30 20:52:05
+29,CSL001,LOGIN,,,2026-03-30 20:52:13
+30,CSL001,EMAIL_REPORT,160,samathoudam@gmail.com [sent],2026-03-30 20:53:13
+31,PAR0001,LOGIN,,,2026-03-30 21:07:18
+32,PAR0001,LOGOUT,,,2026-03-30 21:07:24
+33,CSL001,LOGIN,,,2026-03-30 21:07:28
+34,TCH003,LOGIN,,,2026-03-30 22:02:32
+35,TCH003,LOGOUT,,,2026-03-30 22:02:32
+36,PAR0001,LOGIN,,,2026-03-30 22:02:32
+37,PAR0001,LOGOUT,,,2026-03-30 22:02:32
+38,CSL001,LOGIN,,,2026-03-30 22:02:32
+39,CSL001,LOGOUT,,,2026-03-30 22:02:32
+40,ADM002,LOGIN,,,2026-03-30 22:02:33
+41,ADM002,LOGOUT,,,2026-03-30 22:02:33
+42,ADM002,LOGIN,,,2026-03-30 22:03:20
+43,ADM002,LOGOUT,,,2026-03-30 22:03:21
+44,ADM002,LOGIN,,,2026-03-30 22:04:05
+45,ADM002,LOGIN,,,2026-03-30 22:04:39
+46,CSL001,LOGIN,,,2026-03-30 22:05:36
+47,CSL001,LOGIN,,,2026-03-30 22:56:54
+48,CSL001,LOGIN,,,2026-03-30 23:00:26
+49,CSL001,LOGIN,,,2026-03-30 23:10:01
+50,CSL001,LOGIN,,,2026-03-30 23:17:36
+51,CSL001,LOGOUT,,,2026-03-30 23:21:39
+52,TCH001,LOGIN,,,2026-03-30 23:25:26
+53,TCH001,LOGOUT,,,2026-03-30 23:31:11
+54,CSL002,LOGIN,,,2026-03-30 23:49:28
+55,CSL002,LOGOUT,,,2026-03-31 00:11:27
+56,PAR0001,LOGIN,,,2026-03-31 00:11:47
+57,PAR0001,LOGOUT,,,2026-03-31 00:12:48
+58,PAR0002,LOGIN,,,2026-03-31 00:13:16
+59,PAR0001,LOGIN,,,2026-03-31 01:07:35
+60,PAR0002,LOGIN,,,2026-03-31 02:00:45
+61,PAR0002,LOGOUT,,,2026-03-31 02:00:58
+62,CSL002,LOGIN,,,2026-03-31 02:01:21
+63,CSL002,EMAIL_REPORT,211,parent211@example.com [sent],2026-03-31 02:02:52
+64,CSL002,LOGOUT,,,2026-03-31 02:03:17
+65,TCH001,LOGIN,,,2026-03-31 02:08:31
+66,TCH001,EMAIL_REPORT,1,parent1@example.com [sent],2026-03-31 02:09:30
+67,TCH001,EMAIL_REPORT,1,parent1@example.com [sent],2026-03-31 02:09:31
+68,TCH001,LOGOUT,,,2026-03-31 02:09:50
+69,ADM001,LOGIN,,,2026-03-31 02:10:03
+70,ADM001,LOGIN,,,2026-03-31 02:51:52
+71,ADM001,LOGOUT,,,2026-03-31 02:52:28
+72,TCH002,LOGIN,,,2026-03-31 02:53:08
+73,ADM001,LOGIN,,,2026-03-31 03:01:08
+74,ADM001,LOGIN,,,2026-03-31 03:02:42
+75,ADM001,LOGOUT,,,2026-03-31 03:03:11
+76,CSL002,LOGIN,,,2026-03-31 03:03:32
+77,CSL002,EMAIL_REPORT,211,recipients=9 ok=9 sim=0 fail=0,2026-03-31 03:04:12
+78,CSL002,mark_student_reported,student_211,Marked student Ningthoujam Deven as reported: academic,2026-03-31 03:04:12
+79,CSL002,LOGOUT,,,2026-03-31 03:04:22
+80,CSL002,EMAIL_REPORT,211,recipients=9 ok=9 sim=0 fail=0,2026-03-31 03:04:25
+81,CSL002,mark_student_reported,student_211,Marked student Ningthoujam Deven as reported: academic,2026-03-31 03:04:25
+82,CSL002,LOGIN,,,2026-03-31 03:09:02
+83,CSL002,EMAIL_REPORT,211,recipients=9 ok=9 sim=0 fail=0,2026-03-31 03:10:03
+84,CSL002,mark_student_reported,student_211,Marked student Ningthoujam Deven as reported: academic,2026-03-31 03:10:03
+85,CSL002,EMAIL_REPORT,247,recipients=9 ok=9 sim=0 fail=0,2026-03-31 03:18:55
+86,CSL002,mark_student_reported,student_247,Marked student Maibam Rishi as reported: academic,2026-03-31 03:18:55
+87,CSL002,EMAIL_REPORT,372,recipients=9 ok=9 sim=0 fail=0,2026-03-31 03:22:44
+88,CSL002,mark_student_reported,student_372,Marked student Konthoujam Thoibi as reported: academic,2026-03-31 03:22:44
+89,CSL002,LOGOUT,,,2026-03-31 03:32:17
+90,TCH004,LOGIN,,,2026-03-31 03:33:32
+91,TCH004,LOGOUT,,,2026-03-31 03:34:30
+92,ADM001,LOGIN,,,2026-03-31 03:34:51
+93,CSL002,LOGIN,,,2026-03-31 09:30:17
+94,CSL002,unmark_student_reported,student_372,Unmarked student Konthoujam Thoibi as reported: academic,2026-03-31 09:30:58
+95,CSL002,UNREPORT,5,Report revoked for student 372,2026-03-31 09:30:58
+96,CSL002,unmark_student_reported,student_372,Unmarked student Konthoujam Thoibi as reported: academic,2026-03-31 09:31:02
+97,CSL002,UNREPORT,5,Report revoked for student 372,2026-03-31 09:31:02
+98,CSL002,unmark_student_reported,student_247,Unmarked student Maibam Rishi as reported: academic,2026-03-31 09:31:07
+99,CSL002,UNREPORT,4,Report revoked for student 247,2026-03-31 09:31:07
+100,CSL002,UNREPORT,3,Report revoked for student 211,2026-03-31 09:31:10
+101,CSL002,UNREPORT,2,Report revoked for student 211,2026-03-31 09:31:14
+102,CSL002,LOGIN,,,2026-03-31 09:40:27
+103,CSL002,EMAIL_REPORT,236,recipients=9 ok=9 sim=0 fail=0,2026-03-31 09:41:35
+104,CSL002,mark_student_reported,student_236,Marked student Wahengbam Sanatombi as reported: academic,2026-03-31 09:41:35
+105,CSL002,SET_COUNSELOR_REPORTED,student_236,Counselor reported toggled to True for student 236,2026-03-31 09:41:36
+106,CSL001,LOGIN,,,2026-03-31 12:01:48
+107,CSL002,LOGIN,,,2026-03-31 12:39:25
+108,CSL002,EMAIL_REPORT,247,recipients=9 ok=8 sim=0 fail=1,2026-03-31 12:41:25
+109,CSL002,mark_student_reported,student_247,Marked student Maibam Rishi as reported: academic,2026-03-31 12:41:25
+110,CSL002,SET_COUNSELOR_REPORTED,student_247,Counselor reported toggled to True for student 247,2026-03-31 12:41:25
+111,CSL002,EMAIL_REPORT,247,recipients=9 ok=9 sim=0 fail=0,2026-03-31 13:04:02
+112,CSL002,mark_student_reported,student_247,Marked student Maibam Rishi as reported: academic,2026-03-31 13:04:02
+113,CSL002,SET_COUNSELOR_REPORTED,student_247,Counselor reported toggled to True for student 247,2026-03-31 13:04:03
+114,CSL002,UNREPORT,7,Report revoked for student 247,2026-03-31 13:04:22
+115,CSL002,DELETE_REPORT,7,Report deleted for student 247,2026-03-31 13:04:25
+116,CSL002,unmark_student_reported,student_372,Unmarked student Konthoujam Thoibi as reported: academic,2026-03-31 13:04:31
+117,CSL002,DELETE_REPORT,5,Report deleted for student 372,2026-03-31 13:04:31
+118,CSL002,DELETE_REPORT,3,Report deleted for student 211,2026-03-31 13:04:34
+119,CSL002,DELETE_REPORT,2,Report deleted for student 211,2026-03-31 13:04:37
+120,CSL002,DELETE_REPORT,4,Report deleted for student 247,2026-03-31 13:04:41
+121,CSL002,EMAIL_REPORT,247,recipients=9 ok=9 sim=0 fail=0,2026-03-31 13:04:42
+122,CSL002,mark_student_reported,student_247,Marked student Maibam Rishi as reported: academic,2026-03-31 13:04:42
+123,CSL002,SET_COUNSELOR_REPORTED,student_247,Counselor reported toggled to True for student 247,2026-03-31 13:04:42
+124,CSL001,LOGIN,,,2026-03-31 13:31:26
+125,CSL001,EMAIL_REPORT,282,recipients=9 ok=9 sim=0 fail=0,2026-03-31 13:32:36
+126,CSL001,mark_student_reported,student_282,Marked student Panmei Ibemhal as reported: academic,2026-03-31 13:32:36
+127,CSL001,SET_COUNSELOR_REPORTED,student_282,Counselor reported toggled to True for student 282,2026-03-31 13:32:36
+128,CSL001,LOGIN,,,2026-03-31 13:43:06
+129,CSL001,EMAIL_REPORT,287,recipients=9 ok=9 sim=0 fail=0,2026-03-31 13:44:22
+130,CSL001,mark_student_reported,student_287,Marked student Sanasam Suresh as reported: academic,2026-03-31 13:44:22
+131,CSL001,SET_COUNSELOR_REPORTED,student_287,Counselor reported toggled to True for student 287,2026-03-31 13:44:22
+132,CSL001,unmark_student_reported,student_211,Unmarked student Ningthoujam Deven as reported: academic,2026-03-31 13:44:55
+133,CSL001,UNREPORT,1,Report revoked for student 211,2026-03-31 13:44:55
+134,CSL001,unmark_student_reported,student_236,Unmarked student Wahengbam Sanatombi as reported: academic,2026-03-31 13:44:59
+135,CSL001,UNREPORT,6,Report revoked for student 236,2026-03-31 13:44:59
+136,CSL001,UNREPORT,9,Report revoked for student 247,2026-03-31 13:45:01
+137,CSL001,unmark_student_reported,student_282,Unmarked student Panmei Ibemhal as reported: academic,2026-03-31 13:45:03
+138,CSL001,UNREPORT,10,Report revoked for student 282,2026-03-31 13:45:04
+139,CSL001,unmark_student_reported,student_287,Unmarked student Sanasam Suresh as reported: academic,2026-03-31 13:45:07
+140,CSL001,UNREPORT,11,Report revoked for student 287,2026-03-31 13:45:07
+141,CSL001,unmark_student_reported,student_287,Unmarked student Sanasam Suresh as reported: academic,2026-03-31 13:45:09
+142,CSL001,DELETE_REPORT,11,Report deleted for student 287,2026-03-31 13:45:09
+143,CSL001,DELETE_REPORT,9,Report deleted for student 247,2026-03-31 13:45:12
+144,CSL001,unmark_student_reported,student_282,Unmarked student Panmei Ibemhal as reported: academic,2026-03-31 13:45:15
+145,CSL001,DELETE_REPORT,10,Report deleted for student 282,2026-03-31 13:45:15
+146,CSL001,unmark_student_reported,student_247,Unmarked student Maibam Rishi as reported: academic,2026-03-31 13:45:18
+147,CSL001,UNREPORT,8,Report revoked for student 247,2026-03-31 13:45:18
+148,CSL001,unmark_student_reported,student_247,Unmarked student Maibam Rishi as reported: academic,2026-03-31 13:45:20
+149,CSL001,DELETE_REPORT,8,Report deleted for student 247,2026-03-31 13:45:20
+150,CSL001,unmark_student_reported,student_211,Unmarked student Ningthoujam Deven as reported: academic,2026-03-31 13:45:22
+151,CSL001,DELETE_REPORT,1,Report deleted for student 211,2026-03-31 13:45:22
+152,CSL001,unmark_student_reported,student_236,Unmarked student Wahengbam Sanatombi as reported: academic,2026-03-31 13:45:25
+153,CSL001,DELETE_REPORT,6,Report deleted for student 236,2026-03-31 13:45:25
+154,CSL001,LOGOUT,,,2026-03-31 13:54:55
+155,TCH003,LOGIN,,,2026-03-31 13:56:26
+156,TCH002,LOGIN,,,2026-03-31 14:04:38
+157,TCH004,LOGIN,,,2026-03-31 14:08:51
+158,TCH002,LOGIN,,,2026-03-31 14:17:18
+159,TCH004,LOGIN,,,2026-03-31 14:20:20
+160,TCH004,LOGOUT,,,2026-03-31 14:20:54
+161,ADM001,LOGIN,,,2026-03-31 14:21:08
+162,ADM001,LOGOUT,,,2026-03-31 14:21:31
+163,CSL002,LOGIN,,,2026-03-31 14:21:40
+164,CSL001,LOGIN,,,2026-03-31 14:26:47
+165,CSL002,LOGIN,,,2026-03-31 14:32:17
+166,CSL002,LOGIN,,,2026-03-31 14:35:49
+167,CSL002,LOGIN,,,2026-03-31 14:37:51
+168,CSL002,LOGIN,,,2026-03-31 14:44:32
+169,CSL002,EMAIL_REPORT,211,recipients=9 ok=9 sim=0 fail=0,2026-03-31 14:46:11
+170,CSL002,mark_student_reported,student_211,Marked student Ningthoujam Deven as reported: academic,2026-03-31 14:46:11
+171,CSL002,SET_COUNSELOR_REPORTED,student_211,Counselor reported toggled to True for student 211,2026-03-31 14:46:11
+172,TCH001,LOGIN,,,2026-03-31 22:40:34
+173,TCH001,LOGOUT,,,2026-03-31 22:41:19
+174,CSL002,LOGIN,,,2026-04-02 07:32:07
+175,CSL002,unmark_student_reported,student_211,Unmarked student Ningthoujam Deven as reported: academic,2026-04-02 07:33:18
+176,CSL002,UNREPORT,1,Report revoked for student 211,2026-04-02 07:33:18
+177,CSL002,unmark_student_reported,student_211,Unmarked student Ningthoujam Deven as reported: academic,2026-04-02 07:33:23
+178,CSL002,DELETE_REPORT,1,Report deleted for student 211,2026-04-02 07:33:23

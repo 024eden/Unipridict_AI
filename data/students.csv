@@ -1,0 +1,1003 @@
+student_id,student_name,parent_name,parent_email,address,gender,age,attendance_rate,study_hours_weekly,previous_grades,assignment_completion,class_participation,extra_curricular,library_visits,online_resource_hours,parent_education,family_income,internet_access,tutoring,mentor_support,stress_level,motivation_score,final_grade,performance_category,pass_fail,last_reported_at,reported_by,counselor_reported,added_by,created_at,updated_at
+1,Thangjam Bobo,Thangjam Ibohal,parent1@example.com,123 Main St,Imphal,Male,20,59.33,2.1,66.64,51.49,5.0,Yes,0,10.6,Master,Medium,Yes,No,No,5.1,7.1,96.53,Excellent,,,,Pass,,2026-03-26 00:33:49
+2,Thangjam Thoibi,Thangjam Sanalembi,parent2@example.com,45 Park Ave,Imphal,Female,15,98.65,0.5,94.51,34.0,6.0,Yes,6,12.0,Bachelor,Low,Yes,Yes,No,1.1,9.8,111.81,Excellent,,,,Pass,,2026-03-26 00:33:49
+3,Laishram Romen,Laishram Devi,parent3@example.com,78 School Rd,Imphal,Male,23,52.05,6.4,86.85,54.01,9.5,No,2,18.7,High School,High,Yes,Yes,No,4.6,5.3,91.96,Excellent,,,,Pass,,2026-03-26 00:33:49
+4,Oinam Suresh,Oinam Binata,parent4@example.com,23 College St,Imphal,Male,15,81.59,6.3,87.76,76.69,2.9,Yes,4,15.5,Bachelor,Medium,Yes,No,No,6.3,2.5,72.31,Average,,,,Pass,,2026-03-26 00:33:49
+5,Konsam Ibomcha,Konsam Onita,parent5@example.com,56 Market Rd,Imphal,Male,19,89.29,1.9,85.65,37.18,5.7,No,4,3.0,Master,Medium,No,No,No,6.1,1.9,62.69,Below Average,,,,Pass,,2026-03-26 00:33:49
+6,Laishram Sanatombi,Laishram Bimola,parent6@example.com,34 Hospital Rd,Imphal,Female,18,42.47,4.4,52.66,30.83,5.3,No,7,3.5,High School,Low,Yes,No,No,7.7,3.4,45.75,At Risk,,,,Fail,,2026-03-26 00:33:49
+7,Yumnam Tomba,Yumjam Indira,parent7@example.com,67 Library Ln,Imphal,Male,17,80.22,8.5,83.56,39.78,3.3,No,2,2.0,Master,Medium,Yes,No,No,7.0,6.1,94.95,Excellent,,,,Pass,,2026-03-26 00:33:49
+8,Ningthoujam Deven,Ningthoujam Leela,parent8@example.com,89 Sports Complex,Imphal,Male,20,97.09,3.6,40.02,80.1,8.4,No,8,14.8,PhD,High,Yes,No,No,3.5,9.5,98.16,Excellent,,,,Pass,,2026-03-26 00:33:49
+9,Sorokhaibam Biren,Sorokhaibam Radha,parent9@example.com,21 Tech Park,Imphal,Male,16,47.45,9.5,76.04,98.1,9.1,No,3,14.1,PhD,Low,No,Yes,Yes,3.3,3.7,106.18,Excellent,,,,Pass,,2026-03-26 00:33:49
+10,Oinam Ibemhal,Oinam Devi,parent10@example.com,12 University Rd,Imphal,Female,17,93.77,5.6,74.91,98.81,8.0,No,4,19.7,Bachelor,Medium,No,Yes,No,5.2,3.7,83.64,Average,,,,Pass,,2026-03-26 00:33:49
+11,Thounaojam Sanjit,Thounaojam Bijoya,parent11@example.com,34 Govt Colony,Imphal,Male,19,75.69,4.4,31.79,64.58,2.8,No,4,10.4,Master,Low,Yes,Yes,No,7.6,5.3,76.58,Average,,,,Pass,,2026-03-26 00:33:49
+12,Wangkhem Ranjit,Wangkhem Ongbi,parent12@example.com,78 Industrial Area,Imphal,Male,23,77.0,5.7,85.16,90.85,1.8,Yes,5,16.5,PhD,High,Yes,No,Yes,1.8,9.3,114.54,Excellent,,,,Pass,,2026-03-26 00:33:49
+13,Pukhrambam Priyokumar,Pukhrambam ongbi,parent13@example.com,45 Residential Area,Imphal,Male,16,76.78,4.2,93.23,81.58,6.4,No,1,11.5,Bachelor,Low,Yes,No,Yes,9.5,4.8,71.15,Average,,,,Pass,,2026-03-26 00:33:49
+14,Heisnam Kiran,Heisnam Bimola,parent14@example.com,23 Market Complex,Imphal,Male,24,57.93,2.4,48.72,65.07,1.5,No,3,17.5,High School,High,Yes,No,No,5.9,3.0,43.28,At Risk,,,,Fail,,2026-03-26 00:33:49
+15,Konsam Tombi,Konsam Leima,parent15@example.com,56 Educational Zone,Imphal,Female,22,96.11,2.3,86.87,70.09,7.1,Yes,2,14.4,High School,Medium,Yes,Yes,No,3.8,2.5,92.85,Excellent,,,,Pass,,2026-03-26 00:33:49
+16,Lourembam Ibungo,Lourembam Ongbi,parent16@example.com,67 Sports Village,Imphal,Male,16,96.84,8.6,35.77,39.61,5.8,Yes,1,12.9,High School,Medium,Yes,No,Yes,7.2,5.1,77.69,Average,,,,Pass,,2026-03-26 00:33:49
+17,Yumnam Bembem,Yumnam Indira,parent17@example.com,89 Tech Hub,Imphal,Female,19,77.52,7.9,72.0,95.64,7.0,No,2,11.3,Master,Medium,No,Yes,No,1.4,8.2,109.37,Excellent,,,,Pass,,2026-03-26 00:33:49
+18,Ningthoujam Sanalembi,Ningthoujam Devi,parent18@example.com,21 Business Park,Imphal,Female,21,87.01,6.8,64.0,54.64,6.3,Yes,3,14.5,Bachelor,Low,Yes,Yes,No,5.4,3.6,91.11,Excellent,,,,Pass,,2026-03-26 00:33:49
+19,Sorokhaibam Ibungo,Sorokhaibam Leima,parent19@example.com,34 Research Center,Imphal,Female,22,76.74,4.2,68.21,61.23,4.8,No,7,8.4,Master,Medium,No,Yes,Yes,5.4,5.6,91.11,Excellent,,,,Pass,,2026-03-26 00:33:49
+20,Kshetrimayum Bishwajit,,,,Male,15,69.06,7.4,94.83,77.02,2.8,No,4,1.9,Master,Medium,Yes,No,Yes,2.5,6.4,90.91,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+21,Thounaojam Priyabala,,,,Female,20,79.65,3.4,90.99,53.37,3.8,Yes,1,0.8,Bachelor,Low,Yes,Yes,No,8.5,5.1,91.86,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+22,Moirangthem Somorjit,,,,Male,15,73.18,6.3,84.96,47.8,5.7,No,1,9.6,Bachelor,High,Yes,No,No,8.2,2.7,74.84,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+23,Wangkhem Ongbi,,,,Female,16,75.85,4.7,49.16,74.17,6.9,Yes,1,12.0,High School,Low,Yes,No,No,2.4,9.3,72.06,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+24,Pukhrambam Reena,,,,Female,15,87.03,8.7,93.83,31.75,8.0,No,4,1.6,Master,Medium,Yes,Yes,No,4.3,6.1,100.05,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+25,Heisnam Sunita,,,,Female,19,68.85,13.5,36.83,80.45,7.9,Yes,6,5.7,Bachelor,Medium,Yes,No,Yes,1.9,7.6,118.14,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+26,Lourembam Sharmila,,,,Female,24,42.45,2.6,89.73,65.98,9.8,No,6,6.4,Bachelor,Low,No,Yes,No,8.6,6.7,80.34,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+27,Kshetrimayum Ibemhal,,,,Female,23,49.84,5.5,52.97,72.4,3.6,Yes,0,11.3,High School,Medium,Yes,Yes,No,3.9,10.0,87.63,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+28,Moirangthem Memchoubi,,,,Female,20,66.32,18.7,33.76,74.23,1.6,Yes,8,5.6,PhD,Medium,Yes,Yes,No,5.0,5.1,107.17,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+29,Naorem Bembem,,,,Female,15,83.49,4.4,76.85,66.89,4.1,Yes,3,1.9,PhD,Medium,Yes,No,No,3.9,4.8,90.28,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+30,Akoijam Sanalembi,,,,Female,15,75.6,4.4,46.19,70.78,7.7,Yes,4,3.3,Bachelor,Medium,No,No,Yes,3.8,4.2,95.45,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+31,Naorem Dinesh,,,,Male,16,79.02,10.7,47.05,77.87,4.9,Yes,2,3.5,Bachelor,Low,Yes,No,No,7.7,4.3,79.92,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+32,Akoijam Sanatomba,,,,Male,23,68.76,5.7,51.42,82.72,8.4,Yes,2,16.9,Master,High,Yes,Yes,Yes,7.7,3.5,101.34,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+33,Chongtham Thoibi,,,,Female,17,76.94,6.4,34.46,80.92,5.9,Yes,2,5.7,High School,Medium,Yes,No,Yes,5.7,9.8,87.4,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+34,Wahengbam Sanatombi,,,,Female,15,59.74,14.3,42.4,90.87,9.4,No,0,14.3,High School,Low,Yes,No,No,6.9,8.8,79.41,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+35,Sagolsem Ibemhal,,,,Female,19,68.21,8.4,30.36,43.26,9.5,No,6,11.4,Bachelor,Medium,No,No,Yes,5.6,3.9,76.33,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+36,Chongtham Robindro,,,,Male,21,84.66,4.7,61.18,58.08,1.6,No,4,19.5,High School,Low,Yes,No,No,1.3,3.7,79.55,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+37,Khumanthem Tombi,,,,Female,20,92.31,11.0,35.9,96.35,5.1,No,3,5.5,Bachelor,Low,Yes,Yes,Yes,1.6,1.9,100.96,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+38,Wahengbam Rojit,,,,Male,15,66.02,4.9,77.79,57.76,6.5,Yes,3,3.2,Bachelor,Medium,Yes,No,Yes,4.5,8.9,97.63,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+39,Sagolsem Premo,,,,Male,19,42.62,4.4,46.49,38.74,3.3,Yes,1,1.0,Bachelor,High,Yes,No,No,7.7,4.3,69.68,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+40,Khumanthem Sunil,,,,Male,19,49.7,9.7,96.05,66.78,4.7,Yes,5,4.8,High School,High,Yes,No,Yes,9.2,6.2,99.78,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+41,Elangbam Bimol,,,,Male,20,41.25,6.2,90.99,37.66,7.1,No,3,13.7,Bachelor,Medium,Yes,No,Yes,1.3,9.1,105.35,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+42,Phuritshabam Sushil,,,,Male,17,79.2,9.6,50.26,44.2,3.0,No,4,1.7,Bachelor,Medium,Yes,Yes,No,4.3,4.7,83.9,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+43,Elangbam Priyabala,,,,Female,19,59.94,16.2,84.83,99.88,6.4,Yes,2,4.9,Bachelor,Medium,Yes,Yes,Yes,3.0,8.3,120.29,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+44,Phuritshabam Bembem,,,,Female,21,72.55,2.0,86.23,67.9,7.3,Yes,0,17.1,Bachelor,Medium,Yes,Yes,Yes,8.3,4.9,93.9,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+45,Maibam Sanalembi,,,,Female,19,69.6,4.5,99.06,49.88,1.8,Yes,1,11.7,PhD,Low,Yes,No,No,8.6,7.3,88.06,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+46,Mutum Ongbi,,,,Female,19,44.89,5.1,71.85,99.63,5.5,No,1,1.4,High School,High,Yes,No,Yes,2.9,4.9,104.98,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+47,Tongbram Ibemhal,,,,Female,19,64.2,2.2,35.74,97.66,3.4,No,4,1.0,Master,Low,Yes,No,No,7.4,4.5,64.47,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+48,Maibam Rishi,,,,Male,24,53.23,5.5,75.28,60.85,7.5,Yes,0,1.2,High School,Medium,No,No,Yes,7.6,9.9,84.23,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+49,Leishangthem Memchoubi,,,,Female,24,65.1,6.1,73.75,48.23,2.7,Yes,2,18.8,Bachelor,High,Yes,No,Yes,2.6,6.5,90.94,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+50,Hijam Reena,,,,Female,17,52.21,1.0,74.68,88.69,9.0,No,3,17.0,Bachelor,Medium,Yes,No,No,4.9,4.3,93.86,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+51,Mutum Bhorot,,,,Male,15,90.43,10.7,51.5,80.09,4.9,No,3,16.9,Bachelor,Low,Yes,Yes,No,6.6,3.3,108.01,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+52,Sinam Sanatombi,,,,Female,19,50.45,3.9,90.18,78.09,2.8,Yes,3,18.5,Master,Low,No,No,Yes,1.2,1.4,72.8,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+53,Tongbram Robichandra,,,,Male,23,97.65,5.7,97.16,92.52,4.9,No,1,10.1,Bachelor,Medium,No,No,No,4.6,7.4,103.6,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+54,Shamurailatpam Sunita,,,,Female,15,64.95,10.3,45.24,78.26,4.7,Yes,2,4.9,Bachelor,Medium,Yes,No,Yes,2.4,4.3,73.57,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+55,Hijam Nandakumar,,,,Male,17,90.77,2.8,36.17,49.87,4.9,No,3,8.0,Master,Medium,Yes,Yes,Yes,5.9,8.4,78.79,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+56,Konthoujam Bembem,,,,Female,18,77.73,5.8,43.62,78.57,6.3,No,4,14.4,High School,Medium,Yes,No,No,8.6,4.3,76.76,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+57,Khundongbam Sanalembi,,,,Female,15,84.12,2.5,87.44,51.41,5.7,Yes,4,17.5,High School,High,Yes,No,Yes,5.7,4.4,69.87,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+58,Sinam Ibotombi,,,,Male,15,86.06,5.7,77.37,83.15,2.3,Yes,1,8.7,High School,Low,Yes,No,No,1.3,8.0,125.07,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+59,Konthoujam Dhananjoy,,,,Male,22,70.29,4.9,74.52,73.38,1.6,No,0,10.7,High School,Medium,Yes,No,Yes,1.3,5.4,78.83,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+60,Khundongbam Nilachandra,,,,Male,16,72.6,8.1,58.13,35.42,7.6,Yes,3,18.6,Bachelor,Medium,No,No,No,6.4,9.0,93.4,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+61,Angom Birachandra,,,,Male,22,70.84,5.2,70.45,65.9,6.0,No,4,2.1,Bachelor,Low,Yes,No,No,4.0,6.3,91.33,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+62,Loitongbam Romesh,,,,Male,21,75.28,2.3,51.55,54.03,4.2,No,0,17.2,High School,Low,Yes,Yes,No,6.2,3.2,79.62,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+63,Potsangbam Ibohal,,,,Male,24,41.76,1.9,63.4,53.0,8.3,No,1,3.2,High School,High,Yes,No,Yes,2.5,6.1,79.82,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+64,Rajkumar Sanajaoba,Rajkumar Devi,parent64@example.com,45 Market Rd,Imphal,Male,24,63.73,1.9,85.51,72.16,4.5,Yes,4,9.7,Master,High,Yes,No,No,8.0,1.0,56.23,Below Average,,,,Fail,,2026-03-26 00:33:49
+65,Nameirakpam Surjakanta,,,,Male,16,76.37,5.4,98.69,52.56,8.2,Yes,2,4.4,Master,Low,No,No,No,8.7,3.8,91.14,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+66,Angom Ibemhal,,,,Female,20,75.86,5.9,95.27,84.38,3.8,No,5,12.1,PhD,High,Yes,No,No,9.0,2.9,90.1,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+67,Loitongbam Tombi,,,,Female,20,87.58,5.3,95.37,34.96,1.7,Yes,5,11.2,PhD,Low,Yes,No,No,3.7,6.9,82.83,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+68,Sapam Ratankumar,,,,Male,17,79.3,6.7,58.16,76.23,9.4,No,4,7.6,PhD,Medium,Yes,No,No,6.9,2.2,88.67,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+69,Potsangbam Thoibi,,,,Female,16,99.53,7.8,62.82,86.64,4.6,No,2,17.3,Master,Low,Yes,No,No,3.5,3.6,92.93,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+70,Rajkumari Sanatombi,,,,Female,15,57.03,3.9,79.39,77.1,8.1,Yes,5,13.2,Bachelor,High,Yes,No,No,7.9,4.0,84.69,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+71,Nameirakpam Priyabala,,,,Female,20,61.55,3.0,94.55,64.81,3.5,No,6,14.4,High School,Low,No,No,No,2.1,1.0,61.78,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+72,Sapam Memchoubi,,,,Female,19,63.03,7.4,39.94,96.52,6.8,Yes,1,3.0,Bachelor,Medium,Yes,No,No,7.9,1.4,69.97,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+73,Luwang Nimai,,,,Male,23,67.95,7.7,51.3,51.0,8.9,Yes,2,17.7,High School,Medium,Yes,No,Yes,5.0,3.8,88.18,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+74,Luwang Reena,Luwang Ongbi,parent74@example.com,78 School Area,Imphal,Female,15,90.16,3.8,39.75,31.34,1.4,No,2,3.3,Master,Low,No,Yes,No,8.7,3.0,48.95,At Risk,,,,Fail,,2026-03-26 00:33:49
+75,Nongmaithem Oken,,,,Male,21,54.15,6.5,72.84,60.24,8.5,No,2,4.5,Bachelor,Medium,Yes,No,No,7.7,2.1,61.97,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+76,Nongmaithem Bembem,,,,Female,19,86.56,4.2,51.44,32.31,6.1,Yes,3,2.6,Bachelor,Low,Yes,No,No,4.4,2.4,60.57,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+77,Yengkhom Sanalembi,,,,Female,19,64.32,2.9,52.83,96.78,6.5,No,1,8.8,High School,Medium,Yes,No,Yes,9.1,8.5,86.23,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+78,Panmei Ibemhal,,,,Female,16,76.11,9.6,34.96,44.69,5.7,Yes,4,17.8,Bachelor,Medium,Yes,No,No,3.6,7.1,93.29,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+79,Yengkhom Sanajaoba,,,,Male,17,77.95,13.1,54.49,85.22,8.9,Yes,2,5.0,Bachelor,Medium,No,Yes,No,9.7,5.4,104.18,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+80,Thokchom Thoibi,,,,Female,21,62.37,4.4,90.37,84.22,1.4,Yes,0,7.5,High School,High,Yes,Yes,No,7.9,9.2,118.84,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+81,Thokchom Ibungo,Thokchom Ongbi,parent81@example.com,34 College Gate,Imphal,Male,20,70.76,7.2,46.32,45.24,3.3,No,1,16.9,Bachelor,Medium,Yes,No,No,9.9,1.3,33.1,At Risk,,,,Fail,,2026-03-26 00:33:49
+82,Okram Sunita,,,,Female,16,64.78,6.3,78.66,73.49,8.9,Yes,5,12.4,High School,Low,Yes,No,No,1.5,4.1,103.54,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+83,Okram Ibobi,,,,Male,20,44.15,1.5,74.07,33.37,7.8,Yes,5,15.0,Bachelor,Medium,Yes,No,No,3.5,8.4,67.35,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+84,Maisnam Tombi,,,,Female,16,66.23,10.0,90.44,63.85,1.2,Yes,3,4.3,Bachelor,Medium,Yes,Yes,Yes,7.7,6.7,97.2,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+85,Maisnam Arunkumar,,,,Male,16,45.84,6.5,39.26,31.03,5.7,No,2,14.3,Master,High,Yes,No,Yes,9.3,9.8,71.52,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+86,Keisham Sarat,,,,Male,16,64.3,12.6,98.43,94.48,5.8,Yes,1,4.6,Bachelor,Low,Yes,No,Yes,1.3,9.5,127.81,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+87,Keisham Sanatombi,,,,Female,17,75.58,3.8,70.78,98.33,4.6,Yes,2,19.7,Bachelor,Medium,Yes,Yes,Yes,1.0,2.5,77.28,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+88,Thiyam Sunil,,,,Male,16,74.76,5.2,99.68,45.56,3.7,Yes,3,11.2,PhD,High,Yes,Yes,No,3.3,9.7,112.21,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+89,Thiyam Bembem,,,,Female,18,79.76,2.9,93.81,44.57,7.1,No,3,13.9,Bachelor,High,Yes,Yes,No,8.7,9.5,102.13,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+90,Sanasam Priyabala,,,,Female,23,45.72,5.4,45.51,82.76,2.9,No,5,2.4,Bachelor,Medium,Yes,Yes,No,7.9,4.4,76.72,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+91,Konthoujam Memchoubi,,,,Female,20,79.13,5.1,33.93,47.74,8.2,Yes,3,5.0,Bachelor,Low,Yes,Yes,No,4.1,9.8,88.66,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+92,Longjam Reena,,,,Female,15,58.73,1.2,47.89,92.66,8.2,No,2,2.8,Master,Low,Yes,Yes,No,1.0,1.3,93.68,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+93,Huidrom Sanalembi,,,,Female,22,63.94,15.4,66.93,70.18,4.7,Yes,5,7.8,Bachelor,Low,Yes,No,No,6.0,6.9,77.4,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+94,Ngangbam Ibemhal,,,,Female,21,91.48,2.4,42.01,54.55,3.6,No,3,5.7,Bachelor,High,Yes,Yes,No,3.1,3.4,60.57,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+95,Meisnam Thoibi,,,,Female,24,40.54,7.3,41.72,88.29,3.6,Yes,4,14.7,Master,Low,Yes,Yes,Yes,7.7,2.2,71.04,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+96,Koijam Tombi,,,,Female,17,75.3,6.4,62.38,64.54,5.3,Yes,4,2.2,High School,Medium,Yes,Yes,No,5.0,6.2,100.9,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+97,Takhellambam Bembem,,,,Female,15,75.92,12.0,32.33,93.81,7.5,Yes,4,15.0,Master,Medium,Yes,No,Yes,7.1,3.8,104.1,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+98,Shijagurumayum Sanatombi,,,,Female,19,63.8,13.0,38.53,94.96,4.2,No,5,0.9,Bachelor,Medium,No,No,No,8.7,7.0,84.4,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+99,Sagolband Priyabala,,,,Female,18,54.22,2.6,59.11,41.58,6.5,No,4,4.0,Bachelor,Medium,Yes,Yes,No,5.8,5.9,75.38,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+100,Sanasam Suresh,,,,Male,24,54.08,3.1,34.42,30.16,4.4,Yes,4,15.8,Master,Medium,No,No,No,4.0,4.5,60.48,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+101,Longjam Lokendro,Longjam Ongbi,parent101@example.com,56 University Area,Imphal,Male,22,93.02,8.1,57.77,98.88,3.7,No,0,14.9,High School,Medium,Yes,No,Yes,7.9,2.6,55.54,Below Average,,,,Fail,,2026-03-26 00:33:49
+102,Phurailatpam Memchoubi,,,,Female,15,66.52,3.0,63.18,93.43,1.2,Yes,4,9.5,Master,Low,No,Yes,No,3.4,6.4,78.27,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+103,Salam Reena,,,,Female,24,59.85,16.5,61.59,33.88,1.0,Yes,2,1.0,PhD,Medium,Yes,No,No,9.0,8.5,75.14,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+104,Usham Sanalembi,,,,Female,15,66.93,7.0,90.84,88.31,3.0,Yes,5,12.2,Bachelor,High,Yes,No,Yes,1.6,6.4,112.46,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+105,Khomdram Ibemhal,,,,Female,18,80.16,10.4,67.1,62.05,4.7,No,5,8.1,PhD,High,No,Yes,Yes,8.5,6.5,105.15,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+106,Laifungbam Thoibi,,,,Female,22,48.75,3.0,62.76,48.13,8.7,No,2,6.3,High School,Medium,Yes,No,No,1.8,5.6,98.15,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+107,Mangangcha Tombi,,,,Female,19,66.97,10.3,58.75,91.51,8.2,Yes,4,12.8,Master,Medium,Yes,No,Yes,1.5,4.5,109.47,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+108,Chakpram Bembem,,,,Female,16,75.27,1.9,87.23,43.77,3.4,Yes,0,8.7,Bachelor,Medium,Yes,No,No,4.3,5.1,89.24,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+109,Taorem Ibemhal,,,,Female,20,96.92,5.9,92.65,96.31,3.2,Yes,2,1.8,Bachelor,Medium,Yes,Yes,No,9.6,9.9,118.85,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+110,Huidrom Sadananda,,,,Male,19,55.15,5.8,89.73,44.39,3.0,Yes,0,18.3,High School,High,Yes,No,No,9.9,7.7,75.88,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+111,Yumkham Thoibi,,,,Female,16,61.56,12.1,77.15,72.96,4.1,Yes,6,15.6,Bachelor,Medium,Yes,No,Yes,2.8,4.9,86.99,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+112,Ngangbam Dinesh,,,,Male,17,62.76,3.4,39.62,45.62,5.5,Yes,4,1.1,High School,Low,Yes,Yes,No,2.3,5.1,68.87,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+113,Nongthombam Tombi,,,,Female,23,76.33,15.6,49.38,68.2,4.9,Yes,5,10.5,PhD,High,Yes,No,No,4.2,5.5,85.37,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+114,Laitonjam Bembem,,,,Female,21,61.4,8.3,33.22,77.88,3.0,Yes,6,1.7,Master,Medium,No,No,Yes,4.0,6.9,86.38,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+115,Meisnam Ranjit,,,,Male,21,72.01,6.7,95.16,43.32,2.2,Yes,5,16.7,High School,Medium,Yes,No,Yes,7.8,5.2,77.36,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+116,Khangembam Sanatombi,,,,Female,20,86.91,8.4,76.26,66.46,1.1,Yes,5,12.3,High School,High,Yes,Yes,Yes,5.0,7.2,95.47,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+117,Koijam Ibotombi,,,,Male,22,82.32,4.9,82.25,62.83,2.4,Yes,2,3.4,Master,Medium,Yes,Yes,No,8.0,4.0,65.53,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+118,Pebam Priyabala,Pebam Ongbi,parent118@example.com,23 Residential Complex,Imphal,Female,18,66.78,1.6,51.81,34.97,7.3,No,3,0.4,Bachelor,Medium,No,No,No,7.7,4.7,49.68,At Risk,,,,Fail,,2026-03-26 00:33:49
+119,Joykumari Memchoubi,,,,Female,22,91.85,2.5,89.2,87.28,3.2,Yes,9,0.6,High School,Medium,Yes,No,Yes,6.2,8.8,99.44,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+120,Takhellambam Biren,Takhellambam Ongbi,parent120@example.com,67 Sports Complex,Imphal,Male,18,73.49,7.7,48.17,53.5,5.2,No,0,10.1,Bachelor,Low,No,Yes,No,8.5,4.0,57.26,Below Average,,,,Fail,,2026-03-26 00:33:49
+121,Chingakham Reena,,,,Female,22,72.39,3.1,30.12,70.22,6.3,Yes,1,14.7,Bachelor,Medium,Yes,No,No,2.8,9.7,118.04,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+122,Shijagurumayum Sanjoy,,,,Male,23,42.05,3.9,56.35,66.03,9.0,Yes,3,2.4,High School,Low,Yes,No,No,2.5,2.6,63.07,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+123,Takhellambam Sanalembi,,,,Female,17,99.2,10.0,69.95,65.93,9.0,Yes,6,4.4,Master,Low,Yes,No,No,7.8,3.2,109.45,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+124,Phurailatpam Nimai,,,,Male,17,47.38,6.3,63.51,37.51,7.7,Yes,1,6.5,Bachelor,Medium,Yes,No,Yes,3.2,5.2,80.78,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+125,Salam Robindro,,,,Male,16,53.87,11.8,90.35,59.64,1.3,Yes,5,4.4,High School,Medium,Yes,Yes,Yes,1.0,8.2,106.13,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+126,Maibam Ibemhal,,,,Female,24,43.1,3.9,37.38,61.67,6.2,No,3,7.8,PhD,Low,Yes,No,No,9.2,7.6,62.0,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+127,Surchandra Tombi,,,,Female,17,78.4,4.9,68.77,81.35,8.1,Yes,5,11.2,Bachelor,High,Yes,No,Yes,6.6,2.6,85.95,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+128,Usham Ibomcha,,,,Male,17,53.48,9.7,65.91,88.8,1.2,Yes,7,13.7,High School,Medium,Yes,Yes,No,5.0,3.1,87.98,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+129,Elangbam Reena,,,,Female,19,50.8,6.8,49.7,68.15,5.9,No,5,19.3,High School,Low,Yes,No,No,7.5,6.2,63.82,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+130,Keisham Sanalembi,,,,Female,19,45.31,16.4,87.56,36.07,8.7,Yes,6,18.6,High School,Medium,Yes,Yes,No,4.0,3.7,113.35,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+131,Rajkumari Ibemhal,,,,Female,16,46.2,2.5,82.7,46.58,5.3,No,1,11.4,Bachelor,High,Yes,Yes,No,9.6,4.8,68.22,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+132,Khomdram Tomba,,,,Male,24,75.08,2.7,81.3,41.55,1.0,Yes,2,14.7,High School,Medium,Yes,No,No,1.6,5.4,65.92,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+133,Laifungbam Deben,,,,Male,20,81.29,6.1,91.33,38.72,1.1,No,1,19.0,Bachelor,Low,Yes,Yes,No,6.8,6.3,82.44,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+134,Mangangcha Somorjit,,,,Male,19,63.84,6.9,80.59,55.61,4.7,Yes,5,1.7,High School,Low,No,No,No,8.0,3.3,88.03,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+135,Chakpram Suresh,Chakpram Ongbi,parent135@example.com,89 Educational Hub,Imphal,Male,20,68.79,2.8,46.23,46.06,2.4,Yes,2,0.1,Bachelor,Medium,Yes,No,No,5.2,2.5,58.98,Below Average,,,,Fail,,2026-03-26 00:33:49
+136,Taorem Rajen,,,,Male,15,81.16,9.0,79.39,45.28,7.0,No,2,0.6,Master,Medium,Yes,No,No,7.8,4.6,85.75,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+137,Yumkham Nara,,,,Male,19,41.04,7.4,51.54,33.83,7.4,Yes,2,11.3,Bachelor,Medium,Yes,Yes,No,9.3,1.7,61.54,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+138,Nongthombam Bimol,,,,Male,23,59.39,3.6,46.95,31.24,2.6,Yes,2,15.3,Bachelor,High,Yes,Yes,Yes,7.7,5.7,64.22,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+139,Laitonjam Inaocha,,,,Male,24,98.39,6.0,35.11,37.19,9.0,No,2,7.3,PhD,Low,Yes,Yes,Yes,3.8,8.6,102.72,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+140,Khangembam Raghumani,,,,Male,16,74.81,8.9,82.08,42.05,5.0,Yes,2,10.9,Bachelor,High,Yes,No,No,6.1,2.1,77.44,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+141,Nongmaikapam Thoibi,,,,Female,15,55.25,6.0,79.77,60.17,2.3,Yes,6,10.3,Bachelor,High,Yes,No,No,9.2,2.0,68.07,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+142,Pebam Ibungo,,,,Male,24,71.3,2.6,46.41,65.74,7.9,No,0,1.9,Bachelor,High,No,Yes,No,5.0,1.7,73.36,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+143,Sanjenbam Tombi,,,,Female,23,60.56,1.2,82.46,39.84,8.1,Yes,1,6.4,Master,High,Yes,No,No,7.1,8.6,77.2,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+144,Pukhrambam Bembem,,,,Female,24,71.93,2.3,94.25,59.73,6.8,No,4,0.4,High School,High,Yes,No,Yes,5.2,1.7,80.86,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+145,Yendrembam Sanatombi,,,,Female,23,47.54,8.1,37.56,53.92,8.7,No,6,2.2,Bachelor,Medium,Yes,No,No,2.1,9.9,83.36,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+146,Joykumar Ningombam,,,,Male,23,47.96,5.7,46.28,42.84,7.6,Yes,3,16.2,Bachelor,Medium,Yes,Yes,No,1.5,4.2,74.7,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+147,Chingakham Ropen,,,,Male,20,48.61,4.1,82.52,30.48,8.9,Yes,3,16.6,Bachelor,Medium,Yes,Yes,No,9.6,4.0,80.29,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+148,Maibam Romesh,,,,Male,22,96.39,3.6,49.22,62.69,4.9,Yes,3,16.0,Master,High,Yes,No,No,6.5,1.8,72.87,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+149,Surchandra Khangembam,,,,Male,15,83.97,3.5,73.73,78.0,7.7,Yes,4,14.5,Bachelor,Medium,No,No,No,1.9,6.3,106.42,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+150,Sagolsem Memchoubi,Sagolsem Ongbi,parent150@example.com,45 Market Area,Imphal,Female,24,49.74,4.1,35.68,45.84,10.0,No,1,15.9,High School,Low,Yes,Yes,No,8.7,6.3,53.71,Below Average,,,,Fail,,2026-03-26 00:33:49
+151,Elangbam Ibomcha,,,,Male,18,51.3,4.8,61.65,39.23,7.5,Yes,4,13.4,PhD,Low,No,Yes,No,5.7,5.4,90.01,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+152,Keisham Tomba,,,,Male,15,83.85,5.3,81.74,92.09,2.0,Yes,4,13.4,High School,High,Yes,No,No,7.9,3.8,87.54,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+153,Rajkumar Ibotombi,,,,Male,22,49.37,2.8,78.06,49.25,5.7,No,4,13.3,High School,Medium,Yes,Yes,No,2.1,4.3,74.55,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+154,Nongmaikapam Dinesh,,,,Male,15,54.07,2.7,87.06,45.65,6.3,No,1,10.3,Bachelor,Medium,No,No,Yes,9.2,3.9,60.93,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+155,Sanjenbam Biren,,,,Male,17,97.8,5.1,91.42,90.0,2.6,Yes,2,7.3,Master,Low,Yes,No,No,6.3,4.8,97.73,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+156,Oinam Reena,Oinam Ongbi,parent156@example.com,78 School Zone,Imphal,Female,18,55.32,6.1,84.12,87.2,9.7,Yes,1,14.6,Master,Medium,Yes,No,No,7.6,4.1,58.83,Below Average,,,,Fail,,2026-03-26 00:33:49
+157,Pukhrambam Ibungo,,,,Male,22,79.7,2.1,77.01,61.38,2.6,No,2,6.0,PhD,Low,No,No,No,1.3,7.1,70.37,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+158,Longjam Sanalembi,,,,Female,20,98.72,9.0,32.22,64.25,2.6,No,2,10.9,High School,Medium,Yes,No,No,3.8,3.7,85.74,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+159,Yendrembam Sanjoy,,,,Male,24,62.46,4.3,67.45,45.24,9.2,No,3,8.7,Bachelor,Medium,Yes,Yes,No,3.4,4.2,82.22,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+160,Leishangthem Ibemhal,Leishangthem Ongbi,parent160@example.com,34 Tech Park,Imphal,Female,21,41.05,7.7,32.64,35.48,5.2,Yes,2,5.5,High School,High,No,No,No,9.5,4.9,53.72,Below Average,,,,Fail,,2026-03-26 00:33:49
+161,Thounaojam Nara,,,,Male,22,54.65,8.2,86.56,70.14,1.6,Yes,5,19.5,Master,Medium,Yes,Yes,No,2.7,1.0,83.04,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+162,Sagolsem Rajen,,,,Male,16,89.85,5.8,52.45,36.88,6.4,Yes,5,5.2,Bachelor,Medium,Yes,No,No,7.4,5.4,87.43,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+163,Konthoujam Thoibi,,,,Female,24,91.88,4.3,69.37,61.45,6.4,Yes,3,6.2,High School,Medium,Yes,No,Yes,1.4,3.3,87.11,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+164,Khundongbam Tombi,,,,Female,22,86.11,9.3,49.56,95.83,1.6,No,5,3.2,Master,Medium,Yes,No,No,2.8,1.5,72.83,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+165,Wahengbam Bembem,,,,Female,17,46.79,7.2,84.78,96.7,9.8,No,3,16.5,Bachelor,Low,Yes,Yes,Yes,4.0,9.2,121.22,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+166,Oinam Bishorjit,,,,Male,21,87.73,6.4,92.06,46.75,5.9,No,8,11.7,Bachelor,Medium,Yes,Yes,Yes,8.2,3.9,99.19,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+167,Potsangbam Sanatombi,,,,Female,17,95.12,3.5,57.9,73.69,6.0,Yes,8,12.3,Master,High,Yes,No,No,8.1,4.8,95.21,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+168,Longjam Ibotombi,,,,Male,21,76.04,7.2,90.4,63.19,5.7,No,4,16.4,High School,Medium,Yes,Yes,No,9.6,8.4,99.65,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+169,Leishangthem Romesh,,,,Male,16,96.45,8.5,48.7,91.3,6.5,No,1,6.9,High School,Medium,No,No,Yes,9.3,2.5,71.37,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+170,Maisnam Priyabala,,,,Female,24,89.61,3.0,67.43,49.0,3.4,No,0,3.9,High School,High,Yes,No,No,1.7,8.7,88.57,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+171,Heisnam Memchoubi,,,,Female,20,80.02,10.3,90.11,30.26,3.6,Yes,3,4.0,Bachelor,High,Yes,Yes,No,8.5,3.2,101.83,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+172,Konthoujam Tomba,,,,Male,17,74.63,7.6,52.81,41.38,5.6,Yes,4,14.7,High School,Medium,Yes,Yes,Yes,5.1,6.3,100.5,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+173,Khundongbam Suresh,,,,Male,17,60.91,6.6,96.78,54.47,8.3,No,3,12.3,Bachelor,Medium,Yes,No,No,8.8,7.2,88.14,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+174,Sorokhaibam Reena,Sorokhaibam Ongbi,parent174@example.com,67 Business Center,Imphal,Female,23,49.56,4.5,38.53,52.1,1.4,Yes,6,4.1,High School,High,No,No,No,1.8,9.1,57.61,Below Average,,,,Fail,,2026-03-26 00:33:49
+175,Ningthoujam Sanalembi,,,,Female,21,76.3,12.3,31.28,85.4,6.4,No,4,2.9,PhD,High,Yes,No,No,8.4,6.5,97.65,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+176,Thangjam Ibemhal,,,,Female,19,59.09,3.2,93.29,77.64,8.3,Yes,4,2.4,High School,High,Yes,Yes,No,2.4,5.1,119.4,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+177,Wahengbam Nandakumar,,,,Male,24,91.99,5.8,34.81,50.97,2.4,No,3,12.6,High School,Medium,Yes,No,No,4.0,6.2,61.48,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+178,Potsangbam Biren,,,,Male,21,99.6,4.5,99.43,62.04,1.1,No,2,0.0,High School,Medium,Yes,Yes,No,1.3,2.8,89.31,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+179,Maisnam Sanjit,,,,Male,23,85.15,2.1,96.6,36.69,3.8,No,5,0.4,Master,Low,Yes,Yes,No,2.1,7.2,106.64,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+180,Heisnam Ibomcha,,,,Male,15,45.43,3.0,39.59,92.87,6.3,Yes,4,7.8,Bachelor,Medium,Yes,Yes,No,5.0,2.7,79.31,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+181,Sorokhaibam Romen,Sorokhaibam Ongbi,parent181@example.com,12 Industrial Estate,Imphal,Male,21,57.32,8.1,67.63,95.48,2.2,No,3,13.8,Master,High,Yes,No,No,8.4,6.0,58.9,Below Average,,,,Fail,,2026-03-26 00:33:49
+182,Ningthoujam Tomba,,,,Male,20,46.55,14.1,42.94,98.59,4.8,No,5,13.9,Master,High,Yes,Yes,No,8.0,6.8,83.39,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+183,Laishram Thoibi,,,,Female,24,79.03,8.3,59.97,90.8,6.0,Yes,2,8.6,PhD,Medium,Yes,No,Yes,3.1,9.1,116.76,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+184,Thangjam Ibungo,,,,Male,23,85.91,7.2,34.3,42.18,6.4,No,2,13.8,Master,Medium,Yes,No,Yes,2.4,5.1,80.91,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+185,Laishram Bimol,,,,Male,15,95.54,14.5,45.67,33.23,3.5,Yes,2,10.4,High School,Medium,No,No,No,4.5,8.0,101.81,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+186,Angom Sanjoy,,,,Male,18,66.29,2.8,55.43,70.57,4.6,Yes,3,19.5,Master,Medium,Yes,No,No,8.9,2.5,70.66,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+187,Angom Tombi,,,,Female,23,94.08,3.4,60.71,93.88,8.0,Yes,3,3.2,PhD,Medium,Yes,Yes,Yes,1.8,2.4,104.58,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+188,Tongbram Ibohal,,,,Male,18,92.67,6.4,98.42,42.41,9.5,No,3,12.0,PhD,Medium,No,No,No,5.9,5.7,102.29,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+189,Mutum Somorjit,,,,Male,24,59.03,5.8,86.55,30.49,8.8,Yes,0,9.8,High School,Low,Yes,Yes,Yes,1.8,6.4,99.8,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+190,Tongbram Bembem,,,,Female,17,92.13,5.9,81.62,86.38,6.1,No,4,3.9,Bachelor,Medium,Yes,No,Yes,5.2,6.7,102.2,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+191,Hijam Rajen,,,,Male,23,62.54,4.0,67.59,35.38,4.7,Yes,4,15.0,High School,Low,Yes,Yes,Yes,2.1,7.7,97.45,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+192,Phuritshabam Ibotombi,,,,Male,16,57.81,6.0,88.8,58.96,4.0,Yes,2,5.5,High School,High,No,Yes,No,1.7,3.7,108.27,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+193,Sinam Dinesh,,,,Male,18,78.94,1.6,53.75,77.52,2.1,No,4,7.6,Master,Medium,Yes,Yes,No,2.7,6.6,76.56,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+194,Thoudam Robindro,,,,Male,20,59.7,11.7,79.62,46.58,2.0,No,2,7.5,PhD,High,Yes,Yes,Yes,3.3,2.7,91.0,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+195,Wangkhem Biren,,,,Male,16,77.81,6.5,99.56,35.88,7.2,No,1,4.9,Bachelor,Low,Yes,No,No,3.5,3.0,86.12,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+196,Mutum Sanatombi,,,,Female,22,76.59,8.5,52.02,83.9,3.3,Yes,1,8.6,Master,Low,Yes,No,Yes,6.8,1.6,81.08,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+197,Hijam Priyabala,,,,Female,22,73.81,6.2,77.18,74.11,3.3,Yes,1,9.5,High School,Medium,No,Yes,No,1.5,7.7,105.03,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+198,Phuritshabam Memchoubi,,,,Female,15,62.83,8.9,89.1,99.19,10.0,No,1,14.9,High School,Medium,Yes,No,Yes,1.7,5.6,124.41,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+199,Nongmaithem Nimai,,,,Male,17,72.91,5.5,94.11,54.1,2.7,No,2,15.3,Bachelor,Medium,Yes,No,No,2.7,3.1,71.92,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+200,Akoijam Tomba,,,,Male,24,75.79,10.5,80.26,34.32,2.3,Yes,1,3.2,Bachelor,Low,Yes,No,No,8.8,6.0,84.49,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+201,Thangjam Bobo,,,,Male,23,72.74,2.9,49.85,81.4,1.9,Yes,5,11.9,Master,Low,Yes,No,No,6.7,4.2,72.53,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+202,Thangjam Thoibi,,,,Female,19,66.67,9.9,52.84,66.52,6.2,No,2,17.9,Bachelor,Medium,No,Yes,Yes,7.6,8.5,88.49,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+203,Laishram Romen,,,,Male,20,40.88,9.9,31.45,44.92,6.7,Yes,1,2.2,Bachelor,Low,Yes,Yes,Yes,4.3,5.8,86.54,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+204,Oinam Suresh,,,,Male,18,75.22,1.5,83.26,84.72,4.3,No,3,9.5,Bachelor,Medium,Yes,No,No,2.9,1.3,84.05,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+205,Laishram Sanatombi,,,,Female,24,50.11,3.3,32.99,44.26,5.8,Yes,5,15.0,High School,Medium,Yes,No,No,1.3,9.9,82.8,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+206,Konsam Ibomcha,,,,Male,16,78.55,7.8,90.53,48.25,8.1,Yes,3,12.2,PhD,Low,Yes,No,No,5.4,1.7,96.71,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+207,Oinam Ibemhal,,,,Female,22,85.56,6.0,38.31,36.48,8.4,No,3,2.0,Bachelor,Low,Yes,No,No,6.2,7.3,74.64,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+208,Konsam Tombi,,,,Female,20,70.03,4.8,42.03,57.96,9.6,Yes,1,7.9,Bachelor,Low,Yes,No,No,9.1,4.9,66.38,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+209,Yumnam Bembem,,,,Female,19,72.54,2.1,63.36,59.33,8.4,Yes,2,10.1,Master,High,No,No,No,8.9,3.2,77.26,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+210,Yumnam Tomba,,,,Male,23,97.09,9.1,81.65,66.02,6.1,No,3,19.9,Bachelor,Medium,Yes,No,No,4.8,7.1,99.22,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+211,Ningthoujam Deven,Parent of Ningthoujam Deven,parent211@example.com,Address for student 211,Male,15,90.83,5.2,39.73,79.63,2.6,Yes,2,3.6,Master,High,Yes,No,Yes,4.8,2.1,53.98,Below Average,Fail,,,1,,2026-03-26 00:33:49,2026-03-26 00:33:49
+212,Sorokhaibam Biren,,,,Male,19,94.85,5.4,60.8,93.43,1.9,Yes,4,19.6,High School,Low,Yes,No,No,2.5,8.7,95.38,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+213,Thounaojam Sanjit,,,,Male,20,88.83,6.0,63.8,39.64,1.5,No,4,7.5,High School,Medium,No,No,No,3.3,3.3,79.46,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+214,Wangkhem Ranjit,,,,Male,19,46.54,6.3,44.86,33.8,7.0,Yes,4,4.0,PhD,Low,Yes,No,No,9.3,4.3,72.7,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+215,Pukhrambam Priyokumar,,,,Male,20,48.94,3.1,38.09,31.3,8.3,Yes,2,8.3,Master,Medium,Yes,No,Yes,2.3,6.7,64.55,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+216,Heisnam Kiran,,,,Male,20,71.6,5.4,88.55,40.05,5.6,Yes,3,12.3,Bachelor,High,Yes,Yes,No,9.7,1.0,61.62,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+217,Ningthoujam Sanalembi,,,,Female,21,54.76,7.6,65.17,76.06,1.5,Yes,1,4.3,Bachelor,High,Yes,No,No,5.5,5.3,74.26,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+218,Lourembam Ibungo,,,,Male,18,68.6,3.1,31.01,80.92,5.8,No,3,5.8,PhD,Medium,No,No,No,5.1,9.0,88.77,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+219,Sorokhaibam Ibungo,,,,Female,22,63.66,10.9,86.21,85.06,9.4,No,2,17.1,High School,High,Yes,No,Yes,2.6,7.1,112.53,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+220,Kshetrimayum Bishwajit,,,,Male,21,72.96,9.6,98.66,47.06,6.4,Yes,0,20.0,High School,Low,No,No,No,7.0,4.5,90.5,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+221,Moirangthem Somorjit,,,,Male,23,84.81,4.4,72.41,51.41,8.3,No,3,6.4,Bachelor,Medium,No,Yes,Yes,5.1,6.9,91.3,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+222,Naorem Dinesh,,,,Male,21,82.93,4.6,65.26,63.82,8.2,No,4,3.0,High School,Medium,Yes,Yes,No,4.3,9.4,106.42,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+223,Thounaojam Priyabala,,,,Female,17,71.27,1.7,91.49,34.42,9.4,Yes,1,15.9,High School,High,Yes,No,No,3.4,2.7,92.97,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+224,Wangkhem Ongbi,,,,Female,17,89.34,7.4,96.68,72.78,7.9,No,2,12.0,Master,Low,Yes,Yes,No,1.6,5.8,119.66,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+225,Pukhrambam Reena,,,,Female,22,65.85,6.8,82.82,98.86,7.7,Yes,5,2.0,High School,High,Yes,No,No,5.7,3.1,93.57,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+226,Heisnam Sunita,,,,Female,19,93.8,3.7,61.18,55.26,3.1,No,0,18.9,Master,Medium,No,Yes,No,3.8,8.7,99.52,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+227,Akoijam Sanatomba,,,,Male,18,44.28,10.6,71.46,82.7,1.5,No,1,1.6,Bachelor,Medium,Yes,No,No,7.4,7.5,83.22,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+228,Lourembam Sharmila,,,,Female,22,97.28,5.5,79.07,65.0,5.7,Yes,2,12.5,Bachelor,Low,Yes,No,Yes,7.5,8.2,111.52,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+229,Chongtham Robindro,,,,Male,20,79.28,2.1,43.6,38.95,2.1,Yes,2,8.5,Bachelor,Medium,Yes,No,No,4.0,9.5,71.72,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+230,Wahengbam Rojit,,,,Male,16,62.8,3.7,61.3,70.76,9.7,Yes,2,11.1,Bachelor,Medium,No,Yes,No,7.0,3.1,87.59,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+231,Kshetrimayum Ibemhal,,,,Female,18,51.83,1.8,88.09,50.99,3.6,Yes,4,4.3,High School,Medium,Yes,No,Yes,3.3,1.4,75.77,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+232,Moirangthem Memchoubi,,,,Female,18,68.75,26.8,75.83,32.41,8.7,Yes,3,13.8,High School,High,Yes,Yes,No,7.5,3.6,135.1,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+233,Naorem Bembem,,,,Female,20,51.67,1.8,58.78,74.45,4.5,No,3,19.2,Master,Medium,Yes,Yes,Yes,1.1,4.6,69.3,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+234,Akoijam Sanalembi,,,,Female,20,49.98,5.1,76.44,90.13,3.9,Yes,2,9.2,High School,Medium,Yes,Yes,Yes,2.4,6.6,99.46,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+235,Chongtham Thoibi,,,,Female,15,77.04,3.4,38.28,54.13,9.4,Yes,3,10.5,High School,High,Yes,No,No,3.2,8.2,80.11,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+236,Wahengbam Sanatombi,Parent of Wahengbam Sanatombi,parent236@example.com,Address for student 236,Female,22,71.39,1.3,58.1,57.32,4.3,No,1,4.8,PhD,Medium,Yes,Yes,No,8.0,4.1,59.04,Below Average,Fail,,,1,,2026-03-26 00:33:49,2026-03-26 00:33:49
+237,Sagolsem Ibemhal,,,,Female,20,80.21,12.5,85.52,92.37,4.5,Yes,2,17.8,PhD,Medium,Yes,No,No,1.6,5.3,113.55,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+238,Khumanthem Tombi,,,,Female,17,95.78,3.1,45.44,86.95,2.0,No,0,19.4,Bachelor,Low,Yes,Yes,No,2.7,8.1,74.45,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+239,Sagolsem Premo,,,,Male,23,71.94,8.2,43.02,80.05,7.0,No,4,15.7,High School,Medium,Yes,Yes,No,4.2,3.0,91.14,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+240,Elangbam Priyabala,,,,Female,16,74.86,2.5,96.56,47.42,3.6,Yes,4,10.9,Master,Medium,Yes,Yes,Yes,1.1,3.0,96.95,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+241,Phuritshabam Bembem,,,,Female,22,45.38,8.0,44.69,93.72,6.3,Yes,6,19.1,Master,High,Yes,No,Yes,7.9,6.3,82.39,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+242,Khumanthem Sunil,,,,Male,24,83.06,1.2,48.26,40.81,6.3,Yes,3,3.1,High School,Medium,Yes,Yes,No,6.0,4.9,71.13,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+243,Maibam Sanalembi,,,,Female,17,63.99,13.0,97.87,73.87,7.5,No,4,9.6,High School,Low,Yes,No,No,9.1,9.5,110.06,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+244,Elangbam Bimol,,,,Male,19,98.6,4.7,81.43,32.02,7.7,Yes,1,10.8,Master,Medium,Yes,No,No,1.3,4.2,117.76,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+245,Phuritshabam Sushil,,,,Male,20,89.39,2.5,78.97,75.06,5.6,No,3,9.8,PhD,Low,Yes,No,No,3.4,7.8,92.15,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+246,Mutum Ongbi,,,,Female,24,71.35,11.4,89.7,49.4,4.0,No,1,16.0,Master,Medium,Yes,Yes,Yes,7.6,6.2,90.25,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+247,Maibam Rishi,Parent of Maibam Rishi,parent247@example.com,Address for student 247,Male,20,47.39,3.8,38.11,61.48,8.5,Yes,3,13.4,High School,Medium,Yes,No,No,7.1,1.5,37.04,At Risk,Fail,,,1,,2026-03-26 00:33:49,2026-03-26 00:33:49
+248,Mutum Bhorot,,,,Male,18,91.56,1.9,79.42,54.17,3.8,No,2,2.5,Bachelor,Medium,Yes,No,No,3.2,1.8,81.93,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+249,Tongbram Robichandra,,,,Male,17,87.99,6.1,65.26,42.09,5.6,Yes,5,6.9,Bachelor,High,Yes,No,No,6.4,2.8,64.76,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+250,Hijam Nandakumar,,,,Male,18,51.08,4.0,88.04,73.54,4.6,No,4,6.8,High School,Medium,Yes,No,Yes,8.1,2.3,67.72,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+251,Tongbram Ibemhal,,,,Female,15,57.72,5.6,65.57,91.74,8.7,Yes,1,11.3,High School,Medium,Yes,No,No,1.3,4.0,117.28,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+252,Sinam Ibotombi,,,,Male,18,87.6,7.9,73.42,97.14,4.9,No,4,5.8,High School,Low,Yes,Yes,Yes,7.5,6.2,107.06,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+253,Leishangthem Memchoubi,,,,Female,15,51.11,4.2,63.44,43.46,4.5,Yes,2,2.3,Bachelor,Medium,No,No,No,3.3,6.4,78.74,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+254,Konthoujam Dhananjoy,,,,Male,15,95.07,8.8,63.47,80.22,7.2,No,1,13.1,Bachelor,High,Yes,Yes,Yes,9.5,6.3,98.85,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+255,Khundongbam Nilachandra,,,,Male,24,65.47,8.2,83.76,76.5,6.4,Yes,6,17.0,Master,Low,No,Yes,No,5.8,2.1,95.42,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+256,Angom Birachandra,,,,Male,20,45.22,0.3,74.0,54.04,2.0,Yes,1,18.6,Master,Medium,Yes,Yes,No,1.3,6.4,82.78,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+257,Loitongbam Romesh,,,,Male,19,88.94,10.5,74.33,31.34,5.6,Yes,4,19.5,PhD,Medium,Yes,No,No,4.6,4.7,98.27,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+258,Hijam Reena,,,,Female,18,62.41,4.8,61.52,78.29,7.6,Yes,4,15.6,Master,Low,Yes,No,No,9.7,9.1,68.83,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+259,Sinam Sanatombi,,,,Female,17,71.59,7.8,67.18,96.18,9.9,No,6,2.8,High School,Low,Yes,Yes,Yes,7.6,9.2,119.93,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+260,Potsangbam Ibohal,,,,Male,15,46.74,3.5,82.2,74.25,6.7,No,6,17.1,Bachelor,Low,Yes,No,No,3.7,7.9,95.26,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+261,Rajkumar Sanajaoba,,,,Male,20,40.16,5.8,87.82,60.47,4.3,Yes,1,8.0,Bachelor,High,No,No,No,6.2,7.3,109.01,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+262,Shamurailatpam Sunita,,,,Female,16,78.28,3.6,78.76,66.76,3.0,Yes,4,14.6,High School,Medium,Yes,No,No,6.4,2.0,72.57,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+263,Nameirakpam Surjakanta,,,,Male,22,70.91,3.6,94.69,43.97,8.9,Yes,6,10.6,PhD,Medium,Yes,Yes,No,1.2,1.8,99.78,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+264,Sapam Ratankumar,,,,Male,24,75.61,3.6,87.42,82.54,8.3,Yes,6,16.6,High School,Medium,Yes,No,No,2.6,8.6,117.48,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+265,Luwang Nimai,,,,Male,19,87.62,2.8,69.33,82.25,3.1,Yes,2,8.5,Bachelor,Low,No,Yes,No,6.0,4.8,92.33,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+266,Konthoujam Bembem,,,,Female,21,78.8,11.8,77.0,40.19,2.8,Yes,4,1.2,Bachelor,Medium,No,Yes,No,4.6,5.1,83.04,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+267,Khundongbam Sanalembi,,,,Female,24,50.49,3.9,94.84,91.46,7.4,Yes,4,11.1,Bachelor,Low,Yes,No,No,2.7,8.6,118.11,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+268,Angom Ibemhal,,,,Female,16,61.65,3.7,73.34,48.84,3.8,Yes,3,3.4,Bachelor,Low,Yes,No,Yes,8.0,6.6,67.04,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+269,Nongmaithem Oken,,,,Male,22,94.35,8.1,87.74,98.76,3.8,No,2,19.3,Bachelor,High,No,No,Yes,5.4,2.6,93.15,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+270,Yengkhom Sanajaoba,,,,Male,16,86.2,2.0,78.22,56.8,2.4,Yes,0,10.5,High School,Low,Yes,No,Yes,3.8,2.9,66.51,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+271,Loitongbam Tombi,,,,Female,18,73.4,4.0,68.64,42.45,3.4,Yes,3,11.1,High School,High,Yes,No,Yes,2.5,1.1,65.38,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+272,Potsangbam Thoibi,,,,Female,15,55.34,4.3,46.93,54.62,4.8,No,0,18.1,PhD,Medium,Yes,Yes,No,6.5,7.4,73.66,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+273,Rajkumari Sanatombi,,,,Female,19,58.12,2.6,59.82,60.81,7.6,No,1,12.5,High School,Low,Yes,Yes,Yes,7.0,5.4,77.87,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+274,Nameirakpam Priyabala,,,,Female,23,83.92,1.4,97.74,34.85,4.0,Yes,3,6.1,High School,Medium,Yes,No,Yes,7.0,9.5,92.73,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+275,Thokchom Ibungo,,,,Male,15,91.07,5.8,76.04,70.48,4.0,No,3,5.9,Bachelor,Medium,No,No,No,3.0,7.4,97.79,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+276,Sapam Memchoubi,,,,Female,23,80.29,7.0,69.51,71.83,3.6,No,1,10.0,High School,Medium,Yes,No,No,6.4,1.9,71.27,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+277,Okram Ibobi,,,,Male,22,88.57,4.9,95.31,81.73,5.3,Yes,8,17.3,Bachelor,Low,Yes,No,No,9.1,2.5,95.38,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+278,Luwang Reena,,,,Female,20,86.0,11.6,71.06,32.04,2.6,Yes,3,15.9,Bachelor,Low,Yes,No,No,4.2,5.5,84.89,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+279,Maisnam Arunkumar,,,,Male,21,48.98,6.4,66.83,67.89,5.4,Yes,1,19.3,Master,High,Yes,No,Yes,2.9,9.3,102.16,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+280,Nongmaithem Bembem,,,,Female,17,65.44,5.2,83.15,33.7,7.3,Yes,2,1.4,Master,Medium,Yes,Yes,Yes,7.9,3.2,75.91,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+281,Yengkhom Sanalembi,,,,Female,15,49.18,6.9,79.89,79.08,1.3,Yes,3,5.4,High School,Low,Yes,Yes,No,2.6,8.4,120.25,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+282,Panmei Ibemhal,Parent of Panmei Ibemhal,parent282@example.com,Address for student 282,Female,19,54.11,4.1,43.52,33.9,1.1,No,1,1.6,Bachelor,High,Yes,No,No,3.3,3.8,55.51,Below Average,Fail,,,1,,2026-03-26 00:33:49,2026-03-26 00:33:49
+283,Thokchom Thoibi,,,,Female,16,92.16,9.0,62.99,93.82,1.7,Yes,3,15.0,High School,Low,Yes,No,No,1.9,3.4,86.07,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+284,Keisham Sarat,,,,Male,19,68.37,4.2,63.08,79.15,5.8,Yes,3,2.8,High School,Low,Yes,No,No,3.4,9.1,117.38,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+285,Okram Sunita,,,,Female,22,72.12,4.0,56.48,65.52,8.7,Yes,5,2.0,Bachelor,Low,Yes,Yes,Yes,4.7,1.4,89.83,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+286,Thiyam Sunil,,,,Male,23,50.71,6.4,66.21,60.91,1.0,Yes,5,11.2,High School,Medium,Yes,No,No,1.6,6.9,75.97,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+287,Sanasam Suresh,Parent of Sanasam Suresh,parent287@example.com,Address for student 287,Male,16,58.74,4.0,58.92,39.15,9.4,No,6,8.2,Bachelor,Low,Yes,No,Yes,8.8,1.4,57.63,Below Average,Fail,,,1,,2026-03-26 00:33:49,2026-03-26 00:33:49
+288,Longjam Lokendro,Parent of Longjam Lokendro,parent288@example.com,Address for student 288,Male,17,53.81,1.2,43.95,50.37,2.0,Yes,4,14.3,Master,Medium,Yes,No,No,5.6,8.2,55.3,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+289,Huidrom Sadananda,,,,Male,17,52.37,7.1,58.87,90.83,8.6,No,1,9.7,Master,High,Yes,Yes,No,6.3,8.5,92.31,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+290,Maisnam Tombi,,,,Female,15,78.28,8.4,35.06,93.31,5.3,Yes,1,8.5,Master,Low,Yes,No,No,4.3,9.0,112.69,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+291,Ngangbam Dinesh,Parent of Ngangbam Dinesh,parent291@example.com,Address for student 291,Male,22,55.41,4.6,70.31,30.05,6.9,Yes,5,8.5,High School,Medium,Yes,No,No,7.0,2.7,58.29,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+292,Meisnam Ranjit,,,,Male,20,77.92,6.2,89.76,71.59,5.6,No,4,17.4,Bachelor,Medium,Yes,No,No,4.9,2.1,69.89,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+293,Koijam Ibotombi,,,,Male,22,43.51,4.3,80.77,80.35,5.3,Yes,3,7.9,High School,Medium,Yes,No,No,7.9,5.5,87.46,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+294,Keisham Sanatombi,,,,Female,23,48.51,5.8,55.23,73.31,8.5,Yes,1,6.7,Bachelor,High,Yes,No,No,8.4,3.4,91.39,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+295,Thiyam Bembem,,,,Female,19,56.47,2.9,36.09,35.72,7.8,No,1,6.8,High School,Medium,Yes,Yes,No,7.0,6.5,83.42,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+296,Sanasam Priyabala,,,,Female,17,75.82,16.9,44.15,45.24,5.4,Yes,1,3.9,High School,Low,No,Yes,No,5.4,5.6,121.88,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+297,Konthoujam Memchoubi,,,,Female,19,80.55,14.4,68.18,47.52,2.0,No,1,17.2,Bachelor,Medium,Yes,No,No,8.0,2.3,97.82,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+298,Takhellambam Biren,,,,Male,19,66.56,2.6,44.49,88.22,2.0,No,2,2.9,Master,Low,Yes,Yes,No,5.4,7.7,72.41,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+299,Shijagurumayum Sanjoy,,,,Male,19,66.75,5.2,68.08,62.42,8.2,Yes,0,18.2,Master,Medium,Yes,No,Yes,2.0,8.2,100.37,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+300,Longjam Reena,,,,Female,17,83.47,6.0,46.21,64.08,5.8,Yes,0,5.7,Bachelor,Low,Yes,Yes,No,2.0,9.7,94.25,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+301,Phurailatpam Nimai,,,,Male,24,40.95,6.1,89.42,95.44,5.3,Yes,2,18.0,Bachelor,Low,Yes,No,No,9.5,4.6,71.75,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+302,Salam Robindro,,,,Male,18,60.47,9.2,57.81,74.6,7.1,Yes,0,15.8,Bachelor,Medium,Yes,No,No,2.9,4.0,101.83,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+303,Usham Ibomcha,,,,Male,23,89.12,3.7,47.19,92.91,8.7,No,5,11.6,Bachelor,Low,Yes,Yes,No,8.3,2.7,87.48,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+304,Huidrom Sanalembi,,,,Female,24,76.19,6.8,86.86,61.96,6.7,No,4,13.4,High School,Medium,Yes,No,Yes,3.2,2.6,101.71,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+305,Ngangbam Ibemhal,,,,Female,23,60.23,4.8,54.0,40.46,7.9,Yes,2,6.5,Master,Low,No,No,Yes,4.9,3.9,62.92,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+306,Khomdram Tomba,,,,Male,16,94.33,2.0,37.8,95.1,7.9,Yes,1,11.5,Bachelor,High,Yes,Yes,No,6.9,9.8,102.45,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+307,Meisnam Thoibi,,,,Female,22,86.36,7.9,69.93,62.11,4.2,Yes,2,5.8,High School,Low,Yes,No,Yes,2.4,1.8,91.01,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+308,Koijam Tombi,,,,Female,22,55.89,5.2,70.71,42.71,3.5,Yes,1,8.0,High School,High,Yes,Yes,Yes,7.6,3.3,83.51,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+309,Takhellambam Bembem,Parent of Takhellambam Bembem,parent309@example.com,Address for student 309,Female,21,78.72,4.6,80.03,51.17,8.2,No,2,15.3,High School,Medium,Yes,No,Yes,7.2,1.8,58.38,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+310,Shijagurumayum Sanatombi,,,,Female,22,75.75,5.0,46.82,33.56,4.4,Yes,5,4.9,Bachelor,Medium,Yes,Yes,Yes,5.9,3.5,71.1,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+311,Sagolband Priyabala,,,,Female,17,64.07,8.0,61.06,62.78,9.1,No,6,16.8,Master,Low,Yes,Yes,No,6.1,1.8,88.46,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+312,Laifungbam Deben,,,,Male,20,62.02,3.3,49.77,89.72,1.6,No,4,7.5,Bachelor,Medium,Yes,No,No,2.0,5.6,81.19,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+313,Phurailatpam Memchoubi,,,,Female,15,60.61,2.2,35.67,95.35,1.5,No,2,10.6,Bachelor,Medium,Yes,No,No,4.9,4.9,71.46,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+314,Mangangcha Somorjit,,,,Male,21,77.03,3.8,91.36,95.28,9.3,Yes,3,18.8,PhD,Medium,Yes,Yes,No,1.8,2.6,110.45,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+315,Chakpram Suresh,,,,Male,15,66.54,6.1,81.02,38.77,6.8,No,4,13.6,High School,Medium,Yes,No,Yes,3.8,2.6,64.16,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+316,Salam Reena,Parent of Salam Reena,parent316@example.com,Address for student 316,Female,23,89.91,3.7,51.1,56.74,4.4,No,1,12.9,High School,Medium,Yes,No,Yes,9.1,6.6,53.55,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+317,Taorem Rajen,,,,Male,15,80.18,6.5,71.96,31.98,7.8,No,0,14.2,Bachelor,Medium,Yes,No,No,6.2,4.5,78.77,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+318,Yumkham Nara,,,,Male,15,44.2,6.8,44.09,89.86,7.1,Yes,7,18.4,Master,Low,Yes,No,No,7.7,1.5,64.72,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+319,Nongthombam Bimol,,,,Male,21,78.41,4.8,92.32,55.11,5.8,Yes,2,5.0,Bachelor,Low,Yes,No,Yes,6.2,9.3,95.72,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+320,Usham Sanalembi,,,,Female,16,56.27,6.8,38.04,74.18,1.9,No,6,12.3,Bachelor,Medium,Yes,No,No,2.7,4.6,75.99,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+321,Khomdram Ibemhal,,,,Female,19,75.57,5.2,30.27,80.04,8.3,Yes,2,8.0,PhD,Low,Yes,No,No,6.4,6.3,74.35,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+322,Laitonjam Inaocha,,,,Male,22,80.81,5.5,65.14,60.09,8.8,Yes,3,0.2,Master,Low,No,No,No,7.8,9.0,91.16,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+323,Laifungbam Thoibi,,,,Female,22,53.85,6.7,70.82,51.45,2.5,No,6,2.5,High School,Low,Yes,Yes,Yes,2.2,4.6,93.26,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+324,Mangangcha Tombi,,,,Female,17,67.41,5.7,70.53,97.35,8.7,Yes,4,6.5,Master,Low,No,Yes,No,8.4,8.4,101.15,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+325,Chakpram Bembem,,,,Female,21,51.42,1.9,33.82,97.51,8.9,Yes,2,11.3,High School,Medium,Yes,Yes,Yes,6.0,9.2,101.04,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+326,Taorem Ibemhal,,,,Female,17,43.14,13.1,51.98,50.26,5.9,Yes,7,17.6,Bachelor,Medium,Yes,Yes,No,1.0,2.6,89.97,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+327,Khangembam Raghumani,,,,Male,20,62.71,5.7,64.94,63.57,6.9,No,5,15.8,High School,High,Yes,Yes,No,5.7,9.0,102.3,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+328,Pebam Ibungo,,,,Male,20,61.78,3.1,45.16,98.1,4.4,Yes,5,11.1,Bachelor,Medium,Yes,No,No,4.6,2.1,78.33,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+329,Yumkham Thoibi,,,,Female,17,99.73,6.9,91.08,30.34,3.5,No,0,1.5,Bachelor,High,Yes,No,Yes,3.7,3.5,86.91,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+330,Nongthombam Tombi,,,,Female,21,66.78,13.4,36.1,58.89,7.5,Yes,2,5.7,Master,Medium,Yes,Yes,Yes,7.9,8.3,89.48,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+331,Joykumar Ningombam,,,,Male,17,60.01,3.5,64.12,37.03,8.8,Yes,1,7.3,Bachelor,High,No,Yes,No,9.1,9.1,78.96,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+332,Chingakham Ropen,,,,Male,22,74.83,15.2,78.4,65.64,6.9,No,5,12.4,Bachelor,High,Yes,Yes,No,7.9,7.2,115.54,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+333,Laitonjam Bembem,Parent of Laitonjam Bembem,parent333@example.com,Address for student 333,Female,24,45.33,8.3,48.32,31.73,5.6,Yes,3,1.3,High School,Medium,Yes,No,No,8.6,1.9,47.49,At Risk,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+334,Maibam Romesh,,,,Male,18,97.7,1.5,73.7,58.48,2.4,No,8,10.6,PhD,Medium,Yes,No,No,9.2,5.7,81.32,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+335,Khangembam Sanatombi,,,,Female,15,78.1,15.8,88.06,45.45,1.5,Yes,2,18.0,Master,Low,Yes,Yes,Yes,9.2,6.2,105.42,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+336,Pebam Priyabala,Parent of Pebam Priyabala,parent336@example.com,Address for student 336,Female,18,85.29,1.6,43.32,67.33,5.0,Yes,3,14.1,High School,Low,Yes,No,No,2.0,3.5,58.55,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+337,Surchandra Khangembam,,,,Male,21,50.23,5.9,94.21,99.72,1.4,Yes,2,15.9,PhD,High,Yes,No,Yes,5.1,9.9,121.5,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+338,Elangbam Ibomcha,,,,Male,18,64.57,4.9,68.75,86.04,6.1,Yes,3,13.6,Bachelor,High,Yes,No,Yes,1.0,4.0,88.48,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+339,Joykumari Memchoubi,,,,Female,20,65.36,2.7,50.95,89.19,4.4,No,5,4.1,Bachelor,Medium,Yes,Yes,No,5.6,2.9,71.61,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+340,Chingakham Reena,,,,Female,23,89.31,7.5,60.16,74.47,7.8,No,8,2.2,Master,High,Yes,No,No,9.3,2.0,81.42,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+341,Keisham Tomba,,,,Male,15,40.07,10.8,51.85,32.91,3.8,Yes,3,16.6,High School,High,Yes,No,No,2.8,4.4,72.03,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+342,Takhellambam Sanalembi,,,,Female,19,58.05,2.0,80.76,44.48,6.3,Yes,3,13.9,PhD,Medium,Yes,No,No,6.8,7.2,92.45,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+343,Rajkumar Ibotombi,,,,Male,21,98.87,12.1,85.74,94.75,5.8,No,5,11.5,Bachelor,Medium,No,No,No,6.8,3.1,88.11,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+344,Maibam Ibemhal,,,,Female,15,68.49,8.2,88.31,55.63,1.0,Yes,2,3.8,High School,Medium,No,No,Yes,2.4,7.9,105.73,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+345,Nongmaikapam Dinesh,,,,Male,18,62.95,11.7,99.0,37.25,1.7,Yes,4,12.1,Master,Medium,Yes,No,No,3.1,2.2,90.43,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+346,Sanjenbam Biren,,,,Male,20,47.19,5.3,85.39,79.17,3.6,No,3,0.6,Master,Low,Yes,No,No,5.2,5.0,70.76,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+347,Pukhrambam Ibungo,,,,Male,16,98.45,15.6,72.1,50.96,8.9,No,5,2.4,High School,Medium,Yes,No,No,2.7,7.3,121.14,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+348,Surchandra Tombi,,,,Female,24,41.2,6.6,53.75,48.82,2.3,No,4,6.2,High School,Medium,Yes,No,No,6.3,2.2,63.05,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+349,Elangbam Reena,,,,Female,19,84.23,6.4,68.12,99.86,7.4,No,4,8.9,Master,Medium,Yes,No,No,5.4,6.4,105.13,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+350,Yendrembam Sanjoy,,,,Male,24,86.12,6.2,32.87,90.07,9.8,No,2,2.4,High School,High,No,Yes,No,5.7,8.2,103.83,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+351,Keisham Sanalembi,,,,Female,15,54.62,1.7,82.14,58.56,8.1,Yes,4,2.4,PhD,Medium,Yes,No,No,2.2,6.4,98.84,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+352,Thounaojam Nara,,,,Male,20,80.29,7.5,61.22,98.62,3.2,Yes,5,14.5,Master,Low,Yes,No,No,5.7,5.6,99.16,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+353,Sagolsem Rajen,,,,Male,20,45.58,2.4,31.4,75.51,9.2,Yes,3,11.4,Bachelor,High,Yes,No,Yes,1.4,8.5,84.32,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+354,Rajkumari Ibemhal,,,,Female,18,55.42,2.7,34.38,81.94,1.8,No,0,10.7,Bachelor,Medium,No,Yes,No,8.9,9.9,74.12,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+355,Nongmaikapam Thoibi,,,,Female,22,87.27,1.3,57.12,32.21,5.2,No,3,9.0,Bachelor,Low,No,No,Yes,4.1,2.6,67.95,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+356,Oinam Bishorjit,,,,Male,18,91.88,1.5,70.84,38.51,9.0,No,6,19.5,Bachelor,Medium,Yes,No,Yes,8.7,7.2,85.02,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+357,Sanjenbam Tombi,,,,Female,22,76.51,10.7,62.49,74.32,6.8,No,5,1.0,Master,Medium,Yes,No,Yes,7.3,1.7,72.32,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+358,Pukhrambam Bembem,,,,Female,22,70.41,4.9,73.34,92.93,4.7,No,3,3.6,PhD,High,Yes,No,Yes,7.9,1.4,73.11,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+359,Longjam Ibotombi,,,,Male,19,49.56,0.7,63.62,73.66,3.6,No,1,13.0,Bachelor,Medium,Yes,Yes,No,3.8,3.5,66.46,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+360,Leishangthem Romesh,,,,Male,18,43.79,6.5,76.32,39.38,4.4,Yes,6,2.7,Bachelor,Low,Yes,Yes,No,3.0,9.7,106.66,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+361,Yendrembam Sanatombi,,,,Female,16,47.06,9.2,45.34,38.1,5.6,No,3,11.8,High School,Medium,Yes,No,Yes,4.7,6.0,86.14,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+362,Konthoujam Tomba,,,,Male,17,53.64,3.2,37.9,89.09,3.9,Yes,2,11.4,Bachelor,High,Yes,Yes,Yes,1.2,3.4,86.38,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+363,Khundongbam Suresh,,,,Male,17,60.5,3.6,71.75,39.75,9.7,Yes,3,19.4,Bachelor,Medium,Yes,No,No,9.3,2.2,61.9,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+364,Sagolsem Memchoubi,,,,Female,18,62.85,9.7,63.93,66.42,9.4,No,6,17.7,Bachelor,High,Yes,No,Yes,4.5,9.3,108.61,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+365,Wahengbam Nandakumar,Parent of Wahengbam Nandakumar,parent365@example.com,Address for student 365,Male,18,60.78,4.1,31.88,32.6,8.8,No,1,18.9,High School,Low,Yes,No,No,9.9,4.3,30.2,At Risk,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+366,Potsangbam Biren,,,,Male,24,54.34,11.1,56.63,35.65,4.8,Yes,3,2.3,Master,High,Yes,Yes,Yes,7.9,3.8,78.51,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+367,Oinam Reena,,,,Female,19,70.58,5.3,37.43,77.06,7.2,Yes,1,17.4,Bachelor,Medium,Yes,Yes,Yes,1.7,8.7,115.7,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+368,Longjam Sanalembi,,,,Female,18,89.52,10.7,67.19,78.24,9.1,No,4,2.6,Master,Medium,Yes,No,No,6.9,6.4,108.36,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+369,Maisnam Sanjit,,,,Male,24,56.78,4.1,57.7,53.9,8.7,No,1,12.7,Master,Medium,Yes,No,No,3.4,2.5,72.3,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+370,Heisnam Ibomcha,,,,Male,22,96.54,11.3,72.92,45.09,4.7,No,2,14.4,Bachelor,High,No,Yes,No,3.2,4.8,120.36,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+371,Leishangthem Ibemhal,,,,Female,20,92.4,2.1,86.39,86.96,2.0,Yes,5,3.2,Bachelor,Medium,Yes,No,Yes,3.3,9.4,87.68,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+372,Konthoujam Thoibi,Parent of Konthoujam Thoibi,parent372@example.com,Address for student 372,Female,20,49.71,6.9,50.98,45.2,1.7,Yes,2,12.7,Bachelor,High,Yes,No,No,9.2,9.1,57.06,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+373,Khundongbam Tombi,,,,Female,22,87.18,3.9,97.35,67.94,6.2,Yes,3,1.0,High School,Medium,Yes,Yes,No,5.5,1.6,100.34,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+374,Wahengbam Bembem,,,,Female,21,74.48,5.2,67.49,97.77,6.8,Yes,4,5.9,Master,Low,Yes,Yes,Yes,7.0,3.4,104.54,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+375,Sorokhaibam Romen,,,,Male,24,73.99,8.1,73.28,40.35,8.6,Yes,3,18.4,High School,Medium,No,No,Yes,3.5,2.4,94.3,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+376,Potsangbam Sanatombi,,,,Female,24,63.46,4.8,77.65,95.86,3.6,No,6,3.4,Bachelor,Medium,Yes,Yes,Yes,5.7,5.8,86.97,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+377,Maisnam Priyabala,,,,Female,22,70.07,8.6,76.67,42.8,2.5,Yes,3,1.3,High School,Medium,Yes,Yes,No,4.2,7.7,91.64,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+378,Ningthoujam Tomba,,,,Male,16,63.83,9.1,65.77,69.72,4.4,Yes,3,8.9,Master,Medium,No,Yes,Yes,3.9,3.7,80.35,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+379,Heisnam Memchoubi,,,,Female,23,72.38,5.0,60.01,56.39,4.2,Yes,3,17.0,Bachelor,Medium,Yes,No,No,3.2,7.8,93.1,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+380,Thangjam Ibungo,,,,Male,15,77.68,8.3,33.76,97.55,2.2,Yes,2,1.5,Bachelor,High,Yes,No,Yes,4.7,7.0,78.1,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+381,Sorokhaibam Reena,,,,Female,22,80.46,4.5,31.55,49.15,7.1,No,3,7.1,Bachelor,Low,Yes,Yes,Yes,6.9,7.6,94.65,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+382,Ningthoujam Sanalembi,,,,Female,18,71.95,5.9,55.06,57.98,5.6,No,4,18.0,Master,Medium,Yes,Yes,Yes,3.0,9.5,100.93,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+383,Thangjam Ibemhal,,,,Female,18,83.29,7.6,53.36,98.8,7.5,No,3,2.4,High School,High,Yes,Yes,No,9.7,4.8,86.87,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+384,Laishram Bimol,,,,Male,19,48.48,3.7,57.14,67.55,4.2,Yes,3,6.2,Bachelor,Medium,Yes,No,Yes,2.1,4.1,66.73,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+385,Angom Sanjoy,,,,Male,22,52.72,1.9,39.69,65.18,3.9,Yes,3,15.6,Bachelor,Medium,Yes,Yes,No,5.3,7.2,63.04,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+386,Laishram Thoibi,,,,Female,19,89.12,3.2,81.67,48.04,5.3,Yes,2,10.9,High School,Medium,Yes,No,No,1.8,8.3,93.87,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+387,Tongbram Ibohal,,,,Male,22,59.35,3.9,89.99,79.1,8.9,Yes,5,16.6,High School,Medium,Yes,Yes,No,1.2,2.7,98.17,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+388,Mutum Somorjit,,,,Male,24,41.37,9.5,95.71,31.01,1.4,No,4,2.2,High School,Low,No,Yes,No,9.3,8.6,86.17,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+389,Hijam Rajen,,,,Male,15,49.23,4.3,64.47,33.47,8.2,Yes,0,18.4,High School,Medium,No,Yes,No,8.3,1.5,65.47,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+390,Phuritshabam Ibotombi,Parent of Phuritshabam Ibotombi,parent390@example.com,Address for student 390,Male,24,53.42,8.4,79.06,71.96,4.3,No,2,18.7,Bachelor,High,Yes,No,No,7.2,1.1,59.42,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+391,Sinam Dinesh,,,,Male,23,97.44,0.8,89.89,53.92,8.7,Yes,5,3.1,High School,Medium,Yes,No,No,8.8,2.4,70.5,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+392,Thoudam Robindro,,,,Male,20,74.38,2.6,59.28,96.73,8.2,No,3,0.7,Bachelor,Low,Yes,No,Yes,8.2,9.8,93.71,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+393,Angom Tombi,,,,Female,17,95.96,4.1,51.66,93.22,4.1,No,1,19.8,High School,Medium,No,Yes,Yes,6.8,5.7,66.91,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+394,Tongbram Bembem,,,,Female,22,74.51,11.7,95.57,79.96,7.2,No,1,9.6,High School,Medium,Yes,Yes,No,8.6,1.4,94.43,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+395,Wangkhem Biren,,,,Male,23,68.76,5.9,66.1,87.27,2.4,Yes,2,11.4,PhD,Low,No,No,No,4.5,10.0,107.47,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+396,Mutum Sanatombi,,,,Female,20,58.82,2.7,64.81,76.71,9.1,No,2,12.3,Bachelor,High,No,No,No,6.0,7.7,83.84,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+397,Hijam Priyabala,,,,Female,21,76.38,1.4,42.49,38.79,4.6,No,5,15.8,High School,Low,Yes,No,Yes,8.0,8.5,69.18,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+398,Phuritshabam Memchoubi,,,,Female,15,48.35,6.4,37.57,83.59,5.1,Yes,3,16.2,Bachelor,High,Yes,Yes,No,1.8,2.9,82.4,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+399,Thangjam Thoibi,,,,Female,19,93.9,2.9,88.95,44.71,7.4,Yes,7,3.9,High School,Medium,Yes,Yes,No,8.7,1.9,73.12,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+400,Nongmaithem Nimai,,,,Male,19,89.76,3.4,72.99,52.64,8.4,No,5,4.7,High School,Medium,Yes,Yes,No,2.4,5.6,118.65,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+401,Laishram Sanatombi,,,,Female,24,59.05,2.6,52.81,87.35,3.1,No,3,17.5,High School,Medium,Yes,No,No,8.8,7.9,67.9,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+402,Oinam Ibemhal,,,,Female,18,97.17,3.0,43.42,67.56,7.0,Yes,6,16.4,PhD,Low,Yes,No,No,3.8,6.7,91.68,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+403,Akoijam Tomba,,,,Male,20,89.51,2.2,68.88,90.2,4.5,Yes,4,12.4,Master,Medium,Yes,No,Yes,3.9,6.7,89.08,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+404,Thangjam Bobo,,,,Male,21,79.98,5.2,70.87,44.91,4.3,No,2,19.9,Master,High,Yes,Yes,No,1.7,7.8,110.01,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+405,Konsam Tombi,Parent of Konsam Tombi,parent405@example.com,Address for student 405,Female,23,47.31,6.1,44.49,72.54,7.2,Yes,1,14.7,PhD,Medium,No,No,No,9.0,3.0,49.33,At Risk,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+406,Yumnam Bembem,,,,Female,15,68.69,3.0,89.6,35.87,4.5,Yes,3,4.3,PhD,Medium,Yes,No,No,2.6,7.0,102.75,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+407,Ningthoujam Sanalembi,,,,Female,20,70.37,13.2,35.9,75.01,4.1,Yes,2,16.9,Master,High,Yes,Yes,No,6.7,4.5,87.86,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+408,Sorokhaibam Ibungo,,,,Female,21,53.95,7.3,54.93,83.38,8.5,No,4,8.3,Bachelor,Low,Yes,No,No,6.8,1.6,66.93,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+409,Thounaojam Priyabala,Parent of Thounaojam Priyabala,parent409@example.com,Address for student 409,Female,17,44.8,1.2,77.63,70.95,1.9,Yes,6,0.7,Bachelor,Low,Yes,No,Yes,3.5,2.8,59.11,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+410,Wangkhem Ongbi,,,,Female,22,86.6,5.8,49.19,48.64,7.1,No,2,6.4,High School,Low,Yes,No,Yes,9.9,8.1,99.69,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+411,Laishram Romen,,,,Male,19,47.32,6.4,87.94,32.19,3.2,Yes,3,15.3,Bachelor,Medium,Yes,No,No,1.6,9.1,77.47,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+412,Pukhrambam Reena,,,,Female,23,75.66,6.6,81.79,38.36,1.1,No,2,19.2,Bachelor,High,No,Yes,No,6.5,3.5,66.85,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+413,Heisnam Sunita,,,,Female,19,96.19,5.2,85.23,73.56,2.5,No,6,5.5,PhD,Medium,Yes,No,Yes,5.3,2.7,67.37,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+414,Oinam Suresh,,,,Male,23,92.57,8.2,38.34,95.41,6.5,Yes,1,4.9,Bachelor,High,Yes,No,No,3.2,1.2,67.69,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+415,Konsam Ibomcha,,,,Male,24,56.67,9.8,39.84,44.46,7.4,Yes,8,11.3,Bachelor,Medium,No,Yes,No,2.5,9.5,115.46,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+416,Yumnam Tomba,,,,Male,18,91.09,7.3,50.05,81.45,1.2,Yes,3,16.2,Bachelor,Medium,Yes,No,Yes,7.6,7.2,85.13,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+417,Ningthoujam Deven,,,,Male,23,40.02,11.0,66.27,90.65,1.3,Yes,6,14.9,High School,Low,Yes,No,Yes,9.2,9.6,78.51,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+418,Lourembam Sharmila,,,,Female,19,41.06,9.0,82.36,66.46,9.1,No,1,11.2,Bachelor,High,Yes,Yes,Yes,2.0,8.8,122.7,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+419,Kshetrimayum Ibemhal,,,,Female,24,76.15,4.6,88.56,76.85,1.7,Yes,4,12.6,Bachelor,Low,Yes,Yes,No,2.7,4.1,91.32,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+420,Moirangthem Memchoubi,,,,Female,23,61.89,6.6,79.3,87.05,9.0,No,1,4.8,Bachelor,Medium,Yes,Yes,No,9.9,2.0,80.37,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+421,Naorem Bembem,,,,Female,17,63.19,7.4,95.0,48.25,3.1,Yes,0,8.7,Bachelor,Medium,Yes,No,No,1.1,5.5,99.75,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+422,Akoijam Sanalembi,,,,Female,18,73.87,9.6,81.71,50.78,7.7,Yes,0,5.1,High School,Low,Yes,No,No,5.6,1.2,82.03,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+423,Chongtham Thoibi,Parent of Chongtham Thoibi,parent423@example.com,Address for student 423,Female,23,51.51,5.0,51.44,30.04,3.8,Yes,4,17.7,Bachelor,Medium,Yes,No,No,5.6,2.3,46.37,At Risk,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+424,Sorokhaibam Biren,,,,Male,24,52.71,6.3,48.56,97.42,8.7,Yes,4,2.3,Bachelor,Low,Yes,Yes,No,3.4,3.1,101.26,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+425,Wahengbam Sanatombi,,,,Female,20,69.08,1.3,78.73,94.23,7.3,Yes,4,13.6,Bachelor,High,Yes,No,No,7.0,7.0,93.46,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+426,Thounaojam Sanjit,,,,Male,16,85.26,4.1,43.5,83.52,4.6,No,2,5.2,Bachelor,Medium,No,No,No,9.5,5.6,76.41,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+427,Wangkhem Ranjit,Parent of Wangkhem Ranjit,parent427@example.com,Address for student 427,Male,21,77.17,0.6,36.49,35.54,1.7,Yes,3,9.5,High School,Medium,Yes,Yes,Yes,5.1,3.7,57.18,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+428,Sagolsem Ibemhal,,,,Female,16,57.84,2.9,67.26,61.33,7.6,Yes,3,6.0,High School,Medium,Yes,No,No,7.7,6.1,91.27,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+429,Pukhrambam Priyokumar,,,,Male,16,65.82,3.4,87.51,37.13,6.6,No,4,6.5,Bachelor,Medium,No,No,No,6.8,2.1,64.67,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+430,Khumanthem Tombi,,,,Female,15,50.24,7.4,37.1,31.11,1.0,No,7,5.2,Bachelor,High,Yes,Yes,Yes,5.3,7.8,80.22,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+431,Heisnam Kiran,,,,Male,17,44.48,3.2,85.43,73.13,1.1,Yes,0,15.1,Bachelor,Low,No,Yes,No,1.4,7.4,101.73,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+432,Elangbam Priyabala,,,,Female,20,86.96,5.2,86.81,97.26,8.3,No,3,7.3,Master,Low,No,No,No,7.7,2.9,101.31,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+433,Lourembam Ibungo,,,,Male,22,55.92,6.6,63.76,93.2,3.3,Yes,4,14.5,High School,Low,Yes,No,No,4.3,6.5,89.94,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+434,Phuritshabam Bembem,,,,Female,23,50.67,5.1,34.01,78.77,6.7,No,4,9.1,High School,High,Yes,No,No,3.0,5.5,78.64,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+435,Maibam Sanalembi,Parent of Maibam Sanalembi,parent435@example.com,Address for student 435,Female,21,81.5,3.7,42.22,36.76,5.1,No,3,10.9,Bachelor,High,Yes,No,Yes,9.5,1.5,47.12,At Risk,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+436,Mutum Ongbi,,,,Female,18,77.08,12.1,79.52,49.19,8.8,No,3,10.9,Bachelor,Medium,Yes,Yes,No,8.0,3.5,89.31,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+437,Tongbram Ibemhal,,,,Female,20,77.99,8.4,79.82,52.4,9.3,No,3,19.5,Bachelor,Medium,Yes,Yes,No,9.7,10.0,131.63,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+438,Leishangthem Memchoubi,,,,Female,19,53.73,4.9,92.88,83.42,10.0,Yes,2,7.3,Master,Low,Yes,No,No,3.3,1.9,86.51,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+439,Kshetrimayum Bishwajit,,,,Male,22,53.96,4.1,70.79,86.16,2.4,No,2,4.2,Master,Low,Yes,Yes,No,8.5,5.6,86.88,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+440,Moirangthem Somorjit,,,,Male,15,53.25,6.4,38.69,56.96,8.8,Yes,4,18.2,High School,Medium,Yes,No,No,6.5,8.6,94.98,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+441,Naorem Dinesh,,,,Male,15,50.43,6.4,38.5,59.25,3.4,Yes,2,3.5,PhD,Low,Yes,Yes,Yes,9.8,3.7,66.57,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+442,Hijam Reena,,,,Female,20,79.34,5.7,80.48,33.12,6.3,Yes,4,16.7,High School,Medium,Yes,Yes,No,9.5,3.3,81.97,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+443,Akoijam Sanatomba,,,,Male,24,90.88,3.7,42.86,50.24,5.6,No,4,3.0,Bachelor,Medium,Yes,Yes,No,9.8,9.0,84.18,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+444,Sinam Sanatombi,Parent of Sinam Sanatombi,parent444@example.com,Address for student 444,Female,16,83.46,0.9,52.99,61.59,1.2,No,4,13.2,Bachelor,Medium,Yes,Yes,No,9.6,3.7,54.1,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+445,Shamurailatpam Sunita,,,,Female,19,87.53,6.4,64.1,38.19,9.4,Yes,4,3.0,Bachelor,Medium,No,No,No,1.1,6.9,102.06,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+446,Chongtham Robindro,Parent of Chongtham Robindro,parent446@example.com,Address for student 446,Male,15,64.29,3.1,31.73,61.73,1.7,No,4,18.5,High School,Medium,Yes,Yes,No,7.7,7.7,56.7,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+447,Wahengbam Rojit,,,,Male,21,79.24,11.9,47.42,89.72,7.2,No,2,11.3,Bachelor,Medium,Yes,No,No,3.4,8.1,113.84,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+448,Konthoujam Bembem,,,,Female,15,61.25,2.5,58.55,70.69,8.1,Yes,2,6.6,Bachelor,Low,No,No,Yes,7.3,10.0,88.44,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+449,Sagolsem Premo,,,,Male,18,71.53,4.3,49.57,35.53,8.2,Yes,4,2.8,High School,Medium,Yes,No,No,9.8,8.2,70.9,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+450,Khundongbam Sanalembi,,,,Female,23,68.9,11.7,39.55,43.42,2.2,No,4,7.4,High School,Low,Yes,No,No,1.4,6.9,68.72,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+451,Angom Ibemhal,,,,Female,15,50.61,4.2,80.96,63.22,5.0,Yes,7,14.1,Bachelor,Low,Yes,No,Yes,6.1,9.1,90.72,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+452,Loitongbam Tombi,,,,Female,18,63.22,3.1,86.92,55.3,8.5,Yes,3,7.7,Bachelor,Medium,Yes,Yes,Yes,7.6,9.2,105.64,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+453,Potsangbam Thoibi,,,,Female,20,97.83,9.6,48.02,55.11,3.7,No,2,4.9,Bachelor,High,No,No,No,3.3,9.8,90.91,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+454,Rajkumari Sanatombi,,,,Female,20,54.91,11.2,84.21,67.05,5.2,No,2,11.5,High School,Low,Yes,No,No,3.0,8.0,107.03,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+455,Khumanthem Sunil,,,,Male,22,48.03,1.4,56.99,70.91,3.5,No,1,8.4,Master,Low,No,Yes,Yes,1.5,2.8,69.73,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+456,Elangbam Bimol,,,,Male,15,65.11,9.0,65.47,85.78,5.2,No,0,3.3,High School,Low,Yes,No,Yes,1.8,7.4,99.95,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+457,Nameirakpam Priyabala,,,,Female,21,87.42,8.7,89.92,53.87,9.0,Yes,3,3.1,Master,Medium,No,No,Yes,6.9,1.7,80.99,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+458,Sapam Memchoubi,,,,Female,15,74.93,4.8,82.5,86.38,5.1,Yes,2,14.1,Bachelor,Medium,No,Yes,Yes,5.5,3.9,87.03,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+459,Phuritshabam Sushil,,,,Male,21,80.86,2.5,86.36,53.7,6.0,No,2,19.5,Bachelor,Low,Yes,No,No,1.3,2.0,65.91,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+460,Maibam Rishi,,,,Male,17,51.38,12.2,39.58,33.88,4.6,Yes,1,4.7,Master,High,Yes,Yes,No,9.7,9.5,87.17,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+461,Luwang Reena,,,,Female,22,77.14,0.9,34.88,68.79,5.1,No,0,15.5,High School,Medium,Yes,No,No,6.9,4.0,65.57,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+462,Mutum Bhorot,,,,Male,17,59.41,3.1,92.54,71.15,1.1,Yes,4,1.8,High School,Medium,No,No,No,5.6,7.4,70.45,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+463,Nongmaithem Bembem,,,,Female,15,90.06,8.1,57.15,95.42,3.6,Yes,1,7.6,Bachelor,Medium,Yes,Yes,No,3.5,6.1,101.64,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+464,Tongbram Robichandra,,,,Male,22,77.76,1.4,50.15,80.82,4.9,Yes,4,10.1,High School,Medium,Yes,Yes,No,6.9,2.0,73.59,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+465,Yengkhom Sanalembi,,,,Female,17,51.93,4.4,80.73,94.24,6.7,No,6,5.4,Bachelor,Medium,Yes,Yes,No,4.3,6.1,104.44,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+466,Hijam Nandakumar,,,,Male,16,43.88,4.8,88.55,93.58,5.1,Yes,1,10.6,High School,Medium,Yes,Yes,No,7.3,6.9,84.7,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+467,Panmei Ibemhal,,,,Female,15,42.56,10.8,90.37,72.32,4.0,Yes,3,17.7,Master,Low,Yes,Yes,No,7.1,8.9,130.86,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+468,Sinam Ibotombi,,,,Male,17,62.28,8.1,52.12,66.94,4.5,Yes,2,18.9,Bachelor,Medium,Yes,No,No,1.8,1.6,83.44,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+469,Konthoujam Dhananjoy,,,,Male,16,55.95,8.5,89.65,69.02,3.2,No,5,2.0,High School,Medium,No,No,No,9.2,3.7,64.97,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+470,Thokchom Thoibi,,,,Female,16,78.77,1.5,32.87,98.48,9.3,Yes,3,5.4,Master,Low,Yes,No,Yes,5.4,7.2,81.03,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+471,Khundongbam Nilachandra,,,,Male,20,69.96,4.5,33.48,84.12,5.7,Yes,1,19.6,Bachelor,Low,Yes,Yes,Yes,4.5,1.3,78.5,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+472,Okram Sunita,,,,Female,15,55.96,6.9,73.65,37.44,1.1,Yes,1,5.4,Bachelor,Low,Yes,No,No,9.6,2.8,63.02,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+473,Angom Birachandra,Parent of Angom Birachandra,parent473@example.com,Address for student 473,Male,16,48.95,9.8,34.42,84.49,1.2,No,3,13.9,Bachelor,High,Yes,No,No,4.9,3.0,51.17,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+474,Maisnam Tombi,,,,Female,20,47.63,2.0,52.72,41.94,9.8,Yes,2,5.1,Bachelor,Low,No,Yes,No,7.5,7.0,70.34,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+475,Loitongbam Romesh,,,,Male,17,91.88,4.3,77.09,61.31,3.0,Yes,4,7.1,Bachelor,High,Yes,No,No,6.9,3.6,70.31,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+476,Keisham Sanatombi,,,,Female,18,54.61,14.2,53.61,44.73,8.3,Yes,5,3.8,Bachelor,Medium,Yes,Yes,Yes,2.5,6.4,108.64,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+477,Potsangbam Ibohal,,,,Male,15,79.1,3.3,42.57,78.27,1.5,Yes,3,17.1,High School,High,Yes,No,No,9.9,9.7,79.16,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+478,Thiyam Bembem,,,,Female,22,88.64,7.5,49.69,91.41,9.3,No,2,17.7,PhD,Medium,No,No,No,5.2,8.1,123.5,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+479,Rajkumar Sanajaoba,,,,Male,21,76.84,8.8,62.03,50.33,8.9,Yes,4,5.9,Master,High,No,No,Yes,4.6,4.0,67.37,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+480,Sanasam Priyabala,,,,Female,21,91.57,7.6,63.28,35.74,6.1,No,1,16.5,High School,Low,Yes,No,No,9.3,5.3,70.76,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+481,Konthoujam Memchoubi,,,,Female,17,63.54,9.5,84.81,50.89,1.1,No,4,7.2,Master,Medium,Yes,No,No,5.8,2.8,65.42,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+482,Longjam Reena,,,,Female,24,97.37,1.4,82.51,77.07,3.3,Yes,2,2.0,Bachelor,Low,Yes,Yes,No,7.3,1.1,86.53,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+483,Nameirakpam Surjakanta,,,,Male,24,47.99,7.7,61.98,53.01,4.7,No,3,15.2,High School,Medium,Yes,No,No,8.6,3.6,68.23,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+484,Huidrom Sanalembi,,,,Female,17,46.13,4.7,89.2,49.47,5.1,No,3,11.9,High School,Medium,Yes,No,No,3.1,4.3,74.87,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+485,Sapam Ratankumar,,,,Male,16,79.52,5.2,38.0,42.91,3.7,No,1,5.5,High School,Medium,No,Yes,No,2.5,6.1,92.6,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+486,Ngangbam Ibemhal,,,,Female,15,96.57,6.2,47.87,64.83,1.3,Yes,2,5.1,Master,Medium,No,No,No,1.6,9.5,83.2,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+487,Luwang Nimai,,,,Male,21,88.53,7.1,87.96,49.32,6.3,Yes,2,19.5,Bachelor,Low,No,No,No,9.1,9.5,94.64,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+488,Meisnam Thoibi,,,,Female,21,44.59,4.7,56.46,81.17,5.7,Yes,4,17.3,Bachelor,Medium,Yes,Yes,No,2.8,1.6,66.32,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+489,Nongmaithem Oken,,,,Male,16,56.76,5.3,98.68,35.36,3.5,No,3,16.2,High School,Medium,Yes,No,No,3.8,6.5,81.46,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+490,Yengkhom Sanajaoba,,,,Male,21,95.82,1.6,62.64,76.48,1.3,Yes,2,2.6,Bachelor,Low,Yes,No,No,3.6,1.4,66.52,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+491,Koijam Tombi,,,,Female,22,55.18,1.8,85.44,46.63,10.0,Yes,2,15.1,Bachelor,High,Yes,No,No,3.7,6.8,102.13,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+492,Thokchom Ibungo,,,,Male,15,86.87,8.8,58.16,64.25,5.3,Yes,3,4.3,Master,High,Yes,No,No,7.0,2.1,98.05,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+493,Okram Ibobi,,,,Male,23,89.51,10.1,59.75,50.03,7.8,Yes,2,19.5,PhD,High,Yes,No,No,9.6,9.5,118.2,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+494,Takhellambam Bembem,,,,Female,21,69.73,9.6,56.8,80.59,5.1,Yes,3,1.0,Bachelor,High,Yes,No,No,4.0,8.8,91.25,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+495,Maisnam Arunkumar,,,,Male,17,63.18,6.0,80.34,96.17,1.4,Yes,4,7.0,Bachelor,Low,Yes,Yes,No,4.7,1.2,84.05,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+496,Keisham Sarat,,,,Male,22,67.01,12.0,68.33,94.2,3.8,Yes,2,8.6,Bachelor,High,Yes,Yes,Yes,7.9,8.0,117.58,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+497,Thiyam Sunil,,,,Male,21,53.62,11.1,96.06,70.84,3.9,No,2,16.5,Master,Medium,Yes,Yes,No,4.9,6.7,111.28,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+498,Shijagurumayum Sanatombi,,,,Female,22,93.36,10.0,47.56,62.38,8.5,Yes,1,15.3,High School,Low,Yes,Yes,No,9.3,5.5,123.69,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+499,Sanasam Suresh,,,,Male,20,67.04,5.3,37.04,87.28,6.9,No,3,7.5,Bachelor,High,Yes,Yes,No,5.5,6.4,86.79,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+500,Sagolband Priyabala,,,,Female,23,92.95,7.8,57.53,77.83,3.5,Yes,3,11.3,Master,Low,Yes,No,No,4.1,7.1,98.57,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+501,Longjam Lokendro,,,,Male,19,46.34,5.4,73.17,42.85,9.7,Yes,3,16.7,High School,Medium,Yes,No,No,9.7,9.0,112.23,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+502,Huidrom Sadananda,,,,Male,17,99.3,6.0,90.26,87.46,3.9,No,4,0.4,High School,Low,No,Yes,No,4.8,7.9,114.88,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+503,Ngangbam Dinesh,,,,Male,17,66.6,7.8,54.23,60.02,10.0,No,3,16.0,Bachelor,Medium,Yes,Yes,No,3.1,6.2,95.48,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+504,Phurailatpam Memchoubi,,,,Female,15,42.87,12.5,75.77,43.23,10.0,Yes,2,18.9,High School,Medium,Yes,Yes,Yes,2.6,8.4,108.39,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+505,Meisnam Ranjit,,,,Male,22,42.28,6.6,54.51,49.73,2.7,No,3,0.6,Bachelor,Medium,Yes,Yes,Yes,10.0,9.9,79.98,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+506,Koijam Ibotombi,,,,Male,16,84.77,2.1,73.21,48.73,3.8,No,4,0.9,Bachelor,Low,Yes,Yes,No,7.8,3.7,84.75,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+507,Salam Reena,,,,Female,17,79.54,16.5,91.94,66.34,5.4,No,6,6.9,Bachelor,Medium,Yes,No,Yes,4.7,2.1,108.92,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+508,Takhellambam Biren,,,,Male,22,88.13,4.8,46.2,46.41,7.0,Yes,3,1.8,High School,Medium,Yes,Yes,No,8.4,7.6,83.65,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+509,Usham Sanalembi,,,,Female,22,46.32,2.2,58.3,38.65,5.8,Yes,3,9.6,PhD,Low,Yes,No,No,5.9,9.8,81.13,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+510,Khomdram Ibemhal,,,,Female,18,42.13,6.2,99.53,38.66,9.7,No,3,14.6,High School,High,Yes,No,No,3.9,2.1,75.68,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+511,Shijagurumayum Sanjoy,,,,Male,18,70.51,8.0,90.8,70.83,7.5,No,3,11.3,Master,Medium,Yes,Yes,No,7.7,4.9,98.76,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+512,Laifungbam Thoibi,,,,Female,19,63.26,10.2,69.52,81.43,2.9,Yes,5,3.9,High School,High,No,Yes,No,7.7,1.6,89.26,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+513,Phurailatpam Nimai,,,,Male,20,67.72,6.4,66.16,52.51,1.9,No,4,13.1,Bachelor,Low,Yes,Yes,No,5.5,8.0,86.95,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+514,Mangangcha Tombi,,,,Female,19,99.5,4.1,49.92,32.43,7.2,Yes,1,13.7,High School,Medium,Yes,Yes,No,1.4,9.5,115.87,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+515,Chakpram Bembem,,,,Female,21,98.24,6.2,66.2,38.91,2.4,Yes,3,18.6,High School,Low,No,Yes,Yes,1.7,5.5,100.1,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+516,Salam Robindro,,,,Male,16,96.54,6.0,89.37,94.03,8.1,Yes,4,2.9,High School,Medium,No,No,No,8.1,4.7,95.79,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+517,Taorem Ibemhal,,,,Female,21,87.03,8.1,77.96,64.55,3.8,No,2,13.8,Bachelor,Low,Yes,Yes,No,8.4,9.2,116.03,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+518,Yumkham Thoibi,Parent of Yumkham Thoibi,parent518@example.com,Address for student 518,Female,24,61.29,5.5,50.3,61.75,3.9,Yes,2,18.2,Bachelor,Medium,No,No,Yes,7.1,2.2,48.85,At Risk,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+519,Nongthombam Tombi,,,,Female,21,64.73,18.8,44.1,32.66,1.1,No,1,10.0,High School,Medium,Yes,Yes,No,8.6,9.0,79.02,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+520,Laitonjam Bembem,,,,Female,15,72.98,10.4,48.56,81.0,7.3,Yes,4,7.2,PhD,Low,Yes,No,No,7.5,4.5,84.77,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+521,Khangembam Sanatombi,Parent of Khangembam Sanatombi,parent521@example.com,Address for student 521,Female,21,89.83,3.9,41.88,66.96,2.0,No,1,3.4,High School,Medium,Yes,No,No,9.1,6.0,55.98,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+522,Usham Ibomcha,,,,Male,19,44.12,3.6,36.69,44.15,8.0,No,3,17.3,Bachelor,High,Yes,Yes,Yes,2.4,5.8,82.96,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+523,Pebam Priyabala,,,,Female,17,65.46,3.5,59.34,37.71,5.4,No,2,7.9,High School,Low,Yes,Yes,No,4.5,6.5,107.36,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+524,Khomdram Tomba,,,,Male,17,44.96,7.5,37.93,56.84,8.1,No,0,18.5,Bachelor,Medium,Yes,No,No,5.2,9.5,96.26,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+525,Joykumari Memchoubi,,,,Female,18,70.88,5.9,42.03,88.6,6.3,Yes,1,17.0,Master,Medium,Yes,No,No,3.7,9.6,92.35,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+526,Laifungbam Deben,,,,Male,16,93.93,3.1,68.31,90.57,1.7,Yes,1,7.5,Bachelor,Medium,Yes,Yes,No,7.5,8.5,90.36,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+527,Mangangcha Somorjit,,,,Male,16,86.95,1.2,41.52,72.2,7.9,Yes,3,11.5,High School,High,Yes,Yes,No,9.2,2.7,86.31,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+528,Chingakham Reena,Parent of Chingakham Reena,parent528@example.com,Address for student 528,Female,15,53.67,4.3,34.47,80.93,1.6,Yes,3,0.5,High School,High,No,Yes,Yes,4.7,4.0,55.81,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+529,Takhellambam Sanalembi,,,,Female,19,98.56,7.8,52.22,38.06,5.3,No,4,5.3,Master,Medium,Yes,Yes,No,9.5,5.4,73.31,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+530,Maibam Ibemhal,,,,Female,18,80.04,2.3,45.42,71.17,2.6,Yes,3,14.2,High School,Medium,Yes,No,Yes,5.7,9.1,87.1,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+531,Chakpram Suresh,,,,Male,24,40.63,4.4,66.07,76.69,7.8,Yes,3,13.6,Bachelor,Medium,Yes,No,Yes,5.7,5.7,78.56,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+532,Surchandra Tombi,,,,Female,16,55.32,10.5,37.17,44.05,9.2,Yes,4,7.1,High School,Medium,Yes,Yes,Yes,6.4,9.8,104.86,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+533,Taorem Rajen,,,,Male,17,55.64,0.6,82.62,91.61,6.0,Yes,4,16.2,High School,Medium,Yes,Yes,No,3.4,9.9,107.03,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+534,Yumkham Nara,,,,Male,21,44.16,4.1,93.44,43.65,5.7,Yes,3,4.7,High School,High,Yes,Yes,No,4.5,6.4,93.65,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+535,Nongthombam Bimol,,,,Male,21,97.59,3.9,82.04,51.94,7.9,No,1,9.2,Master,Medium,No,No,Yes,6.0,8.9,107.47,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+536,Elangbam Reena,,,,Female,18,68.7,1.9,67.3,73.44,1.0,Yes,2,9.5,Master,Low,Yes,No,No,9.5,10.0,87.0,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+537,Keisham Sanalembi,,,,Female,19,93.75,2.1,90.25,74.68,9.3,Yes,0,6.8,Bachelor,Low,Yes,Yes,Yes,6.8,8.6,128.08,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+538,Laitonjam Inaocha,,,,Male,19,59.33,8.6,78.64,78.96,2.8,No,3,19.1,High School,High,Yes,No,No,4.0,6.9,96.84,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+539,Khangembam Raghumani,,,,Male,20,47.51,11.9,30.74,37.84,9.9,No,3,13.9,Bachelor,Low,Yes,No,No,1.1,8.6,100.48,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+540,Rajkumari Ibemhal,,,,Female,23,68.46,3.3,57.59,89.46,7.6,Yes,1,10.8,Bachelor,Medium,Yes,Yes,No,9.8,1.7,79.01,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+541,Pebam Ibungo,,,,Male,16,46.84,9.3,89.57,67.3,8.0,No,2,10.2,Bachelor,Low,No,Yes,No,5.4,6.7,87.44,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+542,Nongmaikapam Thoibi,,,,Female,19,69.16,5.7,54.21,62.99,6.9,Yes,4,3.2,High School,Low,No,Yes,No,9.4,2.9,75.15,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+543,Joykumar Ningombam,,,,Male,17,95.22,5.0,32.47,98.68,5.2,Yes,2,7.4,PhD,Low,Yes,Yes,No,5.9,2.0,87.66,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+544,Sanjenbam Tombi,,,,Female,18,71.25,12.1,82.23,81.83,6.1,Yes,5,13.5,Bachelor,Medium,Yes,Yes,Yes,6.4,9.0,123.52,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+545,Chingakham Ropen,,,,Male,24,76.99,3.2,86.14,38.26,1.4,Yes,4,18.5,PhD,Low,No,No,Yes,7.4,6.8,78.8,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+546,Pukhrambam Bembem,,,,Female,20,49.4,3.8,41.24,82.96,6.6,No,3,16.3,High School,Medium,Yes,No,No,3.9,3.2,87.53,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+547,Maibam Romesh,,,,Male,22,42.62,2.5,67.61,36.67,6.6,Yes,3,6.0,High School,Medium,Yes,Yes,No,7.3,4.5,68.79,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+548,Yendrembam Sanatombi,,,,Female,15,46.65,2.5,43.44,31.92,9.0,Yes,4,8.7,High School,Medium,No,Yes,No,5.7,9.8,82.53,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+549,Sagolsem Memchoubi,,,,Female,24,75.91,7.5,80.35,58.25,5.6,No,3,1.7,Master,Medium,Yes,No,Yes,7.1,8.8,107.87,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+550,Surchandra Khangembam,,,,Male,22,45.7,12.0,49.01,99.55,1.7,Yes,2,2.0,Bachelor,Medium,Yes,Yes,No,8.5,1.1,75.28,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+551,Elangbam Ibomcha,,,,Male,21,62.56,6.6,52.14,42.24,3.8,Yes,6,9.4,Master,Medium,Yes,Yes,Yes,2.7,9.8,103.14,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+552,Oinam Reena,,,,Female,15,73.01,0.6,89.15,77.09,6.9,No,1,10.6,Master,Medium,Yes,Yes,Yes,6.5,4.3,83.35,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+553,Keisham Tomba,,,,Male,16,63.32,14.8,63.34,42.14,3.2,Yes,3,5.3,Bachelor,Medium,Yes,No,No,1.5,7.3,92.03,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+554,Longjam Sanalembi,,,,Female,17,49.82,9.7,76.88,80.74,3.5,No,2,12.9,Bachelor,High,Yes,Yes,No,1.9,7.4,91.63,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+555,Rajkumar Ibotombi,,,,Male,15,56.43,10.8,58.17,65.37,8.4,Yes,4,14.1,Master,Medium,Yes,Yes,No,7.1,9.2,112.27,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+556,Leishangthem Ibemhal,,,,Female,23,95.7,6.6,50.86,77.6,6.3,No,2,6.0,Bachelor,Medium,Yes,No,No,1.6,9.0,94.85,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+557,Konthoujam Thoibi,,,,Female,22,80.56,3.3,73.78,44.2,5.6,Yes,3,15.2,Bachelor,Medium,Yes,Yes,No,6.4,3.5,73.33,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+558,Khundongbam Tombi,,,,Female,16,69.76,5.5,40.84,82.19,3.9,No,2,4.1,Bachelor,Medium,Yes,No,Yes,3.0,6.8,87.59,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+559,Wahengbam Bembem,,,,Female,23,40.76,11.0,56.11,99.69,7.6,Yes,2,10.9,Master,Low,Yes,No,No,3.7,4.5,88.36,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+560,Potsangbam Sanatombi,,,,Female,21,99.54,4.5,44.63,76.6,3.6,No,3,16.1,Bachelor,Medium,No,Yes,No,2.2,5.7,77.49,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+561,Maisnam Priyabala,,,,Female,23,80.29,9.3,78.71,64.54,7.6,Yes,3,10.7,PhD,Medium,Yes,Yes,No,3.2,6.0,101.93,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+562,Nongmaikapam Dinesh,,,,Male,20,59.02,2.9,96.09,94.62,1.6,Yes,4,18.2,High School,Medium,Yes,No,No,8.4,4.6,88.42,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+563,Sanjenbam Biren,,,,Male,20,92.76,9.1,99.69,31.11,8.8,Yes,4,1.2,Bachelor,High,Yes,Yes,No,6.7,5.2,110.91,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+564,Pukhrambam Ibungo,Parent of Pukhrambam Ibungo,parent564@example.com,Address for student 564,Male,18,55.51,6.1,61.52,81.09,5.5,No,2,11.8,High School,Medium,No,No,No,9.5,2.9,59.05,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+565,Heisnam Memchoubi,,,,Female,24,72.64,4.6,47.68,92.21,4.9,No,2,11.2,High School,Medium,Yes,No,Yes,1.4,6.5,89.73,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+566,Sorokhaibam Reena,,,,Female,24,78.16,6.1,61.0,34.32,6.5,Yes,4,13.2,Master,High,Yes,No,Yes,8.1,7.8,86.85,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+567,Ningthoujam Sanalembi,,,,Female,16,53.26,8.5,89.31,61.5,6.6,Yes,2,16.7,PhD,Medium,Yes,No,No,7.3,4.9,84.8,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+568,Thangjam Ibemhal,,,,Female,21,98.7,10.5,44.42,44.33,2.2,No,2,14.5,Master,High,Yes,Yes,No,3.3,9.8,99.07,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+569,Yendrembam Sanjoy,,,,Male,19,84.89,3.7,96.65,69.66,7.8,Yes,8,15.8,PhD,High,No,No,No,7.6,1.5,90.82,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+570,Thounaojam Nara,,,,Male,20,73.47,4.4,53.93,75.47,3.5,No,3,5.8,High School,High,Yes,No,No,7.4,6.3,82.19,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+571,Laishram Thoibi,,,,Female,16,50.84,8.1,99.01,51.18,9.1,No,3,7.7,High School,Low,Yes,No,No,5.1,6.3,88.8,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+572,Sagolsem Rajen,,,,Male,19,43.23,18.2,88.7,62.2,8.4,No,4,12.5,Bachelor,Low,No,No,No,7.2,1.3,99.89,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+573,Oinam Bishorjit,,,,Male,24,59.2,16.7,86.6,49.55,4.1,Yes,1,11.1,Master,Medium,No,No,No,5.0,3.0,110.62,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+574,Angom Tombi,,,,Female,18,85.19,11.1,52.25,55.86,8.3,Yes,4,19.2,High School,Medium,Yes,Yes,Yes,4.0,9.1,115.79,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+575,Longjam Ibotombi,,,,Male,23,56.16,12.8,30.61,41.17,4.2,No,4,3.7,PhD,Medium,Yes,No,No,5.2,5.9,68.84,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+576,Tongbram Bembem,,,,Female,20,72.37,3.2,56.75,91.99,1.9,No,4,7.0,Bachelor,Low,Yes,Yes,No,9.1,4.9,65.35,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+577,Leishangthem Romesh,,,,Male,16,83.68,3.0,51.13,30.7,9.7,No,3,11.5,PhD,Low,Yes,No,Yes,4.5,4.7,69.98,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+578,Mutum Sanatombi,,,,Female,15,46.48,2.7,32.62,91.77,6.9,Yes,3,17.4,Bachelor,Medium,Yes,Yes,No,4.6,9.0,96.8,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+579,Hijam Priyabala,,,,Female,19,81.12,3.2,65.38,70.02,5.1,Yes,2,18.6,Bachelor,Low,No,Yes,No,6.5,4.3,108.21,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+580,Phuritshabam Memchoubi,,,,Female,23,45.51,8.0,58.21,53.22,4.6,Yes,2,6.7,Master,Low,Yes,No,No,7.8,8.7,90.41,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+581,Thangjam Thoibi,,,,Female,20,97.91,5.9,74.42,80.61,3.9,No,2,1.3,Master,Low,Yes,Yes,No,7.6,3.8,87.3,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+582,Konthoujam Tomba,,,,Male,24,69.3,8.7,73.48,65.54,9.8,Yes,2,8.4,High School,Low,Yes,Yes,Yes,1.2,5.8,112.51,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+583,Laishram Sanatombi,,,,Female,21,49.04,12.0,38.45,64.94,2.2,Yes,3,7.9,PhD,Medium,Yes,Yes,No,7.2,2.3,64.66,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+584,Oinam Ibemhal,,,,Female,19,60.54,6.6,98.39,37.71,3.8,Yes,0,19.7,Master,Medium,No,Yes,No,5.1,8.4,111.05,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+585,Konsam Tombi,,,,Female,24,64.8,5.9,43.09,57.27,5.4,Yes,4,8.6,High School,Low,Yes,No,Yes,5.7,7.6,80.04,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+586,Khundongbam Suresh,,,,Male,20,85.49,15.0,61.17,46.87,5.3,No,3,6.1,High School,Low,Yes,Yes,No,6.1,5.8,106.05,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+587,Yumnam Bembem,,,,Female,19,84.61,4.5,64.17,31.1,5.2,Yes,6,7.3,Bachelor,Medium,Yes,Yes,Yes,7.6,1.2,69.76,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+588,Wahengbam Nandakumar,,,,Male,23,76.72,2.3,86.91,55.21,2.6,Yes,4,7.9,Bachelor,Medium,No,Yes,No,8.5,5.3,102.3,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+589,Ningthoujam Sanalembi,Parent of Ningthoujam Sanalembi,parent589@example.com,Address for student 589,Female,20,46.36,7.8,36.95,36.29,2.3,Yes,1,16.4,Master,High,Yes,Yes,No,6.8,3.0,55.7,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+590,Potsangbam Biren,,,,Male,22,49.09,4.0,60.01,47.98,3.3,Yes,4,1.6,High School,Medium,No,Yes,No,6.1,4.7,63.53,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+591,Maisnam Sanjit,,,,Male,16,45.63,6.4,74.0,36.48,9.2,Yes,6,6.3,Bachelor,High,Yes,No,No,4.4,8.7,91.76,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+592,Sorokhaibam Ibungo,,,,Female,23,74.63,3.2,45.06,37.07,2.0,Yes,3,19.3,Bachelor,Medium,Yes,Yes,No,2.2,7.9,89.05,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+593,Heisnam Ibomcha,,,,Male,19,92.63,7.9,73.92,43.93,7.8,No,2,3.1,High School,Medium,Yes,Yes,Yes,9.6,3.2,102.09,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+594,Thounaojam Priyabala,,,,Female,21,66.03,5.8,94.66,99.99,7.8,Yes,1,14.9,Bachelor,Medium,Yes,No,No,5.2,9.9,123.32,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+595,Wangkhem Ongbi,,,,Female,24,49.65,5.6,99.83,30.15,8.3,Yes,4,7.1,High School,Low,Yes,No,Yes,6.1,9.1,106.71,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+596,Pukhrambam Reena,,,,Female,15,73.48,8.8,32.27,74.71,9.0,Yes,4,11.6,High School,Low,No,Yes,Yes,7.8,5.8,98.4,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+597,Sorokhaibam Romen,,,,Male,24,88.71,12.2,46.49,39.89,3.4,No,3,2.0,Bachelor,Low,Yes,Yes,No,1.6,5.8,78.38,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+598,Ningthoujam Tomba,,,,Male,19,84.5,14.3,51.72,94.44,3.0,Yes,2,6.1,PhD,Medium,Yes,No,No,8.7,9.1,105.21,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+599,Heisnam Sunita,,,,Female,24,92.89,8.7,57.94,36.55,5.2,No,4,10.0,High School,Low,Yes,No,No,8.2,6.7,79.06,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+600,Lourembam Sharmila,,,,Female,16,56.67,6.0,46.96,96.85,3.4,Yes,6,4.6,Bachelor,Low,Yes,No,Yes,8.0,5.8,75.55,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+601,Thangjam Ibungo,,,,Male,20,51.64,6.1,44.24,72.76,7.6,No,3,10.8,High School,Medium,Yes,Yes,No,1.2,7.7,89.25,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+602,Kshetrimayum Ibemhal,,,,Female,15,92.79,9.9,96.82,30.09,6.7,Yes,2,4.4,High School,High,Yes,No,No,5.7,3.1,103.98,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+603,Moirangthem Memchoubi,,,,Female,17,79.45,3.1,94.3,92.58,8.9,No,5,13.0,Bachelor,Low,Yes,No,Yes,1.5,8.9,117.01,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+604,Naorem Bembem,,,,Female,19,58.66,3.6,33.29,66.52,1.7,Yes,1,18.1,Master,Medium,Yes,No,No,6.0,5.8,63.63,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+605,Laishram Bimol,,,,Male,18,84.54,1.6,53.72,48.39,9.2,Yes,1,1.7,High School,Low,Yes,Yes,Yes,7.5,6.4,90.37,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+606,Angom Sanjoy,,,,Male,17,88.91,10.3,58.36,83.71,3.6,No,1,4.3,PhD,High,Yes,Yes,No,2.1,1.8,86.25,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+607,Tongbram Ibohal,,,,Male,24,76.9,13.1,46.73,94.87,5.4,Yes,1,16.9,High School,Low,Yes,Yes,No,7.3,3.8,81.28,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+608,Akoijam Sanalembi,,,,Female,19,81.27,8.7,74.02,63.86,4.9,No,2,12.6,Master,High,No,Yes,No,5.0,4.8,95.95,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+609,Chongtham Thoibi,,,,Female,22,62.52,1.8,74.83,52.09,7.8,Yes,3,1.6,Master,Low,Yes,No,Yes,8.3,4.7,77.73,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+610,Wahengbam Sanatombi,,,,Female,18,72.32,7.9,89.54,85.23,4.8,No,1,9.7,Bachelor,High,Yes,Yes,Yes,5.8,8.0,115.0,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+611,Mutum Somorjit,,,,Male,15,71.45,4.6,81.86,77.72,9.5,No,1,4.2,High School,Low,Yes,Yes,Yes,4.0,3.5,100.12,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+612,Sagolsem Ibemhal,,,,Female,21,90.88,7.0,67.98,92.21,9.1,No,2,4.0,Bachelor,Low,Yes,No,Yes,4.0,2.6,84.48,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+613,Khumanthem Tombi,,,,Female,22,90.4,14.6,75.75,78.48,8.8,No,3,18.8,Bachelor,Low,Yes,No,Yes,9.1,6.2,100.72,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+614,Elangbam Priyabala,,,,Female,17,89.96,3.4,49.18,47.05,1.6,No,5,15.2,Master,Low,No,Yes,No,5.1,6.5,88.49,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+615,Phuritshabam Bembem,,,,Female,20,40.66,8.8,71.51,95.22,8.7,No,4,13.9,Bachelor,High,Yes,Yes,Yes,4.7,2.1,94.68,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+616,Hijam Rajen,,,,Male,16,84.97,5.4,64.25,37.34,8.0,Yes,3,4.8,Bachelor,Medium,Yes,Yes,No,1.4,1.0,97.21,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+617,Phuritshabam Ibotombi,,,,Male,21,85.52,6.1,39.33,48.76,1.9,Yes,1,2.4,Master,Medium,Yes,Yes,No,4.3,9.3,102.52,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+618,Maibam Sanalembi,Parent of Maibam Sanalembi,parent618@example.com,Address for student 618,Female,22,80.7,2.0,46.98,66.41,2.0,No,2,17.4,PhD,High,Yes,No,Yes,8.6,1.7,39.77,At Risk,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+619,Sinam Dinesh,,,,Male,20,85.38,4.7,50.42,69.6,1.9,No,0,0.1,Bachelor,Medium,Yes,Yes,No,7.8,9.1,84.26,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+620,Thoudam Robindro,,,,Male,20,90.52,2.7,94.7,31.07,1.1,No,2,7.8,Master,High,Yes,No,Yes,3.0,4.6,82.55,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+621,Mutum Ongbi,,,,Female,19,68.22,9.0,46.13,84.64,5.9,No,2,5.6,Bachelor,Low,No,Yes,No,4.7,6.9,86.65,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+622,Tongbram Ibemhal,,,,Female,22,70.12,6.2,50.25,55.31,9.8,No,5,11.4,Bachelor,High,Yes,No,No,2.8,2.7,75.33,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+623,Wangkhem Biren,,,,Male,15,47.48,8.1,55.85,58.45,4.9,Yes,3,5.0,Bachelor,Low,Yes,No,Yes,9.6,8.4,75.99,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+624,Leishangthem Memchoubi,,,,Female,24,63.12,3.5,76.46,86.66,5.9,Yes,2,6.2,Master,Medium,No,No,No,6.4,2.6,68.92,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+625,Nongmaithem Nimai,,,,Male,18,78.6,4.3,38.28,56.55,9.7,Yes,4,17.0,Bachelor,Medium,Yes,Yes,Yes,7.8,4.5,84.74,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+626,Hijam Reena,,,,Female,18,86.82,9.8,96.78,33.31,3.3,Yes,5,12.1,Bachelor,Medium,No,No,No,7.4,3.1,77.17,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+627,Akoijam Tomba,,,,Male,17,53.03,5.0,90.59,42.35,8.7,Yes,3,2.9,Bachelor,Medium,Yes,No,No,8.9,8.5,90.14,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+628,Sinam Sanatombi,,,,Female,17,48.27,4.2,70.41,96.91,5.9,No,2,14.5,Bachelor,Medium,Yes,No,Yes,9.5,8.7,88.21,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+629,Thangjam Bobo,,,,Male,18,79.78,9.1,77.18,34.93,6.1,No,0,4.1,Bachelor,High,No,Yes,No,1.3,4.3,105.07,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+630,Laishram Romen,,,,Male,15,40.11,3.5,31.17,54.85,4.1,Yes,3,8.7,Master,High,Yes,Yes,Yes,9.8,3.8,64.1,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+631,Oinam Suresh,,,,Male,16,50.7,4.4,53.73,65.22,6.1,Yes,1,12.9,Bachelor,High,Yes,Yes,Yes,8.8,8.0,88.87,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+632,Shamurailatpam Sunita,,,,Female,23,41.74,5.8,85.7,64.53,1.7,Yes,6,5.4,High School,High,Yes,Yes,Yes,4.4,8.9,113.54,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+633,Konsam Ibomcha,,,,Male,24,50.01,7.6,35.42,30.28,7.9,Yes,4,7.7,Master,Medium,Yes,No,No,8.5,6.6,78.0,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+634,Yumnam Tomba,,,,Male,16,50.88,5.2,49.76,65.08,3.6,Yes,3,14.7,Master,High,No,No,No,7.6,9.3,85.16,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+635,Konthoujam Bembem,,,,Female,19,63.26,2.1,70.97,56.86,9.0,Yes,7,18.8,Bachelor,High,No,No,No,8.1,4.4,74.13,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+636,Khundongbam Sanalembi,,,,Female,23,64.14,8.3,47.95,98.05,4.3,Yes,4,10.6,High School,Medium,No,Yes,No,3.0,2.4,82.84,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+637,Ningthoujam Deven,,,,Male,23,92.46,11.2,95.38,41.14,2.3,Yes,3,0.2,PhD,Medium,Yes,Yes,Yes,6.8,2.6,98.66,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+638,Sorokhaibam Biren,,,,Male,22,70.61,4.1,39.17,54.79,7.3,No,1,6.8,Master,High,Yes,Yes,No,1.2,7.0,100.34,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+639,Angom Ibemhal,,,,Female,15,83.4,4.9,85.82,59.36,2.5,Yes,2,8.0,High School,Medium,Yes,No,No,8.6,4.7,81.6,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+640,Loitongbam Tombi,Parent of Loitongbam Tombi,parent640@example.com,Address for student 640,Female,15,46.25,2.9,65.56,57.35,7.8,Yes,1,6.8,High School,Medium,No,No,No,9.6,2.4,54.13,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+641,Potsangbam Thoibi,,,,Female,23,53.53,6.0,82.52,76.61,9.7,Yes,4,8.7,Bachelor,Low,Yes,Yes,No,7.0,3.6,85.46,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+642,Rajkumari Sanatombi,,,,Female,22,82.18,3.3,51.75,45.09,8.0,Yes,2,12.7,Bachelor,High,Yes,No,No,5.6,5.8,67.1,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+643,Nameirakpam Priyabala,Parent of Nameirakpam Priyabala,parent643@example.com,Address for student 643,Female,24,43.17,12.8,66.01,45.48,1.2,No,1,2.4,High School,High,No,No,Yes,7.5,2.1,56.71,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+644,Thounaojam Sanjit,,,,Male,23,69.2,4.8,89.98,81.04,6.4,No,2,5.5,Bachelor,Medium,Yes,No,Yes,3.9,1.0,88.79,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+645,Sapam Memchoubi,,,,Female,21,75.96,4.4,62.68,65.02,7.3,Yes,1,10.2,Bachelor,Low,Yes,Yes,No,6.6,9.3,82.69,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+646,Wangkhem Ranjit,,,,Male,17,76.13,4.7,55.18,59.06,8.4,No,3,6.3,Master,Medium,Yes,No,No,7.5,3.7,68.23,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+647,Pukhrambam Priyokumar,,,,Male,17,41.38,3.5,67.53,41.84,1.5,Yes,1,19.8,Bachelor,Medium,Yes,Yes,No,2.3,3.0,61.08,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+648,Heisnam Kiran,,,,Male,16,59.33,6.5,80.22,43.13,5.3,No,3,8.6,Bachelor,Medium,Yes,Yes,No,2.3,7.3,101.11,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+649,Luwang Reena,,,,Female,19,78.19,4.6,61.05,30.74,5.8,Yes,3,17.4,PhD,Medium,Yes,No,Yes,7.4,8.7,78.81,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+650,Lourembam Ibungo,,,,Male,17,48.94,9.3,95.72,36.4,2.5,Yes,1,17.9,High School,High,Yes,No,No,4.9,6.7,75.6,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+651,Kshetrimayum Bishwajit,,,,Male,20,81.72,6.4,50.65,68.98,3.9,No,2,16.7,High School,Medium,Yes,Yes,No,9.0,3.3,68.16,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+652,Nongmaithem Bembem,,,,Female,16,84.76,7.9,63.28,92.43,5.0,No,3,0.9,Master,Medium,Yes,Yes,No,3.8,8.8,104.28,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+653,Moirangthem Somorjit,,,,Male,17,98.92,8.4,82.98,50.1,8.5,No,6,19.0,High School,High,Yes,No,No,1.4,5.6,107.01,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+654,Naorem Dinesh,,,,Male,19,52.59,11.2,78.24,52.94,9.4,Yes,3,2.6,Master,Medium,Yes,Yes,No,6.8,4.4,99.56,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+655,Yengkhom Sanalembi,,,,Female,15,89.51,4.3,90.45,38.09,6.7,Yes,5,0.7,High School,Low,Yes,No,No,7.2,6.4,97.84,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+656,Akoijam Sanatomba,,,,Male,15,71.22,3.7,99.78,57.2,4.6,No,1,8.3,High School,Medium,Yes,No,No,6.0,7.3,89.67,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+657,Chongtham Robindro,,,,Male,24,62.41,4.1,59.88,32.61,3.3,Yes,2,3.9,PhD,Medium,Yes,No,No,7.1,6.3,79.23,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+658,Wahengbam Rojit,,,,Male,23,47.34,5.8,37.78,94.23,9.8,Yes,3,3.7,Bachelor,High,Yes,No,Yes,5.7,9.3,93.12,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+659,Panmei Ibemhal,,,,Female,21,84.13,6.8,32.13,77.12,9.8,Yes,3,5.8,Master,High,Yes,No,No,7.2,6.7,99.31,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+660,Thokchom Thoibi,,,,Female,15,54.15,3.1,80.88,99.35,9.3,Yes,1,5.0,High School,Medium,Yes,No,Yes,1.4,8.9,116.82,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+661,Okram Sunita,,,,Female,22,62.29,3.9,91.18,91.8,8.1,Yes,3,13.7,High School,Low,Yes,No,No,4.3,6.3,100.69,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+662,Sagolsem Premo,,,,Male,17,43.75,6.8,45.45,63.11,3.9,Yes,3,3.7,Master,Low,Yes,Yes,Yes,2.9,4.0,85.73,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+663,Khumanthem Sunil,,,,Male,22,88.08,6.3,41.09,66.38,8.4,Yes,1,10.9,Bachelor,Medium,Yes,Yes,No,1.9,5.8,96.31,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+664,Maisnam Tombi,,,,Female,19,86.0,4.4,34.35,43.34,4.7,No,3,19.7,Bachelor,Medium,No,No,No,3.1,1.8,69.56,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+665,Elangbam Bimol,,,,Male,15,84.02,2.1,87.59,62.34,3.9,Yes,2,8.6,High School,Medium,No,Yes,Yes,2.7,3.1,81.2,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+666,Phuritshabam Sushil,,,,Male,21,57.97,6.3,51.8,93.21,7.7,Yes,4,12.8,Bachelor,Medium,Yes,No,Yes,9.8,7.9,77.11,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+667,Keisham Sanatombi,,,,Female,19,50.41,8.2,58.12,33.56,1.7,Yes,4,19.4,Master,High,Yes,No,No,3.6,7.0,61.76,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+668,Thiyam Bembem,,,,Female,20,78.25,8.0,65.19,90.45,1.4,No,3,2.8,Master,High,No,No,No,3.1,2.5,75.81,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+669,Maibam Rishi,,,,Male,20,69.77,4.9,88.76,53.87,5.0,Yes,4,8.4,Bachelor,Low,Yes,Yes,Yes,8.5,4.9,84.65,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+670,Mutum Bhorot,,,,Male,22,50.7,3.2,75.56,92.97,5.0,No,5,17.0,Bachelor,Medium,Yes,Yes,Yes,4.8,2.3,81.27,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+671,Tongbram Robichandra,,,,Male,23,81.15,2.5,73.05,95.86,9.1,Yes,3,18.6,Bachelor,Medium,Yes,Yes,No,4.8,8.7,107.14,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+672,Sanasam Priyabala,,,,Female,16,99.47,3.1,42.3,76.96,2.1,No,2,12.0,Bachelor,Low,Yes,Yes,No,5.0,2.0,76.16,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+673,Konthoujam Memchoubi,,,,Female,23,84.83,7.3,65.92,76.51,2.1,Yes,6,2.9,Master,Medium,No,No,Yes,4.7,6.9,91.83,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+674,Longjam Reena,,,,Female,24,84.4,4.7,80.08,61.69,2.3,Yes,2,18.0,High School,Low,Yes,No,No,3.9,6.5,86.03,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+675,Huidrom Sanalembi,,,,Female,23,97.02,5.6,98.13,88.49,1.3,No,2,3.5,High School,Low,Yes,No,No,3.6,5.3,101.95,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+676,Hijam Nandakumar,Parent of Hijam Nandakumar,parent676@example.com,Address for student 676,Male,24,52.18,1.6,44.1,97.31,1.6,No,4,7.1,PhD,Medium,No,No,Yes,8.9,3.5,54.3,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+677,Ngangbam Ibemhal,,,,Female,24,73.93,9.5,30.67,84.26,6.9,Yes,1,7.5,High School,Medium,Yes,Yes,No,2.5,4.6,99.75,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+678,Meisnam Thoibi,,,,Female,21,98.78,11.0,35.27,73.54,4.9,Yes,0,8.9,High School,Medium,Yes,Yes,Yes,2.6,8.3,122.02,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+679,Koijam Tombi,,,,Female,15,49.92,3.5,56.31,72.48,7.9,Yes,4,15.8,Bachelor,Medium,Yes,Yes,Yes,6.1,7.9,106.33,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+680,Takhellambam Bembem,,,,Female,21,82.02,12.4,87.44,89.46,9.9,No,4,16.0,Master,Low,Yes,No,Yes,4.1,7.6,115.06,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+681,Shijagurumayum Sanatombi,,,,Female,24,75.15,4.3,30.5,67.88,6.9,Yes,2,14.4,Bachelor,Medium,No,No,No,4.8,7.7,94.13,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+682,Sinam Ibotombi,Parent of Sinam Ibotombi,parent682@example.com,Address for student 682,Male,19,75.19,2.9,61.97,86.27,1.5,Yes,0,0.4,Bachelor,Medium,No,No,No,8.3,2.3,52.4,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+683,Konthoujam Dhananjoy,,,,Male,20,81.86,3.3,53.05,65.62,1.9,Yes,3,11.3,PhD,Medium,Yes,No,No,9.1,1.9,66.09,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+684,Sagolband Priyabala,,,,Female,24,95.78,4.0,33.67,34.37,8.9,No,6,14.9,Master,High,Yes,No,Yes,8.1,8.8,91.38,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+685,Khundongbam Nilachandra,,,,Male,21,86.95,3.8,61.52,56.88,5.7,No,4,8.9,Master,Medium,Yes,Yes,Yes,3.1,8.5,98.89,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+686,Phurailatpam Memchoubi,,,,Female,19,43.37,4.5,47.83,61.11,8.4,No,3,18.9,High School,Medium,No,No,No,9.8,7.1,67.08,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+687,Salam Reena,,,,Female,21,91.16,3.5,54.63,39.91,8.7,Yes,1,16.5,High School,Medium,Yes,Yes,Yes,4.3,6.5,95.84,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+688,Angom Birachandra,,,,Male,23,53.53,8.8,79.39,37.17,9.3,No,4,12.8,Bachelor,High,Yes,No,No,2.5,4.3,80.44,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+689,Loitongbam Romesh,,,,Male,17,62.61,3.9,66.51,67.48,9.5,No,4,1.2,High School,High,Yes,Yes,No,5.5,3.0,79.43,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+690,Usham Sanalembi,,,,Female,22,67.7,1.8,38.73,35.96,6.0,No,2,13.0,High School,Low,No,No,No,7.5,7.0,65.05,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+691,Khomdram Ibemhal,,,,Female,16,68.85,2.7,97.3,51.21,4.1,Yes,7,18.2,High School,Medium,Yes,Yes,Yes,1.7,9.2,118.41,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+692,Laifungbam Thoibi,,,,Female,21,66.11,4.6,74.51,82.12,9.7,Yes,2,7.6,Bachelor,Low,Yes,Yes,No,6.7,4.9,102.18,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+693,Potsangbam Ibohal,,,,Male,16,96.24,5.0,83.61,97.51,5.9,No,4,16.8,Bachelor,High,Yes,No,Yes,8.7,3.7,79.07,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+694,Mangangcha Tombi,,,,Female,18,82.36,9.1,35.54,80.25,1.6,Yes,1,6.3,Master,Medium,Yes,Yes,No,3.4,3.4,73.87,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+695,Chakpram Bembem,,,,Female,21,77.87,4.9,33.29,99.48,6.8,Yes,3,11.4,High School,High,Yes,Yes,No,7.2,1.2,78.0,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+696,Taorem Ibemhal,,,,Female,17,42.99,6.2,31.36,78.88,6.3,No,0,13.0,Bachelor,Medium,Yes,No,No,4.6,5.7,65.7,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+697,Rajkumar Sanajaoba,,,,Male,16,94.23,4.2,43.22,50.57,9.1,No,1,13.6,High School,Medium,Yes,No,No,4.7,9.9,108.53,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+698,Yumkham Thoibi,,,,Female,24,94.56,6.4,59.01,77.04,6.9,No,3,17.7,Bachelor,High,Yes,No,No,3.5,8.3,95.8,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+699,Nongthombam Tombi,,,,Female,21,86.81,1.6,95.51,79.15,4.1,No,2,4.7,Bachelor,High,Yes,No,Yes,6.6,9.1,103.16,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+700,Nameirakpam Surjakanta,,,,Male,15,40.42,6.5,61.99,56.02,9.7,Yes,2,5.2,Bachelor,Low,No,Yes,Yes,4.2,6.6,89.26,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+701,Laitonjam Bembem,,,,Female,22,43.44,4.6,50.32,31.24,8.2,Yes,2,14.1,Master,Medium,Yes,Yes,No,8.5,5.3,71.91,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+702,Khangembam Sanatombi,,,,Female,17,53.51,9.3,69.34,79.22,6.7,Yes,4,3.5,Master,Medium,Yes,No,No,9.7,9.9,102.32,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+703,Sapam Ratankumar,,,,Male,16,47.88,9.7,37.84,31.52,3.6,Yes,2,9.3,Bachelor,Medium,Yes,Yes,No,9.4,5.0,73.62,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+704,Pebam Priyabala,,,,Female,17,63.93,6.9,72.67,74.18,4.4,Yes,3,0.4,Master,Medium,Yes,No,No,2.5,9.3,108.04,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+705,Luwang Nimai,,,,Male,19,95.36,4.2,69.79,41.45,7.0,Yes,4,2.8,Bachelor,Medium,Yes,Yes,Yes,1.1,7.9,105.75,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+706,Nongmaithem Oken,,,,Male,22,68.32,4.4,85.44,69.59,1.6,Yes,3,13.6,Master,Medium,No,No,No,4.9,4.0,77.02,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+707,Joykumari Memchoubi,,,,Female,24,40.8,2.8,99.07,65.27,3.3,No,5,14.9,Bachelor,Low,No,No,No,7.6,5.5,65.22,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+708,Chingakham Reena,Parent of Chingakham Reena,parent708@example.com,Address for student 708,Female,21,56.96,4.8,47.56,30.95,7.4,No,1,2.3,Bachelor,Medium,Yes,No,Yes,9.8,4.5,44.08,At Risk,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+709,Takhellambam Sanalembi,Parent of Takhellambam Sanalembi,parent709@example.com,Address for student 709,Female,21,42.68,2.0,65.68,55.4,5.3,No,6,4.6,Master,Low,Yes,No,No,8.1,2.2,54.99,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+710,Maibam Ibemhal,,,,Female,21,42.18,4.7,93.62,72.08,4.6,No,3,2.0,High School,Low,Yes,No,No,6.2,4.2,88.29,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+711,Yengkhom Sanajaoba,,,,Male,22,56.54,9.1,84.96,89.4,2.4,No,4,8.7,Bachelor,Medium,Yes,No,No,1.2,9.0,119.43,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+712,Surchandra Tombi,,,,Female,15,56.54,4.0,64.12,92.2,5.0,No,4,2.5,PhD,Low,Yes,No,No,8.4,7.8,84.59,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+713,Thokchom Ibungo,,,,Male,18,87.23,6.5,96.18,63.87,7.9,No,4,8.7,Master,Medium,Yes,Yes,No,2.6,3.5,109.21,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+714,Elangbam Reena,Parent of Elangbam Reena,parent714@example.com,Address for student 714,Female,20,98.49,7.8,34.01,80.99,3.4,No,2,14.6,High School,Medium,Yes,No,No,1.5,4.3,56.92,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+715,Keisham Sanalembi,,,,Female,23,62.27,8.7,95.17,52.15,1.0,No,6,13.7,Bachelor,Medium,No,Yes,No,8.7,6.5,111.63,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+716,Rajkumari Ibemhal,,,,Female,16,65.73,4.0,33.54,53.95,7.0,No,1,5.6,Master,Medium,Yes,Yes,No,6.1,4.7,87.67,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+717,Okram Ibobi,,,,Male,15,90.69,2.8,68.31,43.61,9.8,Yes,6,13.5,PhD,Medium,Yes,No,Yes,2.2,5.5,104.52,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+718,Nongmaikapam Thoibi,,,,Female,24,56.09,2.5,92.33,69.34,6.5,Yes,3,18.6,Bachelor,Low,Yes,Yes,Yes,4.5,7.3,104.16,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+719,Sanjenbam Tombi,Parent of Sanjenbam Tombi,parent719@example.com,Address for student 719,Female,16,49.38,2.9,48.39,52.02,2.1,Yes,3,7.0,Master,High,No,No,Yes,1.8,5.2,41.45,At Risk,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+720,Pukhrambam Bembem,,,,Female,21,91.19,4.2,63.06,35.91,3.9,Yes,2,6.6,Master,High,Yes,No,No,6.7,2.7,70.78,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+721,Yendrembam Sanatombi,,,,Female,17,42.79,2.0,52.7,77.95,8.8,Yes,3,11.4,High School,Low,Yes,No,No,3.5,5.7,82.72,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+722,Maisnam Arunkumar,,,,Male,24,77.18,3.4,96.65,79.54,3.1,Yes,5,4.9,Master,Medium,Yes,No,Yes,8.8,4.2,68.78,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+723,Sagolsem Memchoubi,,,,Female,16,73.72,9.5,87.66,55.2,6.5,Yes,4,13.0,Bachelor,Medium,No,No,Yes,4.2,3.6,97.0,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+724,Keisham Sarat,,,,Male,21,60.76,9.1,79.63,35.37,4.6,Yes,4,16.6,Bachelor,Low,Yes,Yes,No,5.5,4.0,101.12,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+725,Thiyam Sunil,,,,Male,16,58.91,1.1,71.13,59.84,2.9,No,2,9.2,Bachelor,Medium,Yes,No,No,1.6,5.0,74.39,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+726,Sanasam Suresh,,,,Male,17,86.31,17.9,87.44,60.96,8.3,Yes,4,13.6,Bachelor,Medium,Yes,Yes,No,3.5,9.0,144.51,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+727,Longjam Lokendro,,,,Male,21,45.19,10.8,57.46,76.81,7.7,No,5,13.0,Master,Low,Yes,Yes,No,7.1,7.6,102.68,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+728,Huidrom Sadananda,,,,Male,18,54.21,1.9,61.33,52.08,7.0,No,3,0.8,Bachelor,High,No,No,No,7.6,7.0,65.55,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+729,Ngangbam Dinesh,,,,Male,15,83.95,5.5,81.1,77.78,3.1,Yes,5,3.7,Master,Medium,Yes,Yes,No,3.2,5.2,109.96,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+730,Oinam Reena,,,,Female,19,72.9,3.9,55.04,91.0,1.9,No,1,17.9,Master,Medium,Yes,Yes,No,5.5,1.0,83.6,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+731,Meisnam Ranjit,Parent of Meisnam Ranjit,parent731@example.com,Address for student 731,Male,23,47.68,3.7,34.47,46.62,6.2,Yes,4,18.8,Master,Medium,Yes,No,Yes,8.4,4.1,57.56,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+732,Koijam Ibotombi,,,,Male,22,92.93,1.9,35.2,98.52,6.0,Yes,3,15.6,Bachelor,Low,No,Yes,No,4.4,8.3,92.05,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+733,Takhellambam Biren,,,,Male,23,63.61,8.7,38.08,57.05,2.7,Yes,6,18.4,High School,Medium,Yes,Yes,Yes,2.2,4.5,69.42,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+734,Longjam Sanalembi,,,,Female,24,89.67,8.6,90.88,48.71,1.5,Yes,4,6.1,Bachelor,Medium,Yes,Yes,Yes,4.9,6.1,107.21,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+735,Leishangthem Ibemhal,,,,Female,23,87.26,6.6,63.06,59.51,1.7,Yes,3,5.0,Master,Medium,Yes,No,No,6.4,2.8,79.1,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+736,Shijagurumayum Sanjoy,,,,Male,21,77.47,14.5,79.9,36.61,9.9,Yes,2,7.7,High School,Medium,Yes,No,No,1.1,9.2,130.04,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+737,Konthoujam Thoibi,,,,Female,18,69.67,4.8,57.5,38.8,8.1,Yes,3,1.1,PhD,Low,Yes,No,No,4.1,9.3,93.16,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+738,Phurailatpam Nimai,,,,Male,19,98.77,3.4,48.11,59.01,9.3,Yes,3,16.2,Master,Low,Yes,Yes,No,6.5,2.3,90.69,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+739,Salam Robindro,,,,Male,15,48.7,2.8,54.3,83.37,2.8,Yes,1,19.7,Master,Low,Yes,No,No,9.6,7.5,65.66,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+740,Khundongbam Tombi,,,,Female,15,83.51,3.0,85.59,93.02,9.6,No,2,16.5,Bachelor,High,No,No,Yes,4.7,1.7,79.92,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+741,Usham Ibomcha,,,,Male,17,51.47,10.7,73.77,76.54,2.3,Yes,3,11.1,Bachelor,Low,Yes,Yes,Yes,2.5,6.4,92.38,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+742,Wahengbam Bembem,,,,Female,22,60.3,6.7,95.63,37.37,5.6,Yes,4,5.9,Master,Low,Yes,No,No,5.8,2.6,69.7,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+743,Potsangbam Sanatombi,,,,Female,16,58.52,4.2,77.58,77.04,8.5,Yes,3,4.0,Bachelor,High,Yes,No,No,3.6,2.3,91.37,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+744,Khomdram Tomba,,,,Male,18,96.82,3.5,69.91,74.48,4.1,Yes,1,7.3,Master,Medium,Yes,No,No,2.9,1.0,77.71,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+745,Laifungbam Deben,,,,Male,16,98.04,8.2,72.71,86.4,4.8,Yes,1,13.3,Bachelor,Medium,Yes,No,No,6.3,9.5,105.6,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+746,Maisnam Priyabala,,,,Female,19,50.98,2.2,95.97,87.77,2.2,No,1,8.9,Master,Low,Yes,Yes,Yes,9.2,8.5,75.57,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+747,Mangangcha Somorjit,,,,Male,23,41.32,2.5,85.17,90.77,2.1,Yes,4,18.7,Master,Medium,Yes,No,Yes,8.5,1.7,69.03,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+748,Chakpram Suresh,,,,Male,15,83.2,8.7,31.68,58.99,6.6,No,2,17.1,High School,Low,No,No,No,2.6,6.4,94.19,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+749,Taorem Rajen,,,,Male,19,65.08,6.5,67.39,78.85,7.1,No,4,2.0,High School,Medium,Yes,No,No,7.9,3.1,66.41,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+750,Heisnam Memchoubi,,,,Female,23,45.33,2.8,78.18,48.78,8.0,Yes,2,2.6,Master,High,Yes,No,No,3.1,3.4,76.99,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+751,Sorokhaibam Reena,,,,Female,15,81.03,5.7,82.41,99.95,6.0,Yes,3,13.5,High School,Medium,No,No,No,3.6,8.9,102.39,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+752,Yumkham Nara,Parent of Yumkham Nara,parent752@example.com,Address for student 752,Male,23,72.71,3.0,44.92,42.27,6.8,No,5,4.6,Bachelor,Low,Yes,No,No,9.3,2.0,52.05,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+753,Ningthoujam Sanalembi,,,,Female,22,98.83,5.6,90.7,30.71,1.1,No,4,15.8,Bachelor,Medium,Yes,No,Yes,9.2,6.4,83.17,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+754,Thangjam Ibemhal,,,,Female,18,53.64,5.2,96.91,40.42,2.5,Yes,3,11.8,High School,Medium,Yes,No,No,2.5,4.6,97.46,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+755,Laishram Thoibi,,,,Female,24,64.24,4.0,46.57,84.31,9.9,No,1,4.6,High School,Medium,Yes,Yes,No,1.6,2.7,84.86,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+756,Angom Tombi,,,,Female,19,72.55,4.0,91.78,61.27,1.7,No,4,9.6,Master,Medium,No,No,No,3.6,5.1,83.98,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+757,Tongbram Bembem,,,,Female,19,87.5,2.6,36.79,61.33,7.1,Yes,4,8.1,Bachelor,Medium,Yes,No,No,6.2,9.5,97.6,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+758,Nongthombam Bimol,,,,Male,20,72.93,4.2,33.9,96.85,2.6,No,3,17.5,Bachelor,Medium,Yes,Yes,No,8.9,8.0,79.53,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+759,Laitonjam Inaocha,,,,Male,21,76.77,11.9,39.05,94.37,7.5,Yes,4,0.6,PhD,High,Yes,Yes,No,2.1,2.2,113.56,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+760,Khangembam Raghumani,,,,Male,22,53.57,5.4,34.04,51.78,7.4,Yes,4,17.9,High School,High,No,Yes,Yes,4.7,8.6,85.27,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+761,Mutum Sanatombi,,,,Female,22,90.82,15.6,89.15,44.63,3.1,No,3,13.0,High School,Low,Yes,Yes,Yes,3.4,9.4,126.45,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+762,Hijam Priyabala,,,,Female,16,65.72,1.5,34.13,89.39,3.4,No,1,14.8,Master,Medium,No,Yes,No,1.1,3.5,64.73,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+763,Pebam Ibungo,,,,Male,23,48.46,3.8,49.02,93.42,6.9,Yes,1,0.1,Master,Low,Yes,Yes,No,8.1,4.0,86.13,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+764,Phuritshabam Memchoubi,,,,Female,21,79.85,7.4,37.26,67.91,4.5,Yes,4,12.6,Bachelor,Medium,Yes,No,Yes,8.3,2.1,71.03,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+765,Joykumar Ningombam,,,,Male,18,52.97,17.9,50.68,74.06,2.8,No,4,11.8,PhD,Low,Yes,Yes,Yes,3.0,4.1,106.24,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+766,Chingakham Ropen,,,,Male,18,45.85,1.9,36.34,47.98,7.6,No,3,10.7,PhD,Medium,Yes,Yes,No,2.4,7.1,97.02,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+767,Maibam Romesh,,,,Male,22,91.72,5.2,76.76,86.06,2.4,No,2,15.7,High School,Medium,Yes,No,No,2.3,3.4,94.82,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+768,Thangjam Thoibi,,,,Female,18,67.61,7.0,39.33,74.25,8.7,No,3,11.1,High School,Low,No,Yes,Yes,5.2,1.1,81.55,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+769,Laishram Sanatombi,,,,Female,20,84.96,10.9,89.63,65.25,5.6,No,3,17.1,Master,High,Yes,No,No,3.2,4.0,95.13,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+770,Surchandra Khangembam,Parent of Surchandra Khangembam,parent770@example.com,Address for student 770,Male,19,57.44,3.8,87.2,34.21,2.0,Yes,4,4.7,Bachelor,Medium,Yes,No,No,5.6,5.1,49.15,At Risk,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+771,Elangbam Ibomcha,,,,Male,17,87.22,4.5,30.96,94.12,7.2,Yes,3,16.1,High School,Medium,Yes,Yes,No,4.5,6.1,111.73,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+772,Keisham Tomba,,,,Male,24,46.72,2.7,92.7,73.08,5.7,Yes,0,3.6,Master,Medium,Yes,Yes,Yes,2.9,7.2,121.14,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+773,Rajkumar Ibotombi,Parent of Rajkumar Ibotombi,parent773@example.com,Address for student 773,Male,16,61.36,4.3,32.03,43.49,3.7,No,5,16.3,Bachelor,High,No,Yes,No,7.8,1.6,51.6,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+774,Oinam Ibemhal,,,,Female,23,98.68,4.8,46.78,72.45,4.8,No,2,18.8,Bachelor,Low,Yes,Yes,No,2.4,5.2,83.13,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+775,Konsam Tombi,,,,Female,24,87.64,6.8,32.27,77.42,3.7,Yes,2,6.7,High School,Medium,Yes,Yes,Yes,8.2,3.4,92.28,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+776,Nongmaikapam Dinesh,,,,Male,23,69.84,8.2,53.51,66.8,3.4,Yes,3,10.6,Bachelor,Medium,Yes,Yes,No,6.1,9.5,112.51,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+777,Sanjenbam Biren,Parent of Sanjenbam Biren,parent777@example.com,Address for student 777,Male,15,60.39,2.2,65.97,80.27,2.5,Yes,2,13.2,Bachelor,High,Yes,Yes,Yes,8.5,4.2,54.78,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+778,Yumnam Bembem,,,,Female,24,92.33,3.5,85.77,70.7,4.3,Yes,2,1.6,High School,Medium,Yes,No,No,1.0,1.9,90.22,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+779,Ningthoujam Sanalembi,,,,Female,17,72.69,6.5,53.66,96.34,3.3,Yes,2,9.9,Bachelor,Medium,Yes,Yes,No,7.7,1.4,80.79,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+780,Pukhrambam Ibungo,,,,Male,22,85.51,1.6,79.38,33.76,7.2,Yes,1,7.2,Bachelor,High,Yes,No,Yes,1.5,3.4,68.63,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+781,Yendrembam Sanjoy,,,,Male,20,85.25,13.0,43.13,37.44,7.2,Yes,3,17.4,PhD,High,Yes,Yes,Yes,9.6,2.6,74.26,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+782,Thounaojam Nara,,,,Male,19,41.08,10.3,82.54,42.16,5.5,Yes,4,17.5,PhD,Medium,Yes,No,No,7.3,6.8,98.37,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+783,Sorokhaibam Ibungo,,,,Female,19,47.58,7.1,46.52,78.31,8.0,Yes,1,14.0,High School,Low,Yes,Yes,Yes,3.9,8.6,104.84,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+784,Thounaojam Priyabala,,,,Female,20,79.58,7.9,40.05,75.19,8.6,Yes,2,13.1,Master,Medium,Yes,No,No,3.9,3.8,80.09,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+785,Wangkhem Ongbi,,,,Female,21,49.7,9.8,42.98,92.44,6.2,No,3,14.7,Master,Medium,Yes,Yes,No,8.8,6.2,80.76,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+786,Sagolsem Rajen,,,,Male,15,55.33,10.1,42.74,81.3,6.6,Yes,2,7.3,Master,Medium,Yes,No,No,9.1,7.6,76.26,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+787,Oinam Bishorjit,,,,Male,23,96.8,7.2,65.9,65.58,3.5,No,4,8.1,Bachelor,Medium,No,Yes,No,9.0,4.6,83.92,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+788,Pukhrambam Reena,,,,Female,17,73.61,2.4,89.14,99.43,9.1,No,0,11.1,High School,Low,Yes,No,No,8.3,1.6,89.57,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+789,Heisnam Sunita,,,,Female,18,85.04,6.5,35.57,48.63,1.2,Yes,4,18.8,Master,Medium,Yes,Yes,Yes,8.4,3.1,78.17,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+790,Longjam Ibotombi,,,,Male,24,73.48,10.4,79.49,88.32,4.1,Yes,2,14.5,High School,Low,Yes,No,Yes,6.2,8.9,102.65,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+791,Lourembam Sharmila,,,,Female,15,73.15,5.9,75.8,59.88,7.5,No,7,11.0,High School,Low,No,Yes,Yes,1.3,8.4,104.69,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+792,Kshetrimayum Ibemhal,,,,Female,24,45.65,8.8,91.08,75.41,1.7,No,4,15.4,Bachelor,Medium,Yes,No,No,1.8,1.8,81.08,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+793,Leishangthem Romesh,,,,Male,17,60.62,8.0,47.09,80.91,2.6,No,2,7.4,PhD,Medium,No,Yes,No,6.8,3.0,79.02,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+794,Moirangthem Memchoubi,,,,Female,16,56.95,8.7,61.51,74.36,6.3,No,2,14.6,High School,Medium,Yes,Yes,No,4.6,7.9,104.82,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+795,Konthoujam Tomba,,,,Male,16,63.44,3.9,94.81,39.84,6.0,Yes,6,8.2,Bachelor,Low,Yes,No,No,6.1,5.4,97.79,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+796,Khundongbam Suresh,,,,Male,15,87.9,8.6,76.2,61.01,7.7,Yes,2,5.6,Bachelor,Low,Yes,No,No,3.1,7.8,130.28,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+797,Wahengbam Nandakumar,Parent of Wahengbam Nandakumar,parent797@example.com,Address for student 797,Male,22,62.32,3.1,57.21,69.3,8.3,Yes,8,12.2,Master,Medium,Yes,No,Yes,6.8,2.9,58.02,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+798,Potsangbam Biren,,,,Male,17,67.1,3.1,39.2,89.43,2.2,Yes,3,13.7,Bachelor,Medium,Yes,No,Yes,3.2,9.6,102.55,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+799,Maisnam Sanjit,,,,Male,17,63.84,4.2,48.37,61.06,1.2,Yes,2,9.2,High School,Medium,Yes,No,No,5.1,8.1,88.74,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+800,Heisnam Ibomcha,,,,Male,20,45.6,7.7,70.69,94.31,7.2,No,2,11.3,High School,Low,No,No,No,5.3,2.8,66.01,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+801,Sorokhaibam Romen,,,,Male,22,66.46,6.3,80.27,60.83,3.7,Yes,4,13.9,Bachelor,Medium,Yes,Yes,No,2.6,6.0,104.61,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+802,Naorem Bembem,,,,Female,23,51.74,6.0,38.71,68.41,6.6,Yes,4,15.4,High School,High,Yes,Yes,No,8.9,2.0,75.61,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+803,Ningthoujam Tomba,Parent of Ningthoujam Tomba,parent803@example.com,Address for student 803,Male,23,51.2,4.6,71.97,85.74,2.4,No,6,17.9,High School,Low,Yes,No,No,5.7,4.3,59.39,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+804,Thangjam Ibungo,,,,Male,18,45.64,1.1,68.52,70.81,5.2,No,4,7.1,Bachelor,Medium,Yes,No,Yes,8.8,6.9,68.21,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+805,Akoijam Sanalembi,,,,Female,19,61.4,5.3,65.98,97.22,5.5,Yes,4,19.0,Bachelor,Medium,Yes,No,No,3.4,4.0,90.04,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+806,Chongtham Thoibi,,,,Female,16,85.45,2.7,78.31,76.22,6.3,No,5,12.7,Master,Low,Yes,No,No,2.6,6.9,85.74,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+807,Wahengbam Sanatombi,,,,Female,23,56.59,2.6,88.62,66.59,5.6,No,3,15.8,High School,Low,Yes,Yes,Yes,1.2,3.2,84.61,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+808,Laishram Bimol,,,,Male,22,58.74,7.5,52.61,31.65,5.5,Yes,2,14.0,Bachelor,Medium,Yes,Yes,No,1.8,7.5,108.65,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+809,Sagolsem Ibemhal,,,,Female,17,78.56,1.2,92.23,58.96,4.0,Yes,3,4.1,Bachelor,Low,Yes,No,No,2.3,4.2,102.97,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+810,Angom Sanjoy,,,,Male,23,51.75,11.0,41.24,50.95,1.6,Yes,2,1.4,High School,Low,Yes,Yes,No,1.7,8.1,81.99,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+811,Tongbram Ibohal,Parent of Tongbram Ibohal,parent811@example.com,Address for student 811,Male,17,93.82,6.1,42.11,82.37,1.8,Yes,2,14.5,Bachelor,Medium,Yes,Yes,Yes,9.1,2.2,47.77,At Risk,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+812,Mutum Somorjit,,,,Male,23,71.21,4.0,48.67,44.58,4.9,Yes,8,10.2,High School,Low,No,No,Yes,9.2,4.3,73.52,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+813,Hijam Rajen,,,,Male,16,66.86,0.7,38.37,44.37,4.2,No,2,14.0,Master,Medium,Yes,No,Yes,9.4,5.2,69.15,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+814,Khumanthem Tombi,,,,Female,24,73.47,3.1,46.12,43.27,5.6,No,4,9.5,Bachelor,Low,Yes,Yes,Yes,9.6,4.8,76.6,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+815,Elangbam Priyabala,Parent of Elangbam Priyabala,parent815@example.com,Address for student 815,Female,23,49.96,4.8,37.45,38.79,3.7,No,8,6.2,Bachelor,Medium,Yes,No,No,5.4,4.9,52.79,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+816,Phuritshabam Ibotombi,,,,Male,22,76.81,1.1,87.52,51.77,7.2,No,5,5.7,High School,Medium,No,Yes,No,5.8,5.0,75.43,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+817,Sinam Dinesh,,,,Male,23,61.79,4.1,39.73,92.01,8.8,No,7,14.6,High School,Medium,Yes,Yes,No,2.2,9.9,113.14,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+818,Thoudam Robindro,,,,Male,19,93.83,10.0,82.31,84.24,3.7,Yes,3,5.5,Bachelor,Medium,Yes,No,No,2.2,2.7,110.83,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+819,Phuritshabam Bembem,,,,Female,16,50.13,5.2,33.35,81.47,2.7,Yes,1,14.3,Bachelor,Low,Yes,No,Yes,8.0,7.9,65.36,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+820,Wangkhem Biren,,,,Male,22,70.42,11.1,96.4,85.81,2.0,No,2,7.7,High School,Medium,No,Yes,No,8.7,6.0,99.96,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+821,Nongmaithem Nimai,,,,Male,20,75.89,3.2,79.78,48.86,6.5,Yes,2,15.4,High School,Low,Yes,No,No,8.1,4.7,76.3,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+822,Maibam Sanalembi,,,,Female,22,42.0,1.7,30.48,92.12,5.0,Yes,2,2.9,Bachelor,Low,Yes,Yes,No,8.5,6.7,81.43,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+823,Mutum Ongbi,,,,Female,19,61.82,7.0,83.47,39.61,2.7,No,6,4.1,Bachelor,Medium,Yes,No,Yes,3.5,8.7,67.56,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+824,Akoijam Tomba,,,,Male,24,83.96,7.9,65.99,53.54,6.9,No,2,13.7,High School,High,No,Yes,No,5.2,5.2,96.84,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+825,Tongbram Ibemhal,,,,Female,16,89.22,9.8,84.56,71.07,2.3,Yes,5,11.2,Bachelor,Medium,Yes,No,No,5.1,8.8,104.22,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+826,Leishangthem Memchoubi,,,,Female,20,58.79,11.6,66.57,37.2,6.0,No,2,4.1,Bachelor,Low,Yes,No,No,10.0,1.8,83.37,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+827,Thangjam Bobo,,,,Male,19,87.92,5.2,74.87,81.11,5.7,Yes,4,18.1,Bachelor,High,No,Yes,Yes,9.5,6.9,102.4,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+828,Hijam Reena,,,,Female,19,98.07,10.5,85.04,57.11,7.6,No,5,5.5,Bachelor,Low,Yes,No,No,6.4,4.0,104.9,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+829,Laishram Romen,,,,Male,15,91.41,19.8,58.36,84.91,1.5,Yes,1,8.4,Bachelor,High,Yes,No,No,2.2,4.5,98.65,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+830,Sinam Sanatombi,,,,Female,16,47.06,8.9,30.19,64.5,9.0,No,4,4.0,High School,Medium,Yes,Yes,Yes,3.3,6.1,87.33,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+831,Oinam Suresh,,,,Male,22,84.38,3.2,89.5,42.66,7.3,Yes,1,7.8,High School,Medium,No,No,No,4.3,5.3,94.47,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+832,Konsam Ibomcha,,,,Male,17,59.18,5.3,56.66,81.43,2.9,No,5,9.8,Bachelor,Medium,Yes,No,Yes,8.9,4.4,61.28,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+833,Yumnam Tomba,,,,Male,24,99.3,6.9,64.72,47.65,2.7,Yes,6,5.9,Bachelor,High,No,No,No,2.5,3.8,79.54,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+834,Shamurailatpam Sunita,,,,Female,17,69.12,6.7,30.54,64.36,4.9,Yes,4,15.4,Bachelor,High,Yes,No,No,3.0,6.6,84.95,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+835,Ningthoujam Deven,,,,Male,22,47.35,4.8,64.45,35.29,8.4,Yes,3,7.9,Master,Medium,Yes,No,Yes,4.1,5.6,63.4,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+836,Konthoujam Bembem,,,,Female,22,83.51,12.3,99.05,73.25,8.6,Yes,1,14.6,Master,Medium,Yes,No,No,9.3,3.9,101.33,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+837,Sorokhaibam Biren,,,,Male,16,59.38,1.6,49.48,76.61,5.7,Yes,1,4.1,High School,Medium,Yes,No,Yes,5.5,2.8,74.92,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+838,Thounaojam Sanjit,,,,Male,22,99.82,5.5,57.68,56.51,8.7,Yes,1,7.5,Master,Medium,No,No,No,6.8,8.0,93.99,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+839,Khundongbam Sanalembi,,,,Female,15,98.79,6.8,78.1,96.81,1.0,No,3,0.2,Bachelor,High,Yes,No,No,4.5,8.2,124.01,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+840,Wangkhem Ranjit,,,,Male,20,79.37,3.4,87.04,91.19,1.3,No,2,15.2,High School,Low,Yes,Yes,No,2.7,2.9,88.5,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+841,Pukhrambam Priyokumar,,,,Male,22,47.79,10.1,59.22,79.56,9.2,Yes,0,12.5,PhD,Medium,Yes,No,No,3.0,3.4,74.23,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+842,Angom Ibemhal,,,,Female,17,81.21,6.4,51.68,79.96,8.0,No,1,16.4,Master,High,Yes,No,No,8.2,3.2,81.99,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+843,Heisnam Kiran,,,,Male,22,45.58,5.9,95.65,47.67,5.1,Yes,6,9.1,PhD,High,Yes,No,No,9.0,9.0,79.39,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+844,Lourembam Ibungo,,,,Male,15,41.76,7.7,77.4,75.98,7.8,Yes,4,16.0,High School,Low,Yes,No,No,5.4,8.0,103.05,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+845,Kshetrimayum Bishwajit,,,,Male,23,89.38,6.0,38.33,43.87,9.6,Yes,2,13.0,High School,Low,No,Yes,Yes,4.2,1.7,76.81,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+846,Moirangthem Somorjit,,,,Male,23,52.59,8.5,34.82,40.08,7.9,Yes,4,0.1,Bachelor,High,Yes,Yes,Yes,8.3,8.5,84.3,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+847,Loitongbam Tombi,,,,Female,19,62.74,1.0,63.85,99.96,8.6,Yes,5,5.1,Bachelor,Medium,Yes,No,No,7.1,1.3,85.24,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+848,Potsangbam Thoibi,,,,Female,24,98.41,1.3,45.41,73.57,7.8,No,0,9.9,High School,Medium,Yes,No,No,1.4,3.3,65.55,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+849,Naorem Dinesh,,,,Male,18,60.21,9.0,47.78,60.17,2.5,Yes,0,12.4,Master,Low,Yes,No,No,4.2,9.3,84.74,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+850,Rajkumari Sanatombi,,,,Female,20,57.79,5.3,91.44,50.17,8.5,Yes,4,1.3,Bachelor,High,Yes,No,Yes,7.1,8.8,94.57,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+851,Akoijam Sanatomba,,,,Male,21,95.09,3.3,36.27,72.27,2.8,Yes,3,14.1,Bachelor,Low,No,No,No,6.2,8.0,92.8,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+852,Nameirakpam Priyabala,,,,Female,19,46.64,6.4,80.08,33.47,9.0,No,4,10.9,Bachelor,Low,Yes,Yes,No,9.8,5.1,78.21,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+853,Chongtham Robindro,Parent of Chongtham Robindro,parent853@example.com,Address for student 853,Male,24,85.57,5.2,48.98,36.63,5.1,No,1,10.5,Bachelor,Low,Yes,No,No,8.8,3.9,53.59,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+854,Wahengbam Rojit,,,,Male,23,99.28,3.1,83.22,32.3,7.1,No,3,5.8,High School,High,Yes,Yes,No,1.5,8.9,112.89,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+855,Sagolsem Premo,,,,Male,17,94.08,16.4,80.57,64.94,5.5,No,4,11.9,PhD,Medium,Yes,No,No,7.5,6.9,99.66,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+856,Khumanthem Sunil,,,,Male,21,79.1,12.3,30.52,72.04,1.8,No,2,0.5,Bachelor,Medium,Yes,No,No,4.0,3.7,65.99,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+857,Elangbam Bimol,,,,Male,24,58.84,3.6,65.64,34.37,3.6,No,5,1.3,High School,Medium,Yes,Yes,No,7.1,5.2,76.68,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+858,Phuritshabam Sushil,,,,Male,24,55.26,3.7,39.75,80.49,9.9,Yes,2,14.7,Master,High,Yes,Yes,No,6.6,8.9,71.37,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+859,Sapam Memchoubi,,,,Female,19,89.16,3.2,90.64,46.13,9.6,No,4,6.4,PhD,Medium,Yes,Yes,Yes,5.5,9.1,103.26,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+860,Maibam Rishi,,,,Male,21,92.79,4.1,91.01,77.96,3.9,Yes,2,6.9,Master,Medium,No,No,No,8.7,6.9,86.07,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+861,Luwang Reena,,,,Female,16,71.53,8.1,59.28,98.73,10.0,No,3,4.2,Master,High,No,Yes,No,7.4,7.6,122.65,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+862,Mutum Bhorot,,,,Male,18,54.66,5.7,61.11,78.38,8.6,No,3,8.9,Bachelor,Medium,Yes,No,No,9.0,1.4,71.44,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+863,Nongmaithem Bembem,,,,Female,16,46.78,4.1,51.23,91.82,6.5,No,0,1.0,PhD,Medium,Yes,Yes,Yes,3.5,6.4,89.25,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+864,Yengkhom Sanalembi,,,,Female,21,45.23,4.9,80.16,96.37,1.4,Yes,5,6.0,High School,High,No,No,Yes,4.1,7.2,84.14,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+865,Panmei Ibemhal,,,,Female,16,83.14,4.1,55.11,64.07,9.1,No,5,10.5,Master,Medium,Yes,Yes,No,6.6,1.2,80.41,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+866,Tongbram Robichandra,,,,Male,15,65.21,3.0,48.75,79.16,6.0,No,2,9.3,Bachelor,Medium,Yes,Yes,No,9.7,8.6,87.98,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+867,Hijam Nandakumar,,,,Male,23,94.32,2.6,60.26,89.64,8.8,Yes,2,20.0,High School,Low,Yes,Yes,No,4.3,9.4,119.97,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+868,Thokchom Thoibi,,,,Female,15,84.38,2.5,36.4,54.96,8.5,Yes,1,7.8,Bachelor,Medium,Yes,No,No,1.3,3.1,98.74,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+869,Sinam Ibotombi,,,,Male,22,51.48,6.3,82.26,48.3,8.5,No,0,7.7,Bachelor,Medium,Yes,No,No,5.0,8.6,90.62,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+870,Okram Sunita,,,,Female,16,76.83,9.6,30.88,96.26,7.3,No,5,10.1,Bachelor,Low,Yes,Yes,Yes,5.9,7.0,101.57,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+871,Konthoujam Dhananjoy,,,,Male,22,66.13,5.9,75.11,80.84,3.6,Yes,2,3.8,High School,High,No,Yes,No,8.2,6.2,91.07,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+872,Maisnam Tombi,,,,Female,17,74.63,1.1,42.8,45.38,4.0,Yes,5,17.5,Master,Medium,Yes,Yes,No,7.6,8.6,90.12,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+873,Keisham Sanatombi,Parent of Keisham Sanatombi,parent873@example.com,Address for student 873,Female,20,84.28,6.2,46.27,61.44,3.8,Yes,3,11.4,High School,Medium,No,No,No,9.7,3.6,58.39,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+874,Khundongbam Nilachandra,,,,Male,17,88.37,3.5,74.49,85.75,1.2,Yes,1,3.8,Bachelor,Medium,Yes,Yes,No,8.0,8.1,93.89,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+875,Thiyam Bembem,,,,Female,21,90.62,2.7,99.51,68.29,6.2,No,1,15.9,Master,Medium,No,No,No,3.7,3.8,73.5,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+876,Angom Birachandra,,,,Male,24,55.24,2.0,84.44,75.5,7.3,No,4,0.7,Bachelor,Low,Yes,No,No,6.8,8.1,98.73,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+877,Sanasam Priyabala,Parent of Sanasam Priyabala,parent877@example.com,Address for student 877,Female,23,41.87,2.7,45.81,82.76,8.7,No,5,19.7,Bachelor,Medium,Yes,No,No,7.1,5.1,54.5,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+878,Konthoujam Memchoubi,,,,Female,16,84.36,2.7,42.32,73.54,2.3,Yes,1,17.3,High School,Low,Yes,No,No,10.0,2.1,61.68,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+879,Loitongbam Romesh,,,,Male,19,46.38,1.6,90.64,67.81,5.9,No,0,11.6,Bachelor,Low,Yes,Yes,No,2.2,4.4,104.28,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+880,Potsangbam Ibohal,,,,Male,20,58.9,2.7,61.09,82.47,1.1,Yes,1,2.2,PhD,Low,Yes,No,Yes,2.7,3.1,88.26,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+881,Rajkumar Sanajaoba,,,,Male,18,40.23,7.3,39.59,80.93,1.9,Yes,7,4.3,PhD,Low,Yes,Yes,No,2.4,1.9,67.77,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+882,Longjam Reena,,,,Female,18,80.9,10.7,90.35,74.09,1.5,Yes,4,5.6,Master,Medium,Yes,No,Yes,6.3,2.0,82.25,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+883,Nameirakpam Surjakanta,,,,Male,18,50.03,1.2,87.13,55.19,7.5,Yes,5,4.8,High School,Medium,Yes,No,Yes,2.2,8.0,94.51,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+884,Huidrom Sanalembi,,,,Female,16,79.32,8.7,98.87,58.41,1.7,Yes,2,10.0,High School,High,Yes,Yes,Yes,6.9,8.9,119.15,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+885,Ngangbam Ibemhal,,,,Female,18,99.5,4.8,93.68,97.93,7.4,Yes,4,18.9,High School,Medium,Yes,Yes,No,8.2,9.3,124.99,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+886,Sapam Ratankumar,,,,Male,15,44.36,2.0,89.63,37.87,3.2,Yes,4,8.9,Bachelor,Medium,Yes,Yes,No,4.9,8.7,87.05,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+887,Luwang Nimai,,,,Male,20,44.62,4.1,33.68,48.8,8.9,Yes,0,13.2,High School,Medium,No,Yes,No,6.0,8.5,94.98,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+888,Meisnam Thoibi,,,,Female,15,60.42,7.0,37.31,64.47,8.3,No,3,13.8,High School,Medium,Yes,Yes,Yes,9.2,1.6,68.84,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+889,Koijam Tombi,,,,Female,24,91.98,5.4,69.83,88.57,9.6,Yes,3,17.4,Bachelor,Medium,Yes,Yes,Yes,6.1,8.1,118.64,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+890,Nongmaithem Oken,,,,Male,20,52.93,1.4,67.2,41.46,9.0,No,5,0.7,Bachelor,Medium,No,Yes,No,2.9,8.0,80.82,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+891,Yengkhom Sanajaoba,,,,Male,15,61.62,5.1,62.06,49.39,9.4,Yes,3,8.1,Bachelor,Low,Yes,No,Yes,4.1,2.2,89.11,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+892,Thokchom Ibungo,,,,Male,20,44.11,8.1,57.78,34.61,8.7,No,5,15.7,PhD,Medium,Yes,No,No,5.8,7.0,82.59,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+893,Okram Ibobi,,,,Male,24,85.79,7.4,60.18,79.42,7.2,No,4,16.3,Bachelor,Medium,Yes,No,No,2.4,5.1,95.46,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+894,Maisnam Arunkumar,Parent of Maisnam Arunkumar,parent894@example.com,Address for student 894,Male,22,64.5,4.2,69.85,46.67,2.5,No,0,18.5,Master,Medium,Yes,No,No,6.5,9.1,59.64,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+895,Takhellambam Bembem,,,,Female,16,85.55,5.3,30.15,57.21,3.4,No,2,14.1,Master,High,Yes,No,No,10.0,7.3,76.02,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+896,Shijagurumayum Sanatombi,,,,Female,16,94.22,4.3,48.25,61.06,2.9,Yes,1,4.9,Bachelor,Low,Yes,No,Yes,6.9,9.6,77.56,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+897,Sagolband Priyabala,,,,Female,18,53.97,7.1,66.28,92.39,6.4,Yes,3,10.1,High School,Low,No,No,No,4.4,1.9,84.25,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+898,Phurailatpam Memchoubi,,,,Female,17,88.44,7.4,80.56,58.79,5.5,Yes,5,0.6,High School,Medium,Yes,No,No,4.0,1.4,78.52,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+899,Keisham Sarat,,,,Male,18,43.55,0.9,42.19,40.17,8.8,Yes,6,12.9,High School,High,Yes,Yes,No,9.4,9.8,71.04,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+900,Thiyam Sunil,,,,Male,21,93.93,8.1,68.28,66.7,9.6,Yes,2,11.1,Bachelor,Medium,No,No,Yes,8.8,1.7,94.85,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+901,Sanasam Suresh,,,,Male,15,79.05,6.9,80.01,97.41,4.6,No,2,13.3,PhD,Medium,Yes,No,No,5.3,4.5,92.4,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+902,Salam Reena,,,,Female,20,92.45,3.5,61.12,72.54,5.6,Yes,6,18.6,PhD,Low,No,No,No,4.2,6.8,92.03,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+903,Usham Sanalembi,,,,Female,17,40.01,9.5,31.9,98.84,9.7,No,9,13.7,High School,Medium,Yes,No,Yes,7.4,8.9,111.18,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+904,Longjam Lokendro,,,,Male,24,50.14,4.3,61.45,88.88,3.5,No,3,6.4,PhD,Medium,Yes,Yes,No,3.8,3.3,96.67,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+905,Huidrom Sadananda,,,,Male,21,63.39,3.1,50.75,32.52,8.1,No,0,4.0,Bachelor,High,Yes,Yes,Yes,2.1,1.3,67.63,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+906,Khomdram Ibemhal,,,,Female,24,62.77,3.5,95.08,76.09,3.0,No,3,17.1,Master,Low,Yes,No,No,3.8,5.7,72.13,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+907,Laifungbam Thoibi,,,,Female,16,53.6,5.5,38.72,50.07,7.1,No,1,3.9,High School,Medium,Yes,No,No,4.9,5.2,83.03,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+908,Ngangbam Dinesh,,,,Male,16,62.9,4.0,75.67,69.17,3.3,Yes,3,3.2,High School,Medium,Yes,Yes,No,3.3,3.8,73.79,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+909,Meisnam Ranjit,,,,Male,18,47.73,3.5,33.69,49.55,9.0,Yes,3,4.1,Bachelor,Low,Yes,Yes,No,3.0,8.9,98.01,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+910,Mangangcha Tombi,,,,Female,15,64.77,3.1,61.23,54.42,6.1,No,2,10.2,Master,Medium,Yes,No,No,1.1,7.7,84.21,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+911,Koijam Ibotombi,,,,Male,17,88.14,7.6,68.78,94.62,2.7,No,0,2.5,High School,Medium,Yes,No,No,6.7,8.7,98.22,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+912,Takhellambam Biren,,,,Male,23,68.74,7.2,50.86,44.47,3.0,No,4,18.8,High School,Low,Yes,No,No,6.5,2.5,71.06,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+913,Shijagurumayum Sanjoy,,,,Male,21,41.08,1.1,61.86,91.19,5.4,Yes,3,19.3,PhD,High,Yes,Yes,Yes,2.7,7.2,85.47,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+914,Chakpram Bembem,,,,Female,21,65.29,3.7,41.45,32.13,9.7,No,2,19.5,PhD,Low,Yes,Yes,No,9.5,9.8,80.04,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+915,Taorem Ibemhal,,,,Female,18,41.63,8.0,51.29,36.36,7.9,Yes,1,0.8,High School,High,Yes,Yes,No,4.7,6.5,97.02,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+916,Yumkham Thoibi,,,,Female,16,97.97,5.1,73.48,89.83,5.4,Yes,3,18.9,Master,High,Yes,No,No,1.2,2.5,114.58,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+917,Nongthombam Tombi,,,,Female,18,47.65,8.3,51.13,74.14,4.0,Yes,0,19.9,Bachelor,Medium,Yes,Yes,No,3.0,10.0,128.81,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+918,Laitonjam Bembem,,,,Female,20,82.46,9.9,92.98,82.31,5.9,Yes,4,18.8,Bachelor,Low,Yes,Yes,No,7.2,5.8,99.58,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+919,Khangembam Sanatombi,,,,Female,17,98.37,9.8,73.99,44.66,7.7,Yes,4,13.4,Bachelor,High,Yes,No,No,2.8,8.6,111.19,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+920,Pebam Priyabala,,,,Female,15,89.56,8.9,60.71,67.6,8.1,Yes,1,14.0,Bachelor,Medium,No,No,No,1.5,2.3,83.14,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+921,Phurailatpam Nimai,,,,Male,22,81.96,4.5,32.71,81.61,3.9,Yes,3,2.4,Bachelor,Low,Yes,Yes,No,6.6,7.0,96.86,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+922,Salam Robindro,,,,Male,19,90.37,3.9,64.97,73.91,7.5,Yes,3,17.5,Bachelor,Medium,Yes,No,No,5.7,9.2,105.38,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+923,Usham Ibomcha,,,,Male,19,98.91,4.8,83.53,63.02,6.9,No,3,1.2,Bachelor,Low,No,No,No,7.9,5.8,97.84,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+924,Khomdram Tomba,,,,Male,18,77.28,4.1,48.59,97.18,9.6,No,6,6.4,Master,High,No,No,Yes,8.0,3.6,73.63,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+925,Laifungbam Deben,,,,Male,20,73.55,9.1,86.47,77.33,9.4,Yes,5,19.8,Master,High,No,No,Yes,9.6,2.1,96.17,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+926,Mangangcha Somorjit,,,,Male,17,77.69,7.3,47.63,93.54,8.1,Yes,5,8.4,Bachelor,High,Yes,No,No,1.5,3.7,94.44,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+927,Chakpram Suresh,,,,Male,23,71.96,5.5,87.66,81.08,7.5,No,3,2.6,High School,Medium,Yes,Yes,Yes,1.4,4.2,106.79,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+928,Joykumari Memchoubi,,,,Female,19,78.11,2.2,35.97,81.48,3.5,Yes,2,19.4,Bachelor,Medium,No,No,No,9.9,7.4,63.4,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+929,Chingakham Reena,,,,Female,17,66.99,7.2,90.63,35.6,8.6,Yes,5,19.7,Master,Low,No,No,No,6.8,2.6,95.25,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+930,Taorem Rajen,Parent of Taorem Rajen,parent930@example.com,Address for student 930,Male,15,53.11,9.9,64.94,55.16,4.8,No,5,3.7,Bachelor,Low,Yes,No,Yes,7.4,2.0,53.37,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+931,Yumkham Nara,,,,Male,24,47.21,3.4,50.76,90.09,3.5,No,6,17.3,Bachelor,Low,Yes,No,No,1.9,4.5,69.62,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+932,Takhellambam Sanalembi,,,,Female,20,44.1,9.3,48.56,46.28,4.5,Yes,1,7.8,High School,Medium,No,No,No,1.6,5.1,93.41,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+933,Nongthombam Bimol,,,,Male,16,55.8,6.8,60.24,38.09,8.5,Yes,4,7.6,Bachelor,High,Yes,No,No,2.4,6.7,104.02,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+934,Laitonjam Inaocha,,,,Male,17,42.77,17.0,99.93,52.83,2.3,Yes,1,5.3,Bachelor,High,Yes,Yes,Yes,4.8,7.4,103.78,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+935,Maibam Ibemhal,,,,Female,15,74.03,4.8,45.42,45.43,5.1,Yes,1,0.9,PhD,Low,Yes,Yes,No,2.0,9.0,90.69,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+936,Khangembam Raghumani,,,,Male,23,57.03,3.6,37.23,94.77,5.4,Yes,4,5.4,Bachelor,Medium,Yes,No,No,5.0,3.6,77.05,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+937,Surchandra Tombi,,,,Female,22,89.47,8.5,70.95,90.76,1.3,Yes,5,1.1,High School,Medium,Yes,Yes,Yes,6.1,5.8,107.92,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+938,Pebam Ibungo,,,,Male,16,44.45,3.2,64.2,64.98,2.8,Yes,2,18.5,Bachelor,Medium,Yes,No,No,1.0,4.3,84.99,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+939,Elangbam Reena,Parent of Elangbam Reena,parent939@example.com,Address for student 939,Female,22,53.58,5.5,66.69,34.29,8.4,No,1,13.2,Master,Medium,No,Yes,No,2.0,1.0,59.24,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+940,Keisham Sanalembi,,,,Female,23,83.81,6.4,76.69,80.02,8.5,No,5,17.7,Bachelor,Medium,Yes,No,Yes,4.4,6.2,114.75,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+941,Rajkumari Ibemhal,,,,Female,15,75.93,8.3,48.7,73.64,3.6,No,5,14.3,Bachelor,High,Yes,No,No,1.5,8.3,84.87,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+942,Joykumar Ningombam,,,,Male,19,43.87,10.0,93.75,97.94,8.9,No,1,2.6,Bachelor,Medium,No,Yes,No,2.2,1.3,113.43,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+943,Nongmaikapam Thoibi,,,,Female,22,92.63,14.7,60.5,69.13,7.9,Yes,3,18.8,Master,Medium,Yes,Yes,Yes,3.1,1.0,91.39,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+944,Chingakham Ropen,,,,Male,16,92.64,1.4,39.04,53.55,4.8,No,7,18.0,High School,Low,Yes,Yes,Yes,4.9,7.6,72.48,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+945,Maibam Romesh,,,,Male,18,59.82,14.2,81.96,66.33,7.7,Yes,3,7.0,Bachelor,Low,Yes,Yes,Yes,7.4,7.2,133.03,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+946,Surchandra Khangembam,,,,Male,21,60.42,2.0,75.02,98.55,9.7,Yes,2,2.2,PhD,Medium,Yes,No,Yes,2.2,4.7,116.07,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+947,Elangbam Ibomcha,,,,Male,17,99.34,2.7,52.1,78.75,5.1,No,2,14.1,PhD,Medium,Yes,No,No,7.6,7.0,83.9,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+948,Sanjenbam Tombi,,,,Female,19,77.57,7.8,73.51,77.04,3.1,No,5,14.6,Bachelor,High,Yes,Yes,Yes,8.7,9.6,98.19,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+949,Pukhrambam Bembem,,,,Female,22,71.88,5.8,45.39,46.85,9.5,No,2,17.9,PhD,Medium,No,No,No,6.9,3.2,67.81,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+950,Keisham Tomba,,,,Male,24,90.29,2.5,61.14,82.05,6.4,Yes,2,1.1,Bachelor,Medium,Yes,Yes,No,1.4,3.2,101.6,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+951,Rajkumar Ibotombi,,,,Male,17,57.12,7.4,92.96,82.52,1.9,No,3,2.8,Bachelor,Medium,Yes,No,No,5.0,2.7,82.34,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+952,Yendrembam Sanatombi,,,,Female,18,65.75,4.8,39.35,52.21,6.2,No,2,12.0,Bachelor,Low,Yes,Yes,Yes,6.9,7.5,78.32,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+953,Nongmaikapam Dinesh,Parent of Nongmaikapam Dinesh,parent953@example.com,Address for student 953,Male,23,56.07,1.5,57.07,63.86,5.5,Yes,3,12.4,High School,Medium,Yes,No,No,9.8,4.2,43.68,At Risk,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+954,Sagolsem Memchoubi,,,,Female,21,87.35,10.2,87.48,50.62,8.7,Yes,2,0.7,Bachelor,Medium,Yes,No,Yes,9.6,9.9,108.83,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+955,Sanjenbam Biren,,,,Male,15,74.4,3.1,97.86,48.11,5.8,Yes,2,7.9,Bachelor,Low,Yes,No,No,4.6,7.4,81.66,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+956,Pukhrambam Ibungo,,,,Male,18,79.53,2.5,61.77,31.81,3.3,No,0,11.7,Master,Medium,No,No,No,6.5,4.3,65.87,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+957,Oinam Reena,,,,Female,18,55.14,5.5,65.49,49.96,7.1,Yes,7,14.8,Master,Medium,Yes,No,No,9.0,2.3,70.97,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+958,Yendrembam Sanjoy,,,,Male,23,53.21,2.8,70.05,68.78,5.9,Yes,5,6.3,Bachelor,Low,Yes,No,No,8.5,6.3,77.25,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+959,Longjam Sanalembi,,,,Female,20,69.3,7.4,95.26,30.11,3.1,Yes,1,9.7,Bachelor,High,Yes,No,No,5.3,3.7,77.72,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+960,Thounaojam Nara,,,,Male,23,84.25,4.7,90.07,49.83,6.2,Yes,1,16.3,High School,Medium,Yes,Yes,No,3.4,9.1,135.51,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+961,Sagolsem Rajen,,,,Male,20,71.51,6.4,41.94,91.7,8.4,No,2,19.1,Bachelor,Low,Yes,No,No,2.2,5.0,101.29,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+962,Oinam Bishorjit,,,,Male,20,41.96,3.4,60.57,71.56,1.3,Yes,3,4.6,Bachelor,Low,No,Yes,No,5.4,3.6,68.49,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+963,Leishangthem Ibemhal,,,,Female,19,92.11,5.7,62.48,72.55,6.7,No,2,5.1,High School,High,Yes,No,No,7.5,6.3,83.46,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+964,Longjam Ibotombi,,,,Male,19,43.88,2.9,85.24,58.24,4.1,No,3,18.8,Bachelor,Medium,Yes,No,No,9.7,2.2,68.87,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+965,Leishangthem Romesh,,,,Male,16,97.35,4.3,72.2,77.35,3.6,No,4,7.9,Bachelor,Medium,No,No,No,8.8,6.1,81.37,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+966,Konthoujam Tomba,,,,Male,22,41.51,5.2,75.8,43.3,4.5,Yes,3,14.4,Master,Low,Yes,No,No,2.8,1.5,60.4,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+967,Khundongbam Suresh,,,,Male,22,81.67,1.4,99.87,87.31,4.1,Yes,9,12.2,Master,High,No,Yes,No,7.5,6.5,93.31,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+968,Konthoujam Thoibi,,,,Female,15,44.93,9.4,35.25,38.17,8.5,Yes,3,5.7,Bachelor,Medium,Yes,No,No,3.6,5.8,87.06,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+969,Khundongbam Tombi,,,,Female,22,94.64,1.8,45.61,75.92,3.5,Yes,4,13.1,Bachelor,Medium,Yes,Yes,Yes,7.2,5.7,94.06,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+970,Wahengbam Nandakumar,,,,Male,19,67.87,2.6,58.55,53.88,7.6,Yes,1,13.1,Bachelor,High,Yes,Yes,Yes,7.0,7.2,97.78,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+971,Wahengbam Bembem,,,,Female,16,48.25,3.0,54.34,82.33,1.8,No,4,11.8,High School,Low,Yes,No,No,3.5,1.4,61.6,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+972,Potsangbam Biren,,,,Male,16,60.45,7.2,31.52,68.48,9.6,Yes,1,2.0,High School,Medium,Yes,Yes,No,3.1,5.1,91.91,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+973,Maisnam Sanjit,,,,Male,20,49.89,3.7,36.42,61.66,6.6,Yes,4,19.9,High School,Low,Yes,No,No,1.9,5.0,69.11,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+974,Heisnam Ibomcha,,,,Male,23,50.23,12.5,77.67,41.86,7.4,Yes,2,8.0,High School,Medium,Yes,No,No,1.5,5.1,100.36,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+975,Potsangbam Sanatombi,,,,Female,15,96.89,12.9,91.55,74.58,3.7,Yes,5,12.8,High School,Low,Yes,No,No,8.7,9.8,116.9,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+976,Maisnam Priyabala,,,,Female,20,66.71,7.4,66.0,98.23,4.7,No,3,17.7,High School,High,No,Yes,No,1.4,2.3,79.19,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+977,Heisnam Memchoubi,,,,Female,23,87.33,3.1,67.74,87.79,3.0,Yes,4,8.5,High School,Medium,Yes,No,Yes,1.8,7.2,97.01,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+978,Sorokhaibam Reena,,,,Female,22,78.38,4.5,47.86,34.2,9.4,Yes,1,15.5,Bachelor,Medium,Yes,No,No,3.1,4.6,90.42,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+979,Ningthoujam Sanalembi,,,,Female,20,80.59,5.5,83.75,56.34,5.4,No,2,19.4,PhD,High,Yes,No,Yes,9.0,5.6,77.96,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+980,Thangjam Ibemhal,,,,Female,17,47.9,9.3,82.63,94.79,6.7,Yes,3,7.2,Master,High,Yes,No,No,4.0,7.9,124.49,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+981,Laishram Thoibi,,,,Female,22,54.05,4.4,71.19,65.21,7.6,Yes,6,8.1,High School,Medium,Yes,No,Yes,2.7,2.4,68.35,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+982,Angom Tombi,,,,Female,23,87.21,3.0,44.89,76.35,4.3,Yes,5,18.1,Bachelor,Medium,Yes,Yes,No,7.4,7.9,83.9,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+983,Tongbram Bembem,,,,Female,15,98.25,2.3,36.79,93.88,7.5,Yes,4,3.2,Master,Low,No,No,No,3.9,1.6,71.12,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+984,Sorokhaibam Romen,,,,Male,23,55.76,9.6,34.5,91.17,7.1,Yes,3,0.6,High School,Low,Yes,No,Yes,4.0,5.3,97.39,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+985,Mutum Sanatombi,,,,Female,20,56.29,7.4,71.49,65.13,7.4,Yes,5,18.2,Master,Medium,Yes,No,No,7.7,7.7,96.01,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+986,Hijam Priyabala,,,,Female,20,68.37,4.1,87.75,60.64,5.4,No,3,16.4,Bachelor,Low,No,Yes,No,3.3,2.7,75.0,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+987,Phuritshabam Memchoubi,,,,Female,18,99.03,4.4,90.08,53.78,4.4,Yes,3,19.5,PhD,Medium,No,No,Yes,9.1,7.9,74.47,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+988,Thangjam Thoibi,Parent of Thangjam Thoibi,parent988@example.com,Address for student 988,Female,15,56.14,1.3,62.45,80.33,3.0,No,5,1.2,Master,Low,Yes,No,No,6.1,2.5,46.39,At Risk,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+989,Laishram Sanatombi,,,,Female,24,64.42,2.6,84.9,50.09,8.4,No,5,3.1,Bachelor,Medium,Yes,No,No,5.8,8.2,73.58,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+990,Oinam Ibemhal,,,,Female,22,93.49,15.0,96.28,47.49,6.5,Yes,3,2.1,Bachelor,Medium,Yes,No,No,3.4,5.2,124.49,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+991,Konsam Tombi,,,,Female,16,40.18,5.8,49.26,54.94,5.0,Yes,4,13.7,High School,Low,Yes,Yes,Yes,8.5,7.2,68.61,Below Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+992,Yumnam Bembem,,,,Female,15,42.39,1.7,57.86,42.41,9.5,Yes,2,12.1,High School,Low,No,Yes,Yes,6.2,9.3,96.35,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+993,Ningthoujam Sanalembi,,,,Female,16,76.24,2.0,95.2,78.66,1.4,No,2,7.2,Bachelor,Medium,Yes,No,No,2.4,4.7,88.01,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+994,Sorokhaibam Ibungo,,,,Female,15,94.44,4.0,53.68,73.14,8.7,No,1,1.1,High School,Medium,Yes,No,Yes,2.9,3.1,97.58,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+995,Thounaojam Priyabala,,,,Female,15,54.33,2.9,93.97,63.8,10.0,No,3,12.8,High School,Medium,Yes,No,Yes,5.2,8.8,93.28,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+996,Ningthoujam Tomba,,,,Male,23,68.18,5.1,98.67,57.32,9.0,Yes,4,11.4,Bachelor,High,Yes,Yes,No,8.0,2.5,99.1,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+997,Thangjam Ibungo,,,,Male,15,67.03,7.1,76.33,93.63,8.3,No,1,2.3,Master,Low,Yes,No,No,9.5,6.7,95.68,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+998,Wangkhem Ongbi,,,,Female,18,68.38,2.7,87.18,32.04,4.4,Yes,3,18.2,High School,Low,Yes,Yes,No,7.0,9.3,97.16,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+999,Pukhrambam Reena,,,,Female,24,77.35,4.2,82.47,83.84,3.1,Yes,5,4.0,High School,Low,Yes,No,No,5.6,7.1,94.0,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+1000,Laishram Bimol,,,,Male,20,68.18,2.2,78.97,93.13,7.6,Yes,1,14.9,Bachelor,Medium,Yes,Yes,No,3.3,2.8,105.73,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+1001,Angom Sanjoy,,,,Male,18,80,10,70,75,5,No,2,5,Bachelor,Medium,Yes,No,No,5,7,70,Average,Pass,,,,TCH001,2026-03-27 06:10:16,2026-03-27 06:10:16
+1002,ROshni Devi,,,,Female,18,80,10,70,75,5,No,2,5,Bachelor,Medium,Yes,No,No,5,7,70,Average,Pass,,,,TCH003,2026-03-30 07:27:19,2026-03-30 07:27:19

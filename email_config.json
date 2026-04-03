@@ -1,0 +1,37 @@
+{
+  "enabled": true,
+  "provider": "gmail",
+  "smtp_host": "smtp.gmail.com",
+  "smtp_port": 465,
+  "use_ssl": true,
+  "sender_email": "samathoudam@gmail.com",
+  "sender_password": "ndmh ustu hslv xugl",
+  "sender_name": "Test",
+  "reply_to": "samathoudam@gmail.com",
+  "providers": {
+    "gmail": {
+      "smtp_host": "smtp.gmail.com",
+      "smtp_port": 465,
+      "use_ssl": true,
+      "note": "Use a Gmail App Password (not your normal password). Enable 2FA first, then create App Password at myaccount.google.com/apppasswords"
+    },
+    "outlook": {
+      "smtp_host": "smtp-mail.outlook.com",
+      "smtp_port": 587,
+      "use_ssl": false,
+      "note": "Use your Outlook/Hotmail email and password"
+    },
+    "yahoo": {
+      "smtp_host": "smtp.mail.yahoo.com",
+      "smtp_port": 465,
+      "use_ssl": true,
+      "note": "Use a Yahoo App Password from Account Security settings"
+    },
+    "custom": {
+      "smtp_host": "",
+      "smtp_port": 587,
+      "use_ssl": false,
+      "note": "Enter your own SMTP server details"
+    }
+  }
+}

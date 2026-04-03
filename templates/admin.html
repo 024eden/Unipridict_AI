@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UniPredict AI — Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#edf4fb;--s:rgba(255,255,255,.88);--b:rgba(59,130,246,.12);
+  --p:#2563eb;--pl:#3b82f6;--ok:#16a34a;--err:#dc2626;--warn:#d97706;
+  --txt:#0f172a;--m:#64748b;
+}
+body{font-family:'DM Sans',sans-serif;background:#edf4fb;min-height:100vh;color:var(--txt);position:relative;}
+body::before{content:'';position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:linear-gradient(135deg,#e8f4fd 0%,#edf7ee 35%,#fef9ee 70%,#f0ecfb 100%)}
+body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse 60% 50% at 15% 15%,rgba(59,130,246,.07) 0%,transparent 60%),
+             radial-gradient(ellipse 50% 40% at 85% 20%,rgba(34,197,94,.06) 0%,transparent 55%),
+             radial-gradient(ellipse 55% 45% at 50% 85%,rgba(168,85,247,.05) 0%,transparent 55%);
+  animation:bgPulse 25s ease-in-out infinite alternate}
+@keyframes bgPulse{0%{opacity:1}100%{opacity:.65}}
+.edu-float{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.edu-float span{position:absolute;font-size:2.6rem;opacity:.045;animation:eduDrift 20s ease-in-out infinite}
+.edu-float span:nth-child(1){animation-duration:23s;animation-delay:0s}
+.edu-float span:nth-child(2){animation-duration:19s;animation-delay:-5s}
+.edu-float span:nth-child(3){animation-duration:26s;animation-delay:-9s}
+.edu-float span:nth-child(4){animation-duration:21s;animation-delay:-3s}
+.edu-float span:nth-child(5){animation-duration:24s;animation-delay:-14s}
+.edu-float span:nth-child(6){animation-duration:18s;animation-delay:-7s}
+.edu-float span:nth-child(7){animation-duration:22s;animation-delay:-11s}
+.edu-float span:nth-child(8){animation-duration:20s;animation-delay:-2s}
+@keyframes eduDrift{0%,100%{transform:translateY(0) rotate(0deg) scale(1)}25%{transform:translateY(-16px) rotate(4deg) scale(1.04)}60%{transform:translateY(-9px) rotate(-3deg) scale(.96)}80%{transform:translateY(-20px) rotate(6deg) scale(1.02)}}
+nav{background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:2px solid rgba(59,130,246,.13);box-shadow:0 2px 14px rgba(59,130,246,.08);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:62px;position:sticky;top:0;z-index:100}
+.nb{font-family:'DM Serif Display',serif;font-size:1.35rem;color:#1e40af;text-decoration:none;display:flex;align-items:center;gap:8px}
+.nl{display:flex;gap:3px}
+.nl a{padding:7px 14px;border-radius:8px;color:#475569;text-decoration:none;font-size:.88rem;font-weight:600;transition:all .2s}
+.nl a:hover,.nl a.active{background:rgba(37,99,235,.1);color:#1d4ed8}
+.nr{display:flex;align-items:center;gap:10px}
+.nb-btn{position:relative;background:rgba(255,255,255,.8);border:1px solid rgba(59,130,246,.18);border-radius:9px;padding:7px 11px;color:#475569;text-decoration:none;font-size:1rem;transition:all .2s}
+.nb-btn:hover{color:#1d4ed8}
+.badge{position:absolute;top:-5px;right:-5px;background:var(--err);color:#fff;font-size:.6rem;font-weight:700;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.uc{background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.28);border-radius:9px;padding:7px 13px;font-size:.82rem;color:#1d4ed8;font-weight:700}
+.lo{padding:7px 13px;border-radius:9px;background:rgba(220,38,38,.09);border:1px solid rgba(220,38,38,.2);color:#dc2626;font-size:.82rem;text-decoration:none;transition:all .2s;font-weight:600}
+.lo:hover{background:rgba(220,38,38,.18)}
+.main{padding:28px;max-width:1380px;margin:0 auto}
+.pt{font-family:'DM Serif Display',serif;font-size:1.9rem;color:#0f172a;margin-bottom:4px}
+.ps{color:var(--m);font-size:.88rem;margin-bottom:24px}
+.card{background:var(--s);border:1px solid var(--b);border-radius:15px;padding:24px;margin-bottom:16px}
+.ct{font-size:1rem;font-weight:600;color:#fff;margin-bottom:16px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:22px}
+.mc{background:rgba(255,255,255,.92);border:1px solid rgba(59,130,246,.1);border-radius:14px;padding:22px;position:relative;overflow:hidden;transition:all .2s;box-shadow:0 2px 12px rgba(59,130,246,.05)}
+.mc:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,130,246,.1)}
+.mc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.mc.blue::before{background:linear-gradient(90deg,#5b5cf6,#8b5cf6)}
+.mc.green::before{background:linear-gradient(90deg,#10b981,#34d399)}
+.mc.yellow::before{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+.mc.red::before{background:linear-gradient(90deg,#ef4444,#f87171)}
+.mc.purple::before{background:linear-gradient(90deg,#8b5cf6,#a78bfa)}
+.mc.cyan::before{background:linear-gradient(90deg,#06b6d4,#22d3ee)}
+.mi{font-size:1.5rem;margin-bottom:10px}
+.mv{font-size:2rem;font-weight:700;color:#0f172a;margin-bottom:3px}
+.ml{color:#64748b;font-size:.77rem;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+@media(max-width:900px){.g2,.g3{grid-template-columns:1fr}}
+/* Tabs */
+.tab-nav{display:flex;gap:4px;flex-wrap:wrap;background:rgba(255,255,255,.7);border:1px solid rgba(59,130,246,.12);border-radius:12px;padding:5px;margin-bottom:20px}
+.tab-btn{padding:9px 16px;border-radius:8px;border:none;background:transparent;color:var(--m);font-size:.83rem;font-weight:500;cursor:pointer;transition:all .18s;font-family:'DM Sans',sans-serif;white-space:nowrap}
+.tab-btn:hover{color:#0f172a;background:rgba(37,99,235,.06)}
+.tab-btn.active{background:rgba(37,99,235,.14);color:#1d4ed8;border:1px solid rgba(37,99,235,.3)}
+/* Tables */
+.tw{overflow-x:auto}
+.tw table{width:100%;border-collapse:collapse}
+.tw thead{background:rgba(37,99,235,.06)}
+.tw th{padding:10px 12px;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--m);font-weight:600;white-space:nowrap;border-bottom:1px solid var(--b)}
+.tw td{padding:11px 12px;font-size:.83rem;border-bottom:1px solid rgba(255,255,255,.04)}
+.tw tr:hover td{background:rgba(59,130,246,.03)}
+.tw tr:last-child td{border-bottom:none}
+.tw-wrap{background:var(--s);border:1px solid var(--b);border-radius:12px;overflow:hidden}
+/* Forms */
+.fg{margin-bottom:12px}
+.fg label{display:block;color:var(--m);font-size:.78rem;font-weight:500;margin-bottom:4px}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid var(--b);border-radius:9px;padding:9px 12px;font-size:.86rem;color:#fff;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--p)}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.25)}
+.fg textarea{resize:vertical;min-height:90px}
+/* Buttons */
+.btn-pri{background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff;border:none;border-radius:10px;padding:10px 20px;font-size:.87rem;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;transition:opacity .18s,transform .18s;white-space:nowrap}
+.btn-pri:hover{opacity:.88;transform:translateY(-1px)}
+.btn-pri.green{background:linear-gradient(135deg,#059669,#10b981)}
+.btn-pri.red{background:linear-gradient(135deg,#dc2626,#ef4444)}
+.btn-pri.cyan{background:linear-gradient(135deg,#0891b2,#06b6d4)}
+.btn-pri.amber{background:linear-gradient(135deg,#d97706,#f59e0b)}
+.btn-sec{padding:8px 16px;border-radius:9px;background:var(--s);border:1px solid var(--b);color:var(--m);font-size:.84rem;cursor:pointer;transition:all .18s;font-family:'DM Sans',sans-serif}
+.btn-sec:hover{border-color:rgba(255,255,255,.2);color:var(--txt)}
+.btn-sm{padding:5px 11px;border-radius:7px;background:rgba(91,92,246,.15);border:1px solid rgba(91,92,246,.28);color:var(--pl);font-size:.75rem;cursor:pointer;transition:all .18s;font-family:'DM Sans',sans-serif}
+.btn-sm:hover{background:rgba(91,92,246,.28)}
+.btn-sm.red{background:rgba(239,68,68,.13);border-color:rgba(239,68,68,.28);color:#fca5a5}
+.btn-sm.red:hover{background:rgba(239,68,68,.24)}
+/* Pill badges */
+.pill{padding:2px 9px;border-radius:9px;font-size:.72rem;font-weight:600;display:inline-block}
+.pill-p{background:rgba(91,92,246,.18);color:var(--pl);border:1px solid rgba(91,92,246,.28)}
+.pill-ok{background:rgba(16,185,129,.14);color:#34d399;border:1px solid rgba(16,185,129,.28)}
+.pill-w{background:rgba(245,158,11,.13);color:#fbbf24;border:1px solid rgba(245,158,11,.28)}
+/* DB chip */
+.dbc{display:inline-flex;align-items:center;gap:8px;background:rgba(91,92,246,.12);border:1px solid rgba(91,92,246,.2);border-radius:9px;padding:8px 13px;margin:3px}
+.dbc .dn{color:var(--pl);font-family:monospace;font-weight:600;font-size:.82rem}
+.dbc .dc{color:var(--m);font-size:.75rem}
+/* Schema block */
+.scm{background:rgba(0,0,0,.22);border:1px solid var(--b);border-radius:10px;padding:12px 15px;margin-bottom:8px}
+.scm .sn{color:var(--pl);font-family:monospace;font-weight:600;font-size:.86rem;margin-bottom:5px}
+.scm .sc{color:var(--m);font-size:.74rem;font-family:monospace;line-height:1.9}
+/* SQL */
+.sql-box{font-family:monospace;font-size:.87rem;background:rgba(0,0,0,.4);border:1px solid var(--b);border-radius:10px;padding:13px 15px;color:#a5b4fc;resize:vertical;min-height:90px;width:100%;outline:none;transition:border-color .2s;line-height:1.6}
+.sql-box:focus{border-color:var(--p)}
+.qs-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.qs{padding:5px 11px;border-radius:8px;background:rgba(0,0,0,.3);border:1px solid var(--b);color:var(--pl);font-size:.74rem;cursor:pointer;font-family:monospace;transition:all .18s}
+.qs:hover{background:rgba(91,92,246,.18);border-color:rgba(91,92,246,.35)}
+/* Toggle */
+.tog-wrap{display:flex;align-items:center;gap:12px;cursor:pointer;user-select:none}
+.tog-track{width:48px;height:26px;border-radius:13px;background:#374151;transition:background .25s;position:relative;flex-shrink:0;border:1px solid var(--b)}
+.tog-track.on{background:var(--ok)}
+.tog-knob{width:20px;height:20px;border-radius:50%;background:#fff;position:absolute;top:2px;left:3px;transition:left .25s;box-shadow:0 1px 4px rgba(0,0,0,.4)}
+.tog-track.on .tog-knob{left:23px}
+/* Banner */
+.bnr{border-radius:12px;padding:13px 17px;display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;font-size:.86rem}
+.bnr.ok{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.28)}
+.bnr.warn{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.28)}
+.bnr.err{background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.28)}
+.bnr-ico{font-size:1.3rem;flex-shrink:0;margin-top:1px}
+/* Audit rows */
+.a-grid{display:grid;grid-template-columns:155px 95px 140px 1fr;gap:8px;align-items:start}
+.a-hd{padding:8px 13px;border-bottom:1px solid var(--b);font-size:.71rem;color:var(--m);text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+.a-row{padding:10px 13px;border-bottom:1px solid rgba(255,255,255,.04);font-size:.81rem}
+.a-row:last-child{border-bottom:none}
+.a-row:hover{background:rgba(255,255,255,.02)}
+.a-act{padding:3px 9px;border-radius:7px;font-size:.7rem;font-weight:600;background:rgba(91,92,246,.18);color:var(--pl);font-family:monospace;white-space:nowrap;display:inline-block}
+/* Notif dot */
+.ndot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.ndot.danger,.ndot.error{background:var(--err)}
+.ndot.success{background:var(--ok)}
+.ndot.warning{background:var(--warn)}
+.ndot.info{background:var(--p)}
+/* Provider btns */
+.prov-btn{padding:9px 16px;border-radius:9px;background:var(--s);border:1px solid var(--b);color:var(--m);font-size:.83rem;cursor:pointer;transition:all .18s;font-family:'DM Sans',sans-serif}
+.prov-btn:hover{border-color:var(--pl);color:var(--pl)}
+.prov-btn.active{background:rgba(91,92,246,.22);border-color:rgba(91,92,246,.45);color:var(--pl);font-weight:600}
+/* Mono hint */
+.mh{font-family:monospace;color:var(--pl);font-size:.82rem}
+/* Result msg */
+.rmsg{font-size:.84rem;margin-top:8px;line-height:1.5;min-height:20px}
+.ok-t{color:#34d399}
+.err-t{color:#fca5a5}
+.warn-t{color:#fbbf24}
+/* Toast */
+#toastBox{position:fixed;bottom:22px;right:22px;z-index:9999;display:flex;flex-direction:column;gap:7px;pointer-events:none}
+.ti{background:#181929;border:1px solid var(--b);border-radius:10px;padding:11px 16px;font-size:.83rem;color:#fff;pointer-events:auto;display:flex;align-items:center;gap:9px;max-width:320px;animation:tIn .28s ease;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.ti.ok{border-left:3px solid var(--ok)}.ti.err{border-left:3px solid var(--err)}.ti.warn{border-left:3px solid var(--warn)}
+@keyframes tIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:translateX(0)}}
+hr.sep{border:none;border-top:1px solid var(--b);margin:16px 0}
+</style>
+</head>
+<body>
+<div class="edu-float" aria-hidden="true"><span style="top:6%;left:1.5%">📚</span><span style="top:18%;right:3%">🎓</span><span style="top:38%;left:5%">✏️</span><span style="top:55%;right:7%">🔬</span><span style="top:72%;left:2%">📐</span><span style="bottom:10%;right:4%">🌍</span><span style="bottom:22%;left:10%">💡</span><span style="top:28%;right:20%">🏆</span></div>
+<nav>
+  <a class="nb" href="/admin">🎓 UniPredict AI</a>
+  <div class="nl"><a href="/admin" class="active">Admin</a><a href="/reports">📋 Reports</a><a href="/analytics">📊 Analytics</a><a href="/notifications">🔔 Notifications</a></div>
+  <div class="nr">
+    <a class="nb-btn" href="/notifications">🔔{% if notif_count > 0 %}<span class="badge">{{ notif_count if notif_count < 99 else '99+' }}</span>{% endif %}</a>
+    <div class="uc">👑 {{ user_name }}</div>
+    <button onclick="openPwdModal()" style="background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);color:#1d4ed8;border-radius:8px;padding:6px 13px;font-size:.8rem;cursor:pointer;font-family:inherit;margin-right:6px" title="Change Password">🔑</button><a class="lo" href="/logout">Sign Out</a>
+  </div>
+</nav>
+
+<div class="main">
+  <div class="pt">Admin Dashboard</div>
+  <div class="ps">Manage teachers, users, database, SQL, email settings and audit log.</div>
+
+  <div class="mg">
+    <div class="mc blue">
+      <div class="mi">👥</div>
+      <div class="mv">{{ stats.total_students }}</div>
+      <div class="ml">Total Students (overall)</div>
+    </div>
+    <div class="mc green">
+      <div class="mi">✅</div>
+      <div class="mv">{{ stats.pass_count }}</div>
+      <div class="ml">Passing Students (overall) · pass rate {{ stats.pass_rate }}%</div>
+    </div>
+    <div class="mc red">
+      <div class="mi">⚠️</div>
+      <div class="mv">{{ stats.fail_count }}</div>
+      <div class="ml">At-Risk / Failing Students (overall)</div>
+    </div>
+    <div class="mc yellow">
+      <div class="mi">📊</div>
+      <div class="mv">{{ stats.avg_grade }}</div>
+      <div class="ml">Avg Grade (overall)</div>
+    </div>
+    <div class="mc purple">
+      <div class="mi">📖</div>
+      <div class="mv">{{ stats.total_teachers }}</div>
+      <div class="ml">Teachers (overall)</div>
+    </div>
+    <div class="mc cyan">
+      <div class="mi">🗄️</div>
+      <div class="mv">{{ table_info.students }}</div>
+      <div class="ml">DB Records (students table)</div>
+    </div>
+  </div>
+
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('overview',this)">📊 Overview</button>
+    <button class="tab-btn" onclick="showTab('teachers',this)">📖 Manage Teachers</button>
+    <button class="tab-btn" onclick="showTab('counselors',this)">🤝 Manage Counselors</button>
+    <button class="tab-btn" onclick="showTab('admins',this)">👑 Manage Admins</button>
+    <button class="tab-btn" onclick="showTab('users',this)">👥 All Users</button>
+    <button class="tab-btn" onclick="showTab('email',this)">📧 Email Settings</button>
+    <button class="tab-btn" onclick="showTab('audit',this)">📋 Audit Log</button>
+    <button class="tab-btn" onclick="showTab('reports',this)">📊 Student Reports</button>
+  </div>
+
+  <!-- ═══ OVERVIEW ═══ -->
+  <div id="tab-overview" class="tab-pane">
+    <div class="g2">
+      <div class="card">
+        <div class="ct">🤖 ML Model Performance</div>
+        {% for m in stats.models %}
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 13px;background:rgba(37,99,235,.04);border:1px solid rgba(37,99,235,.12);border-radius:9px;margin-bottom:8px">
+          <span style="font-size:.86rem">{{ m.name }}</span>
+          <div style="display:flex;align-items:center;gap:9px">
+            <div style="width:80px;height:5px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden">
+              <div style="height:100%;background:linear-gradient(90deg,#2563eb,#3b82f6)" class="accuracy-bar" data-accuracy="{{ m.accuracy }}"></div>
+            </div>
+            <span style="font-weight:700;color:#1d4ed8;font-size:.9rem">{{ m.accuracy }}%</span>
+          </div>
+          <script>
+          document.querySelectorAll('.accuracy-bar').forEach(function(el) {
+            el.style.width = el.dataset.accuracy + '%';
+          });
+          </script>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="card">
+        <div class="ct">🔔 Recent Activity</div>
+        <div id="notifPreview"><div style="color:var(--m);font-size:.84rem">Loading…</div></div>
+        <div style="text-align:right;margin-top:12px"><a href="/notifications" style="color:#2563eb;font-size:.81rem;text-decoration:none">View all →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ MANAGE TEACHERS ═══ -->
+  <div id="tab-teachers" class="tab-pane" style="display:none">
+    <div class="card">
+      <div class="ct">➕ Add New Teacher</div>
+      <div style="background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.18);border-radius:10px;padding:10px 14px;font-size:.82rem;color:#374151;margin-bottom:16px">
+        📧 Login credentials will be automatically emailed to the teacher after account creation.
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:13px">
+        <div class="fg"><label>Full Name *</label><input id="tName" placeholder="e.g. Mr. Arjun Kumar" autocomplete="off"></div>
+        <div class="fg"><label>Email *</label><input id="tEmail" type="email" placeholder="teacher@university.edu" autocomplete="off"></div>
+        <div class="fg"><label>Phone *</label><input id="tPhone" placeholder="+91-98XXXXXXXX" autocomplete="off"></div>
+        <div class="fg"><label>Subject *</label><input id="tSubject" placeholder="e.g. Mathematics" autocomplete="off"></div>
+        <div class="fg"><label>Password *</label><input id="tPwd" type="password" placeholder="Unique strong password"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;margin-top:6px;flex-wrap:wrap">
+        <button class="btn-pri" onclick="addTeacher()">➕ Add Teacher</button>
+        <div id="addMsg" class="rmsg"></div>
+      </div>
+    </div>
+    <div class="card" style="margin-bottom:0">
+      <div class="ct">📖 Current Teachers <span id="tCount" class="pill pill-p" style="margin-left:4px">{{ db_users.teachers|length }}</span></div>
+      <div class="tw-wrap"><div class="tw"><table>
+        <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Subject</th><th>Username</th><th>Added</th><th>Action</th></tr></thead>
+        <tbody id="teacherTable">
+          {% for t in db_users.teachers %}
+          <tr id="trow-{{ t.id }}">
+            <td style="font-family:monospace;font-size:.75rem">{{ t.id }}</td>
+            <td><strong>{{ t.name }}</strong></td>
+            <td style="font-size:.78rem">{{ t.email }}</td>
+            <td style="font-size:.78rem">{{ t.phone or '—' }}</td>
+            <td>{{ t.subject or '—' }}</td>
+            <td style="font-family:monospace;font-size:.77rem">{{ t.username }}</td>
+            <td style="font-size:.74rem;color:#64748b">{{ t.created_at[:10] }}</td>
+            <td><button class="btn-sm red" onclick="deleteTeacher('{{ t.id }}','{{ t.name }}')">🗑 Delete</button></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table></div></div>
+    </div>
+  </div>
+
+  <!-- ═══ MANAGE COUNSELORS ═══ -->
+  <div id="tab-counselors" class="tab-pane" style="display:none">
+    <div class="card">
+      <div class="ct">➕ Add New Counselor</div>
+      <div style="background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.18);border-radius:10px;padding:10px 14px;font-size:.82rem;color:#374151;margin-bottom:16px">
+        📧 Login credentials will be automatically emailed to the counselor after account creation.
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:13px">
+        <div class="fg"><label>Full Name *</label><input id="cName" placeholder="e.g. Ms. Priya Sharma" autocomplete="off"></div>
+        <div class="fg"><label>Email *</label><input id="cEmail" type="email" placeholder="counselor@university.edu" autocomplete="off"></div>
+        <div class="fg"><label>Phone *</label><input id="cPhone" placeholder="+91-98XXXXXXXX" autocomplete="off"></div>
+        <div class="fg"><label>Password *</label><input id="cPwd" type="password" placeholder="Unique strong password"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;margin-top:6px;flex-wrap:wrap">
+        <button class="btn-pri" onclick="addCounselor()">➕ Add Counselor</button>
+        <div id="addCMsg" class="rmsg"></div>
+      </div>
+    </div>
+    <div class="card" style="margin-bottom:0">
+      <div class="ct">🤝 Current Counselors <span id="cCount" class="pill pill-ok" style="margin-left:4px">{{ db_users.counselors|length }}</span></div>
+      <div class="tw-wrap"><div class="tw"><table>
+        <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Username</th><th>Added</th><th>Action</th></tr></thead>
+        <tbody id="counselorTable">
+          {% for c in db_users.counselors %}
+          <tr id="crow-{{ c.id }}">
+            <td style="font-family:monospace;font-size:.75rem">{{ c.id }}</td>
+            <td><strong>{{ c.name }}</strong></td>
+            <td style="font-size:.78rem">{{ c.email }}</td>
+            <td style="font-size:.78rem">{{ c.phone or '—' }}</td>
+            <td style="font-family:monospace;font-size:.77rem">{{ c.username }}</td>
+            <td style="font-size:.74rem;color:#64748b">{{ c.created_at[:10] }}</td>
+            <td><button class="btn-sm red" onclick="deleteCounselor('{{ c.id }}','{{ c.name }}')">🗑 Delete</button></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table></div></div>
+    </div>
+  </div>
+
+  <!-- ═══ MANAGE ADMINS ═══ -->
+  <div id="tab-admins" class="tab-pane" style="display:none">
+    <div class="card">
+      <div class="ct">👑 Add New Admin</div>
+      <div style="background:rgba(217,119,6,.07);border:1px solid rgba(217,119,6,.22);border-radius:10px;padding:10px 14px;font-size:.82rem;color:#374151;margin-bottom:16px">
+        ⚠️ Admins have <strong style="color:#fbbf24">full system access</strong>. Only create accounts for trusted staff.<br>
+        📧 Login credentials will be emailed to the new admin automatically.
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:13px">
+        <div class="fg"><label>Full Name *</label><input id="aName" placeholder="e.g. Dr. Raj Kumar" autocomplete="off"></div>
+        <div class="fg"><label>Email *</label><input id="aEmail" type="email" placeholder="admin@university.edu" autocomplete="off"></div>
+        <div class="fg"><label>Phone *</label><input id="aPhone" placeholder="+91-98XXXXXXXX" autocomplete="off"></div>
+        <div class="fg"><label>Password *</label><input id="aPwd" type="password" placeholder="Strong password"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;margin-top:6px;flex-wrap:wrap">
+        <button class="btn-pri amber" onclick="addAdmin()">👑 Add Admin</button>
+        <div id="addAMsg" class="rmsg"></div>
+      </div>
+    </div>
+    <div class="card" style="margin-bottom:0">
+      <div class="ct">👑 Current Admins <span id="aCount" class="pill pill-w" style="margin-left:4px">{{ db_users.admins|length }}</span></div>
+      <div class="tw-wrap"><div class="tw"><table>
+        <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Username</th><th>Added</th><th>Action</th></tr></thead>
+        <tbody id="adminTable">
+          {% for a in db_users.admins %}
+          <tr id="arow-{{ a.id }}">
+            <td style="font-family:monospace;font-size:.75rem">{{ a.id }}</td>
+            <td><strong>{{ a.name }}</strong></td>
+            <td style="font-size:.78rem">{{ a.email }}</td>
+            <td style="font-size:.78rem">{{ a.phone or '—' }}</td>
+            <td style="font-family:monospace;font-size:.77rem">{{ a.username }}</td>
+            <td style="font-size:.74rem;color:#64748b">{{ a.created_at[:10] }}</td>
+            <td><button class="btn-sm red" onclick="deleteAdmin('{{ a.id }}','{{ a.name }}')">🗑 Delete</button></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table></div></div>
+    </div>
+  </div>
+
+  <!-- ═══ ALL USERS ═══ -->
+  <div id="tab-users" class="tab-pane" style="display:none">
+    <div class="g2" style="margin-bottom:16px">
+      <div class="card" style="margin-bottom:0">
+        <div class="ct">👑 Admins <span class="pill pill-w">{{ db_users.admins|length }}</span></div>
+        <div class="tw-wrap"><div class="tw"><table>
+          <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Username</th></tr></thead>
+          <tbody>{% for u in db_users.admins %}<tr>
+            <td style="font-family:monospace;font-size:.74rem">{{ u.id }}</td><td><strong>{{ u.name }}</strong></td>
+            <td style="font-size:.76rem">{{ u.email }}</td><td style="font-size:.76rem">{{ u.phone or '—' }}</td>
+            <td style="font-family:monospace;font-size:.76rem">{{ u.username }}</td>
+          </tr>{% endfor %}</tbody>
+        </table></div></div>
+      </div>
+      <div class="card" style="margin-bottom:0">
+        <div class="ct">📖 Teachers <span class="pill pill-p">{{ db_users.teachers|length }}</span></div>
+        <div class="tw-wrap"><div class="tw"><table>
+          <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Subject</th><th>Username</th></tr></thead>
+          <tbody>{% for u in db_users.teachers %}<tr>
+            <td style="font-family:monospace;font-size:.74rem">{{ u.id }}</td><td><strong>{{ u.name }}</strong></td>
+            <td style="font-size:.76rem">{{ u.email }}</td><td style="font-size:.76rem">{{ u.subject or '—' }}</td>
+            <td style="font-family:monospace;font-size:.76rem">{{ u.username }}</td>
+          </tr>{% endfor %}</tbody>
+        </table></div></div>
+      </div>
+      <div class="card" style="margin-bottom:0">
+        <div class="ct">🤝 Counselors <span class="pill pill-ok">{{ db_users.counselors|length }}</span></div>
+        <div class="tw-wrap"><div class="tw"><table>
+          <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Username</th></tr></thead>
+          <tbody>{% for u in db_users.counselors %}<tr>
+            <td style="font-family:monospace;font-size:.74rem">{{ u.id }}</td><td><strong>{{ u.name }}</strong></td>
+            <td style="font-size:.76rem">{{ u.email }}</td><td style="font-size:.76rem">{{ u.phone or '—' }}</td>
+            <td style="font-family:monospace;font-size:.76rem">{{ u.username }}</td>
+          </tr>{% endfor %}</tbody>
+        </table></div></div>
+      </div>
+      <div class="card" style="margin-bottom:0">
+        <div class="ct">👨‍👩‍👧 Parents <span class="pill pill-ok">{{ db_users.parents|length }}</span></div>
+        <p style="color:var(--m);font-size:.82rem;margin-bottom:10px">Showing first 20. Use SQL Explorer for all {{ db_users.parents|length }}.</p>
+        <div class="tw-wrap"><div class="tw"><table>
+          <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Username</th></tr></thead>
+          <tbody>{% for u in db_users.parents[:20] %}<tr>
+            <td style="font-family:monospace;font-size:.74rem">{{ u.id }}</td><td><strong>{{ u.name }}</strong></td>
+            <td style="font-size:.76rem">{{ u.email }}</td>
+            <td style="font-family:monospace;font-size:.76rem">{{ u.username }}</td>
+          </tr>{% endfor %}</tbody>
+        </table></div></div>
+      </div>
+    </div>
+    <!-- Link Parent to Student section removed — managed by Teacher role only -->
+  </div>
+
+  <!-- ═══ DATABASE ═══ -->
+  <div id="tab-database" class="tab-pane" style="display:none">
+    <div class="card">
+      <div class="ct">🗄️ Database Tables — <span style="font-family:monospace;font-size:.83rem;color:var(--m)">unipredict.db</span></div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px">
+        {% for table, count in table_info.items() %}
+        <div class="dbc"><span class="dn">{{ table }}</span><span class="dc">{{ "{:,}".format(count) }} rows</span></div>
+        {% endfor %}
+      </div>
+      <div style="font-size:.9rem;font-weight:600;color:#fff;margin-bottom:10px">📐 Schema</div>
+      {% for tbl, cols in [
+        ('users', 'id · username · password_hash · name · email · phone · role · subject · created_at · is_active'),
+        ('students', 'student_id · student_name · gender · age · attendance_rate · study_hours_weekly · previous_grades · assignment_completion · class_participation · extra_curricular · library_visits · online_resource_hours · parent_education · family_income · internet_access · tutoring · mentor_support · stress_level · motivation_score · final_grade · performance_category · pass_fail · added_by · created_at · updated_at'),
+        ('parent_students', 'parent_id · student_id'),
+        ('notifications', 'id · message · level · username · created_at'),
+        ('email_logs', 'id · student_id · to_email · subject · sent_by · status · created_at'),
+        ('audit_log', 'id · user_id · action · target · detail · created_at')
+      ] %}
+      <div class="scm"><div class="sn">{{ tbl }}</div><div class="sc">{{ cols }}</div></div>
+      {% endfor %}
+    </div>
+
+    <div class="card">
+      <div class="ct">🔄 Regenerate Student + Parent Database</div>
+      <div class="bnr warn"><span class="bnr-ico">⚠️</span>
+        <div><strong style="color:#fbbf24">Destructive action.</strong> Deletes ALL students and parent accounts, generates fresh records, exports parent_credentials.csv. Admin/teacher/counselor accounts are NOT affected.</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap">
+        <div class="fg" style="margin:0;width:180px"><label>Number of students</label><input type="number" id="regenCount" value="1000" min="100" max="5000"></div>
+        <button class="btn-pri amber" onclick="regenDB()">🔄 Regenerate Now</button>
+      </div>
+      <div id="regenStatus" class="rmsg"></div>
+    </div>
+
+    <div class="card">
+      <div class="ct">📧 Send Login Credentials to All Parents</div>
+      <div class="bnr" style="background:rgba(6,182,212,.08);border-color:rgba(6,182,212,.25)"><span class="bnr-ico">📨</span>
+        <div>Sends each parent their <strong>username and password</strong> to their registered email address. Make sure email is configured in <strong>📧 Email Settings</strong> before sending.</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:10px">
+        <button class="btn-pri cyan" onclick="sendAllParentPasswords()">📧 Send Passwords to All Parents</button>
+        <div id="sendPwdStatus" style="font-size:.85rem;color:var(--m)"></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:0">
+      <div class="ct">📧 Email Logs</div>
+      <div id="emailLogsPanel"><div style="color:var(--m);font-size:.83rem">Loading…</div></div>
+    </div>
+  </div>
+
+  <!-- ═══ SQL EXPLORER ═══ -->
+  <div id="tab-sql" class="tab-pane" style="display:none">
+    <div class="card" style="margin-bottom:0">
+      <div class="ct">💻 SQL Explorer <span style="font-size:.73rem;color:var(--m);font-weight:400;margin-left:6px">SELECT queries only · max 200 rows · Ctrl+Enter to run</span></div>
+      <div class="qs-row">
+        <span class="qs" data-sql="SELECT student_id, student_name, gender, age, final_grade, pass_fail FROM students LIMIT 10" onclick="setSQL(this.dataset.sql)">students</span>
+        <span class="qs" data-sql="SELECT id, username, name, role, email FROM users WHERE is_active=1 ORDER BY role" onclick="setSQL(this.dataset.sql)">all users</span>
+        <span class="qs" data-sql="SELECT student_id, student_name, attendance_rate, final_grade FROM students WHERE pass_fail='Fail' ORDER BY attendance_rate ASC LIMIT 20" onclick="setSQL(this.dataset.sql)">at-risk</span>
+        <span class="qs" data-sql="SELECT performance_category, COUNT(*) total FROM students GROUP BY performance_category ORDER BY total DESC" onclick="setSQL(this.dataset.sql)">performance</span>
+        <span class="qs" data-sql="SELECT role, COUNT(*) count FROM users GROUP BY role" onclick="setSQL(this.dataset.sql)">users by role</span>
+        <span class="qs" data-sql="SELECT * FROM notifications ORDER BY id DESC LIMIT 20" onclick="setSQL(this.dataset.sql)">notifications</span>
+        <span class="qs" data-sql="SELECT * FROM email_logs ORDER BY id DESC LIMIT 20" onclick="setSQL(this.dataset.sql)">email logs</span>
+        <span class="qs" data-sql="SELECT * FROM audit_log ORDER BY id DESC LIMIT 30" onclick="setSQL(this.dataset.sql)">audit log</span>
+        <span class="qs" onclick="setSQL('SELECT ps.parent_id, u.name parent_name, ps.student_id, s.student_name FROM parent_students ps JOIN users u ON ps.parent_id=u.id JOIN students s ON ps.student_id=s.student_id LIMIT 20')">parent links</span>
+        <span class="qs" onclick="setSQL('SELECT ROUND(AVG(final_grade),2) avg_grade, ROUND(AVG(attendance_rate),2) avg_att, ROUND(AVG(study_hours_weekly),2) avg_study FROM students')">aggregate stats</span>
+      </div>
+      <div class="fg" style="margin-bottom:10px">
+        <label>SQL Query</label>
+        <textarea class="sql-box" id="sqlInput" placeholder="SELECT * FROM students WHERE pass_fail = 'Fail' LIMIT 10"></textarea>
+      </div>
+      <div style="display:flex;gap:9px;align-items:center;margin-bottom:14px;flex-wrap:wrap">
+        <button class="btn-pri" onclick="runSQL()">▶ Run</button>
+        <button class="btn-sec" onclick="clearSQL()">✕ Clear</button>
+        <span id="sqlMeta" style="color:var(--m);font-size:.81rem"></span>
+      </div>
+      <div id="sqlResult"></div>
+    </div>
+  </div>
+
+  <!-- ═══ EMAIL SETTINGS ═══ -->
+  <div id="tab-email" class="tab-pane" style="display:none">
+    <div id="emailBanner"></div>
+
+    <div class="card">
+      <div class="ct">📡 Email Provider</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
+        <button class="prov-btn" id="prov-gmail"   onclick="setProvider('gmail')">📨 Gmail</button>
+        <button class="prov-btn" id="prov-outlook" onclick="setProvider('outlook')">💼 Outlook</button>
+        <button class="prov-btn" id="prov-yahoo"   onclick="setProvider('yahoo')">🟣 Yahoo</button>
+        <button class="prov-btn" id="prov-custom"  onclick="setProvider('custom')">⚙️ Custom SMTP</button>
+      </div>
+      <div id="provNote" style="display:none;background:rgba(91,92,246,.1);border:1px solid rgba(91,92,246,.22);border-radius:10px;padding:12px 15px;font-size:.82rem;color:var(--pl);line-height:1.75"></div>
+    </div>
+
+    <div class="card">
+      <div class="ct">⚙️ SMTP Configuration</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:13px">
+        <div class="fg"><label>Sender Email *</label><input type="email" id="cfg_email" placeholder="yourschool@gmail.com" autocomplete="off"></div>
+        <div class="fg">
+          <label>App Password / SMTP Password *</label>
+          <div style="position:relative">
+            <input type="password" id="cfg_password" placeholder="Leave blank to keep saved password">
+            <button onclick="togglePwd()" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--m);cursor:pointer;font-size:.95rem">👁</button>
+          </div>
+        </div>
+        <div class="fg"><label>Display Name</label><input type="text" id="cfg_name" value="UniPredict AI" autocomplete="off"></div>
+        <div class="fg"><label>Reply-To Email (optional)</label><input type="email" id="cfg_replyto" placeholder="principal@school.edu" autocomplete="off"></div>
+        <div class="fg"><label>SMTP Host</label><input type="text" id="cfg_host" placeholder="smtp.gmail.com" autocomplete="off"></div>
+        <div class="fg"><label>SMTP Port</label><input type="number" id="cfg_port" value="465"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-top:2px">
+        <input type="checkbox" id="cfg_ssl" style="width:16px;height:16px;accent-color:var(--p)">
+        <label for="cfg_ssl" style="color:var(--m);font-size:.83rem;cursor:pointer">Use SSL/TLS (port 465, recommended). Uncheck for STARTTLS (port 587).</label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
+        <div class="tog-wrap" onclick="toggleEmail()">
+          <div class="tog-track" id="togTrack"><div class="tog-knob"></div></div>
+          <div>
+            <div id="togLabel" style="font-weight:600;font-size:.91rem">Email Sending Disabled</div>
+            <div style="color:var(--m);font-size:.77rem">Toggle to enable live email delivery</div>
+          </div>
+        </div>
+        <button class="btn-pri" onclick="saveEmail()">💾 Save Configuration</button>
+      </div>
+      <div id="saveMsg" class="rmsg"></div>
+    </div>
+
+    <div class="card">
+      <div class="ct">🔌 Test SMTP Connection</div>
+      <p style="color:var(--m);font-size:.83rem;margin-bottom:12px">Checks credentials without sending any email.</p>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <button class="btn-pri cyan" onclick="testConn()">🔌 Test Connection</button>
+        <div id="connMsg" class="rmsg"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ct">📤 Send Test Email</div>
+      <p style="color:var(--m);font-size:.83rem;margin-bottom:12px">Sends a real email to verify end-to-end delivery.</p>
+      <div style="display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap">
+        <div class="fg" style="flex:1;min-width:190px;margin:0"><label>Recipient email</label><input type="email" id="testTo" placeholder="your@email.com" autocomplete="off"></div>
+        <button class="btn-pri green" onclick="sendTestEmail()">📤 Send Test</button>
+      </div>
+      <div id="testMsg" class="rmsg"></div>
+    </div>
+
+    <div class="card" style="margin-bottom:0">
+      <div class="ct">📘 Gmail Setup — Step by Step</div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;gap:12px"><div style="width:26px;height:26px;border-radius:50%;background:rgba(91,92,246,.18);border:1px solid rgba(91,92,246,.35);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--pl);flex-shrink:0;font-size:.8rem">1</div><div><strong style="display:block;margin-bottom:2px">Enable 2-Step Verification</strong><p style="color:var(--m);font-size:.82rem">Go to <span class="mh">myaccount.google.com/security</span> → 2-Step Verification → Turn On</p></div></div>
+        <div style="display:flex;gap:12px"><div style="width:26px;height:26px;border-radius:50%;background:rgba(91,92,246,.18);border:1px solid rgba(91,92,246,.35);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--pl);flex-shrink:0;font-size:.8rem">2</div><div><strong style="display:block;margin-bottom:2px">Create App Password</strong><p style="color:var(--m);font-size:.82rem">Go to <span class="mh">myaccount.google.com/apppasswords</span><br>App name: type <span class="mh">UniPredict</span> → Generate → copy the <strong style="color:#fff">16-character code</strong></p></div></div>
+        <div style="display:flex;gap:12px"><div style="width:26px;height:26px;border-radius:50%;background:rgba(91,92,246,.18);border:1px solid rgba(91,92,246,.35);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--pl);flex-shrink:0;font-size:.8rem">3</div><div><strong style="display:block;margin-bottom:2px">Enter credentials</strong><p style="color:var(--m);font-size:.82rem">Click 📨 Gmail button → enter Gmail address + paste App Password</p></div></div>
+        <div style="display:flex;gap:12px"><div style="width:26px;height:26px;border-radius:50%;background:rgba(16,185,129,.14);border:1px solid rgba(16,185,129,.35);display:flex;align-items:center;justify-content:center;font-weight:700;color:#34d399;flex-shrink:0;font-size:.8rem">4</div><div><strong style="display:block;margin-bottom:2px;color:#34d399">Test → Enable → Save</strong><p style="color:var(--m);font-size:.82rem">🔌 Test Connection → 📤 Send Test Email → Toggle Enable ON → 💾 Save</p></div></div>
+      </div>
+      <hr class="sep">
+      <div style="color:var(--m);font-size:.82rem;line-height:1.85">
+        <strong style="color:var(--txt)">Outlook:</strong> <span class="mh">smtp-mail.outlook.com</span> · Port <span class="mh">587</span> · SSL OFF &nbsp;|&nbsp;
+        <strong style="color:var(--txt)">Yahoo:</strong> <span class="mh">smtp.mail.yahoo.com</span> · Port <span class="mh">465</span> · SSL ON · needs App Password
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ AUDIT LOG ═══ -->
+  <div id="tab-audit" class="tab-pane" style="display:none">
+    <div class="card" style="margin-bottom:0">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:15px;flex-wrap:wrap;gap:10px">
+        <div class="ct" style="margin:0">📋 Audit Log <span id="auditCnt" class="pill pill-p" style="margin-left:5px"></span></div>
+        <button class="btn-sec" onclick="loadAudit()">🔄 Refresh</button>
+      </div>
+      <div id="auditPanel"><div style="color:var(--m);font-size:.83rem">Loading…</div></div>
+    </div>
+  </div>
+
+  <!-- ═══ STUDENT REPORTS ═══ -->
+  <div id="tab-reports" class="tab-pane" style="display:none">
+    <div class="g2">
+      <!-- Reports Stats -->
+      <div class="card">
+        <div class="ct">📊 Report Statistics</div>
+        <div style="display:grid;gap:12px">
+          <div style="display:flex;justify-content:space-between;padding:10px 13px;background:rgba(37,99,235,.04);border:1px solid rgba(37,99,235,.12);border-radius:9px">
+            <span style="font-size:.86rem;color:var(--m)">Total Reports</span>
+            <span style="font-weight:700;color:#1d4ed8">{{ report_stats.total_reports or 0 }}</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:10px 13px;background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.12);border-radius:9px">
+            <span style="font-size:.86rem;color:var(--m)">Sent Successfully</span>
+            <span style="font-weight:700;color:#34d399">{{ report_stats.sent_successful or 0 }}</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:10px 13px;background:rgba(245,158,11,.04);border:1px solid rgba(245,158,11,.12);border-radius:9px">
+            <span style="font-size:.86rem;color:var(--m)">Pending Reports</span>
+            <span style="font-weight:700;color:#fbbf24">{{ report_stats.reports_by_status.get('pending', 0) }}</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:10px 13px;background:rgba(239,68,68,.04);border:1px solid rgba(239,68,68,.12);border-radius:9px">
+            <span style="font-size:.86rem;color:var(--m)">Failed Reports</span>
+            <span style="font-weight:700;color:#fca5a5">{{ report_stats.reports_by_status.get('failed', 0) }}</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:10px 13px;background:rgba(91,92,246,.04);border:1px solid rgba(91,92,246,.12);border-radius:9px">
+            <span style="font-size:.86rem;color:var(--m)">Recent (7 days)</span>
+            <span style="font-weight:700;color:var(--pl)">{{ report_stats.recent_reports or 0 }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Report Types -->
+      <div class="card">
+        <div class="ct">📋 Reports by Type</div>
+        <div style="display:grid;gap:8px">
+          {% for type, count in report_stats.reports_by_type.items() %}
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 13px;background:rgba(37,99,235,.03);border-radius:8px">
+            <span style="font-size:.85rem">{{ type.title() }}</span>
+            <span class="pill pill-p">{{ count }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Reports Table -->
+    <div class="card" style="margin-bottom:0">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:15px;flex-wrap:wrap;gap:10px">
+        <div class="ct" style="margin:0">📧 Recent Reports Sent <span id="reportCnt" class="pill pill-p" style="margin-left:5px">{{ reports|length }}</span></div>
+        <a href="/reports" class="btn-sec" style="text-decoration:none;display:inline-block">View Full Reports →</a>
+      </div>
+      <div class="tw-wrap">
+        <div class="tw">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Student</th>
+                <th>Type</th>
+                <th>Recipient Email</th>
+                <th>Status</th>
+                <th>Teacher</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% if reports %}
+                {% for r in reports[:20] %}
+                <tr>
+                  <td style="font-size:.78rem;color:#64748b">{{ r.created_at[:10] if r.created_at else '—' }}</td>
+                  <td><strong>{{ r.student_name or "Student #" ~ r.student_id }}</strong></td>
+                  <td style="font-size:.83rem">{{ r.report_type or 'Standard' }}</td>
+                  <td style="font-size:.78rem;max-width:200px;word-break:break-word">{{ r.recipient_email or '—' }}</td>
+                  <td>
+                    <span class="pill pill-{{ 'ok' if r.status == 'sent' else 'w' if r.status == 'pending' else 'err' }}">
+                      {{ r.status.upper() if r.status else 'UNKNOWN' }}
+                    </span>
+                  </td>
+                  <td style="font-size:.83rem">{{ r.teacher_id or '—' }}</td>
+                </tr>
+                {% endfor %}
+              {% else %}
+                <tr>
+                  <td colspan="6" style="text-align:center;padding:20px;color:var(--m)">No reports sent yet</td>
+                </tr>
+              {% endif %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div style="text-align:right;margin-top:12px">
+        <a href="/reports" style="color:#2563eb;font-size:.81rem;text-decoration:none;font-weight:600">View Complete Reports Dashboard →</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.main -->
+<div id="toastBox"></div>
+
+<script>
+// ── Tab switching ──────────────────────────────────────────
+function showTab(name, btn) {
+  document.querySelectorAll('.tab-pane').forEach(function(p) { p.style.display = 'none'; });
+  document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+  var pane = document.getElementById('tab-' + name);
+  if (pane) pane.style.display = 'block';
+  if (btn) btn.classList.add('active');
+  if (name === 'audit') loadAudit();
+  if (name === 'database') loadEmailLogs();
+  if (name === 'email') loadEmailConfig();
+}
+
+// ── Toast ──────────────────────────────────────────────────
+function toast(msg, type) {
+  type = type || 'ok';
+  var c = document.getElementById('toastBox');
+  var el = document.createElement('div');
+  el.className = 'ti ' + type;
+  el.innerHTML = '<span>' + (type==='ok'?'✅':type==='err'?'❌':'⚠️') + '</span><span>' + msg + '</span>';
+  c.appendChild(el);
+  setTimeout(function() {
+    el.style.transition = 'all .3s'; el.style.opacity = '0'; el.style.transform = 'translateX(14px)';
+    setTimeout(function() { el.remove(); }, 300);
+  }, 4000);
+}
+
+// ── Notifications preview ──────────────────────────────────
+async function loadNotifs() {
+  try {
+    var d = await (await fetch('/api/notifications')).json();
+    var c = document.getElementById('notifPreview');
+    if (!d.notifications || !d.notifications.length) {
+      c.innerHTML = '<div style="color:var(--m);font-size:.83rem">No notifications yet.</div>';
+      return;
+    }
+    c.innerHTML = d.notifications.slice(0,7).map(function(n) {
+      return '<div style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--b)">' +
+        '<div class="ndot ' + (n.level||'info') + '"></div>' +
+        '<div style="flex:1;min-width:0"><div style="font-size:.83rem">' + n.message + '</div>' +
+        '<div style="font-size:.71rem;color:var(--m);margin-top:2px">' + (n.created_at||'') + ' · ' + (n.username||'system') + '</div></div></div>';
+    }).join('');
+  } catch(e) {}
+}
+
+// ── Add teacher ────────────────────────────────────────────
+async function addTeacher() {
+  var name    = document.getElementById('tName').value.trim();
+  var email   = document.getElementById('tEmail').value.trim();
+  var phone   = document.getElementById('tPhone').value.trim();
+  var subject = document.getElementById('tSubject').value.trim();
+  var password = document.getElementById('tPwd').value;
+  var msg = document.getElementById('addMsg');
+  if (!name || !email || !phone || !subject || !password) {
+    msg.innerHTML = '<span class="err-t">❌ All fields are required.</span>'; return;
+  }
+  msg.innerHTML = '<span style="color:var(--m)">Adding…</span>';
+  try {
+    var r = await fetch('/api/admin/teachers/add', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name,email,phone,subject,password})});
+    var d = await r.json();
+    if (d.success) {
+      var emailNote = d.email_sent ? ' · 📧 Credentials emailed' : (d.email_simulated ? ' · ⚠️ Email not configured' : ' · ⚠️ Email failed');
+      msg.innerHTML = '<span class="ok-t">✅ Added! Username: <strong>' + d.username + '</strong>' + emailNote + '</span>';
+      toast('Teacher added: ' + d.name);
+      var tbody = document.getElementById('teacherTable');
+      var tr = document.createElement('tr');
+      tr.id = 'trow-' + d.id;
+      tr.innerHTML = '<td style="font-family:monospace;font-size:.75rem">' + d.id + '</td>' +
+        '<td><strong>' + d.name + '</strong></td>' +
+        '<td style="font-size:.78rem">' + d.email + '</td>' +
+        '<td style="font-size:.78rem">' + (d.phone||'—') + '</td>' +
+        '<td>' + d.subject + '</td>' +
+        '<td style="font-family:monospace;font-size:.77rem">' + d.username + '</td>' +
+        '<td style="font-size:.74rem;color:#64748b">today</td>' +
+        '<td><button class="btn-sm red" onclick="deleteTeacher(\'' + d.id + '\',\'' + d.name.replace(/'/g,"\\'") + '\')">🗑 Delete</button></td>';
+      tbody.appendChild(tr);
+      ['tName','tEmail','tPhone','tSubject','tPwd'].forEach(function(id) { document.getElementById(id).value=''; });
+    } else {
+      msg.innerHTML = '<span class="err-t">❌ ' + (d.error||'Failed') + '</span>';
+      toast(d.error||'Failed', 'err');
+    }
+  } catch(e) { msg.innerHTML = '<span class="err-t">❌ Network error</span>'; toast('Network error','err'); }
+}
+
+// ── Delete teacher ─────────────────────────────────────────
+async function deleteTeacher(tid, name) {
+  if (!confirm('Delete teacher "' + name + '"?\nThis cannot be undone.')) return;
+  try {
+    var r = await fetch('/api/admin/teachers/delete/' + tid, {method:'DELETE'});
+    var d = await r.json();
+    if (d.success) { var row = document.getElementById('trow-' + tid); if (row) row.remove(); toast('Deleted: ' + name); }
+    else toast(d.error||'Delete failed', 'err');
+  } catch(e) { toast('Network error', 'err'); }
+}
+
+
+// ── Add counselor ────────────────────────────────────────────
+async function addCounselor() {
+  var name     = document.getElementById('cName').value.trim();
+  var email    = document.getElementById('cEmail').value.trim();
+  var phone    = document.getElementById('cPhone').value.trim();
+  var password = document.getElementById('cPwd').value;
+  var msg = document.getElementById('addCMsg');
+  if (!name || !email || !phone || !password) {
+    msg.innerHTML = '<span class="err-t">❌ All fields are required.</span>'; return;
+  }
+  msg.innerHTML = '<span style="color:var(--m)">Adding…</span>';
+  try {
+    var r = await fetch('/api/admin/counselors/add', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name,email,phone,password})});
+    var d = await r.json();
+    if (d.success) {
+      var emailNote = d.email_sent ? ' · 📧 Credentials emailed' : (d.email_simulated ? ' · ⚠️ Email not configured' : ' · ⚠️ Email failed');
+      msg.innerHTML = '<span class="ok-t">✅ Added! Username: <strong>' + d.username + '</strong>' + emailNote + '</span>';
+      toast('Counselor added: ' + d.name);
+      var tbody = document.getElementById('counselorTable');
+      var tr = document.createElement('tr');
+      tr.id = 'crow-' + d.id;
+      tr.innerHTML = '<td style="font-family:monospace;font-size:.75rem">' + d.id + '</td>' +
+        '<td><strong>' + d.name + '</strong></td>' +
+        '<td style="font-size:.78rem">' + d.email + '</td>' +
+        '<td style="font-size:.78rem">' + (d.phone||'—') + '</td>' +
+        '<td style="font-family:monospace;font-size:.77rem">' + d.username + '</td>' +
+        '<td style="font-size:.74rem;color:#64748b">today</td>' +
+        '<td><button class="btn-sm red" onclick="deleteCounselor(\"' + d.id + '\",\"' + d.name.replace(/"/g,'&quot;') + '\")">🗑 Delete</button></td>';
+      tbody.appendChild(tr);
+      ['cName','cEmail','cPhone','cPwd'].forEach(function(id) { document.getElementById(id).value=''; });
+    } else {
+      msg.innerHTML = '<span class="err-t">❌ ' + (d.error||'Failed') + '</span>';
+      toast(d.error||'Failed', 'err');
+    }
+  } catch(e) { msg.innerHTML = '<span class="err-t">❌ Network error</span>'; toast('Network error','err'); }
+}
+
+// ── Delete counselor ─────────────────────────────────────────
+async function deleteCounselor(cid, name) {
+  if (!confirm('Delete counselor "' + name + '"?\nThis cannot be undone.')) return;
+  try {
+    var r = await fetch('/api/admin/counselors/delete/' + cid, {method:'DELETE'});
+    var d = await r.json();
+    if (d.success) { var row = document.getElementById('crow-' + cid); if (row) row.remove(); toast('Deleted: ' + name); }
+    else toast(d.error||'Delete failed', 'err');
+  } catch(e) { toast('Network error', 'err'); }
+}
+
+// ── Add admin ────────────────────────────────────────────────
+async function addAdmin() {
+  var name     = document.getElementById('aName').value.trim();
+  var email    = document.getElementById('aEmail').value.trim();
+  var phone    = document.getElementById('aPhone').value.trim();
+  var password = document.getElementById('aPwd').value;
+  var msg = document.getElementById('addAMsg');
+  if (!name || !email || !phone || !password) {
+    msg.innerHTML = '<span class="err-t">❌ All fields are required.</span>'; return;
+  }
+  if (!confirm('Create a new admin account for "' + name + '"?\nAdmins have full system access.')) return;
+  msg.innerHTML = '<span style="color:var(--m)">Creating…</span>';
+  try {
+    var r = await fetch('/api/admin/admins/add', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name,email,phone,password})});
+    var d = await r.json();
+    if (d.success) {
+      var emailNote = d.email_sent ? ' · 📧 Credentials emailed' : (d.email_simulated ? ' · ⚠️ Email not configured' : ' · ⚠️ Email failed');
+      msg.innerHTML = '<span class="ok-t">✅ Admin created! Username: <strong>' + d.username + '</strong>' + emailNote + '</span>';
+      toast('Admin added: ' + d.name);
+      var tbody = document.getElementById('adminTable');
+      var tr = document.createElement('tr');
+      tr.id = 'arow-' + d.id;
+      tr.innerHTML = '<td style="font-family:monospace;font-size:.75rem">' + d.id + '</td>' +
+        '<td><strong>' + d.name + '</strong></td>' +
+        '<td style="font-size:.78rem">' + d.email + '</td>' +
+        '<td style="font-size:.78rem">' + (d.phone||'—') + '</td>' +
+        '<td style="font-family:monospace;font-size:.77rem">' + d.username + '</td>' +
+        '<td style="font-size:.74rem;color:#64748b">today</td>' +
+        '<td><button class="btn-sm red" onclick="deleteAdmin(\"' + d.id + '\",\"' + d.name.replace(/"/g,'&quot;') + '\")">🗑 Delete</button></td>';
+      tbody.appendChild(tr);
+      ['aName','aEmail','aPhone','aPwd'].forEach(function(id) { document.getElementById(id).value=''; });
+    } else {
+      msg.innerHTML = '<span class="err-t">❌ ' + (d.error||'Failed') + '</span>';
+      toast(d.error||'Failed', 'err');
+    }
+  } catch(e) { msg.innerHTML = '<span class="err-t">❌ Network error</span>'; toast('Network error','err'); }
+}
+
+// ── Delete admin ─────────────────────────────────────────────
+async function deleteAdmin(aid, name) {
+  if (!confirm('Delete admin "' + name + '"?\nThis cannot be undone.')) return;
+  try {
+    var r = await fetch('/api/admin/admins/delete/' + aid, {method:'DELETE'});
+    var d = await r.json();
+    if (d.success) { var row = document.getElementById('arow-' + aid); if (row) row.remove(); toast('Deleted: ' + name); }
+    else toast(d.error||'Delete failed', 'err');
+  } catch(e) { toast('Network error', 'err'); }
+}
+
+// Link parent section removed — managed by Teacher role only
+
+// ── Email logs ─────────────────────────────────────────────
+async function loadEmailLogs() {
+  var panel = document.getElementById('emailLogsPanel');
+  try {
+    var r = await fetch('/api/admin/query', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({sql:'SELECT id, student_id, to_email, sent_by, status, created_at FROM email_logs ORDER BY id DESC LIMIT 50'})});
+    var d = await r.json();
+    if (!d.success || !d.rows.length) { panel.innerHTML = '<div style="color:var(--m);font-size:.83rem">No emails logged yet.</div>'; return; }
+    var ths = d.columns.map(function(c){return '<th>'+c+'</th>';}).join('');
+    var trs = d.rows.map(function(row){return '<tr>'+row.map(function(cell){return '<td style="font-size:.79rem">'+(cell!=null?cell:'—')+'</td>';}).join('')+'</tr>';}).join('');
+    panel.innerHTML = '<div class="tw-wrap"><div class="tw"><table><thead><tr>'+ths+'</tr></thead><tbody>'+trs+'</tbody></table></div></div>';
+  } catch(e) { panel.innerHTML = '<div style="color:var(--m)">Error loading logs</div>'; }
+}
+
+// ── Regenerate DB ──────────────────────────────────────────
+async function regenDB() {
+  var n = parseInt(document.getElementById('regenCount').value) || 1000;
+  if (!confirm('Delete ALL existing students & parents and generate ' + n + ' fresh records?\nThis cannot be undone.')) return;
+  var s = document.getElementById('regenStatus');
+  s.innerHTML = '<span style="color:var(--m)">⏳ Regenerating… ~15 seconds. Please wait.</span>';
+  try {
+    var r = await fetch('/api/admin/regenerate-db', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({count:n})});
+    var d = await r.json();
+    if (d.success) { s.innerHTML = '<span class="ok-t">✅ ' + d.message + '</span><br><span style="color:var(--m);font-size:.81rem">Refresh page to see updated counts. parent_credentials.csv saved in project folder.</span>'; toast('Database regenerated!'); }
+    else { s.innerHTML = '<span class="err-t">❌ ' + (d.error||'Failed') + '</span>'; toast(d.error||'Failed','err'); }
+  } catch(e) { s.innerHTML = '<span class="err-t">❌ Network error</span>'; toast('Network error','err'); }
+}
+
+async function sendAllParentPasswords() {
+  var statusEl = document.getElementById('sendPwdStatus');
+  if (!confirm('This will email login credentials to ALL parent accounts. Continue?')) return;
+  statusEl.innerHTML = '<span style="color:var(--m)">⏳ Sending… this may take a while for large datasets.</span>';
+  try {
+    var r = await fetch('/api/admin/send-parent-passwords', {method:'POST', headers:{'Content-Type':'application/json'}});
+    var d = await r.json();
+    if (d.success) {
+      statusEl.innerHTML = '<span style="color:#34d399">✅ ' + d.message + '</span>';
+      toast('Parent passwords sent!');
+    } else {
+      statusEl.innerHTML = '<span style="color:#f87171">❌ ' + (d.error||'Failed') + '</span>';
+      toast(d.error||'Failed', 'err');
+    }
+  } catch(e) {
+    statusEl.innerHTML = '<span style="color:#f87171">❌ Network error</span>';
+    toast('Network error', 'err');
+  }
+}
+
+
+// ── SQL Explorer ───────────────────────────────────────────
+function setSQL(q) { document.getElementById('sqlInput').value=q; document.getElementById('sqlResult').innerHTML=''; document.getElementById('sqlMeta').textContent=''; }
+function clearSQL() { document.getElementById('sqlInput').value=''; document.getElementById('sqlResult').innerHTML=''; document.getElementById('sqlMeta').textContent=''; }
+
+async function runSQL() {
+  var sql = document.getElementById('sqlInput').value.trim();
+  var meta = document.getElementById('sqlMeta');
+  var res  = document.getElementById('sqlResult');
+  if (!sql) { toast('Enter a SQL query','err'); return; }
+  meta.textContent = '⏳ Running…'; res.innerHTML = '';
+  var t0 = Date.now();
+  try {
+    var r = await fetch('/api/admin/query', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({sql:sql})});
+    var d = await r.json();
+    var ms = Date.now() - t0;
+    if (d.success) {
+      meta.textContent = d.count + ' row' + (d.count!==1?'s':'') + ' · ' + ms + 'ms';
+      if (!d.rows.length) { res.innerHTML = '<div style="color:var(--m);padding:12px 0">Query OK — no rows returned.</div>'; return; }
+      var ths = d.columns.map(function(c){return '<th>'+c+'</th>';}).join('');
+      var trs = d.rows.map(function(row){return '<tr>'+row.map(function(cell){return '<td style="font-family:monospace;font-size:.77rem">'+(cell===null?'<span style="color:var(--m)">NULL</span>':String(cell).substring(0,150))+'</td>';}).join('')+'</tr>';}).join('');
+      res.innerHTML = '<div class="tw-wrap"><div class="tw"><table><thead><tr>'+ths+'</tr></thead><tbody>'+trs+'</tbody></table></div></div>';
+    } else {
+      meta.textContent = '';
+      res.innerHTML = '<div style="background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);border-radius:9px;padding:13px 15px;color:#fca5a5;font-size:.83rem;font-family:monospace">❌ '+d.error+'</div>';
+    }
+  } catch(e) { meta.textContent=''; res.innerHTML='<div style="color:var(--m)">Network error</div>'; }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var box = document.getElementById('sqlInput');
+  if (box) box.addEventListener('keydown', function(e) { if (e.key==='Enter' && (e.ctrlKey||e.metaKey)) runSQL(); });
+});
+
+// ── Email Settings ─────────────────────────────────────────
+var PROVIDERS = {
+  gmail:   {host:'smtp.gmail.com',        port:465, ssl:true,  note:'<strong>Gmail:</strong> You must use an App Password — NOT your regular Gmail password.<br>Step 1: Enable 2-Step Verification at <span class="mh">myaccount.google.com/security</span><br>Step 2: Go to <span class="mh">myaccount.google.com/apppasswords</span> → name it "UniPredict" → copy the 16-char code'},
+  outlook: {host:'smtp-mail.outlook.com', port:587, ssl:false, note:'<strong>Outlook/Hotmail:</strong> Use your regular Microsoft email and password.<br>Host: <span class="mh">smtp-mail.outlook.com</span> · Port: <span class="mh">587</span> · SSL: OFF (uses STARTTLS)'},
+  yahoo:   {host:'smtp.mail.yahoo.com',   port:465, ssl:true,  note:'<strong>Yahoo Mail:</strong> Requires an App Password from Account Security settings.<br>Host: <span class="mh">smtp.mail.yahoo.com</span> · Port: <span class="mh">465</span> · SSL: ON'},
+  custom:  {host:'',                      port:587, ssl:false, note:'<strong>Custom SMTP:</strong> Enter your own server details. Contact your email provider or IT team for the correct host, port and SSL settings.'}
+};
+var emailOn = false;
+
+async function loadEmailConfig() {
+  try {
+    var r = await fetch('/api/admin/email-config');
+    var d = await r.json();
+    if (!d.success) return;
+    var cfg = d.config;
+    document.getElementById('cfg_email').value   = cfg.sender_email || '';
+    document.getElementById('cfg_name').value    = cfg.sender_name  || 'UniPredict AI';
+    document.getElementById('cfg_replyto').value = cfg.reply_to     || '';
+    document.getElementById('cfg_host').value    = cfg.smtp_host    || '';
+    document.getElementById('cfg_port').value    = cfg.smtp_port    || 465;
+    document.getElementById('cfg_ssl').checked   = cfg.use_ssl !== false;
+    if (cfg.has_password) document.getElementById('cfg_password').placeholder = '•••••••••••••••• (saved — leave blank to keep)';
+    emailOn = !!cfg.enabled;
+    updateTogUI();
+    setProvider(cfg.provider || 'gmail', false);
+    var bnr = document.getElementById('emailBanner');
+    if (cfg.enabled && cfg.sender_email) {
+      bnr.className = 'bnr ok';
+      bnr.innerHTML = '<span class="bnr-ico">✅</span><div><strong style="color:#34d399">Email is ENABLED</strong> — sending from <span style="font-family:monospace;color:#34d399">' + cfg.sender_email + '</span></div>';
+    } else {
+      bnr.className = 'bnr warn';
+      bnr.innerHTML = '<span class="bnr-ico">⚠️</span><div><strong style="color:#fbbf24">Email not configured</strong> — reports are logged but not delivered. Configure SMTP below, test the connection, toggle Enable ON, then save.</div>';
+    }
+  } catch(e) { console.error(e); }
+}
+
+function setProvider(name, fill) {
+  if (fill === undefined) fill = true;
+  document.querySelectorAll('.prov-btn').forEach(function(b) { b.classList.remove('active'); });
+  var btn = document.getElementById('prov-' + name);
+  if (btn) btn.classList.add('active');
+  var p = PROVIDERS[name];
+  if (!p) return;
+  var note = document.getElementById('provNote');
+  note.style.display = 'block';
+  note.innerHTML = p.note;
+  if (fill) {
+    if (p.host) document.getElementById('cfg_host').value = p.host;
+    document.getElementById('cfg_port').value  = p.port;
+    document.getElementById('cfg_ssl').checked = p.ssl;
+  }
+}
+
+function toggleEmail() { emailOn = !emailOn; updateTogUI(); }
+
+function updateTogUI() {
+  var track = document.getElementById('togTrack');
+  var label = document.getElementById('togLabel');
+  if (emailOn) { track.classList.add('on'); label.textContent='Email Sending ENABLED ✅'; label.style.color='#34d399'; }
+  else { track.classList.remove('on'); label.textContent='Email Sending Disabled'; label.style.color='#fff'; }
+}
+
+function togglePwd() { var f=document.getElementById('cfg_password'); f.type=f.type==='password'?'text':'password'; }
+
+function getActiveProv() {
+  var a = document.querySelector('.prov-btn.active');
+  return a ? a.id.replace('prov-','') : 'gmail';
+}
+
+async function saveEmail() {
+  var pwd = document.getElementById('cfg_password').value;
+  var payload = {
+    enabled: emailOn, provider: getActiveProv(),
+    smtp_host: document.getElementById('cfg_host').value.trim(),
+    smtp_port: parseInt(document.getElementById('cfg_port').value),
+    use_ssl: document.getElementById('cfg_ssl').checked,
+    sender_email: document.getElementById('cfg_email').value.trim(),
+    sender_name: document.getElementById('cfg_name').value.trim(),
+    reply_to: document.getElementById('cfg_replyto').value.trim()
+  };
+  if (pwd) payload.sender_password = pwd;
+  var msg = document.getElementById('saveMsg');
+  msg.innerHTML = '<span style="color:var(--m)">Saving…</span>';
+  try {
+    var r = await fetch('/api/admin/email-config', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)});
+    var d = await r.json();
+    if (d.success) { msg.innerHTML='<span class="ok-t">✅ Configuration saved.</span>'; toast('Email config saved'); document.getElementById('cfg_password').value=''; setTimeout(loadEmailConfig, 400); }
+    else { msg.innerHTML='<span class="err-t">❌ '+(d.error||'Failed')+'</span>'; toast(d.error||'Failed','err'); }
+  } catch(e) { msg.innerHTML='<span class="err-t">❌ Network error</span>'; toast('Network error','err'); }
+}
+
+async function testConn() {
+  var msg = document.getElementById('connMsg');
+  msg.innerHTML = '<span style="color:var(--m)">🔌 Connecting…</span>';
+  var pwd = document.getElementById('cfg_password').value;
+  var payload = {
+    smtp_host: document.getElementById('cfg_host').value.trim(),
+    smtp_port: parseInt(document.getElementById('cfg_port').value),
+    use_ssl: document.getElementById('cfg_ssl').checked,
+    sender_email: document.getElementById('cfg_email').value.trim()
+  };
+  if (pwd) payload.sender_password = pwd;
+  try {
+    var r = await fetch('/api/admin/email-test-connection', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)});
+    var d = await r.json();
+    if (d.success) { msg.innerHTML='<span class="ok-t">✅ '+d.message+'</span>'; toast('Connection OK!'); }
+    else { msg.innerHTML='<span class="err-t">❌ '+d.message+'</span>'; toast('Connection failed','err'); }
+  } catch(e) { msg.innerHTML='<span class="err-t">❌ Network error</span>'; toast('Network error','err'); }
+}
+
+async function sendTestEmail() {
+  var to = document.getElementById('testTo').value.trim();
+  var msg = document.getElementById('testMsg');
+  if (!to) { toast('Enter a recipient email address','err'); return; }
+  msg.innerHTML = '<span style="color:var(--m)">📤 Sending…</span>';
+  try {
+    var r = await fetch('/api/admin/email-send-test', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({to_email:to})});
+    var d = await r.json();
+    if (d.success) { msg.innerHTML='<span class="ok-t">✅ '+d.message+' — check inbox &amp; spam.</span>'; toast('Test email sent!'); }
+    else { msg.innerHTML='<span class="err-t">❌ '+(d.message||d.error||'Failed')+'</span>'; toast(d.message||'Failed','err'); }
+  } catch(e) { msg.innerHTML='<span class="err-t">❌ Network error</span>'; toast('Network error','err'); }
+}
+
+// ── Audit Log ──────────────────────────────────────────────
+async function loadAudit() {
+  var panel = document.getElementById('auditPanel');
+  panel.innerHTML = '<div style="color:var(--m);font-size:.83rem">Loading…</div>';
+  try {
+    var r = await fetch('/api/admin/audit');
+    var d = await r.json();
+    if (!d.success) { panel.innerHTML='<div style="color:var(--m)">Failed to load audit log</div>'; return; }
+    if (!d.log.length) {
+      panel.innerHTML = '<div style="color:var(--m);font-size:.83rem;padding:12px 0">No audit entries yet. Actions like login, adding/deleting teachers, SQL queries and sending emails will be logged here.</div>';
+      return;
+    }
+    document.getElementById('auditCnt').textContent = d.log.length + ' entries';
+    var rows = d.log.map(function(e, i) {
+      return '<div class="a-grid a-row">' +
+        '<span style="font-family:monospace;font-size:.74rem;color:#64748b">' + (e.created_at||'').substring(0,16) + '</span>' +
+        '<span style="font-size:.77rem">' + (e.user_id||'—') + '</span>' +
+        '<span><span class="a-act">' + (e.action||'—') + '</span></span>' +
+        '<span style="color:var(--m);font-size:.77rem;word-break:break-all">' + (e.target?e.target+' ':'') + (e.detail||'') + '</span>' +
+        '</div>';
+    }).join('');
+    panel.innerHTML = '<div class="tw-wrap">' +
+      '<div class="a-grid a-hd"><span>Time</span><span>User</span><span>Action</span><span>Details</span></div>' +
+      rows + '</div>';
+  } catch(e) { panel.innerHTML='<div style="color:var(--m)">Error loading audit log</div>'; console.error(e); }
+}
+
+// ── Init ───────────────────────────────────────────────────
+loadNotifs();
+</script>
+
+<!-- Change Password Modal -->
+<div id="chgPwdModal" style="display:none;position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:2000;align-items:center;justify-content:center" onclick="if(event.target===this)closePwdModal()">
+  <div style="background:#1e2235;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:32px 36px;max-width:400px;width:90%">
+    <div style="font-size:1.15rem;font-weight:700;color:#0f172a;margin-bottom:6px">🔑 Change Password</div>
+    <div style="color:#64748b;font-size:.83rem;margin-bottom:22px">Enter your current password and choose a new one.</div>
+    <div id="cpErr" style="background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);color:#fca5a5;border-radius:8px;padding:10px 14px;font-size:.84rem;margin-bottom:12px;display:none"></div>
+    <div id="cpOk" style="background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);color:#6ee7b7;border-radius:8px;padding:10px 14px;font-size:.84rem;margin-bottom:12px;display:none"></div>
+    <div style="margin-bottom:14px"><label style="display:block;color:#374151;font-size:.79rem;font-weight:700;margin-bottom:6px">Current Password</label><div style="position:relative"><input type="password" id="cpCur" placeholder="Your current password" style="width:100%;background:#f8fafc;border:2px solid rgba(59,130,246,.15);border-radius:10px;padding:11px 42px 11px 14px;color:#0f172a;font-size:.9rem;font-family:inherit;outline:none"><button type="button" onclick="toggleCp('cpCur',this)" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#94a3b8">👁</button></div></div>
+    <div style="margin-bottom:14px"><label style="display:block;color:#374151;font-size:.79rem;font-weight:700;margin-bottom:6px">New Password</label><div style="position:relative"><input type="password" id="cpNew" placeholder="At least 6 characters" style="width:100%;background:#f8fafc;border:2px solid rgba(59,130,246,.15);border-radius:10px;padding:11px 42px 11px 14px;color:#0f172a;font-size:.9rem;font-family:inherit;outline:none"><button type="button" onclick="toggleCp('cpNew',this)" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#94a3b8">👁</button></div></div>
+    <div style="margin-bottom:20px"><label style="display:block;color:#374151;font-size:.79rem;font-weight:700;margin-bottom:6px">Confirm New Password</label><input type="password" id="cpCon" placeholder="Re-enter new password" style="width:100%;background:#f8fafc;border:2px solid rgba(59,130,246,.15);border-radius:10px;padding:11px 14px;color:#0f172a;font-size:.9rem;font-family:inherit;outline:none"></div>
+    <button onclick="submitChangePwd()" style="width:100%;padding:12px;background:linear-gradient(135deg,#5b5cf6,#8b5cf6);color:#fff;border:none;border-radius:10px;font-size:.95rem;font-weight:600;cursor:pointer;font-family:inherit" id="cpBtn">Update Password</button>
+  </div>
+</div>
+<script>
+function openPwdModal(){ var m=document.getElementById("chgPwdModal"); m.style.display="flex"; ["cpCur","cpNew","cpCon"].forEach(function(i){document.getElementById(i).value="";}); document.getElementById("cpErr").style.display="none"; document.getElementById("cpOk").style.display="none"; document.getElementById("cpBtn").disabled=false; document.getElementById("cpBtn").textContent="Update Password"; }
+function closePwdModal(){ document.getElementById("chgPwdModal").style.display="none"; }
+function toggleCp(id,btn){ var f=document.getElementById(id); f.type=f.type==="password"?"text":"password"; btn.textContent=f.type==="password"?"👁":"🙈"; }
+async function submitChangePwd(){
+  var cur=document.getElementById("cpCur").value, nw=document.getElementById("cpNew").value, con=document.getElementById("cpCon").value;
+  var err=document.getElementById("cpErr"), ok=document.getElementById("cpOk");
+  err.style.display="none"; ok.style.display="none";
+  if(!cur||!nw||!con){err.textContent="All fields are required.";err.style.display="block";return;}
+  if(nw.length<6){err.textContent="New password must be at least 6 characters.";err.style.display="block";return;}
+  if(nw!==con){err.textContent="New passwords do not match.";err.style.display="block";return;}
+  var btn=document.getElementById("cpBtn"); btn.disabled=true; btn.textContent="Updating…";
+  var r=await fetch("/api/change-password",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({current_password:cur,new_password:nw})});
+  var d=await r.json();
+  if(d.success){ok.textContent="✅ "+d.message;ok.style.display="block";setTimeout(closePwdModal,2000);}
+  else{err.textContent=d.error||"Failed";err.style.display="block";btn.disabled=false;btn.textContent="Update Password";}
+}
+</script></body>
+</html>

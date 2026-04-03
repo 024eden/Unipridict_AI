@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UniPredict AI — Teacher</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#edf4fb;--s:rgba(255,255,255,.88);--b:rgba(59,130,246,.12);
+  --p:#2563eb;--pl:#3b82f6;--ok:#16a34a;--err:#dc2626;--warn:#d97706;
+  --txt:#0f172a;--m:#64748b;
+}
+[data-theme="dark"]{
+  --bg:#0f172a;--s:rgba(30,41,59,.88);--b:rgba(59,130,246,.2);
+  --p:#3b82f6;--pl:#60a5fa;--ok:#22c55e;--err:#ef4444;--warn:#f59e0b;
+  --txt:#f1f5f9;--m:#94a3b8;
+}
+body{font-family:'DM Sans',sans-serif;background:#edf4fb;min-height:100vh;color:var(--txt);position:relative;}
+body::before{content:'';position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:linear-gradient(135deg,#e8f4fd 0%,#edf7ee 35%,#fef9ee 70%,#f0ecfb 100%)}
+body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse 60% 50% at 15% 15%,rgba(59,130,246,.07) 0%,transparent 60%),
+             radial-gradient(ellipse 50% 40% at 85% 20%,rgba(34,197,94,.06) 0%,transparent 55%),
+             radial-gradient(ellipse 55% 45% at 50% 85%,rgba(168,85,247,.05) 0%,transparent 55%);
+  animation:bgPulse 25s ease-in-out infinite alternate}
+@keyframes bgPulse{0%{opacity:1}100%{opacity:.65}}
+.edu-float{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.edu-float span{position:absolute;font-size:2.6rem;opacity:.045;animation:eduDrift 20s ease-in-out infinite}
+.edu-float span:nth-child(1){animation-duration:23s;animation-delay:0s}
+.edu-float span:nth-child(2){animation-duration:19s;animation-delay:-5s}
+.edu-float span:nth-child(3){animation-duration:26s;animation-delay:-9s}
+.edu-float span:nth-child(4){animation-duration:21s;animation-delay:-3s}
+.edu-float span:nth-child(5){animation-duration:24s;animation-delay:-14s}
+.edu-float span:nth-child(6){animation-duration:18s;animation-delay:-7s}
+.edu-float span:nth-child(7){animation-duration:22s;animation-delay:-11s}
+.edu-float span:nth-child(8){animation-duration:20s;animation-delay:-2s}
+@keyframes eduDrift{0%,100%{transform:translateY(0) rotate(0deg) scale(1)}25%{transform:translateY(-16px) rotate(4deg) scale(1.04)}60%{transform:translateY(-9px) rotate(-3deg) scale(.96)}80%{transform:translateY(-20px) rotate(6deg) scale(1.02)}}
+nav{background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:2px solid rgba(59,130,246,.13);box-shadow:0 2px 14px rgba(59,130,246,.08);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:62px;position:sticky;top:0;z-index:100}
+.nb{font-family:'DM Serif Display',serif;font-size:1.35rem;color:#1e40af;text-decoration:none;display:flex;align-items:center;gap:8px}
+.nl{display:flex;gap:3px}
+.nl a{padding:7px 14px;border-radius:8px;color:#475569;text-decoration:none;font-size:.88rem;font-weight:600;transition:all .2s}
+.nl a:hover,.nl a.active{background:rgba(37,99,235,.1);color:#1d4ed8}
+.nr{display:flex;align-items:center;gap:10px}
+.nb-btn{position:relative;background:rgba(255,255,255,.8);border:1px solid rgba(59,130,246,.18);border-radius:9px;padding:7px 11px;color:#475569;text-decoration:none;font-size:1rem;transition:all .2s}
+.nb-btn:hover{color:#1d4ed8}
+.badge{position:absolute;top:-5px;right:-5px;background:var(--err);color:#fff;font-size:.6rem;font-weight:700;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.uc{background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.28);border-radius:9px;padding:7px 13px;font-size:.82rem;color:#1d4ed8;font-weight:700}
+.lo{padding:7px 13px;border-radius:9px;background:rgba(220,38,38,.09);border:1px solid rgba(220,38,38,.2);color:#dc2626;font-size:.82rem;text-decoration:none;transition:all .2s;font-weight:600}
+.lo:hover{background:rgba(220,38,38,.18)}
+.main{padding:28px;max-width:1380px;margin:0 auto}
+.pt{font-family:'DM Serif Display',serif;font-size:1.9rem;color:#0f172a;margin-bottom:4px}
+.ps{color:#475569;font-size:.88rem;margin-bottom:28px;font-weight:500}
+.card{background:rgba(255,255,255,.9);border:1px solid rgba(59,130,246,.12);border-radius:15px;padding:26px;box-shadow:0 2px 18px rgba(59,130,246,.06)}
+.ct{font-size:1.05rem;font-weight:700;color:#0f172a;margin-bottom:18px;display:flex;align-items:center;gap:7px}
+.mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:24px}
+.mc{background:rgba(255,255,255,.92);border:1px solid rgba(59,130,246,.1);border-radius:14px;padding:22px;position:relative;overflow:hidden;transition:all .2s;box-shadow:0 2px 12px rgba(59,130,246,.05)}
+.mc:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,130,246,.1)}
+.mc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.mc.blue::before{background:linear-gradient(90deg,#5b5cf6,#8b5cf6)}
+.mc.green::before{background:linear-gradient(90deg,#10b981,#34d399)}
+.mc.yellow::before{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+.mc.red::before{background:linear-gradient(90deg,#ef4444,#f87171)}
+.mc.purple::before{background:linear-gradient(90deg,#8b5cf6,#a78bfa)}
+.mc.cyan::before{background:linear-gradient(90deg,#06b6d4,#22d3ee)}
+.mi{font-size:1.5rem;margin-bottom:10px}
+.mv{font-size:2rem;font-weight:700;color:#0f172a;margin-bottom:3px}
+.ml{color:#64748b;font-size:.77rem;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.cg{display:grid;gap:18px;margin-bottom:18px}
+.cg2{grid-template-columns:1fr 1fr}
+.cg3{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:900px){.cg2,.cg3{grid-template-columns:1fr}}
+.fl{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;align-items:center}
+.fb{padding:7px 16px;border-radius:18px;border:2px solid rgba(59,130,246,.14);background:rgba(255,255,255,.8);color:#475569;font-size:.83rem;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;font-weight:600}
+.fb:hover,.fb.active{background:rgba(37,99,235,.1);border-color:rgba(37,99,235,.38);color:#1d4ed8}
+.sb{flex:1;min-width:180px;max-width:280px;background:rgba(255,255,255,.9);border:2px solid rgba(59,130,246,.15);border-radius:9px;padding:8px 14px;font-size:.88rem;color:#0f172a;font-family:'DM Sans',sans-serif;outline:none;font-weight:500}
+.sb:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.sb::placeholder{color:#94a3b8}
+table{width:100%;border-collapse:collapse}
+thead{background:rgba(37,99,235,.06)}
+th{padding:12px 14px;text-align:left;font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;color:#475569;font-weight:700;white-space:nowrap}
+td{padding:13px 14px;font-size:.86rem;border-top:1px solid rgba(59,130,246,.07);color:#1e293b}
+tr:hover td{background:rgba(59,130,246,.03)}
+.rp{padding:4px 10px;border-radius:11px;font-size:.73rem;font-weight:600;white-space:nowrap}
+.rp.low{background:rgba(16,185,129,.13);color:#34d399;border:1px solid rgba(16,185,129,.28)}
+.rp.medium{background:rgba(245,158,11,.13);color:#fbbf24;border:1px solid rgba(245,158,11,.28)}
+.rp.high{background:rgba(239,68,68,.13);color:#f87171;border:1px solid rgba(239,68,68,.28)}
+.sp{padding:4px 10px;border-radius:11px;font-size:.73rem;font-weight:600}
+.sp.pass{background:rgba(16,185,129,.13);color:#34d399;border:1px solid rgba(16,185,129,.28)}
+.sp.fail{background:rgba(239,68,68,.13);color:#f87171;border:1px solid rgba(239,68,68,.28)}
+.btn-sm{padding:5px 11px;border-radius:7px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:#1d4ed8;font-size:.75rem;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+.btn-sm:hover{background:rgba(37,99,235,.18)}
+.btn-sm.red{background:rgba(239,68,68,.13);border-color:rgba(239,68,68,.25);color:#f87171}
+.btn-sm.red:hover{background:rgba(239,68,68,.25)}
+.btn-sm.green{background:rgba(16,185,129,.13);border-color:rgba(16,185,129,.25);color:#34d399}
+.btn-del{background:rgba(239,68,68,.13);border-color:rgba(239,68,68,.28);color:#f87171}
+.btn-del:hover{background:rgba(239,68,68,.28)}
+.pg{display:flex;gap:7px;justify-content:center;padding:18px;align-items:center}
+.pb{padding:7px 13px;border-radius:7px;border:2px solid rgba(59,130,246,.13);background:rgba(255,255,255,.8);color:#475569;font-size:.82rem;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600}
+.pb:hover,.pb.active{background:rgba(37,99,235,.1);border-color:rgba(37,99,235,.38);color:#1d4ed8}
+.pb:disabled{opacity:.4;cursor:not-allowed}
+.pi{color:#64748b;font-size:.82rem;font-weight:500}
+.form-g{margin-bottom:16px}
+.form-g label{display:block;color:#374151;font-size:.8rem;font-weight:700;margin-bottom:6px}
+.form-g input,.form-g select{width:100%;background:#f8fafc;border:2px solid rgba(59,130,246,.14);border-radius:9px;padding:10px 13px;font-size:.88rem;color:#0f172a;font-family:'DM Sans',sans-serif;outline:none;transition:all .2s}
+.form-g select option{background:#ffffff;color:#0f172a}
+.form-g input:focus,.form-g select:focus{border-color:#2563eb;background:#fff;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.btn-pri{background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff;border:none;border-radius:10px;padding:12px 24px;font-size:.92rem;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;transition:opacity .2s,transform .2s}
+.btn-pri:hover{opacity:.9;transform:translateY(-1px)}
+.btn-pri:disabled{opacity:.5;cursor:not-allowed}
+/* Academic Background Elements */
+.edu-float{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.edu-float span{position:absolute;font-size:1.3rem;opacity:.08;animation:float 6s ease-in-out infinite;text-shadow:0 2px 4px rgba(0,0,0,.1)}
+.edu-float span:nth-child(odd){animation-delay:-3s}
+.edu-float span:nth-child(3n){font-size:1.5rem;opacity:.1}
+.edu-float span:nth-child(4n){font-size:1.1rem;opacity:.06}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(3deg)}}
+/* Academic Pattern Background */
+.edu-pattern{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.03;background-image:radial-gradient(circle at 25% 25%, #2563eb 1px, transparent 1px),radial-gradient(circle at 75% 75%, #16a34a 1px, transparent 1px);background-size:50px 50px,60px 60px}
+[data-theme="dark"] .edu-pattern{opacity:.02;background-image:radial-gradient(circle at 25% 25%, #3b82f6 1px, transparent 1px),radial-gradient(circle at 75% 75%, #22c55e 1px, transparent 1px)}
+/* Academic Border Frame */
+.edu-frame{position:fixed;inset:20px;z-index:-1;pointer-events:none;border:2px solid rgba(37,99,246,.05);border-radius:20px;background:linear-gradient(45deg,rgba(37,99,246,.02) 0%,transparent 50%,rgba(16,185,129,.02) 100%)}
+[data-theme="dark"] .edu-frame{border-color:rgba(59,130,246,.08);background:linear-gradient(45deg,rgba(59,130,246,.04) 0%,transparent 50%,rgba(34,197,94,.04) 100%)}
+.edu-float span{position:absolute;font-size:2.6rem;opacity:.045;animation:eduDrift 20s ease-in-out infinite}
+.edu-float span:nth-child(1){animation-duration:23s;animation-delay:0s}
+.edu-float span:nth-child(2){animation-duration:19s;animation-delay:-5s}
+.edu-float span:nth-child(3){animation-duration:26s;animation-delay:-9s}
+.edu-float span:nth-child(4){animation-duration:21s;animation-delay:-3s}
+.edu-float span:nth-child(5){animation-duration:24s;animation-delay:-14s}
+.edu-float span:nth-child(6){animation-duration:18s;animation-delay:-7s}
+.edu-float span:nth-child(7){animation-duration:22s;animation-delay:-11s}
+.edu-float span:nth-child(8){animation-duration:20s;animation-delay:-2s}
+@keyframes eduDrift{0%,100%{transform:translateY(0) rotate(0deg) scale(1)}25%{transform:translateY(-16px) rotate(4deg) scale(1.04)}60%{transform:translateY(-9px) rotate(-3deg) scale(.96)}80%{transform:translateY(-20px) rotate(6deg) scale(1.02)}}
+/* Academic Header Branding */
+.nb{font-family:'DM Serif Display',serif;font-size:1.35rem;color:#1e40af;text-decoration:none;display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1e40af 0%,#3b82f6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;font-weight:700}
+.nb::before{content:'🎓';font-size:1.8rem;position:absolute;left:-28px;background:linear-gradient(135deg,#1e40af 0%,#3b82f6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 2px 4px rgba(30,64,175,.2))}
+.nb::after{content:'AI';font-size:.7rem;font-weight:600;position:relative;top:-2px;left:2px;color:#3b82f6;text-shadow:0 1px 2px rgba(59,130,246,.3)}
+[data-theme="dark"] .nb{background:linear-gradient(135deg,#60a5fa 0%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+[data-theme="dark"] .nb::before{background:linear-gradient(135deg,#60a5fa 0%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 2px 4px rgba(96,165,250,.3))}
+[data-theme="dark"] .nb::after{color:#93c5fd;text-shadow:0 1px 2px rgba(147,197,253,.4)}
+/* Academic Dashboard Title */
+.pt{font-family:'DM Serif Display',serif;font-size:1.9rem;color:var(--txt);margin-bottom:4px;background:linear-gradient(135deg,var(--p) 0%,var(--pl) 50%,var(--ok) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;font-weight:700}
+.pt::before{content:'';position:absolute;bottom:-8px;left:0;width:60px;height:3px;background:linear-gradient(90deg,var(--p) 0%,var(--pl) 100%);border-radius:2px}
+.pt::after{content:'📊';position:absolute;right:-40px;top:50%;transform:translateY(-50%);font-size:1.2rem;opacity:.3}
+[data-theme="dark"] .pt::before{background:linear-gradient(90deg,var(--pl) 0%,var(--ok) 100%)}
+[data-theme="dark"] .pt::after{opacity:.2}
+.sp2{width:32px;height:32px;border:2.5px solid rgba(59,130,246,.15);border-top-color:#2563eb;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 10px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ld{display:none;text-align:center;padding:30px;color:#64748b}
+.tw{background:rgba(255,255,255,.92);border:1px solid rgba(59,130,246,.1);border-radius:14px;overflow:hidden}
+.mo{position:fixed;inset:0;background:rgba(15,23,42,.55);backdrop-filter:blur(6px);z-index:1000;display:none;align-items:center;justify-content:center}
+.mo.open{display:flex}
+.md{background:#ffffff;border:1px solid rgba(59,130,246,.15);border-radius:18px;color:#0f172a;box-shadow:0 20px 60px rgba(59,130,246,.15);width:92%;max-width:680px;max-height:87vh;overflow-y:auto;padding:30px;animation:mIn .28s ease}
+@keyframes mIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+.mh{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.mt{font-family:'DM Serif Display',serif;font-size:1.4rem;color:#0f172a}
+.mc2{background:none;border:none;color:#64748b;font-size:1.4rem;cursor:pointer}
+.mc2:hover{color:#0f172a}
+.toast{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;gap:8px}
+.toast-item{background:#ffffff;border:1px solid rgba(59,130,246,.15);border-radius:10px;padding:12px 18px;font-size:.86rem;color:#0f172a;box-shadow:0 4px 20px rgba(0,0,0,.12);animation:tIn .3s ease;max-width:320px;display:flex;align-items:center;gap:10px}
+.toast-item.ok{border-left:3px solid var(--ok)}
+.toast-item.err{border-left:3px solid var(--err)}
+@keyframes tIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}</style>
+</head>
+<body>
+<div class="edu-float" aria-hidden="true">
+  <span style="top:6%;left:1.5%">📚</span>
+  <span style="top:18%;right:3%">🎓</span>
+  <span style="top:38%;left:5%">✏️</span>
+  <span style="top:55%;right:7%">🔬</span>
+  <span style="top:72%;left:2%">📐</span>
+  <span style="bottom:10%;right:4%">🌍</span>
+  <span style="bottom:22%;left:10%">💡</span>
+  <span style="top:28%;right:20%">🏆</span>
+  <span style="top:12%;left:25%">📖</span>
+  <span style="top:45%;right:15%">🔭</span>
+  <span style="bottom:30%;left:18%">⚗️</span>
+  <span style="top:65%;right:25%">🧮</span>
+  <span style="bottom:15%;left:35%">🎨</span>
+  <span style="top:35%;right:35%">🌱</span>
+  <span style="top:85%;left:45%">📊</span>
+  <span style="bottom:5%;right:45%">🔔</span>
+  <span style="top:25%;left:55%">📝</span>
+  <span style="top:75%;right:55%">🌟</span>
+  <span style="bottom:25%;left:65%">🧪</span>
+  <span style="top:15%;right:65%">📐</span>
+  <span style="top:50%;left:75%">💻</span>
+  <span style="bottom:40%;right:75%">🎯</span>
+  <span style="top:90%;left:85%">📈</span>
+  <span style="bottom:8%;right:85%">🏅</span>
+</div>
+<div class="edu-pattern"></div>
+<div class="edu-frame"></div>
+  <nav>
+  <a class="nb" href="/teacher"> UniPredict AI</a>
+  <div class="nl">
+    <a href="/teacher" class="active">My Dashboard</a>
+    <a href="#" onclick="showSection('students')">Student List</a>
+    <a href="#" onclick="showSection('add')">Add Student</a>
+    <a href="#" onclick="showSection('predict')">Predict</a>
+    <a href="/analytics">📊 Analytics</a>
+  </div>
+  <div class="nr">
+    {% if user_role == 'admin' %}
+    <a class="nb-btn" href="/notifications">{% if notif_count > 0 %}<span class="badge">{{ notif_count if notif_count < 10 else '9+' }}</span>{% endif %}</a>
+    {% endif %}
+    <div class="uc">📖 {{ user_name }}</div>
+    <button onclick="openPwdModal()" style="background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);color:#1d4ed8;border-radius:8px;padding:6px 13px;font-size:.8rem;cursor:pointer;font-family:inherit;margin-right:6px" title="Change Password">🔑</button><a class="lo" href="/logout">Sign Out</a>
+  </div>
+</nav>
+<div class="main">
+  <div class="pt">Teacher Dashboard</div>
+  <div class="ps">Manage your students, add new records, and run performance predictions.</div>
+
+  <div class="mg">
+    <div class="mc blue">
+      <div class="mi">👥</div>
+      <div class="mv">{{ total_students }}</div>
+      <div class="ml">Total Students (overall)</div>
+    </div>
+    <div class="mc red">
+      <div class="mi">⚠️</div>
+      <div class="mv">{{ at_risk }}</div>
+      <div class="ml">At-Risk / Failing (overall)</div>
+    </div>
+    <div class="mc green">
+      <div class="mi">✅</div>
+      <div class="mv">{{ pass_overall }}</div>
+      <div class="ml">Passing Students (overall) · current list <span id="passCountList">—</span></div>
+    </div>
+    <div class="mc yellow">
+      <div class="mi">📊</div>
+      <div class="mv">{{ fail_overall }}</div>
+      <div class="ml">Failing Students (overall) · current list <span id="failCountList">—</span></div>
+    </div>
+  </div>
+
+  <!-- Students Section -->
+  <div id="sec-students" class="sec">
+    <div class="card">
+      <div class="ct">👥 Student List</div>
+      <div class="fl">
+        <button class="fb active" onclick="setFilt('all',this)">All</button>
+        <button class="fb" onclick="setFilt('at-risk',this)">⚠️ At-Risk</button>
+        <button class="fb" onclick="setFilt('passing',this)">✅ Passing</button>
+        <input class="sb" id="searchId" type="number" placeholder="Search by Student ID" oninput="debSearch()">
+        <button class="fb" onclick="exportCSV()" style="margin-left:auto">📥 Export CSV</button>
+      </div>
+      <div class="ld" id="tblLoad"><div class="sp2"></div><p>Loading…</p></div>
+      <div class="tw" id="tblWrap">
+        <table>
+          <thead><tr><th>ID</th><th>Name</th><th>Gender</th><th>Age</th><th>Grade</th><th>Attendance</th><th>Study Hrs</th><th>Assignments</th><th>Risk</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody id="tblBody"></tbody>
+        </table>
+        <div id="emptyMsg" style="display:none;padding:40px;text-align:center;color:var(--m)">No students found.</div>
+      </div>
+      <div class="pg" id="pg"></div>
+    </div>
+  </div>
+
+  <!-- Add Student Section -->
+  <div id="sec-add" class="sec" style="display:none">
+    <div class="card">
+      <div class="ct">➕ Add New Student</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
+        <div class="form-g"><label>Student Full Name</label><input type="text" id="as_name" placeholder="e.g. Ravi Kumar" autocomplete="off"></div>
+        <div class="form-g"><label>Parent / Guardian Name <span style="color:#f87171">*</span></label><input type="text" id="as_parentname" placeholder="e.g. Mr. Suresh Kumar" autocomplete="off"></div>
+        <div class="form-g"><label>Parent Email <span style="color:#f87171">*</span></label><input type="email" id="as_parentemail" placeholder="e.g. parent@email.com" autocomplete="off"></div>
+        <div class="form-g"><label>Parent Password <span style="color:#f87171">*</span></label><div style="position:relative"><input type="password" id="as_parentpwd" placeholder="Password to send to parent" style="padding-right:40px"><button type="button" onclick="togglePwd('as_parentpwd',this)" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--m);font-size:.95rem;padding:2px">👁</button></div></div>
+        <div class="form-g"><label>Home Address</label><input type="text" id="as_address" placeholder="e.g. 12 MG Road, Chennai" autocomplete="off"></div>
+        <div class="form-g"><label>Gender</label><select id="as_gender"><option>Male</option><option>Female</option></select></div>
+        <div class="form-g"><label>Age</label><input type="number" id="as_age" value="18" min="15" max="25"></div>
+        <div class="form-g"><label>Attendance Rate (%)</label><input type="number" id="as_att" value="80" min="0" max="100"></div>
+        <div class="form-g"><label>Study Hours/Week</label><input type="number" id="as_study" value="10" min="0" max="40"></div>
+        <div class="form-g"><label>Previous Grade</label><input type="number" id="as_prev" value="70" min="0" max="100"></div>
+        <div class="form-g"><label>Assignment Completion (%)</label><input type="number" id="as_assign" value="75" min="0" max="100"></div>
+        <div class="form-g"><label>Class Participation (1-10)</label><input type="number" id="as_part" value="5" min="1" max="10"></div>
+        <div class="form-g"><label>Stress Level (1-10)</label><input type="number" id="as_stress" value="5" min="1" max="10"></div>
+        <div class="form-g"><label>Motivation (1-10)</label><input type="number" id="as_motiv" value="7" min="1" max="10"></div>
+        <div class="form-g"><label>Final Grade</label><input type="number" id="as_grade" value="70" min="0" max="150"></div>
+        <div class="form-g"><label>Extra-Curricular</label><select id="as_ec"><option>No</option><option>Yes</option></select></div>
+        <div class="form-g"><label>Tutoring</label><select id="as_tut"><option>No</option><option>Yes</option></select></div>
+        <div class="form-g"><label>Mentor Support</label><select id="as_ment"><option>No</option><option>Yes</option></select></div>
+        <div class="form-g"><label>Internet Access</label><select id="as_inet"><option>Yes</option><option>No</option></select></div>
+        <div class="form-g"><label>Parent Education</label><select id="as_par"><option>High School</option><option selected>Bachelor</option><option>Master</option><option>PhD</option></select></div>
+        <div class="form-g"><label>Family Income</label><select id="as_inc"><option>Low</option><option selected>Medium</option><option>High</option></select></div>
+        <div class="form-g"><label>Pass/Fail</label><select id="as_pf"><option>Pass</option><option>Fail</option></select></div>
+        <div class="form-g"><label>Performance Category</label><select id="as_cat"><option>At Risk</option><option>Below Average</option><option selected>Average</option><option>Excellent</option></select></div>
+      </div>
+      <button class="btn-pri" style="margin-top:18px;width:100%" onclick="addStudent()">➕ Add Student to Database</button>
+    </div>
+  </div>
+
+  <!-- Predict Section -->
+  <div id="sec-predict" class="sec" style="display:none">
+    <div class="card">
+      <div class="ct">🔮 Predict Student Performance</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
+        <div class="form-g"><label>Student Name</label><input id="pr_name" placeholder="For tracking only" autocomplete="off"></div>
+        <div class="form-g"><label>Gender</label><select id="pr_g"><option>Male</option><option>Female</option></select></div>
+        <div class="form-g"><label>Age</label><input type="number" id="pr_age" value="18"></div>
+        <div class="form-g"><label>Attendance (%)</label><input type="number" id="pr_att" value="75"></div>
+        <div class="form-g"><label>Study Hrs/Wk</label><input type="number" id="pr_study" value="10"></div>
+        <div class="form-g"><label>Previous Grade</label><input type="number" id="pr_prev" value="70"></div>
+        <div class="form-g"><label>Assignments (%)</label><input type="number" id="pr_assign" value="80"></div>
+        <div class="form-g"><label>Participation (1-10)</label><input type="number" id="pr_part" value="5"></div>
+        <div class="form-g"><label>Stress (1-10)</label><input type="number" id="pr_stress" value="5"></div>
+        <div class="form-g"><label>Motivation (1-10)</label><input type="number" id="pr_motiv" value="7"></div>
+        <div class="form-g"><label>Tutoring</label><select id="pr_tut"><option>No</option><option>Yes</option></select></div>
+        <div class="form-g"><label>Mentor Support</label><select id="pr_ment"><option>No</option><option>Yes</option></select></div>
+      </div>
+      <button class="btn-pri" style="margin-top:18px;width:100%" onclick="runPredict()">🎯 Predict</button>
+      <div class="ld" id="prLoad"><div class="sp2"></div><p>Analysing…</p></div>
+      <div id="prResult" style="display:none;margin-top:20px;border-radius:12px;padding:22px"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Student Modal -->
+<div class="mo" id="editModal" onclick="closeModal(event)">
+  <div class="md">
+    <div class="mh"><div class="mt" id="editTitle">Edit Student</div><button class="mc2" onclick="closeModal()">✕</button></div>
+    <div id="editContent"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let curFilt='all',curPage=1,allS=[],dispS=[];
+
+function showSection(s){
+  document.querySelectorAll('.sec').forEach(el=>el.style.display='none');
+  document.getElementById('sec-'+s).style.display='block';
+  if(s==='students') loadStudents();
+}
+
+function setFilt(f,btn){
+  curFilt=f; curPage=1;
+  document.getElementById('searchId').value='';
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  loadStudents();
+}
+
+let st;
+function debSearch(){ clearTimeout(st); st=setTimeout(searchStudent,400); }
+
+async function searchStudent(){
+  const id=parseInt(document.getElementById('searchId').value);
+  if(!id||isNaN(id)){ dispS=[...allS]; renderTbl(); return; }
+  document.getElementById('tblBody').innerHTML='<tr><td colspan="11" style="text-align:center;padding:24px;color:var(--m)">Searching…</td></tr>';
+  try{
+    const r=await(await fetch('/api/student/'+id)).json();
+    if(r.success){
+      const s=r.student;
+      dispS=[{student_id:s.student_id,student_name:s.student_name||'Unknown',gender:s.gender,age:s.age,final_grade:parseFloat(s.final_grade||0).toFixed(1),
+               attendance_rate:parseFloat(s.attendance_rate||0).toFixed(1),study_hours_weekly:parseFloat(s.study_hours_weekly||0).toFixed(1),
+               assignment_completion:parseFloat(s.assignment_completion||0).toFixed(1),risk_score:s.risk_score,pass_fail:s.pass_fail,performance_category:s.performance_category}];
+      renderTbl(); document.getElementById('pg').innerHTML=''; document.getElementById('passCount').textContent='1';
+    } else { dispS=[]; document.getElementById('tblBody').innerHTML=''; document.getElementById('emptyMsg').style.display='block'; document.getElementById('emptyMsg').textContent='Student #'+id+' not found.'; }
+  }catch(e){ document.getElementById('tblBody').innerHTML='<tr><td colspan="11" style="text-align:center;padding:24px;color:#f87171">⚠️ Search failed. Please try again.</td></tr>'; }
+}
+
+async function loadStudents(){
+  document.getElementById('tblLoad').style.display='block';
+  document.getElementById('tblWrap').style.display='none';
+  try{
+    const resp = await fetch('/api/teacher/students?page='+curPage+'&per_page=25&filter='+curFilt);
+    if(resp.status===401||resp.status===403){
+      document.getElementById('tblLoad').style.display='none';
+      document.getElementById('tblWrap').style.display='block';
+      document.getElementById('tblBody').innerHTML='<tr><td colspan="11" style="text-align:center;padding:30px;color:#f87171">⚠️ Session expired. Please <a href="/login" style="color:#a5a6fb">log in again</a>.</td></tr>';
+      return;
+    }
+    const r = await resp.json();
+    if(r.success){
+      allS=r.students; dispS=[...allS];
+      renderTbl(); renderPg(r);
+      // Passing / failing counts for the currently displayed list
+      const passingNow = r.students.filter(s=>s.pass_fail==='Pass').length;
+      const failingNow = r.students.filter(s=>s.pass_fail==='Fail').length;
+      document.getElementById('passCountList').textContent = passingNow;
+      document.getElementById('failCountList').textContent = failingNow;
+    } else {
+      document.getElementById('tblBody').innerHTML='<tr><td colspan="11" style="text-align:center;padding:30px;color:#f87171">⚠️ '+(r.error||'Failed to load students.')+' <button onclick="loadStudents()" style="margin-left:10px;background:rgba(91,92,246,.2);border:1px solid rgba(91,92,246,.4);color:#a5a6fb;border-radius:7px;padding:4px 12px;cursor:pointer;font-family:inherit">Retry</button></td></tr>';
+      document.getElementById('emptyMsg').style.display='none';
+    }
+  }catch(e){
+    document.getElementById('tblBody').innerHTML='<tr><td colspan="11" style="text-align:center;padding:30px;color:#f87171">⚠️ Could not reach server. <button onclick="loadStudents()" style="margin-left:10px;background:rgba(91,92,246,.2);border:1px solid rgba(91,92,246,.4);color:#a5a6fb;border-radius:7px;padding:4px 12px;cursor:pointer;font-family:inherit">Retry</button></td></tr>';
+    document.getElementById('emptyMsg').style.display='none';
+  }
+  document.getElementById('tblLoad').style.display='none';
+  document.getElementById('tblWrap').style.display='block';
+}
+
+function rc(s){ return s<30?'low':s<60?'medium':'high'; }
+
+function renderTbl(){
+  const tb=document.getElementById('tblBody');
+  const em=document.getElementById('emptyMsg');
+  if(!dispS.length){ tb.innerHTML=''; em.style.display='block'; return; }
+  em.style.display='none';
+  tb.innerHTML=dispS.map(s=>{
+    const name=s.student_name||('Student #'+s.student_id);
+    const reportedBadge=s.is_reported
+      ?'<span title="Report already sent" style="display:inline-flex;align-items:center;gap:3px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.35);color:#059669;font-size:.68rem;font-weight:700;padding:2px 7px;border-radius:20px;margin-left:5px;vertical-align:middle">📬 Reported</span>'
+      :'';
+    return '<tr>'
+      +'<td><strong>#'+s.student_id+'</strong></td>'
+      +'<td><strong>'+name+'</strong>'+reportedBadge+'</td>'
+      +'<td>'+s.gender+'</td><td>'+s.age+'</td>'
+      +'<td><strong>'+s.final_grade+'</strong></td><td>'+s.attendance_rate+'%</td>'
+      +'<td>'+s.study_hours_weekly+' hrs</td><td>'+s.assignment_completion+'%</td>'
+      +'<td><span class="rp '+rc(s.risk_score)+'">'+s.risk_score+'%</span></td>'
+      +'<td><span class="sp '+s.pass_fail.toLowerCase()+'">'+s.pass_fail+'</span></td>'
+      +'<td style="display:flex;gap:5px">'
+        +'<button class="btn-sm" onclick="openEdit('+s.student_id+')">Edit</button>'
+      +'<button class="btn-sm" style="background:rgba(22,163,74,.1);border-color:rgba(22,163,74,.28);color:#15803d" onclick="viewReport('+s.student_id+')">📋 Report</button>'
+        +'<button class="btn-sm btn-del" onclick="deleteStudent('+s.student_id+')">Delete</button>'
+      +'</td>'
+      +'</tr>';
+  }).join('');
+}
+
+function renderPg(d){
+  const w=document.getElementById('pg');
+  if(d.pages<=1){w.innerHTML='';return;}
+  let h=`<button class="pb" onclick="goPage(${curPage-1})" ${curPage===1?'disabled':''}>‹</button>`;
+  for(let i=Math.max(1,curPage-2);i<=Math.min(d.pages,curPage+2);i++)
+    h+=`<button class="pb${i===curPage?' active':''}" onclick="goPage(${i})">${i}</button>`;
+  h+=`<span class="pi">Page ${curPage}/${d.pages}</span>`;
+  h+=`<button class="pb" onclick="goPage(${curPage+1})" ${curPage===d.pages?'disabled':''}>›</button>`;
+  w.innerHTML=h;
+}
+
+function goPage(p){ curPage=p; loadStudents(); }
+
+async function openEdit(sid){
+  const r=await(await fetch('/api/student/'+sid)).json();
+  if(!r.success){toast(r.error,'err');return;}
+  const s=r.student;
+  document.getElementById('editTitle').textContent='Edit Student #'+sid;
+  document.getElementById('editContent').innerHTML=`
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      ${['attendance_rate','study_hours_weekly','assignment_completion','class_participation','stress_level','motivation_score','final_grade','previous_grades'].map(f=>`
+        <div class="form-g"><label>${f.replace(/_/g,' ')}</label>
+        <input type="number" id="ef_${f}" value="${parseFloat(s[f]||0).toFixed(1)}" step="0.1"></div>`).join('')}
+      <div class="form-g"><label>Tutoring</label><select id="ef_tutoring"><option ${s.tutoring==='No'?'selected':''}>No</option><option ${s.tutoring==='Yes'?'selected':''}>Yes</option></select></div>
+      <div class="form-g"><label>Mentor Support</label><select id="ef_mentor_support"><option ${s.mentor_support==='No'?'selected':''}>No</option><option ${s.mentor_support==='Yes'?'selected':''}>Yes</option></select></div>
+      <div class="form-g"><label>Pass/Fail</label><select id="ef_pass_fail"><option ${s.pass_fail==='Pass'?'selected':''}>Pass</option><option ${s.pass_fail==='Fail'?'selected':''}>Fail</option></select></div>
+      <div class="form-g"><label>Performance</label><select id="ef_performance_category">
+        ${['At Risk','Below Average','Average','Excellent'].map(c=>`<option ${s.performance_category===c?'selected':''}>${c}</option>`).join('')}
+      </select></div>
+    </div>
+    <button class="btn-pri" style="width:100%;margin-top:14px" onclick="saveEdit(${sid})">Save Changes</button>`;
+  document.getElementById('editModal').classList.add('open');
+}
+
+async function saveEdit(sid){
+  const fields=['attendance_rate','study_hours_weekly','assignment_completion','class_participation','stress_level','motivation_score','final_grade','previous_grades'];
+  const selects=['tutoring','mentor_support','pass_fail','performance_category'];
+  const payload={};
+  fields.forEach(f=>{ const v=document.getElementById('ef_'+f); if(v) payload[f]=parseFloat(v.value); });
+  selects.forEach(f=>{ const v=document.getElementById('ef_'+f); if(v) payload[f]=v.value; });
+  const r=await fetch('/api/teacher/students/update/'+sid,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+  const d=await r.json();
+  if(d.success){ toast('Student #'+sid+' updated'); closeModal(); loadStudents(); }
+  else toast(d.error||'Failed','err');
+}
+
+function closeModal(e){ if(!e||e.target===document.getElementById('editModal')) document.getElementById('editModal').classList.remove('open'); }
+
+async function deleteStudent(sid){
+  const s = allS.find(x=>x.student_id==sid);
+  const name = s ? (s.student_name||'Student #'+sid) : 'Student #'+sid;
+  if(!confirm('Delete student "'+name+'" (ID #'+sid+')?\n\nThis action cannot be undone.')) return;
+  const r = await fetch('/api/teacher/students/delete/'+sid, {method:'DELETE'});
+  const d = await r.json();
+  if(d.success){ toast('Student #'+sid+' deleted'); loadStudents(); }
+  else toast(d.error||'Delete failed','err');
+}
+
+function togglePwd(id,btn){
+  const f=document.getElementById(id);
+  f.type=f.type==='password'?'text':'password';
+  btn.textContent=f.type==='password'?'👁':'🙈';
+}
+
+function toast(msg,type='ok'){
+  const c=document.getElementById('toast');
+  const el=document.createElement('div');
+  el.className='toast-item '+type;
+  el.innerHTML=(type==='ok'?'✅ ':'❌ ')+msg;
+  c.appendChild(el);
+  setTimeout(()=>el.remove(),4500);
+}
+
+async function addStudent(){
+  const g=id=>document.getElementById(id).value;
+  if(!g('as_name').trim()){toast('Student Name is required','err');return;}
+  if(!g('as_parentname').trim()){toast('Parent / Guardian Name is required','err');return;}
+  if(!g('as_parentemail').trim()){toast('Parent Email is required','err');return;}
+  const emailReg=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!emailReg.test(g('as_parentemail').trim())){toast('Please enter a valid Parent Email','err');return;}
+  if(!g('as_parentpwd').trim()){toast('Parent Password is required','err');return;}
+  const payload={student_name:g('as_name'),parent_name:g('as_parentname'),parent_email:g('as_parentemail'),
+    parent_password:g('as_parentpwd'),address:g('as_address'),gender:g('as_gender'),age:parseInt(g('as_age')),attendance_rate:parseFloat(g('as_att')),
+    study_hours_weekly:parseFloat(g('as_study')),previous_grades:parseFloat(g('as_prev')),
+    assignment_completion:parseFloat(g('as_assign')),class_participation:parseFloat(g('as_part')),
+    stress_level:parseFloat(g('as_stress')),motivation_score:parseFloat(g('as_motiv')),
+    final_grade:parseFloat(g('as_grade')),extra_curricular:g('as_ec'),tutoring:g('as_tut'),
+    mentor_support:g('as_ment'),internet_access:g('as_inet'),parent_education:g('as_par'),
+    family_income:g('as_inc'),pass_fail:g('as_pf'),performance_category:g('as_cat'),
+    library_visits:2,online_resource_hours:5};
+  const r=await fetch('/api/teacher/students/add',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+  const d=await r.json();
+  if(d.success){
+    const emailMsg=d.email_status==='sent'?' · 📧 Credentials emailed to parent':d.email_status==='simulated'?' · ⚠️ Email not configured':' · 📧 Email skipped';
+    toast('Student #'+d.student_id+' added'+emailMsg);
+    showSection('students');
+  } else if(d.duplicate){
+    // Show a prominent duplicate warning — don't just toast
+    const confirmed=confirm('⚠️ Duplicate Found!\n\n'+d.error+'\n\nDo you want to add anyway?');
+    if(confirmed){
+      // Force add by sending with bypass flag
+      payload._bypass_duplicate=true;
+      const r2=await fetch('/api/teacher/students/add',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      const d2=await r2.json();
+      if(d2.success){
+        const emailMsg=d2.email_status==='sent'?' · 📧 Credentials emailed to parent':d2.email_status==='simulated'?' · ⚠️ Email not configured':' · 📧 Email skipped';
+        toast('Student #'+d2.student_id+' added (forced)'+emailMsg);
+        showSection('students');
+      } else toast(d2.error||'Failed','err');
+    }
+  } else toast(d.error||'Failed','err');
+}
+
+async function runPredict(){
+  const g=id=>document.getElementById(id).value;
+  document.getElementById('prLoad').style.display='block';
+  document.getElementById('prResult').style.display='none';
+  const payload={studentName:g('pr_name'),gender:g('pr_g'),age:g('pr_age'),attendance:g('pr_att'),
+    studyHours:g('pr_study'),previousGrade:g('pr_prev'),assignments:g('pr_assign'),
+    participation:g('pr_part'),stress:g('pr_stress'),motivation:g('pr_motiv'),
+    tutoring:g('pr_tut'),mentorSupport:g('pr_ment'),extraCurricular:'No',parentEducation:'Bachelor',
+    familyIncome:'Medium',internetAccess:'Yes',libraryVisits:3,onlineHours:5};
+  const r=await fetch('/api/predict',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+  const d=await r.json();
+  document.getElementById('prLoad').style.display='none';
+  if(d.success){
+    const isPas=d.prediction==='Pass';
+    const el=document.getElementById('prResult');
+    el.style.display='block';
+    el.style.background=isPas?'rgba(16,185,129,.1)':'rgba(239,68,68,.1)';
+    el.style.border='1px solid '+(isPas?'rgba(16,185,129,.3)':'rgba(239,68,68,.3)');
+    el.innerHTML=`
+      <div style="display:flex;gap:16px;align-items:center;margin-bottom:14px">
+        <span style="font-size:2rem;font-weight:700;color:${isPas?'#10b981':'#ef4444'}">${isPas?'✅':'⚠️'}</span>
+        <div style="flex:1"><div style="font-size:1.2rem;font-weight:700">Prediction: ${d.prediction}</div>
+          <div style="color:var(--m);font-size:.86rem">Confidence: ${d.confidence.toFixed(1)}% | Pass: ${d.probabilities.pass.toFixed(1)}%</div></div>
+        <div style="width:70px;height:70px;border-radius:50%;border:3px solid ${d.risk_score<30?'#10b981':d.risk_score<60?'#f59e0b':'#ef4444'};display:flex;align-items:center;justify-content:center;flex-direction:column;color:${d.risk_score<30?'#10b981':d.risk_score<60?'#f59e0b':'#ef4444'};font-weight:700">
+          ${d.risk_score}%<span style="font-size:.58rem;font-weight:400;color:var(--m)">RISK</span></div>
+      </div>
+      ${d.risk_factors.length?`<div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px">${d.risk_factors.map(f=>`<span style="padding:4px 11px;border-radius:18px;font-size:.75rem;background:rgba(239,68,68,.15);color:#f87171;border:1px solid rgba(239,68,68,.28)">${f.factor}: ${f.value}</span>`).join('')}</div>`:''}
+      <div style="display:flex;flex-direction:column;gap:8px">${d.recommendations.map(r=>`<div style="background:rgba(255,255,255,.04);border:1px solid var(--b);border-radius:9px;padding:11px 14px;display:flex;gap:9px"><span>${r.icon}</span><div><div style="font-size:.86rem">${r.message}</div><div style="font-size:.77rem;color:var(--m)">→ ${r.action}</div></div></div>`).join('')}</div>`;
+  } else toast(d.error,'err');
+}
+
+function exportCSV(){
+  const rows=[['ID','Name','Gender','Age','Grade','Attendance','Study Hrs','Assignments','Risk','Status']];
+  dispS.forEach(s=>rows.push([s.student_id,s.student_name||'—',s.gender,s.age,s.final_grade,s.attendance_rate+'%',s.study_hours_weekly,s.assignment_completion+'%',s.risk_score+'%',s.pass_fail]));
+  const a=document.createElement('a');
+  a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(rows.map(r=>r.join(',')).join('\n'));
+  a.download='students.csv'; a.click();
+}
+
+async function viewReport(sid){
+  const r=await(await fetch('/api/student/'+sid+'/report')).json();
+  if(!r.success){toast(r.error||'Failed to load report','err');return;}
+  document.getElementById('editTitle').textContent='📊 Student Report — #'+sid;
+  document.getElementById('editContent').innerHTML=r.report_html;
+  document.getElementById('editModal').classList.add('open');
+}
+
+
+loadStudents();
+</script>
+
+<!-- Change Password Modal -->
+<div id="chgPwdModal" style="display:none;position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:2000;align-items:center;justify-content:center" onclick="if(event.target===this)closePwdModal()">
+  <div style="background:#1e2235;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:32px 36px;max-width:400px;width:90%">
+    <div style="font-size:1.15rem;font-weight:700;color:#0f172a;margin-bottom:6px">🔑 Change Password</div>
+    <div style="color:#64748b;font-size:.83rem;margin-bottom:22px">Enter your current password and choose a new one.</div>
+    <div id="cpErr" style="background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);color:#fca5a5;border-radius:8px;padding:10px 14px;font-size:.84rem;margin-bottom:12px;display:none"></div>
+    <div id="cpOk" style="background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);color:#6ee7b7;border-radius:8px;padding:10px 14px;font-size:.84rem;margin-bottom:12px;display:none"></div>
+    <div style="margin-bottom:14px"><label style="display:block;color:#374151;font-size:.79rem;font-weight:700;margin-bottom:6px">Current Password</label><div style="position:relative"><input type="password" id="cpCur" placeholder="Your current password" style="width:100%;background:#f8fafc;border:2px solid rgba(59,130,246,.15);border-radius:10px;padding:11px 42px 11px 14px;color:#0f172a;font-size:.9rem;font-family:inherit;outline:none"><button type="button" onclick="toggleCp('cpCur', this)" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#94a3b8">👁</button></div></div>
+    <div style="margin-bottom:14px"><label style="display:block;color:#374151;font-size:.79rem;font-weight:700;margin-bottom:6px">New Password</label><div style="position:relative"><input type="password" id="cpNew" placeholder="At least 6 characters" style="width:100%;background:#f8fafc;border:2px solid rgba(59,130,246,.15);border-radius:10px;padding:11px 42px 11px 14px;color:#0f172a;font-size:.9rem;font-family:inherit;outline:none"><button type="button" onclick="toggleCp('cpNew', this)" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#94a3b8">👁</button></div></div>
+    <div style="margin-bottom:20px"><label style="display:block;color:#374151;font-size:.79rem;font-weight:700;margin-bottom:6px">Confirm New Password</label><input type="password" id="cpCon" placeholder="Re-enter new password" style="width:100%;background:#f8fafc;border:2px solid rgba(59,130,246,.15);border-radius:10px;padding:11px 14px;color:#0f172a;font-size:.9rem;font-family:inherit;outline:none"></div>
+    <button onclick="submitChangePwd()" style="width:100%;padding:12px;background:linear-gradient(135deg,#5b5cf6,#8b5cf6);color:#fff;border:none;border-radius:10px;font-size:.95rem;font-weight:600;cursor:pointer;font-family:inherit" id="cpBtn">Update Password</button>
+  </div>
+</div>
+<script>
+function openPwdModal(){ var m=document.getElementById("chgPwdModal"); m.style.display="flex"; ["cpCur","cpNew","cpCon"].forEach(function(i){document.getElementById(i).value="";}); document.getElementById("cpErr").style.display="none"; document.getElementById("cpOk").style.display="none"; document.getElementById("cpBtn").disabled=false; document.getElementById("cpBtn").textContent="Update Password"; }
+function closePwdModal(){ document.getElementById("chgPwdModal").style.display="none"; }
+function toggleCp(id,btn){ var f=document.getElementById(id); f.type=f.type==="password"?"text":"password"; btn.textContent=f.type==="password"?"👁":"🙈"; }
+async function submitChangePwd(){
+  var cur=document.getElementById("cpCur").value, nw=document.getElementById("cpNew").value, con=document.getElementById("cpCon").value;
+  var err=document.getElementById("cpErr"), ok=document.getElementById("cpOk");
+  err.style.display="none"; ok.style.display="none";
+  if(!cur||!nw||!con){err.textContent="All fields are required.";err.style.display="block";return;}
+  if(nw.length<6){err.textContent="New password must be at least 6 characters.";err.style.display="block";return;}
+  if(nw!==con){err.textContent="New passwords do not match.";err.style.display="block";return;}
+  var btn=document.getElementById("cpBtn"); btn.disabled=true; btn.textContent="Updating…";
+  var r=await fetch("/api/change-password",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({current_password:cur,new_password:nw})});
+  var d=await r.json();
+  if(d.success){ok.textContent="✅ "+d.message;ok.style.display="block";setTimeout(closePwdModal,2000);}
+  else{err.textContent=d.error||"Failed";err.style.display="block";btn.disabled=false;btn.textContent="Update Password";}
+}
+</script></body>
+</html>

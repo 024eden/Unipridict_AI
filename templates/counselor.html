@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UniPredict AI — Counselor</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#edf4fb;--s:rgba(255,255,255,.88);--b:rgba(59,130,246,.12);
+  --p:#2563eb;--pl:#3b82f6;--ok:#16a34a;--err:#dc2626;--warn:#d97706;
+  --txt:#0f172a;--m:#64748b;
+}
+[data-theme="dark"]{
+  --bg:#0f172a;--s:rgba(30,41,59,.88);--b:rgba(59,130,246,.2);
+  --p:#3b82f6;--pl:#60a5fa;--ok:#22c55e;--err:#ef4444;--warn:#f59e0b;
+  --txt:#f1f5f9;--m:#94a3b8;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);min-height:100vh;color:var(--txt);position:relative;transition:background .3s ease}
+body::before{content:'';position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:linear-gradient(135deg,#e8f4fd 0%,#edf7ee 35%,#fef9ee 70%,#f0ecfb 100%)}
+[data-theme="dark"] body::before{background:linear-gradient(135deg,#1e293b 0%,#334155 35%,#475569 70%,#64748b 100%)}
+body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse 60% 50% at 15% 15%,rgba(59,130,246,.07) 0%,transparent 60%),
+             radial-gradient(ellipse 50% 40% at 85% 20%,rgba(34,197,94,.06) 0%,transparent 55%),
+             radial-gradient(ellipse 55% 45% at 50% 85%,rgba(168,85,247,.05) 0%,transparent 55%);
+  animation:bgPulse 25s ease-in-out infinite alternate}
+@keyframes bgPulse{0%{opacity:1}100%{opacity:.65}}
+/* Academic Background Elements */
+.edu-float{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.edu-float span{position:absolute;font-size:1.3rem;opacity:.08;animation:float 6s ease-in-out infinite;text-shadow:0 2px 4px rgba(0,0,0,.1)}
+.edu-float span:nth-child(odd){animation-delay:-3s}
+.edu-float span:nth-child(3n){font-size:1.5rem;opacity:.1}
+.edu-float span:nth-child(4n){font-size:1.1rem;opacity:.06}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(3deg)}}
+/* Academic Pattern Background */
+.edu-pattern{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.03;background-image:radial-gradient(circle at 25% 25%, #2563eb 1px, transparent 1px),radial-gradient(circle at 75% 75%, #16a34a 1px, transparent 1px);background-size:50px 50px,60px 60px}
+[data-theme="dark"] .edu-pattern{opacity:.02;background-image:radial-gradient(circle at 25% 25%, #3b82f6 1px, transparent 1px),radial-gradient(circle at 75% 75%, #22c55e 1px, transparent 1px)}
+/* Academic Border Frame */
+.edu-frame{position:fixed;inset:20px;z-index:-1;pointer-events:none;border:2px solid rgba(37,99,246,.05);border-radius:20px;background:linear-gradient(45deg,rgba(37,99,246,.02) 0%,transparent 50%,rgba(16,185,129,.02) 100%)}
+[data-theme="dark"] .edu-frame{border-color:rgba(59,130,246,.08);background:linear-gradient(45deg,rgba(59,130,246,.04) 0%,transparent 50%,rgba(34,197,94,.04) 100%)}
+.edu-float span{position:absolute;font-size:2.6rem;opacity:.045;animation:eduDrift 20s ease-in-out infinite}
+.edu-float span:nth-child(1){animation-duration:23s;animation-delay:0s}
+.edu-float span:nth-child(2){animation-duration:19s;animation-delay:-5s}
+.edu-float span:nth-child(3){animation-duration:26s;animation-delay:-9s}
+.edu-float span:nth-child(4){animation-duration:21s;animation-delay:-3s}
+.edu-float span:nth-child(5){animation-duration:24s;animation-delay:-14s}
+.edu-float span:nth-child(6){animation-duration:18s;animation-delay:-7s}
+.edu-float span:nth-child(7){animation-duration:22s;animation-delay:-11s}
+.edu-float span:nth-child(8){animation-duration:20s;animation-delay:-2s}
+@keyframes eduDrift{0%,100%{transform:translateY(0) rotate(0deg) scale(1)}25%{transform:translateY(-16px) rotate(4deg) scale(1.04)}60%{transform:translateY(-9px) rotate(-3deg) scale(.96)}80%{transform:translateY(-20px) rotate(6deg) scale(1.02)}}
+nav{background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:2px solid rgba(59,130,246,.13);box-shadow:0 2px 14px rgba(59,130,246,.08);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:62px;position:sticky;top:0;z-index:100}
+.nb{font-family:'DM Serif Display',serif;font-size:1.35rem;color:#1e40af;text-decoration:none;display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1e40af 0%,#3b82f6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;font-weight:700}
+.nb::before{content:'🎓';font-size:1.8rem;position:absolute;left:-28px;background:linear-gradient(135deg,#1e40af 0%,#3b82f6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 2px 4px rgba(30,64,175,.2))}
+.nb::after{content:'AI';font-size:.7rem;font-weight:600;position:relative;top:-2px;left:2px;color:#3b82f6;text-shadow:0 1px 2px rgba(59,130,246,.3)}
+[data-theme="dark"] .nb{background:linear-gradient(135deg,#60a5fa 0%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+[data-theme="dark"] .nb::before{background:linear-gradient(135deg,#60a5fa 0%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 2px 4px rgba(96,165,250,.3))}
+[data-theme="dark"] .nb::after{color:#93c5fd;text-shadow:0 1px 2px rgba(147,197,253,.4)}
+.nl{display:flex;gap:3px}
+.nl a{padding:7px 14px;border-radius:8px;color:#475569;text-decoration:none;font-size:.88rem;font-weight:600;transition:all .2s}
+.nl a:hover,.nl a.active{background:rgba(37,99,235,.1);color:#1d4ed8}
+.nr{display:flex;align-items:center;gap:10px}
+.nb-btn{position:relative;background:rgba(255,255,255,.8);border:1px solid rgba(59,130,246,.18);border-radius:9px;padding:7px 11px;color:#475569;text-decoration:none;font-size:1rem;transition:all .2s}
+.nb-btn:hover{color:#1d4ed8}
+.badge{position:absolute;top:-5px;right:-5px;background:var(--err);color:#fff;font-size:.6rem;font-weight:700;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.uc{background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.28);border-radius:9px;padding:7px 13px;font-size:.82rem;color:#1d4ed8;font-weight:700}
+.lo{padding:7px 13px;border-radius:9px;background:rgba(220,38,38,.09);border:1px solid rgba(220,38,38,.2);color:#dc2626;font-size:.82rem;text-decoration:none;transition:all .2s;font-weight:600}
+.lo:hover{background:rgba(220,38,38,.18)}
+.theme-toggle{background:rgba(148,163,184,.1);border:1px solid rgba(148,163,184,.2);border-radius:9px;padding:7px 11px;color:#64748b;font-size:1rem;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px}
+.theme-toggle:hover{background:rgba(148,163,184,.2);color:#475569}
+[data-theme="dark"] .theme-toggle{background:rgba(148,163,184,.2);color:#94a3b8}
+[data-theme="dark"] .theme-toggle:hover{background:rgba(148,163,184,.3);color:#cbd5e1}
+.main{padding:28px;max-width:1380px;margin:0 auto}
+/* Academic Dashboard Title */
+.pt{font-family:'DM Serif Display',serif;font-size:1.9rem;color:var(--txt);margin-bottom:4px;background:linear-gradient(135deg,var(--p) 0%,var(--pl) 50%,var(--ok) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;font-weight:700}
+.pt::before{content:'';position:absolute;bottom:-8px;left:0;width:60px;height:3px;background:linear-gradient(90deg,var(--p) 0%,var(--pl) 100%);border-radius:2px}
+.pt::after{content:'📊';position:absolute;right:-40px;top:50%;transform:translateY(-50%);font-size:1.2rem;opacity:.3}
+[data-theme="dark"] .pt::before{background:linear-gradient(90deg,var(--pl) 0%,var(--ok) 100%)}
+[data-theme="dark"] .pt::after{opacity:.2}
+.ps{color:var(--m);font-size:.88rem;margin-bottom:28px;font-weight:500}
+.card{background:var(--s);border:1px solid var(--b);border-radius:15px;padding:26px;box-shadow:0 2px 18px rgba(59,130,246,.06);transition:all .3s ease}
+.ct{font-size:1.05rem;font-weight:700;color:var(--txt);margin-bottom:18px;display:flex;align-items:center;gap:7px}
+.mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:24px}
+.mc{background:var(--s);border:1px solid var(--b);border-radius:14px;padding:22px;position:relative;overflow:hidden;transition:all .2s;box-shadow:0 2px 12px rgba(59,130,246,.05)}
+.mc:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,130,246,.1)}
+.mc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.mc.blue::before{background:linear-gradient(90deg,#5b5cf6,#8b5cf6)}
+.mc.green::before{background:linear-gradient(90deg,#10b981,#34d399)}
+.mc.yellow::before{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+.mc.red::before{background:linear-gradient(90deg,#ef4444,#f87171)}
+.mc.purple::before{background:linear-gradient(90deg,#8b5cf6,#a78bfa)}
+.mc.cyan::before{background:linear-gradient(90deg,#06b6d4,#22d3ee)}
+.mi{font-size:1.5rem;margin-bottom:10px}
+.mv{font-size:2rem;font-weight:700;color:var(--txt);margin-bottom:3px}
+.ml{color:var(--m);font-size:.77rem;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.cg{display:grid;gap:18px;margin-bottom:18px}
+.cg2{grid-template-columns:1fr 1fr}
+.cg3{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:900px){.cg2,.cg3{grid-template-columns:1fr}}
+.fl{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;align-items:center}
+.fb{padding:7px 16px;border-radius:18px;border:2px solid rgba(59,130,246,.14);background:rgba(255,255,255,.8);color:#475569;font-size:.83rem;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;font-weight:600}
+.fb:hover,.fb.active{background:rgba(37,99,235,.1);border-color:rgba(37,99,235,.38);color:#1d4ed8}
+.sb{flex:1;min-width:180px;max-width:280px;background:rgba(255,255,255,.9);border:2px solid rgba(59,130,246,.15);border-radius:9px;padding:8px 14px;font-size:.88rem;color:#0f172a;font-family:'DM Sans',sans-serif;outline:none;font-weight:500}
+.sb:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.sb::placeholder{color:#94a3b8}
+table{width:100%;border-collapse:collapse}
+thead{background:rgba(37,99,235,.06)}
+th{padding:12px 14px;text-align:left;font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;color:#475569;font-weight:700;white-space:nowrap}
+td{padding:13px 14px;font-size:.86rem;border-top:1px solid rgba(59,130,246,.07);color:#1e293b}
+tr:hover td{background:rgba(59,130,246,.03)}
+.rp{padding:4px 10px;border-radius:11px;font-size:.73rem;font-weight:600;white-space:nowrap}
+.rp.low{background:rgba(16,185,129,.13);color:#34d399;border:1px solid rgba(16,185,129,.28)}
+.rp.medium{background:rgba(245,158,11,.13);color:#fbbf24;border:1px solid rgba(245,158,11,.28)}
+.rp.high{background:rgba(239,68,68,.13);color:#f87171;border:1px solid rgba(239,68,68,.28)}
+.sp{padding:4px 10px;border-radius:11px;font-size:.73rem;font-weight:600}
+.sp.pass{background:rgba(16,185,129,.13);color:#34d399;border:1px solid rgba(16,185,129,.28)}
+.sp.fail{background:rgba(239,68,68,.13);color:#f87171;border:1px solid rgba(239,68,68,.28)}
+.btn-sm{padding:5px 11px;border-radius:7px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:#1d4ed8;font-size:.75rem;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+.btn-sm:hover{background:rgba(37,99,235,.18)}
+.btn-sm.red{background:rgba(239,68,68,.13);border-color:rgba(239,68,68,.25);color:#f87171}
+.btn-sm.red:hover{background:rgba(239,68,68,.25)}
+.btn-sm.green{background:rgba(16,185,129,.13);border-color:rgba(16,185,129,.25);color:#34d399}
+.pg{display:flex;gap:7px;justify-content:center;padding:18px;align-items:center}
+.pb{padding:7px 13px;border-radius:7px;border:2px solid rgba(59,130,246,.13);background:rgba(255,255,255,.8);color:#475569;font-size:.82rem;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600}
+.pb:hover,.pb.active{background:rgba(37,99,235,.1);border-color:rgba(37,99,235,.38);color:#1d4ed8}
+.pb:disabled{opacity:.4;cursor:not-allowed}
+.pi{color:#64748b;font-size:.82rem;font-weight:500}
+.form-g{margin-bottom:16px}
+.form-g label{display:block;color:#374151;font-size:.8rem;font-weight:700;margin-bottom:6px}
+.form-g input,.form-g select{width:100%;background:#f8fafc;border:2px solid rgba(59,130,246,.14);border-radius:9px;padding:10px 13px;font-size:.88rem;color:#0f172a;font-family:'DM Sans',sans-serif;outline:none;transition:all .2s}
+.form-g select option{background:#ffffff;color:#0f172a}
+.form-g input:focus,.form-g select:focus{border-color:#2563eb;background:#fff;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.btn-pri{background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff;border:none;border-radius:10px;padding:12px 24px;font-size:.92rem;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;transition:opacity .2s,transform .2s}
+.btn-pri:hover{opacity:.9;transform:translateY(-1px)}
+.btn-pri:disabled{opacity:.5;cursor:not-allowed}
+.sp2{width:32px;height:32px;border:2.5px solid rgba(59,130,246,.15);border-top-color:#2563eb;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 10px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ld{display:none;text-align:center;padding:30px;color:#64748b}
+.email-col{font-size:.8rem;max-width:200px}
+.email-col a{color:#2563eb;text-decoration:none;display:flex;align-items:center;gap:4px}
+.email-col a:hover{text-decoration:underline}
+.email-icon{font-size:.9rem}
+.tw{background:rgba(255,255,255,.92);border:1px solid rgba(59,130,246,.1);border-radius:14px;overflow:hidden}
+.mo{position:fixed;inset:0;background:rgba(15,23,42,.55);backdrop-filter:blur(6px);z-index:1000;display:none;align-items:center;justify-content:center}
+.mo.open{display:flex}
+.md{background:#ffffff;border:1px solid rgba(59,130,246,.15);border-radius:18px;color:#0f172a;box-shadow:0 20px 60px rgba(59,130,246,.15);width:92%;max-width:680px;max-height:87vh;overflow-y:auto;padding:30px;animation:mIn .28s ease}
+@keyframes mIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+.mh{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.mt{font-family:'DM Serif Display',serif;font-size:1.4rem;color:#0f172a}
+.mc2{background:none;border:none;color:#64748b;font-size:1.4rem;cursor:pointer}
+.mc2:hover{color:#0f172a}
+.toast{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;gap:8px}
+.toast-item{background:#ffffff;border:1px solid rgba(59,130,246,.15);border-radius:10px;padding:12px 18px;font-size:.86rem;color:#0f172a;box-shadow:0 4px 20px rgba(0,0,0,.12);animation:tIn .3s ease;max-width:320px;display:flex;align-items:center;gap:10px}
+.toast-item.ok{border-left:3px solid var(--ok)}
+.toast-item.err{border-left:3px solid var(--err)}
+@keyframes tIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+.interv{background:rgba(37,99,235,.05);border:1px solid rgba(37,99,235,.15);border-radius:9px;padding:13px 15px;margin-bottom:9px}
+.interv-t{font-size:.88rem;font-weight:600;color:#1d4ed8;margin-bottom:3px}
+.interv-d{font-size:.8rem;color:#475569;line-height:1.5}
+/* Charts */
+.chart-container{background:var(--s);border:1px solid var(--b);border-radius:12px;padding:20px;text-align:center;transition:all .3s ease}
+.chart-container:hover{box-shadow:0 4px 16px rgba(59,130,246,.1)}
+.chart-title{font-size:.9rem;font-weight:600;color:var(--txt);margin-bottom:12px}
+.chart-placeholder{width:100%;height:200px;display:flex;align-items:center;justify-content:center;background:rgba(59,130,246,.05);border-radius:8px;color:var(--m);font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="edu-float" aria-hidden="true">
+  <span style="top:6%;left:1.5%">📚</span>
+  <span style="top:18%;right:3%">🎓</span>
+  <span style="top:38%;left:5%">✏️</span>
+  <span style="top:55%;right:7%">🔬</span>
+  <span style="top:72%;left:2%">📐</span>
+  <span style="bottom:10%;right:4%">🌍</span>
+  <span style="bottom:22%;left:10%">💡</span>
+  <span style="top:28%;right:20%">🏆</span>
+  <span style="top:12%;left:25%">📖</span>
+  <span style="top:45%;right:15%">🔭</span>
+  <span style="bottom:30%;left:18%">⚗️</span>
+  <span style="top:65%;right:25%">🧮</span>
+  <span style="bottom:15%;left:35%">🎨</span>
+  <span style="top:35%;right:35%">🌱</span>
+  <span style="top:85%;left:45%">📊</span>
+  <span style="bottom:5%;right:45%">🔔</span>
+  <span style="top:25%;left:55%">📝</span>
+  <span style="top:75%;right:55%">🌟</span>
+  <span style="bottom:25%;left:65%">🧪</span>
+  <span style="top:15%;right:65%">📐</span>
+  <span style="top:50%;left:75%">💻</span>
+  <span style="bottom:40%;right:75%">🎯</span>
+  <span style="top:90%;left:85%">📈</span>
+  <span style="bottom:8%;right:85%">🏅</span>
+</div>
+<div class="edu-pattern"></div>
+<div class="edu-frame"></div>
+<nav>
+  <a class="nb" href="/counselor">🎓 UniPredict AI</a>
+  <div class="nl">
+    <a href="/counselor" class="active">Dashboard</a>
+    <a href="#" onclick="showSec('all')">All Students</a>
+    <a href="/analytics">📊 Analytics</a>
+    <a href="/reports">📋 Reports</a>
+    {% if user_role == 'admin' %}
+    <a href="/notifications">Notifications</a>
+    {% endif %}
+  </div>
+  <div class="nr">
+    {% if user_role == 'admin' %}
+    <a class="nb-btn" href="/notifications">🔔{% if notif_count > 0 %}<span class="badge">{{ notif_count if notif_count < 10 else '9+' }}</span>{% endif %}</a>
+    {% endif %}
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+      <span id="theme-icon">🌙</span>
+    </button>
+    <div class="uc">🤝 {{ user_name }}{% if counselor_email %} · <span style="font-size:.75rem;opacity:.75">{{ counselor_email }}</span>{% endif %}</div>
+    <button onclick="openPwdModal()" style="background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);color:#1d4ed8;border-radius:8px;padding:6px 13px;font-size:.8rem;cursor:pointer;font-family:inherit;margin-right:6px" title="Change Password">🔑</button><a class="lo" href="/logout">Sign Out</a>
+  </div>
+</nav>
+<div class="main">
+  <div class="pt">Counselor Dashboard</div>
+  <div class="ps">Monitor at-risk students and provide targeted intervention support.</div>
+
+  <div class="mg">
+    <div class="mc blue">
+      <div class="mi">👥</div>
+      <div class="mv">{{ total_students }}</div>
+      <div class="ml">Total Students (overall)</div>
+    </div>
+    <div class="mc green">
+      <div class="mi">✅</div>
+      <div class="mv">{{ pass_overall }}</div>
+      <div class="ml">Passing Students (overall)</div>
+    </div>
+    <div class="mc red">
+      <div class="mi">⚠️</div>
+      <div class="mv">{{ total_at_risk }}</div>
+      <div class="ml">At-Risk / Failing Students (overall)</div>
+    </div>
+    <div class="mc yellow">
+      <div class="mi">🚨</div>
+      <div class="mv" id="highRisk">—</div>
+      <div class="ml">High Risk in current list · reports sent <span id="resolved">0</span></div>
+    </div>
+  </div>
+
+  <!-- Analytics Dashboard -->
+  <div class="card" style="margin-bottom:24px">
+    <div class="ct">📊 Performance Analytics</div>
+    <div class="cg cg3">
+      <div class="chart-container">
+        <div class="chart-title">Risk Distribution</div>
+        <canvas id="riskChart" width="300" height="200"></canvas>
+      </div>
+      <div class="chart-container">
+        <div class="chart-title">Grade Distribution</div>
+        <canvas id="gradeChart" width="300" height="200"></canvas>
+      </div>
+      <div class="chart-container">
+        <div class="chart-title">Attendance Overview</div>
+        <canvas id="attendanceChart" width="300" height="200"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- At-Risk Quick Panel -->
+  <div id="sec-home" class="sec">
+    <div class="cg cg2">
+      <div class="card" style="grid-column:1/-1">
+        <div class="ct">🚨 Priority At-Risk Students (Top 20)</div>
+        <div class="tw">
+          <table>
+            <thead><tr><th>ID</th><th>Name</th><th>Gender</th><th>Age</th><th>Grade</th><th>Attendance</th><th>Risk Score</th><th>Status</th><th>Key Issues</th><th>Parent Email</th><th>Actions</th></tr></thead>
+            <tbody>
+            {% for s in at_risk_students %}
+            <tr>
+              <td><strong>#{{ s.student_id }}</strong></td>
+              <td><strong>{{ s.student_name or '—' }}</strong></td>
+              <td>{{ s.gender }}</td><td>{{ s.age }}</td>
+              <td><strong>{{ s.final_grade }}</strong></td>
+              <td>{{ s.attendance_rate }}%</td>
+              <td><span class="rp {{ 'high' if s.risk_score >= 60 else 'medium' }}">{{ s.risk_score }}%</span></td>
+              <td><span class="rp {{ 'low' if s.is_reported else 'high' }}" style="padding:4px 10px;border-radius:11px;font-size:.73rem;font-weight:600;white-space:nowrap">{{ 'Sent' if s.is_reported else 'Not Sent' }}</span></td>
+              <td style="font-size:.78rem;color:#64748b">{{ s.risk_factors | join(', ') }}</td>
+              <td style="font-size:.8rem"><a href="mailto:{{ s.parent_email }}" style="color:#2563eb;text-decoration:none" title="{{ s.parent_email }}">{% if s.parent_email %}📧 {{ s.parent_email }}{% else %}<span style="color:#64748b">—</span>{% endif %}</a></td>
+              <td style="display:flex;gap:5px">
+                <button class="btn-sm" onclick="viewStudent('{{ s.student_id }}')">View</button>
+                <button class="btn-sm green" onclick="sendCReport('{{ s.student_id }}')">Report</button>
+              </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- All Students Section -->
+  <div id="sec-all" class="sec" style="display:none">
+    <div class="card">
+      <div class="ct">👥 All Students</div>
+      <div class="fl">
+        <button class="fb active" onclick="setFilt('all',this)">All</button>
+        <button class="fb" onclick="setFilt('at-risk',this)">⚠️ At-Risk</button>
+        <button class="fb" onclick="setFilt('passing',this)">✅ Passing</button>
+        <input class="sb" id="cSearchId" type="number" placeholder="Search by Student ID" oninput="debSearch()">
+      </div>
+      <div class="ld" id="cTblLoad"><div class="sp2"></div><p>Loading…</p></div>
+      <div class="tw" id="cTblWrap">
+        <table>
+          <thead><tr><th>ID</th><th>Name</th><th>Gender</th><th>Age</th><th>Grade</th><th>Attendance</th><th>Stress</th><th>Motivation</th><th>Risk</th><th>Status</th><th>Parent Email</th><th>Action</th></tr></thead>
+          <tbody id="cTblBody"></tbody>
+        </table>
+        <div id="cEmpty" style="display:none;padding:40px;text-align:center;color:var(--m)">No students found.</div>
+      </div>
+      <div class="pg" id="cPg"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Student Detail Modal -->
+<div class="mo" id="sModal" onclick="closeSModal(event)">
+  <div class="md" style="max-width:780px">
+    <div class="mh"><div class="mt" id="sModalTitle">Student Profile</div><button class="mc2" onclick="closeSModal()">✕</button></div>
+    <div id="sModalContent"></div>
+    <div style="margin-top:16px">
+      <div style="background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.18);border-radius:10px;padding:12px 16px;margin-bottom:12px;display:flex;align-items:center;gap:12px">
+        <div style="font-size:22px">🤝</div>
+        <div>
+          <div style="font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:#64748b;margin-bottom:2px">Reporting Counselor</div>
+          <div style="font-size:.9rem;font-weight:600;color:#0f172a">{{ user_name }}</div>
+          {% if counselor_email %}<div style="font-size:.8rem;color:#2563eb">📧 {{ counselor_email }}</div>{% endif %}
+          <div style="font-size:.75rem;color:#64748b;margin-top:3px" id="cReportTime">🕐 Report time: <span id="cTimestamp">—</span></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-end">
+        <div class="form-g" style="flex:1;margin:0;position:relative;">
+          <label>Parent Email <span style="font-size:.75rem;color:var(--m)">(auto-filled from student record)</span></label>
+          <input type="email" id="cParentEmail" placeholder="parent@email.com" autocomplete="off" style="width:100%;">
+          <div id="parentEmailList" style="margin-top:8px;display:flex;flex-wrap:wrap;gap:6px"></div>
+        </div>
+        <button class="btn-pri" style="white-space:nowrap" onclick="sendCounReport()">📧 Send Report</button>
+      </div>
+      <div id="cEmailStatus" style="margin-top:8px;font-size:.84rem;color:var(--m)"></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let curFilt='all',curPage=1,allS=[],dispS=[],curSid=null;
+let sessionCount=0,resolvedCount=0;
+
+function showSec(s){
+  document.querySelectorAll('.sec').forEach(el=>el.style.display='none');
+  document.getElementById('sec-'+s).style.display='block';
+  if(s==='all') loadStudents();
+}
+
+function setFilt(f,btn){
+  curFilt=f;curPage=1;
+  document.getElementById('cSearchId').value='';
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  loadStudents();
+}
+
+let st;
+function debSearch(){ clearTimeout(st);st=setTimeout(searchStudent,400); }
+
+async function searchStudent(){
+  const id=parseInt(document.getElementById('cSearchId').value);
+  if(!id||isNaN(id)){dispS=[...allS];renderTbl();return;}
+  document.getElementById('cTblBody').innerHTML='<tr><td colspan="11" style="text-align:center;padding:24px;color:var(--m)">Searching…</td></tr>';
+  try{
+    const r=await(await fetch('/api/student/'+id)).json();
+    if(r.success){
+      const s=r.student;
+      dispS=[{student_id:s.student_id,student_name:s.student_name||'Unknown',gender:s.gender,age:s.age,final_grade:parseFloat(s.final_grade||0).toFixed(1),
+               attendance_rate:parseFloat(s.attendance_rate||0).toFixed(1),stress_level:parseFloat(s.stress_level||0).toFixed(1),
+               motivation_score:parseFloat(s.motivation_score||0).toFixed(1),risk_score:s.risk_score,pass_fail:s.pass_fail,performance_category:s.performance_category,
+               parent_email:s.parent_email||''}];
+      renderTbl();document.getElementById('cPg').innerHTML='';
+    }else{dispS=[];document.getElementById('cTblBody').innerHTML='';document.getElementById('cEmpty').textContent='Student #'+id+' not found.';document.getElementById('cEmpty').style.display='block';}
+  }catch(e){}
+}
+
+async function loadStudents(){
+  document.getElementById('cTblLoad').style.display='block';
+  document.getElementById('cTblWrap').style.display='none';
+  try{
+    const r=await(await fetch('/api/students?page='+curPage+'&per_page=25&filter='+curFilt)).json();
+    if(r.success){allS=r.students;dispS=[...allS];renderTbl();renderPg(r);}
+  }catch(e){}
+  document.getElementById('cTblLoad').style.display='none';
+  document.getElementById('cTblWrap').style.display='block';
+}
+
+function rc(s){return s<30?'low':s<60?'medium':'high';}
+function renderTbl(){
+  const tb=document.getElementById('cTblBody'),em=document.getElementById('cEmpty');
+  if(!dispS.length){tb.innerHTML='';em.style.display='block';return;}
+  em.style.display='none';
+  tb.innerHTML=dispS.map(s=>{
+    const reportedBadge=s.is_reported
+      ?`<span title="Report already sent" style="display:inline-flex;align-items:center;gap:3px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.35);color:#059669;font-size:.68rem;font-weight:700;padding:2px 7px;border-radius:20px;margin-left:5px;vertical-align:middle">📬 Reported</span>`
+      :'';
+    const counselorBadge=s.counselor_reported
+      ?`<span title="Counselor report sent" style="display:inline-flex;align-items:center;gap:3px;background:rgba(37,99,235,.12);border:1px solid rgba(37,99,235,.35);color:#1d4ed8;font-size:.68rem;font-weight:700;padding:2px 7px;border-radius:20px;margin-left:5px;vertical-align:middle">🤝 Counselor</span>`
+      :'';
+    const statusColor = s.is_reported ? 'low' : 'high';
+    const statusText = s.is_reported ? 'Sent' : 'Not Sent';
+    return `
+    <tr>
+      <td><strong>#${s.student_id}</strong></td>
+      <td><strong>${s.student_name||'—'}</strong>${reportedBadge}${counselorBadge}</td>
+      <td>${s.gender}</td><td>${s.age}</td>
+      <td>${s.final_grade}</td><td>${s.attendance_rate}%</td>
+      <td>${s.stress_level||'—'}/10</td><td>${s.motivation_score||'—'}/10</td>
+      <td><span class="rp ${rc(s.risk_score)}">${s.risk_score}%</span></td>
+      <td><span class="rp ${statusColor}">${statusText}</span></td>
+      <td style="font-size:.8rem"><a href="mailto:${s.parent_email||''}" class="email-col" title="${s.parent_email||'No email'}">${s.parent_email?'<span class="email-icon">📧</span> '+s.parent_email:'<span style="color:#64748b">—</span>'}</a></td>
+      <td><button class="btn-sm" onclick="viewStudent(${s.student_id})">View</button></td>
+    </tr>`}).join('');
+  document.getElementById('highRisk').textContent=allS.filter(s=>s.risk_score>=60).length;
+  document.getElementById('resolved').textContent=allS.filter(s=>s.is_reported).length;
+}
+
+function renderPg(d){
+  const w=document.getElementById('cPg');
+  if(d.pages<=1){w.innerHTML='';return;}
+  let h=`<button class="pb" onclick="goPage(${curPage-1})" ${curPage===1?'disabled':''}>‹</button>`;
+  for(let i=Math.max(1,curPage-2);i<=Math.min(d.pages,curPage+2);i++)
+    h+=`<button class="pb${i===curPage?' active':''}" onclick="goPage(${i})">${i}</button>`;
+  h+=`<span class="pi">Page ${curPage}/${d.pages}</span>`;
+  h+=`<button class="pb" onclick="goPage(${curPage+1})" ${curPage===d.pages?'disabled':''}>›</button>`;
+  w.innerHTML=h;
+}
+function goPage(p){curPage=p;loadStudents();}
+
+async function toggleCounselorSent(sid, reported){
+  try{
+    const r=await fetch('/api/student/'+sid+'/counselor-report',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({reported})});
+    const d=await r.json();
+    if(d.success){
+      toast('Counselor report status set to ' + (reported?'sent':'not sent'),'ok');
+      // update in local list if present
+      const idx=allS.findIndex(s=>s.student_id===sid);
+      if(idx>=0){
+        allS[idx].counselor_reported = reported ? '1' : '0';
+        renderTbl();
+      }
+    } else {
+      toast(d.error || 'Failed to update status','err');
+      loadStudents();
+    }
+  }catch(e){
+    toast('Request failed','err');
+    loadStudents();
+  }
+}
+
+async function viewStudent(sid){
+  curSid=sid;
+  document.getElementById('sModalTitle').textContent='Student #'+sid+' — Counselor View';
+  document.getElementById('sModalContent').innerHTML='<div class="ld" style="display:block"><div class="sp2"></div><p>Loading…</p></div>';
+  document.getElementById('sModal').classList.add('open');
+  const r=await(await fetch('/api/student/'+sid+'/report')).json();
+  if(r.success){
+    document.getElementById('sModalContent').innerHTML=r.report_html;
+    sessionCount++; document.getElementById('sessions').textContent=sessionCount;
+    // Auto-populate parent email from student record
+    const parentEmail = r.student && r.student.parent_email ? r.student.parent_email : '';
+    const emailInput = document.getElementById('cParentEmail');
+    if (emailInput) {
+      emailInput.value = parentEmail;
+      emailInput.placeholder = parentEmail ? parentEmail : 'Enter parent email';
+    }
+
+    // Show exact student parent emails list (no dropdown) if provided
+    if (Array.isArray(r.suggested_parent_emails)) {
+      renderStudentParentEmails(r.suggested_parent_emails);
+    } else {
+      renderStudentParentEmails([]);
+    }
+
+    // Set live report timestamp
+    const tsEl=document.getElementById('cTimestamp');
+    if(tsEl){
+      const now=new Date();
+      tsEl.textContent=now.toLocaleString('en-GB',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});
+    }
+  }
+}
+
+function closeSModal(e){if(!e||e.target===document.getElementById('sModal'))document.getElementById('sModal').classList.remove('open');}
+
+async function sendCReport(sid){ curSid=sid; document.getElementById('sModal').classList.add('open'); await viewStudent(sid); }
+
+async function sendCounReport(){
+  const email=document.getElementById('cParentEmail').value.trim();
+  if(!email){toast('Enter parent email','err');return;}
+  const statusEl=document.getElementById('cEmailStatus');
+  statusEl.textContent='📤 Sending…';
+  statusEl.style.color='#64748b';
+  const r=await fetch('/api/student/'+curSid+'/email-report',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email})});
+  const d=await r.json();
+  if(d.success){
+    statusEl.innerHTML='<span style="color:#34d399">✅ '+d.message+'</span>';
+    resolvedCount++; document.getElementById('resolved').textContent=resolvedCount;
+    // Mark the report as sent in the student table UI
+    const studentIndex = allS.findIndex(s=>s.student_id===curSid);
+    if(studentIndex >= 0){
+      allS[studentIndex].is_reported = true;
+      allS[studentIndex].last_reported_at = new Date().toISOString();
+      renderTbl();
+    }
+    toast('Report sent to '+email);
+  } else if(d.simulated){
+    statusEl.innerHTML='<span style="color:#fbbf24">⚠️ '+d.message+'<br><small>Ask your admin to configure email at Admin → 📧 Email Settings</small></span>';
+  } else {
+    statusEl.innerHTML='<span style="color:#f87171">❌ '+(d.error||d.message||'Failed')+'</span>';
+    toast(d.error||'Failed','err');
+  }
+}
+
+function toast(msg,type='ok'){
+  const c=document.getElementById('toast');
+  const el=document.createElement('div');
+  el.className='toast-item '+type;
+  el.innerHTML=(type==='ok'?'✅ ':'❌ ')+msg;
+  c.appendChild(el); setTimeout(()=>el.remove(),4500);
+}
+
+function renderStudentParentEmails(emails){
+  const list = document.getElementById('parentEmailList');
+  if (!list) return;
+
+  if (!emails || !emails.length) {
+    list.innerHTML = '<div style="font-size:.8rem;color:#64748b">No parent emails available.</div>';
+    return;
+  }
+
+  list.innerHTML = emails.map(email=>`
+    <button type="button" style="border:1px solid #60a5fa;background:#eff6ff;color:#1d4ed8;padding:6px 8px;border-radius:8px;font-size:.8rem;cursor:pointer" onclick="document.getElementById('cParentEmail').value='${email}';">
+      ${email}
+    </button>
+  `).join('');
+}
+
+// Hide suggestions when clicking outside (to support click anywhere closure behavior)
+document.addEventListener('click', function(e) {
+  const list = document.getElementById('parentEmailList');
+  if (!list) return;
+  if (e.target.id !== 'cParentEmail' && !list.contains(e.target)) {
+     // keep list visible; we only close when user clicks outside modal
+  }
+});
+
+// Set high risk count on load
+document.addEventListener('DOMContentLoaded', function() {
+  const highRiskCount = JSON.parse('{{ (at_risk_students | selectattr("risk_score", "ge", 60) | list | length) | tojson }}');
+  const highRiskElement = document.getElementById('highRisk');
+  if (highRiskElement) {
+    highRiskElement.textContent = highRiskCount;
+  }
+  const resolvedCount = JSON.parse('{{ (at_risk_students | selectattr("is_reported", "equalto", true) | list | length) | tojson }}');
+  const resolvedElement = document.getElementById('resolved');
+  if (resolvedElement) {
+    resolvedElement.textContent = resolvedCount;
+  }
+});
+
+// Theme toggle functionality
+function toggleTheme(){
+  const html = document.documentElement;
+  const themeIcon = document.getElementById('theme-icon');
+  const currentTheme = html.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  
+  html.setAttribute('data-theme', newTheme);
+  themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+  
+  // Save theme preference
+  localStorage.setItem('theme', newTheme);
+}
+
+// Load saved theme on page load
+(function(){
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  const themeIcon = document.getElementById('theme-icon');
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+})();
+
+// Simple Chart Visualization
+function initCharts(){
+  // Risk Distribution Chart
+  drawBarChart('riskChart', ['Low', 'Medium', 'High'], [35, 45, 20], ['#16a34a', '#f59e0b', '#dc2626']);
+  
+  // Grade Distribution Chart  
+  drawBarChart('gradeChart', ['A', 'B', 'C', 'D', 'F'], [25, 30, 20, 15, 10], ['#16a34a', '#84cc16', '#f59e0b', '#fb923c', '#dc2626']);
+  
+  // Attendance Overview Chart
+  drawBarChart('attendanceChart', ['<70%', '70-80%', '80-90%', '>90%'], [10, 20, 35, 35], ['#dc2626', '#f59e0b', '#84cc16', '#16a34a']);
+}
+
+function drawBarChart(canvasId, labels, data, colors){
+  const canvas = document.getElementById(canvasId);
+  if(!canvas) return;
+  
+  const ctx = canvas.getContext('2d');
+  const width = canvas.width;
+  const height = canvas.height;
+  const barWidth = width / (labels.length * 2);
+  const maxValue = Math.max(...data);
+  
+  // Clear canvas
+  ctx.clearRect(0, 0, width, height);
+  
+  // Draw bars
+  data.forEach((value, index) => {
+    const barHeight = (value / maxValue) * (height - 40);
+    const x = (index * 2 + 0.5) * barWidth;
+    const y = height - barHeight - 20;
+    
+    // Draw bar
+    ctx.fillStyle = colors[index];
+    ctx.fillRect(x, y, barWidth, barHeight);
+    
+    // Draw label
+    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--txt');
+    ctx.font = '11px DM Sans';
+    ctx.textAlign = 'center';
+    ctx.fillText(labels[index], x + barWidth/2, height - 5);
+    
+    // Draw value
+    ctx.fillText(value + '%', x + barWidth/2, y - 5);
+  });
+}
+
+// Initialize charts on page load
+document.addEventListener('DOMContentLoaded', function(){
+  setTimeout(initCharts, 500);
+});
+</script>
+
+<!-- Change Password Modal -->
+<div id="chgPwdModal" style="display:none;position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:2000;align-items:center;justify-content:center" onclick="if(event.target===this)closePwdModal()">
+  <div style="background:#1e2235;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:32px 36px;max-width:400px;width:90%">
+    <div style="font-size:1.15rem;font-weight:700;color:#0f172a;margin-bottom:6px">🔑 Change Password</div>
+    <div style="color:#64748b;font-size:.83rem;margin-bottom:22px">Enter your current password and choose a new one.</div>
+    <div id="cpErr" style="background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);color:#fca5a5;border-radius:8px;padding:10px 14px;font-size:.84rem;margin-bottom:12px;display:none"></div>
+    <div id="cpOk" style="background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);color:#6ee7b7;border-radius:8px;padding:10px 14px;font-size:.84rem;margin-bottom:12px;display:none"></div>
+    <div style="margin-bottom:14px"><label style="display:block;color:#374151;font-size:.79rem;font-weight:700;margin-bottom:6px">Current Password</label><div style="position:relative"><input type="password" id="cpCur" placeholder="Your current password" style="width:100%;background:#f8fafc;border:2px solid rgba(59,130,246,.15);border-radius:10px;padding:11px 42px 11px 14px;color:#0f172a;font-size:.9rem;font-family:inherit;outline:none"><button type="button" onclick="toggleCp('cpCur',this)" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#94a3b8">👁</button></div></div>
+    <div style="margin-bottom:14px"><label style="display:block;color:#374151;font-size:.79rem;font-weight:700;margin-bottom:6px">New Password</label><div style="position:relative"><input type="password" id="cpNew" placeholder="At least 6 characters" style="width:100%;background:#f8fafc;border:2px solid rgba(59,130,246,.15);border-radius:10px;padding:11px 42px 11px 14px;color:#0f172a;font-size:.9rem;font-family:inherit;outline:none"><button type="button" onclick="toggleCp('cpNew',this)" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#94a3b8">👁</button></div></div>
+    <div style="margin-bottom:20px"><label style="display:block;color:#374151;font-size:.79rem;font-weight:700;margin-bottom:6px">Confirm New Password</label><input type="password" id="cpCon" placeholder="Re-enter new password" style="width:100%;background:#f8fafc;border:2px solid rgba(59,130,246,.15);border-radius:10px;padding:11px 14px;color:#0f172a;font-size:.9rem;font-family:inherit;outline:none"></div>
+    <button onclick="submitChangePwd()" style="width:100%;padding:12px;background:linear-gradient(135deg,#5b5cf6,#8b5cf6);color:#fff;border:none;border-radius:10px;font-size:.95rem;font-weight:600;cursor:pointer;font-family:inherit" id="cpBtn">Update Password</button>
+  </div>
+</div>
+<script>
+function openPwdModal(){ var m=document.getElementById("chgPwdModal"); m.style.display="flex"; ["cpCur","cpNew","cpCon"].forEach(function(i){document.getElementById(i).value="";}); document.getElementById("cpErr").style.display="none"; document.getElementById("cpOk").style.display="none"; document.getElementById("cpBtn").disabled=false; document.getElementById("cpBtn").textContent="Update Password"; }
+function closePwdModal(){ document.getElementById("chgPwdModal").style.display="none"; }
+function toggleCp(id,btn){ var f=document.getElementById(id); f.type=f.type==="password"?"text":"password"; btn.textContent=f.type==="password"?"👁":"🙈"; }
+async function submitChangePwd(){
+  var cur=document.getElementById("cpCur").value, nw=document.getElementById("cpNew").value, con=document.getElementById("cpCon").value;
+  var err=document.getElementById("cpErr"), ok=document.getElementById("cpOk");
+  err.style.display="none"; ok.style.display="none";
+  if(!cur||!nw||!con){err.textContent="All fields are required.";err.style.display="block";return;}
+  if(nw.length<6){err.textContent="New password must be at least 6 characters.";err.style.display="block";return;}
+  if(nw!==con){err.textContent="New passwords do not match.";err.style.display="block";return;}
+  var btn=document.getElementById("cpBtn"); btn.disabled=true; btn.textContent="Updating…";
+  var r=await fetch("/api/change-password",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({current_password:cur,new_password:nw})});
+  var d=await r.json();
+  if(d.success){ok.textContent="✅ "+d.message;ok.style.display="block";setTimeout(closePwdModal,2000);}
+  else{err.textContent=d.error||"Failed";err.style.display="block";btn.disabled=false;btn.textContent="Update Password";}
+}
+</script></body>
+</html>

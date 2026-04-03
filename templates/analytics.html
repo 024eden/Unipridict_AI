@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📊 Advanced Analytics - UniPredict AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#edf4fb;--s:rgba(255,255,255,.88);--b:rgba(59,130,246,.12);
+      --p:#2563eb;--pl:#3b82f6;--ok:#16a34a;--err:#dc2626;--warn:#d97706;
+      --txt:#0f172a;--m:#64748b;
+    }
+    [data-theme="dark"]{
+      --bg:#0f172a;--s:rgba(30,41,59,.88);--b:rgba(59,130,246,.2);
+      --p:#3b82f6;--pl:#60a5fa;--ok:#22c55e;--err:#ef4444;--warn:#f59e0b;
+      --txt:#f1f5f9;--m:#94a3b8;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);min-height:100vh;color:var(--txt);position:relative;transition:background .3s ease}
+    body::before{content:'';position:fixed;inset:0;z-index:-2;pointer-events:none;
+      background:linear-gradient(135deg,#e8f4fd 0%,#edf7ee 35%,#fef9ee 70%,#f0ecfb 100%)}
+    [data-theme="dark"] body::before{background:linear-gradient(135deg,#1e293b 0%,#334155 35%,#475569 70%,#64748b 100%)}
+    
+    /* Academic Background Elements */
+    .edu-float{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+    .edu-float span{position:absolute;font-size:1.3rem;opacity:.08;animation:float 6s ease-in-out infinite;text-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .edu-float span:nth-child(odd){animation-delay:-3s}
+    .edu-float span:nth-child(3n){font-size:1.5rem;opacity:.1}
+    .edu-float span:nth-child(4n){font-size:1.1rem;opacity:.06}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(3deg)}}
+    .edu-pattern{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.03;background-image:radial-gradient(circle at 25% 25%, #2563eb 1px, transparent 1px),radial-gradient(circle at 75% 75%, #16a34a 1px, transparent 1px);background-size:50px 50px,60px 60px}
+    [data-theme="dark"] .edu-pattern{opacity:.02;background-image:radial-gradient(circle at 25% 25%, #3b82f6 1px, transparent 1px),radial-gradient(circle at 75% 75%, #22c55e 1px, transparent 1px)}
+    .edu-frame{position:fixed;inset:20px;z-index:-1;pointer-events:none;border:2px solid rgba(37,99,246,.05);border-radius:20px;background:linear-gradient(45deg,rgba(37,99,246,.02) 0%,transparent 50%,rgba(16,185,129,.02) 100%)}
+    [data-theme="dark"] .edu-frame{border-color:rgba(59,130,246,.08);background:linear-gradient(45deg,rgba(59,130,246,.04) 0%,transparent 50%,rgba(34,197,94,.04) 100%)}
+    
+    /* Navigation */
+    nav{background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:2px solid rgba(59,130,246,.13);box-shadow:0 2px 14px rgba(59,130,246,.08);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:62px;position:sticky;top:0;z-index:100}
+    .nb{font-family:'DM Serif Display',serif;font-size:1.35rem;color:#1e40af;text-decoration:none;display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1e40af 0%,#3b82f6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;font-weight:700}
+    .nb::before{content:'🎓';font-size:1.8rem;position:absolute;left:-28px;background:linear-gradient(135deg,#1e40af 0%,#3b82f6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 2px 4px rgba(30,64,175,.2))}
+    .nb::after{content:'AI';font-size:.7rem;font-weight:600;position:relative;top:-2px;left:2px;color:#3b82f6;text-shadow:0 1px 2px rgba(59,130,246,.3)}
+    [data-theme="dark"] .nb{background:linear-gradient(135deg,#60a5fa 0%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    [data-theme="dark"] .nb::before{background:linear-gradient(135deg,#60a5fa 0%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 2px 4px rgba(96,165,250,.3))}
+    [data-theme="dark"] .nb::after{color:#93c5fd;text-shadow:0 1px 2px rgba(147,197,253,.4)}
+    .nl{display:flex;gap:3px}
+    .nl a{padding:7px 14px;border-radius:8px;color:var(--txt);text-decoration:none;font-size:.88rem;font-weight:600;transition:all .2s}
+    .nl a:hover,.nl a.active{background:rgba(37,99,235,.1);color:var(--p)}
+    .nr{display:flex;align-items:center;gap:10px}
+    .nb-btn{position:relative;background:var(--s);border:1px solid var(--b);border-radius:9px;padding:7px 11px;color:var(--txt);text-decoration:none;font-size:1rem;transition:all .2s}
+    .nb-btn:hover{color:var(--p)}
+    .badge{position:absolute;top:-5px;right:-5px;background:var(--err);color:#fff;font-size:.6rem;font-weight:700;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+    .theme-toggle{background:rgba(148,163,184,.1);border:1px solid rgba(148,163,184,.2);border-radius:9px;padding:7px 11px;color:var(--m);font-size:1rem;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px}
+    .theme-toggle:hover{background:rgba(148,163,184,.2);color:var(--txt)}
+    [data-theme="dark"] .theme-toggle{background:rgba(148,163,184,.2);color:var(--m)}
+    [data-theme="dark"] .theme-toggle:hover{background:rgba(148,163,184,.3);color:var(--txt)}
+    
+    /* Main Content */
+    .main{padding:28px;max-width:1380px;margin:0 auto}
+    .pt{font-family:'DM Serif Display',serif;font-size:1.9rem;color:var(--txt);margin-bottom:4px;background:linear-gradient(135deg,var(--p) 0%,var(--pl) 50%,var(--ok) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;font-weight:700}
+    .pt::before{content:'';position:absolute;bottom:-8px;left:0;width:60px;height:3px;background:linear-gradient(90deg,var(--p) 0%,var(--pl) 100%);border-radius:2px}
+    .pt::after{content:'📊';position:absolute;right:-40px;top:50%;transform:translateY(-50%);font-size:1.2rem;opacity:.3}
+    [data-theme="dark"] .pt::before{background:linear-gradient(90deg,var(--pl) 0%,var(--ok) 100%)}
+    [data-theme="dark"] .pt::after{opacity:.2}
+    .ps{color:var(--m);font-size:.88rem;margin-bottom:28px;font-weight:500}
+    
+    /* Analytics Layout */
+    .analytics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-bottom:30px}
+    .chart-card{background:var(--s);border:1px solid var(--b);border-radius:15px;padding:24px;box-shadow:0 2px 18px rgba(59,130,246,.06);transition:all .3s ease}
+    .chart-card:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(59,130,246,.12)}
+    .chart-title{font-size:1.1rem;font-weight:700;color:var(--txt);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+    .chart-subtitle{color:var(--m);font-size:.85rem;margin-bottom:20px}
+    .chart-container{position:relative;height:300px;margin-bottom:16px}
+    .chart-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+    .legend-item{display:flex;align-items:center;gap:6px;font-size:.85rem;color:var(--txt)}
+    .legend-color{width:12px;height:12px;border-radius:2px}
+    
+    /* Key Metrics */
+    .metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:30px}
+    .metric-card{background:var(--s);border:1px solid var(--b);border-radius:12px;padding:20px;text-align:center;transition:all .2s}
+    .metric-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(59,130,246,.1)}
+    .metric-value{font-size:2.2rem;font-weight:700;color:var(--txt);margin-bottom:4px}
+    .metric-label{color:var(--m);font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+    .metric-change{font-size:.8rem;margin-top:4px}
+    .metric-change.positive{color:var(--ok)}
+    .metric-change.negative{color:var(--err)}
+    
+    /* Table Styles */
+    .data-table{width:100%;border-collapse:collapse;background:var(--s);border-radius:12px;overflow:hidden}
+    .data-table th{background:rgba(37,99,235,.06);padding:12px;text-align:left;font-size:.85rem;font-weight:700;color:var(--txt);text-transform:uppercase;letter-spacing:.06em}
+    .data-table td{padding:12px;border-top:1px solid var(--b);color:var(--txt);font-size:.9rem}
+    .data-table tr:hover td{background:rgba(37,99,235,.03)}
+    
+    /* Responsive */
+    @media(max-width:900px){.analytics-grid{grid-template-columns:1fr}.metrics-grid{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}}
+    @media(max-width:600px){.main{padding:16px}.chart-card{padding:16px}.metric-value{font-size:1.8rem}}
+  </style>
+</head>
+<body>
+<div class="edu-float" aria-hidden="true">
+  <span style="top:6%;left:1.5%">📊</span>
+  <span style="top:18%;right:3%">📈</span>
+  <span style="top:38%;left:5%">📉</span>
+  <span style="top:55%;right:7%">🔍</span>
+  <span style="top:72%;left:2%">💹</span>
+  <span style="bottom:10%;right:4%">📋</span>
+  <span style="bottom:22%;left:10%">🎯</span>
+  <span style="top:28%;right:20%">⚡</span>
+  <span style="top:12%;left:25%">🏆</span>
+  <span style="top:45%;right:15%">📊</span>
+  <span style="bottom:30%;left:18%">📈</span>
+  <span style="top:65%;right:25%">🎯</span>
+  <span style="bottom:15%;left:35%">⚡</span>
+  <span style="top:35%;right:35%">📊</span>
+  <span style="top:85%;left:45%">📈</span>
+  <span style="bottom:5%;right:45%">🏆</span>
+  <span style="top:25%;left:55%">📉</span>
+  <span style="top:75%;right:55%">🔍</span>
+  <span style="bottom:25%;left:65%">💹</span>
+  <span style="top:15%;right:65%">📋</span>
+  <span style="top:50%;left:75%">📊</span>
+  <span style="bottom:40%;right:75%">📈</span>
+  <span style="top:90%;left:85%">🎯</span>
+  <span style="bottom:8%;right:85%">⚡</span>
+</div>
+<div class="edu-pattern"></div>
+<div class="edu-frame"></div>
+
+<nav>
+  <a class="nb" href="/analytics"> UniPredict AI Analytics</a>
+  <div class="nl">
+    <a href="/analytics" class="active">Analytics</a>
+    <a href="#" onclick="history.back()">← Back</a>
+  </div>
+  <div class="nr">
+    {% if user_role == 'admin' %}
+    <a class="nb-btn" href="/notifications">🔔{% if notif_count > 0 %}<span class="badge">{{ notif_count if notif_count < 10 else '9+' }}</span>{% endif %}</a>
+    {% endif %}
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+      <span id="theme-icon">🌙</span>
+    </button>
+    <div class="uc">👤 {{ user_name }}</div>
+    <a class="lo" href="/logout">Sign Out</a>
+  </div>
+</nav>
+
+<div class="main">
+  <div class="pt">Advanced Analytics Dashboard</div>
+  <div class="ps">Comprehensive insights into student performance, trends, and risk factors</div>
+
+  <!-- Key Metrics -->
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-value">{{ analytics.key_metrics.total_students or 0 }}</div>
+      <div class="metric-label">Total Students</div>
+      <div class="metric-change positive">📊 Active Enrollment</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value">{{ analytics.key_metrics.average_grade or 0 }}%</div>
+      <div class="metric-label">Average Grade</div>
+      <div class="metric-change positive">📈 Academic Performance</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value">{{ analytics.key_metrics.average_attendance or 0 }}%</div>
+      <div class="metric-label">Average Attendance</div>
+      <div class="metric-change positive">✅ Regular Attendance</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value">{{ analytics.key_metrics.pass_rate or 0 }}%</div>
+      <div class="metric-label">Pass Rate</div>
+      <div class="metric-change positive">🎓 Success Rate</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value">{{ analytics.key_metrics.average_study_hours or 0 }}h</div>
+      <div class="metric-label">Study Hours/Week</div>
+      <div class="metric-change positive">📚 Engagement Level</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value">{{ analytics.key_metrics.high_risk_percentage or 0 }}%</div>
+      <div class="metric-label">High Risk Students</div>
+      <div class="metric-change {% if analytics.key_metrics.high_risk_percentage > 20 %}negative{% else %}positive{% endif %}">
+        {% if analytics.key_metrics.high_risk_percentage > 20 %}⚠️ Attention Needed{% else %}✅ Under Control{% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Charts Grid -->
+  <div class="analytics-grid">
+    <!-- Grade Distribution -->
+    <div class="chart-card">
+      <div class="chart-title">📊 Grade Distribution</div>
+      <div class="chart-subtitle">Student performance across grade categories</div>
+      <div class="chart-container">
+        <canvas id="gradeChart"></canvas>
+      </div>
+      <div class="chart-legend" id="gradeLegend"></div>
+    </div>
+
+    <!-- Attendance Analysis -->
+    <div class="chart-card">
+      <div class="chart-title">📈 Attendance Analysis</div>
+      <div class="chart-subtitle">Student attendance rate distribution</div>
+      <div class="chart-container">
+        <canvas id="attendanceChart"></canvas>
+      </div>
+      <div class="chart-legend" id="attendanceLegend"></div>
+    </div>
+
+    <!-- Study Hours Distribution -->
+    <div class="chart-card">
+      <div class="chart-title">📚 Study Hours Analysis</div>
+      <div class="chart-subtitle">Weekly study time distribution</div>
+      <div class="chart-container">
+        <canvas id="studyChart"></canvas>
+      </div>
+      <div class="chart-legend" id="studyLegend"></div>
+    </div>
+
+    <!-- Risk Factors -->
+    <div class="chart-card">
+      <div class="chart-title">⚠️ Risk Factor Analysis</div>
+      <div class="chart-subtitle">Common risk factors among students</div>
+      <div class="chart-container">
+        <canvas id="riskChart"></canvas>
+      </div>
+      <div class="chart-legend" id="riskLegend"></div>
+    </div>
+
+    <!-- Performance Trends -->
+    <div class="chart-card">
+      <div class="chart-title">📈 Performance Trends</div>
+      <div class="chart-subtitle">Monthly performance and attendance trends</div>
+      <div class="chart-container">
+        <canvas id="trendsChart"></canvas>
+      </div>
+      <div class="chart-legend" id="trendsLegend"></div>
+    </div>
+
+    <!-- Gender Performance -->
+    <div class="chart-card">
+      <div class="chart-title">👥 Gender Performance Analysis</div>
+      <div class="chart-subtitle">Performance metrics by gender</div>
+      <div class="chart-container">
+        <canvas id="genderChart"></canvas>
+      </div>
+      <div class="chart-legend" id="genderLegend"></div>
+    </div>
+  </div>
+
+  <!-- Detailed Tables -->
+  <div class="chart-card">
+    <div class="chart-title">📋 Performance Categories Breakdown</div>
+    <div class="chart-subtitle">Students by performance category</div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Count</th>
+          <th>Percentage</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for category in analytics.performance_categories.labels %}
+        <tr>
+          <td>{{ category }}</td>
+          <td>{{ analytics.performance_categories.data[loop.index0] }}</td>
+          <td>{{ (analytics.performance_categories.data[loop.index0] / analytics.key_metrics.total_students * 100)|round(1) }}%</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+// Theme Toggle
+function toggleTheme(){
+  const html = document.documentElement;
+  const themeIcon = document.getElementById('theme-icon');
+  const currentTheme = html.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+  html.setAttribute('data-theme', newTheme);
+  themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+
+  localStorage.setItem('theme', newTheme);
+}
+
+// Load saved theme
+(function(){
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  const themeIcon = document.getElementById('theme-icon');
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+})();
+
+// Analytics Data
+const analytics = {{ analytics|tojson }};
+
+// Chart Colors
+const colors = {
+  primary: ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'],
+  secondary: ['#60a5fa', '#34d399', '#fbbf24', '#f87171', '#a78bfa'],
+  gradients: [
+    ['#3b82f6', '#60a5fa'],
+    ['#10b981', '#34d399'],
+    ['#f59e0b', '#fbbf24'],
+    ['#ef4444', '#f87171'],
+    ['#8b5cf6', '#a78bfa']
+  ]
+};
+
+// Draw Chart Function
+function drawChart(canvasId, type, data, options = {}) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  
+  const ctx = canvas.getContext('2d');
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width;
+  canvas.height = rect.height;
+  
+  const { labels, datasets } = data;
+  const padding = 40;
+  const chartWidth = canvas.width - padding * 2;
+  const chartHeight = canvas.height - padding * 2;
+  
+  // Clear canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  if (type === 'bar') {
+    drawBarChart(ctx, labels, datasets, chartWidth, chartHeight, padding);
+  } else if (type === 'line') {
+    drawLineChart(ctx, labels, datasets, chartWidth, chartHeight, padding);
+  } else if (type === 'pie') {
+    drawPieChart(ctx, labels, datasets[0].data, chartWidth, chartHeight, padding);
+  }
+}
+
+function drawBarChart(ctx, labels, datasets, width, height, padding) {
+  const barWidth = width / (labels.length * datasets.length + labels.length + 1);
+  const maxValue = Math.max(...datasets.flatMap(d => d.data));
+  
+  labels.forEach((label, i) => {
+    datasets.forEach((dataset, j) => {
+      const value = dataset.data[i];
+      const barHeight = (value / maxValue) * height;
+      const x = padding + (i * (datasets.length + 1) + j) * barWidth;
+      const y = padding + height - barHeight;
+      
+      // Draw bar
+      ctx.fillStyle = dataset.color || colors.primary[j % colors.primary.length];
+      ctx.fillRect(x, y, barWidth, barHeight);
+      
+      // Draw value
+      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--txt');
+      ctx.font = '12px DM Sans';
+      ctx.textAlign = 'center';
+      ctx.fillText(value, x + barWidth/2, y - 5);
+    });
+    
+    // Draw label
+    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--txt');
+    ctx.font = '11px DM Sans';
+    ctx.textAlign = 'center';
+    ctx.fillText(labels[i], padding + i * (datasets.length + 1) * barWidth + (datasets.length * barWidth)/2, padding + height + 20);
+  });
+}
+
+function drawLineChart(ctx, labels, datasets, width, height, padding) {
+  const pointSpacing = width / (labels.length - 1);
+  const maxValue = Math.max(...datasets.flatMap(d => d.data));
+  
+  datasets.forEach((dataset, j) => {
+    ctx.strokeStyle = dataset.color || colors.primary[j % colors.primary.length];
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    
+    dataset.data.forEach((value, i) => {
+      const x = padding + i * pointSpacing;
+      const y = padding + height - (value / maxValue) * height;
+      
+      if (i === 0) {
+        ctx.moveTo(x, y);
+      } else {
+        ctx.lineTo(x, y);
+      }
+      
+      // Draw point
+      ctx.fillStyle = dataset.color || colors.primary[j % colors.primary.length];
+      ctx.beginPath();
+      ctx.arc(x, y, 4, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    
+    ctx.stroke();
+  });
+  
+  // Draw labels
+  ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--txt');
+  ctx.font = '11px DM Sans';
+  ctx.textAlign = 'center';
+  labels.forEach((label, i) => {
+    const x = padding + i * pointSpacing;
+    ctx.fillText(label, x, padding + height + 20);
+  });
+}
+
+function drawPieChart(ctx, labels, data, width, height, padding) {
+  const centerX = padding + width / 2;
+  const centerY = padding + height / 2;
+  const radius = Math.min(width, height) / 2 - 20;
+  const total = data.reduce((sum, value) => sum + value, 0);
+  let currentAngle = -Math.PI / 2;
+  
+  data.forEach((value, i) => {
+    const sliceAngle = (value / total) * Math.PI * 2;
+    
+    // Draw slice
+    ctx.fillStyle = colors.primary[i % colors.primary.length];
+    ctx.beginPath();
+    ctx.moveTo(centerX, centerY);
+    ctx.arc(centerX, centerY, radius, currentAngle, currentAngle + sliceAngle);
+    ctx.closePath();
+    ctx.fill();
+    
+    // Draw label
+    const labelAngle = currentAngle + sliceAngle / 2;
+    const labelX = centerX + Math.cos(labelAngle) * (radius * 0.7);
+    const labelY = centerY + Math.sin(labelAngle) * (radius * 0.7);
+    
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 12px DM Sans';
+    ctx.textAlign = 'center';
+    ctx.fillText(`${Math.round(value / total * 100)}%`, labelX, labelY);
+    
+    currentAngle += sliceAngle;
+  });
+}
+
+// Initialize Charts
+function initCharts() {
+  // Grade Distribution
+  if (analytics.grade_distribution) {
+    drawChart('gradeChart', 'bar', {
+      labels: analytics.grade_distribution.labels,
+      datasets: [{
+        data: analytics.grade_distribution.data,
+        color: colors.primary[0]
+      }]
+    });
+  }
+  
+  // Attendance Distribution
+  if (analytics.attendance_distribution) {
+    drawChart('attendanceChart', 'bar', {
+      labels: analytics.attendance_distribution.labels,
+      datasets: [{
+        data: analytics.attendance_distribution.data,
+        color: colors.primary[1]
+      }]
+    });
+  }
+  
+  // Study Hours Distribution
+  if (analytics.study_hours_distribution) {
+    drawChart('studyChart', 'bar', {
+      labels: analytics.study_hours_distribution.labels,
+      datasets: [{
+        data: analytics.study_hours_distribution.data,
+        color: colors.primary[2]
+      }]
+    });
+  }
+  
+  // Risk Factors
+  if (analytics.risk_factors && analytics.risk_factors.labels.length > 0) {
+    drawChart('riskChart', 'bar', {
+      labels: analytics.risk_factors.labels,
+      datasets: [{
+        data: analytics.risk_factors.data,
+        color: colors.primary[3]
+      }]
+    });
+  }
+  
+  // Trends
+  if (analytics.trends) {
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    drawChart('trendsChart', 'line', {
+      labels: months,
+      datasets: [
+        {
+          data: analytics.trends.monthly_performance,
+          color: colors.primary[0]
+        },
+        {
+          data: analytics.trends.monthly_attendance,
+          color: colors.primary[1]
+        }
+      ]
+    });
+  }
+  
+  // Gender Performance
+  if (analytics.gender_performance) {
+    const genders = Object.keys(analytics.gender_performance);
+    const avgGrades = genders.map(g => analytics.gender_performance[g].average);
+    const counts = genders.map(g => analytics.gender_performance[g].count);
+    
+    drawChart('genderChart', 'bar', {
+      labels: genders,
+      datasets: [
+        {
+          data: avgGrades,
+          color: colors.primary[0]
+        }
+      ]
+    });
+  }
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(initCharts, 500);
+  
+  // Handle window resize
+  window.addEventListener('resize', function() {
+    initCharts();
+  });
+});
+</script>
+</body>
+</html>

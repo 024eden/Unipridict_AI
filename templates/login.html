@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>UniPredict AI — Login</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow-y:auto;overflow-x:hidden;position:relative;}
+body::before{content:'';position:fixed;inset:0;z-index:-2;
+  background:linear-gradient(135deg,#e8f4fd 0%,#edf7ee 35%,#fef9ee 70%,#f0ecfb 100%)}
+body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 50% at 10% 10%,rgba(59,130,246,.09) 0%,transparent 55%),
+    radial-gradient(ellipse 50% 40% at 90% 20%,rgba(34,197,94,.07) 0%,transparent 50%),
+    radial-gradient(ellipse 55% 45% at 50% 90%,rgba(168,85,247,.06) 0%,transparent 55%);
+  animation:bgP 25s ease-in-out infinite alternate}
+@keyframes bgP{0%{opacity:1}100%{opacity:.6}}
+/* Grid */
+.grid{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(rgba(59,130,246,.024) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(59,130,246,.024) 1px,transparent 1px);
+  background-size:50px 50px}
+/* Floating icons */
+.flt{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.flt span{position:absolute;font-size:2.8rem;opacity:.05;animation:fd 20s ease-in-out infinite}
+.flt span:nth-child(1){top:6%;left:2%;animation-duration:23s}
+.flt span:nth-child(2){top:16%;right:3%;animation-duration:19s;animation-delay:-5s}
+.flt span:nth-child(3){top:40%;left:5%;animation-duration:26s;animation-delay:-9s}
+.flt span:nth-child(4){top:60%;right:7%;animation-duration:21s;animation-delay:-4s}
+.flt span:nth-child(5){bottom:14%;left:3%;animation-duration:24s;animation-delay:-14s}
+.flt span:nth-child(6){bottom:20%;right:5%;animation-duration:18s;animation-delay:-7s}
+.flt span:nth-child(7){top:28%;left:48%;animation-duration:22s;animation-delay:-11s}
+.flt span:nth-child(8){top:75%;right:22%;animation-duration:20s;animation-delay:-2s}
+@keyframes fd{0%,100%{transform:translateY(0) rotate(0deg) scale(1)}
+  25%{transform:translateY(-18px) rotate(5deg) scale(1.04)}
+  60%{transform:translateY(-9px) rotate(-3deg) scale(.96)}
+  80%{transform:translateY(-22px) rotate(7deg) scale(1.03)}}
+/* Layout */
+.wrap{position:relative;z-index:10;width:100%;max-width:470px;padding:20px}
+.brand{text-align:center;margin-bottom:28px}
+.brand-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.22);border-radius:50px;padding:5px 15px;font-size:.76rem;font-weight:700;color:#1d4ed8;letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px}
+.brand-icon{font-size:3rem;display:block;margin-bottom:9px}
+.brand-name{font-family:'DM Serif Display',serif;font-size:2rem;color:#0f172a;font-weight:700}
+.brand-name span{color:#2563eb}
+.brand-sub{color:#64748b;font-size:.86rem;margin-top:5px;font-weight:500}
+/* Card */
+.card{background:rgba(255,255,255,.88);border:1.5px solid rgba(59,130,246,.14);backdrop-filter:blur(20px);border-radius:22px;padding:34px;box-shadow:0 16px 48px rgba(59,130,246,.1),0 4px 16px rgba(0,0,0,.05)}
+.card-title{font-size:1.3rem;font-weight:700;color:#0f172a;margin-bottom:4px}
+.card-sub{color:#64748b;font-size:.86rem;margin-bottom:24px;font-weight:500}
+/* Fields */
+.field{margin-bottom:16px}
+.field label{display:block;color:#374151;font-size:.81rem;font-weight:700;margin-bottom:7px}
+.field-box{width:100%;background:rgba(248,250,252,.9);border:2px solid rgba(59,130,246,.15);border-radius:11px;padding:12px 15px;font-size:.93rem;color:#0f172a;font-family:'DM Sans',sans-serif;outline:none;transition:all .22s;box-sizing:border-box;font-weight:500}
+.field-box:focus{border-color:#2563eb;background:#fff;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.field-box::placeholder{color:#94a3b8;font-weight:400}
+.pw-wrap{position:relative}
+.pw-wrap .field-box{padding-right:46px}
+.eye{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#94a3b8;font-size:1.05rem;padding:4px}
+.err{background:#fef2f2;border:1.5px solid rgba(220,38,38,.28);color:#991b1b;border-radius:9px;padding:11px 14px;font-size:.85rem;margin-bottom:13px;display:none;font-weight:600}
+.btn-login{width:100%;padding:13px;background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff;border:none;border-radius:11px;font-size:.97rem;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all .2s;margin-top:4px;box-shadow:0 4px 16px rgba(37,99,235,.3)}
+.btn-login:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 6px 22px rgba(37,99,235,.38)}
+.btn-login:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.foot{text-align:center;color:#94a3b8;font-size:.74rem;margin-top:16px;font-weight:500}
+</style>
+</head>
+<body>
+<div class="grid"></div>
+<div class="flt">
+  <span>📚</span><span>🎓</span><span>✏️</span><span>🔬</span>
+  <span>📐</span><span>🌍</span><span>💡</span><span>🏆</span>
+</div>
+<div class="wrap">
+  <div class="brand">
+    <div class="brand-badge">🎓 Academic Intelligence Platform</div>
+    <span class="brand-icon">🏫</span>
+    <div class="brand-name">Uni<span>Predict</span> AI</div>
+    <div class="brand-sub">Student Performance Intelligence · Multi-Role Dashboard</div>
+  </div>
+  <div class="card">
+    <div class="card-title">Welcome Back 👋</div>
+    <div class="card-sub">Sign in with your institutional credentials</div>
+    <div class="err" id="err"></div>
+    <div id="fields"></div>
+    <button class="btn-login" id="btn" onclick="doLogin()">Sign In →</button>
+    <div style="text-align:center;margin-top:11px">
+      <a href="/forgot-password" style="color:#2563eb;font-size:.79rem;text-decoration:none;font-weight:600">Forgot password?</a>
+    </div>
+  </div>
+  <div class="foot">UniPredict AI v4.0 · Multi-Role Academic Platform · © 2026</div>
+</div>
+<script>
+(function(){
+  var r=Math.random().toString(36).slice(2);
+  var uid='f_'+r+'_a',pid='f_'+r+'_b',eid='f_'+r+'_c';
+  window._uid=uid;window._pid=pid;window._eid=eid;
+  document.getElementById('fields').innerHTML=
+    '<div class="field"><label>Username</label>'+
+    '<input id="'+uid+'" class="field-box" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Enter your username" name="'+r+'_u"></div>'+
+    '<div class="field"><label>Password</label><div class="pw-wrap">'+
+    '<input id="'+pid+'" class="field-box" type="password" autocomplete="off" placeholder="Enter your password" name="'+r+'_p">'+
+    '<button type="button" class="eye" id="'+eid+'" onclick="toggleEye()">👁</button></div></div>';
+  setTimeout(function(){
+    var u=document.getElementById(uid),p=document.getElementById(pid);
+    if(u)u.value='';if(p)p.value='';
+  },80);
+})();
+function toggleEye(){
+  var p=document.getElementById(window._pid),b=document.getElementById(window._eid);
+  if(!p)return;p.type=p.type==='password'?'text':'password';
+  b.textContent=p.type==='password'?'👁':'🙈';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Enter')doLogin();});
+async function doLogin(){
+  var usr=(document.getElementById(window._uid)||{}).value||'';
+  var pwd=(document.getElementById(window._pid)||{}).value||'';
+  var btn=document.getElementById('btn'),err=document.getElementById('err');
+  usr=usr.trim();
+  if(!usr||!pwd){showErr('Please enter both username and password.');return;}
+  btn.disabled=true;btn.textContent='Signing in…';err.style.display='none';
+  try{
+    var r=await fetch('/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:usr,password:pwd})});
+    var d=await r.json();
+    if(d.success){window.location.href=d.redirect||'/';}
+    else{showErr(d.error||'Invalid username or password.');btn.disabled=false;btn.textContent='Sign In →';}
+  }catch(e){showErr('Connection error. Please try again.');btn.disabled=false;btn.textContent='Sign In →';}
+}
+function showErr(m){var e=document.getElementById('err');e.textContent=m;e.style.display='block';}
+</script>
+</body>
+</html>
