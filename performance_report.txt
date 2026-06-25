@@ -1,0 +1,159 @@
+======================================================================
+UNIPREDICT AI - STUDENT PERFORMANCE PREDICTION REPORT
+======================================================================
+
+Generated: 2026-05-17 22:06:31
+
+
+======================================================================
+1. MODEL PERFORMANCE SUMMARY
+======================================================================
+
+              Model  Accuracy  CV Score   CV Std
+Logistic Regression    0.9348    0.9344 0.008237
+  Gradient Boosting    0.9340    0.9284 0.009330
+                SVM    0.9316    0.9296 0.003878
+      Random Forest    0.9308    0.9320 0.002828
+
+
+======================================================================
+2. BEST MODEL DETAILS
+======================================================================
+
+              precision    recall  f1-score   support
+
+           0       0.72      0.22      0.34       187
+           1       0.94      0.99      0.97      2313
+
+    accuracy                           0.94      2500
+   macro avg       0.83      0.61      0.65      2500
+weighted avg       0.92      0.94      0.92      2500
+
+
+======================================================================
+3. AT-RISK STUDENTS
+======================================================================
+
+ Student ID Fail Probability Attendance Study Hours Previous Grade                                                                                               Recommendation
+        139           60.24%      71.5%         3.2           31.5                                           Improve attendance; Increase study time; Stress management support
+        156           77.86%      45.3%        10.2           80.8                      Improve attendance; Complete assignments; Stress management support; Enroll in tutoring
+        160           76.35%      54.4%         1.6           64.4                            Improve attendance; Increase study time; Complete assignments; Enroll in tutoring
+        175           66.56%      47.8%         3.4           45.4                     Improve attendance; Increase study time; Complete assignments; Stress management support
+        252           79.71%      80.8%         1.9           36.5                                                                      Increase study time; Enroll in tutoring
+        259           80.33%      45.2%         3.5           40.7                     Improve attendance; Increase study time; Complete assignments; Stress management support
+        275           83.38%      59.7%         6.4           78.3 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+        337           71.67%      45.3%         4.0           35.4 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+        406           88.68%      53.8%         4.6           81.0 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+        486           61.63%      51.6%         2.7           37.6                                                Improve attendance; Increase study time; Complete assignments
+        653           89.75%      53.1%         5.9           51.1 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+        676           61.53%      69.0%         5.6           52.9                     Improve attendance; Increase study time; Complete assignments; Stress management support
+        706           61.97%      62.1%         5.7           34.7                     Improve attendance; Increase study time; Complete assignments; Stress management support
+        736           67.13%      40.6%         5.7           46.4                                                Improve attendance; Increase study time; Complete assignments
+        776           84.08%      59.2%         2.7           32.4 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+        804           72.71%      61.9%         4.1           62.8 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+        806           74.51%      47.7%         3.0           41.1                            Improve attendance; Increase study time; Complete assignments; Enroll in tutoring
+        864           84.80%      51.8%         2.8           38.3 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+        900           62.23%      56.7%         7.2           78.8                     Improve attendance; Increase study time; Complete assignments; Stress management support
+        933           93.57%      58.6%         4.0           54.4 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       1025           60.65%      43.4%         4.7           34.4                                                Improve attendance; Increase study time; Complete assignments
+       1038           66.60%      53.5%         4.3           37.1                                           Improve attendance; Increase study time; Stress management support
+       1122           74.83%      59.2%         3.7           66.5                            Improve attendance; Increase study time; Complete assignments; Enroll in tutoring
+       1150           65.49%      49.9%         3.5           33.8                                                Improve attendance; Increase study time; Complete assignments
+       1258           91.46%      47.7%         2.4           36.6 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       1268           65.13%      63.5%         2.1           75.2                                                Improve attendance; Increase study time; Complete assignments
+       1294           60.26%      41.5%         5.3           83.9                     Improve attendance; Increase study time; Complete assignments; Stress management support
+       1297           85.04%      53.2%         4.0           61.9                     Improve attendance; Increase study time; Complete assignments; Stress management support
+       1364           84.01%      48.2%         4.5           86.5                            Improve attendance; Increase study time; Complete assignments; Enroll in tutoring
+       1444           60.76%      61.6%         1.3           32.4                                                                      Improve attendance; Increase study time
+       1457           78.44%      43.8%         4.6           38.8 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       1531           68.06%      64.4%         7.4           32.9                     Improve attendance; Increase study time; Complete assignments; Stress management support
+       1536           88.50%      61.2%         2.7           46.9 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       1539           69.31%      46.6%         6.3           33.1                     Improve attendance; Increase study time; Complete assignments; Stress management support
+       1616           85.79%      70.0%         1.6           61.1 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       1632           66.79%      47.6%         3.0           53.9                                                Improve attendance; Increase study time; Complete assignments
+       1673           67.79%      81.1%         3.0           50.4                                                                    Increase study time; Complete assignments
+       1718           89.41%      41.0%         2.9           42.8 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       1723           83.99%      58.8%         5.7           30.5                            Improve attendance; Increase study time; Complete assignments; Enroll in tutoring
+       1736           65.50%      52.2%        11.3           48.8                                                                     Improve attendance; Complete assignments
+       1807           70.79%      55.5%         1.2           47.1                                                Improve attendance; Increase study time; Complete assignments
+       1818           77.06%      41.8%         0.7           69.9                            Improve attendance; Increase study time; Complete assignments; Enroll in tutoring
+       1857           76.95%      43.0%         2.8           83.8 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       1878           74.77%      63.8%         2.4           51.6                            Improve attendance; Increase study time; Complete assignments; Enroll in tutoring
+       1912           69.61%      40.2%         5.0           36.2                                                Improve attendance; Increase study time; Complete assignments
+       1978           60.88%      66.6%         0.7           61.2                                                Improve attendance; Increase study time; Complete assignments
+       2029           74.15%      65.6%         2.9           55.8                            Improve attendance; Increase study time; Complete assignments; Enroll in tutoring
+       2138           66.25%      42.1%         3.2           77.3                                                Improve attendance; Increase study time; Complete assignments
+       2144           62.27%      76.4%         1.3           45.9                                                                                          Increase study time
+       2164           78.10%      49.4%         7.0           47.7 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       2190           75.59%      60.2%        10.0           39.3                                                                     Improve attendance; Complete assignments
+       2217           80.14%      57.4%         3.9           32.3                            Improve attendance; Increase study time; Complete assignments; Enroll in tutoring
+       2294           80.80%      45.3%         1.9           56.6                            Improve attendance; Increase study time; Complete assignments; Enroll in tutoring
+       2317           92.07%      64.1%         3.4           81.4 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       2375           81.09%      61.0%         1.8           30.2                       Improve attendance; Increase study time; Stress management support; Enroll in tutoring
+       2436           83.02%      63.6%         2.4           45.0 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       2470           62.80%      73.4%         3.6           57.3                     Improve attendance; Increase study time; Complete assignments; Stress management support
+       2516           68.27%      57.2%         4.1           53.1                     Improve attendance; Increase study time; Complete assignments; Stress management support
+       2564           60.92%      53.2%         2.7           63.5                                                Improve attendance; Increase study time; Complete assignments
+       2565           87.33%      52.1%         4.0           31.3                       Improve attendance; Increase study time; Stress management support; Enroll in tutoring
+       2575           66.82%      47.9%         3.9           56.9                     Improve attendance; Increase study time; Complete assignments; Stress management support
+       2610           76.45%      48.1%         1.7           36.5                       Improve attendance; Increase study time; Stress management support; Enroll in tutoring
+       2663           68.54%      76.3%         1.0           36.4                                                                    Increase study time; Complete assignments
+       2678           82.21%      41.9%         2.7           49.0                                                                      Improve attendance; Increase study time
+       2680           65.43%      56.4%         3.3           38.7                                                Improve attendance; Increase study time; Complete assignments
+       2781           64.43%      60.2%         8.4           49.4                     Improve attendance; Increase study time; Complete assignments; Stress management support
+       2900           69.98%      62.7%         4.6           33.8                     Improve attendance; Increase study time; Complete assignments; Stress management support
+       2937           84.97%      51.3%         3.9           82.3 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       2961           74.77%      55.4%         9.5           34.4                            Improve attendance; Increase study time; Complete assignments; Enroll in tutoring
+       3005           60.38%      52.9%         5.6           42.7                                                Improve attendance; Increase study time; Complete assignments
+       3076           75.31%      64.1%         3.2           41.8                       Improve attendance; Increase study time; Stress management support; Enroll in tutoring
+       3079           84.05%      43.1%         4.9           34.0                            Improve attendance; Increase study time; Complete assignments; Enroll in tutoring
+       3109           66.74%      42.6%         1.6           34.3                     Improve attendance; Increase study time; Complete assignments; Stress management support
+       3151           63.00%      80.3%         0.7           47.4                                                                                          Increase study time
+       3152           62.23%      86.9%         2.5           46.8                                                               Increase study time; Stress management support
+       3200           80.15%      65.6%         1.6           30.4                            Improve attendance; Increase study time; Complete assignments; Enroll in tutoring
+       3246           89.52%      40.6%         1.8           69.4 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       3297           68.91%      71.0%         3.1           42.6                     Improve attendance; Increase study time; Complete assignments; Stress management support
+       3316           69.91%      46.8%         3.1           53.1                     Improve attendance; Increase study time; Complete assignments; Stress management support
+       3390           70.63%      43.3%         1.7           72.0 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       3413           89.90%      40.0%         5.2           30.3 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       3504           73.57%      63.9%        12.8           31.6                                                 Improve attendance; Complete assignments; Enroll in tutoring
+       3553           62.66%      40.1%         1.9           62.2                     Improve attendance; Increase study time; Complete assignments; Stress management support
+       3582           71.67%      52.2%         5.7           50.4 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       3596           65.06%      53.3%         4.3           37.6                     Improve attendance; Increase study time; Complete assignments; Stress management support
+       3611           74.09%      53.4%         7.5           45.6                            Improve attendance; Increase study time; Complete assignments; Enroll in tutoring
+       3646           91.82%      41.9%         3.4           42.0                            Improve attendance; Increase study time; Complete assignments; Enroll in tutoring
+       3717           96.72%      59.9%         3.6           36.4 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       3749           68.02%      59.1%         4.8           37.6                     Improve attendance; Increase study time; Complete assignments; Stress management support
+       3804           74.66%      42.7%         1.5           59.2 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       3815           84.18%      58.6%         9.2           30.0 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       3826           73.26%      73.2%         3.5           33.4                            Improve attendance; Increase study time; Complete assignments; Enroll in tutoring
+       3979           69.48%      47.9%         1.6           36.6                                                Improve attendance; Increase study time; Complete assignments
+       4150           70.09%      52.9%         9.7           60.6 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       4267           66.31%      64.5%         1.5           38.2                                                Improve attendance; Increase study time; Complete assignments
+       4280           83.43%      52.8%         1.3           41.0                                                  Improve attendance; Increase study time; Enroll in tutoring
+       4350           65.88%      47.7%         8.5           53.1                     Improve attendance; Increase study time; Complete assignments; Stress management support
+       4387           65.75%      44.9%         5.6           53.5                     Improve attendance; Increase study time; Complete assignments; Stress management support
+       4413           87.16%      64.9%         4.4           36.6 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       4650           85.71%      41.2%         7.9           31.9 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       4816           79.49%      46.5%         7.3           60.7 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       4833           78.46%      46.9%        11.1           74.5                      Improve attendance; Complete assignments; Stress management support; Enroll in tutoring
+       4846           91.73%      63.9%         8.9           50.2 Improve attendance; Increase study time; Complete assignments; Stress management support; Enroll in tutoring
+       4862           65.49%      46.6%         4.0           85.5                     Improve attendance; Increase study time; Complete assignments; Stress management support
+       4870           69.61%      54.6%         8.5           82.2                     Improve attendance; Increase study time; Complete assignments; Stress management support
+
+
+======================================================================
+4. RECOMMENDATIONS
+======================================================================
+
+• Implement early intervention programs for at-risk students
+• Provide additional tutoring and mentoring support
+• Monitor attendance and engagement metrics closely
+• Offer stress management and wellness programs
+• Enhance parent-teacher communication
+• Regular progress tracking and feedback sessions
+        
+
+======================================================================
+END OF REPORT
+======================================================================

@@ -3,6 +3,8 @@ UniPredict AI - Advanced Student Performance Prediction System
 A comprehensive ML-based system for academic outcome prediction
 """
 
+import os
+
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV
@@ -32,7 +34,7 @@ class UniPredictAI:
         self.y_test = None
         self.feature_names = None
         
-    def generate_sample_dataset(self, n_samples=1000):
+    def generate_sample_dataset(self, n_samples=5000):
         """Generate realistic synthetic student dataset"""
         np.random.seed(42)
         
@@ -164,7 +166,14 @@ class UniPredictAI:
         print(f"   Total features created: 6 new features")
         
         # Separate features and target
-        X = data.drop(['student_id', target_column, 'final_grade', 'performance_category'], axis=1, errors='ignore')
+        # Drop non-predictive metadata columns and the target variable
+        cols_to_drop = [
+            'student_id', target_column, 'final_grade', 'performance_category',
+            'student_name', 'parent_name', 'parent_email', 'address',
+            'last_reported_at', 'reported_by', 'counselor_reported', 'added_by',
+            'created_at', 'updated_at'
+        ]
+        X = data.drop(cols_to_drop, axis=1, errors='ignore')
         y = data[target_column]
         
         # Store feature names before encoding
@@ -234,7 +243,7 @@ class UniPredictAI:
         
         # Split data
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
-            X, y, test_size=0.2, random_state=42, stratify=y
+            X, y, test_size=0.5, random_state=42, stratify=y
         )
         
         # Scale features
@@ -339,7 +348,7 @@ class UniPredictAI:
         
         # ROC AUC Score
         try:
-            roc_auc = roc_auc_score(self.y_test, y_pred_proba[:, 1])
+            roc_auc = roc_auc_score(self.y_test, y_pred_proba[:, 1], average='binary')
             print(f"\nROC AUC Score: {roc_auc:.4f}")
         except:
             print("\nROC AUC Score not available for multiclass")
@@ -383,12 +392,14 @@ class UniPredictAI:
             if col in self.label_encoders:
                 df[col] = self.label_encoders[col].transform(df[col].astype(str))
         
-        # Select same features as training
-        df = df[self.feature_names]
+        # Select same features as training (only those that exist in df)
+        available_features = [f for f in self.feature_names if f in df.columns]
+        df = df[available_features]
         
         # Apply feature selection if used during training
         if hasattr(self, 'selected_features') and self.selected_features:
-            df = df[self.selected_features]
+            available_selected = [f for f in self.selected_features if f in df.columns]
+            df = df[available_selected]
         
         # Scale
         df_scaled = self.scaler.transform(df)
@@ -403,7 +414,10 @@ class UniPredictAI:
         
         return prediction, probability
     
-    def visualize_results(self, save_path='/home/claude/'):
+    def visualize_results(self, save_path=None):
+      if save_path is None:
+        save_path = os.path.dirname(os.path.abspath(__file__)) + os.sep
+        print(f"DEBUG save_path = {save_path}")  # ← add this temporarily
         """Create comprehensive visualizations"""
         print("\n" + "=" * 60)
         print("GENERATING VISUALIZATIONS")
@@ -442,7 +456,7 @@ class UniPredictAI:
         try:
             y_pred_proba = self.best_model.predict_proba(self.X_test)[:, 1]
             fpr, tpr, _ = roc_curve(self.y_test, y_pred_proba)
-            roc_auc = roc_auc_score(self.y_test, y_pred_proba)
+            roc_auc = roc_auc_score(self.y_test, y_pred_proba[:, 1], average='binary')
             
             ax3.plot(fpr, tpr, color='darkorange', lw=2, 
                     label=f'ROC curve (AUC = {roc_auc:.3f})')
@@ -461,16 +475,16 @@ class UniPredictAI:
         
         # 4. Feature Importance (if Random Forest or Gradient Boosting)
         ax4 = plt.subplot(2, 3, 4)
-        if hasattr(self.best_model, 'feature_importances_'):
-            importances = self.best_model.feature_importances_
+        rf_model = self.models.get('Random Forest')
+        if rf_model is not None and hasattr(rf_model, 'feature_importances_'):
+            importances = rf_model.feature_importances_
             indices = np.argsort(importances)[-10:]
-            
-            # Use actual feature names if available
+
             if len(self.feature_names) == len(importances):
                 features = [self.feature_names[i] for i in indices]
             else:
                 features = [f'Feature {i}' for i in indices]
-            
+
             ax4.barh(range(len(indices)), importances[indices], color='teal')
             ax4.set_yticks(range(len(indices)))
             ax4.set_yticklabels(features)
@@ -478,7 +492,7 @@ class UniPredictAI:
             ax4.set_title('Top 10 Feature Importances', fontsize=14, fontweight='bold')
         else:
             ax4.text(0.5, 0.5, 'Feature Importance\nNot Available', 
-                    ha='center', va='center', fontsize=12)
+                     ha='center', va='center', fontsize=12)
             ax4.set_title('Feature Importance', fontsize=14, fontweight='bold')
         
         # 5. Class Distribution
@@ -517,7 +531,7 @@ class UniPredictAI:
         plt.tight_layout(rect=[0, 0.03, 1, 0.96])
         
         # Save
-        save_file = save_path + 'student_performance_analysis.png'
+        save_file = os.path.join(save_path, 'student_performance_analysis.png')
         plt.savefig(save_file, dpi=300, bbox_inches='tight')
         print(f"\nVisualizations saved: {save_file}")
         
@@ -587,7 +601,9 @@ class UniPredictAI:
         
         return '; '.join(recommendations) if recommendations else "Monitor progress"
     
-    def generate_report(self, results_df, at_risk_df, save_path='/home/claude/'):
+    def generate_report(self, results_df, at_risk_df, save_path=None):
+      if save_path is None:
+        save_path = os.path.dirname(os.path.abspath(__file__)) + os.sep
         """Generate comprehensive PDF report"""
         report = []
         report.append("=" * 70)
@@ -652,11 +668,13 @@ def main():
     
     # Generate dataset
     print("\nGenerating synthetic student dataset...")
-    df = predictor.generate_sample_dataset(n_samples=1000)
+    df = predictor.generate_sample_dataset(n_samples=5000)
     print(f"Generated {len(df)} student records")
     
     # Save dataset
-    dataset_file = '/home/claude/student_dataset.csv'
+    save_path = os.path.dirname(os.path.abspath(__file__)) + os.sep
+    dataset_file = os.path.join(save_path, 'student_dataset.csv')
+
     df.to_csv(dataset_file, index=False)
     print(f"Dataset saved: {dataset_file}")
     

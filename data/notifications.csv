@@ -1,116 +1,19 @@
 id,message,level,username,created_at
-1,Database initialised with seed users,success,system,2026-03-26 00:33:49
-2,'Mr. Anand Venkat' logged in,info,teacher_anand,2026-03-26 06:39:17
-3,'Mr. Anand Venkat' logged in,info,teacher_anand,2026-03-27 06:09:02
-4,Teacher added student #1001,success,teacher_anand,2026-03-27 06:10:16
-5,📋 Report for tomba logged (email not configured),info,teacher_anand,2026-03-27 06:10:47
-6,'Mr. Anand Venkat' logged out,info,system,2026-03-27 06:11:32
-7,'Dr. Raj Kumar' logged in,info,admin_raj,2026-03-27 06:11:49
-8,'Dr. Raj Kumar' logged out,info,system,2026-03-27 06:15:31
-9,'Ms. Meera Iyer' logged in,info,counselor_meera,2026-03-27 06:16:12
-10,📧 Report for Unknown Student sent to rosemoirang1luna@gmail.com,success,counselor_meera,2026-03-27 06:18:01
-11,'Ms. Meera Iyer' logged out,info,system,2026-03-27 06:19:44
-12,'Mr. Arjun Mehta' logged in,info,parent_arjun,2026-03-27 06:20:30
-13,'Mr. Anand Venkat' logged in,info,teacher_anand,2026-03-27 10:12:42
-14,'Mr. Thangjam Ibohal' logged in,info,parent_thangjam_1,2026-03-29 13:25:18
-15,'Mr. Thangjam Ibohal' logged out,info,system,2026-03-29 13:30:23
-16,'Mr. Oinam Tomba Meitei' logged in,info,teacher_oinam,2026-03-29 13:30:47
-17,'Mr. Oinam Tomba Meitei' logged out,info,system,2026-03-29 14:06:09
-18,'Mrs. Thangjam Thoibi' logged in,info,parent_thangjam_2,2026-03-29 14:08:07
-19,'Mrs. Thangjam Thoibi' logged in,info,parent_thangjam_2,2026-03-29 21:05:28
-20,'Mr. Oinam Tomba Meitei' logged in,info,teacher_oinam,2026-03-30 07:26:18
-21,Teacher added student #1002,success,teacher_oinam,2026-03-30 07:27:19
-22,'Mr. Oinam Tomba Meitei' logged out,info,system,2026-03-30 07:27:34
-23,'Ms. Pukhrambam Ibemhal Devi' logged in,info,counselor_pukhrambam,2026-03-30 07:27:55
-24,'Mr. Thangjam Ibohal' logged in,info,parent_thangjam_1,2026-03-30 20:51:48
-25,'Mr. Thangjam Ibohal' logged out,info,system,2026-03-30 20:52:05
-26,'Ms. Pukhrambam Ibemhal Devi' logged in,info,counselor_pukhrambam,2026-03-30 20:52:13
-27,📧 Report for Leishangthem Ibemhal sent to samathoudam@gmail.com,success,counselor_pukhrambam,2026-03-30 20:53:13
-28,'Mr. Thangjam Ibohal' logged in,info,parent_thangjam_1,2026-03-30 21:07:18
-29,'Mr. Thangjam Ibohal' logged out,info,system,2026-03-30 21:07:24
-30,'Ms. Pukhrambam Ibemhal Devi' logged in,info,counselor_pukhrambam,2026-03-30 21:07:28
-31,'Mr. Oinam Tomba Meitei' logged in,info,teacher_oinam,2026-03-30 22:02:32
-32,'Mr. Oinam Tomba Meitei' logged out,info,system,2026-03-30 22:02:32
-33,'Mr. Thangjam Ibohal' logged in,info,parent_thangjam_1,2026-03-30 22:02:32
-34,'Mr. Thangjam Ibohal' logged out,info,system,2026-03-30 22:02:32
-35,'Ms. Pukhrambam Ibemhal Devi' logged in,info,counselor_pukhrambam,2026-03-30 22:02:32
-36,'Ms. Pukhrambam Ibemhal Devi' logged out,info,system,2026-03-30 22:02:32
-37,'Dr. Thounaojam Bimola Devi' logged in,info,admin_thounaojam,2026-03-30 22:02:32
-38,'Dr. Thounaojam Bimola Devi' logged out,info,system,2026-03-30 22:02:33
-39,'Dr. Thounaojam Bimola Devi' logged in,info,admin_thounaojam,2026-03-30 22:03:20
-40,'Dr. Thounaojam Bimola Devi' logged out,info,system,2026-03-30 22:03:21
-41,'Dr. Thounaojam Bimola Devi' logged in,info,admin_thounaojam,2026-03-30 22:04:05
-42,'Dr. Thounaojam Bimola Devi' logged in,info,admin_thounaojam,2026-03-30 22:04:39
-43,'Ms. Pukhrambam Ibemhal Devi' logged in,info,counselor_pukhrambam,2026-03-30 22:05:36
-44,'Ms. Pukhrambam Ibemhal Devi' logged in,info,counselor_pukhrambam,2026-03-30 22:56:54
-45,'Ms. Pukhrambam Ibemhal Devi' logged in,info,counselor_pukhrambam,2026-03-30 23:00:26
-46,'Ms. Pukhrambam Ibemhal Devi' logged in,info,counselor_pukhrambam,2026-03-30 23:10:01
-47,'Ms. Pukhrambam Ibemhal Devi' logged in,info,counselor_pukhrambam,2026-03-30 23:17:36
-48,'Ms. Pukhrambam Ibemhal Devi' logged out,info,system,2026-03-30 23:21:39
-49,'Mr. Ningthoujam Ranjit Singh' logged in,info,teacher_ningthoujam,2026-03-30 23:25:26
-50,'Mr. Ningthoujam Ranjit Singh' logged out,info,system,2026-03-30 23:31:11
-51,'Mr. Yumnam Sanjoy Singh' logged in,info,counselor_yumnam,2026-03-30 23:49:28
-52,'Mr. Yumnam Sanjoy Singh' logged out,info,system,2026-03-31 00:11:27
-53,'Mr. Thangjam Ibohal' logged in,info,parent_thangjam_1,2026-03-31 00:11:47
-54,'Mr. Thangjam Ibohal' logged out,info,system,2026-03-31 00:12:48
-55,'Mrs. Thangjam Thoibi' logged in,info,parent_thangjam_2,2026-03-31 00:13:16
-56,'Mr. Thangjam Ibohal' logged in,info,parent_thangjam_1,2026-03-31 01:07:35
-57,'Mrs. Thangjam Thoibi' logged in,info,parent_thangjam_2,2026-03-31 02:00:45
-58,'Mrs. Thangjam Thoibi' logged out,info,system,2026-03-31 02:00:58
-59,'Mr. Yumnam Sanjoy Singh' logged in,info,counselor_yumnam,2026-03-31 02:01:21
-60,📧 Report for Ningthoujam Deven sent to parent211@example.com,success,counselor_yumnam,2026-03-31 02:02:52
-61,'Mr. Yumnam Sanjoy Singh' logged out,info,system,2026-03-31 02:03:17
-62,'Mr. Ningthoujam Ranjit Singh' logged in,info,teacher_ningthoujam,2026-03-31 02:08:31
-63,📧 Report for Thangjam Bobo sent to parent1@example.com,success,teacher_ningthoujam,2026-03-31 02:09:30
-64,📧 Report for Thangjam Bobo sent to parent1@example.com,success,teacher_ningthoujam,2026-03-31 02:09:31
-65,'Mr. Ningthoujam Ranjit Singh' logged out,info,system,2026-03-31 02:09:50
-66,'Dr. Laishram Ibohal Singh' logged in,info,admin_laishram,2026-03-31 02:10:03
-67,'Dr. Laishram Ibohal Singh' logged in,info,admin_laishram,2026-03-31 02:51:52
-68,'Dr. Laishram Ibohal Singh' logged out,info,system,2026-03-31 02:52:28
-69,'Ms. Konthoujam Sanatombi Devi' logged in,info,teacher_konthoujam,2026-03-31 02:53:08
-70,'Dr. Laishram Ibohal Singh' logged in,info,admin_laishram,2026-03-31 03:01:08
-71,'Dr. Laishram Ibohal Singh' logged in,info,admin_laishram,2026-03-31 03:02:42
-72,'Dr. Laishram Ibohal Singh' logged out,info,system,2026-03-31 03:03:11
-73,'Mr. Yumnam Sanjoy Singh' logged in,info,counselor_yumnam,2026-03-31 03:03:32
-74,📧 Report for Ningthoujam Deven sent to parent + 8 staff,success,counselor_yumnam,2026-03-31 03:04:12
-75,'Mr. Yumnam Sanjoy Singh' logged out,info,system,2026-03-31 03:04:22
-76,📧 Report for Ningthoujam Deven sent to parent + 8 staff,success,counselor_yumnam,2026-03-31 03:04:25
-77,'Mr. Yumnam Sanjoy Singh' logged in,info,counselor_yumnam,2026-03-31 03:09:02
-78,📧 Report for Ningthoujam Deven sent to parent + 8 staff,success,counselor_yumnam,2026-03-31 03:10:03
-79,📧 Report for Maibam Rishi sent to parent + 8 staff,success,counselor_yumnam,2026-03-31 03:18:55
-80,📧 Report for Konthoujam Thoibi sent to parent + 8 staff,success,counselor_yumnam,2026-03-31 03:22:44
-81,'Mr. Yumnam Sanjoy Singh' logged out,info,system,2026-03-31 03:32:17
-82,'Ms. Wangkhem Thoibi Devi' logged in,info,teacher_wangkhem,2026-03-31 03:33:32
-83,'Ms. Wangkhem Thoibi Devi' logged out,info,system,2026-03-31 03:34:30
-84,'Dr. Laishram Ibohal Singh' logged in,info,admin_laishram,2026-03-31 03:34:51
-85,'Mr. Yumnam Sanjoy Singh' logged in,info,counselor_yumnam,2026-03-31 09:30:17
-86,'Mr. Yumnam Sanjoy Singh' logged in,info,counselor_yumnam,2026-03-31 09:40:27
-87,📧 Report for Wahengbam Sanatombi sent to parent + 8 staff,success,counselor_yumnam,2026-03-31 09:41:36
-88,'Ms. Pukhrambam Ibemhal Devi' logged in,info,counselor_pukhrambam,2026-03-31 12:01:48
-89,'Mr. Yumnam Sanjoy Singh' logged in,info,counselor_yumnam,2026-03-31 12:39:25
-90,📧 Report for Maibam Rishi sent to parent + 8 staff,success,counselor_yumnam,2026-03-31 12:41:25
-91,📧 Report for Maibam Rishi sent to parent + 8 staff,success,counselor_yumnam,2026-03-31 13:04:03
-92,📧 Report for Maibam Rishi sent to parent + 8 staff,success,counselor_yumnam,2026-03-31 13:04:42
-93,'Ms. Pukhrambam Ibemhal Devi' logged in,info,counselor_pukhrambam,2026-03-31 13:31:26
-94,📧 Report for Panmei Ibemhal sent to parent + 8 staff,success,counselor_pukhrambam,2026-03-31 13:32:36
-95,'Ms. Pukhrambam Ibemhal Devi' logged in,info,counselor_pukhrambam,2026-03-31 13:43:06
-96,📧 Report for Sanasam Suresh sent to parent + 8 staff,success,counselor_pukhrambam,2026-03-31 13:44:22
-97,'Ms. Pukhrambam Ibemhal Devi' logged out,info,system,2026-03-31 13:54:55
-98,'Mr. Oinam Tomba Meitei' logged in,info,teacher_oinam,2026-03-31 13:56:26
-99,'Ms. Konthoujam Sanatombi Devi' logged in,info,teacher_konthoujam,2026-03-31 14:04:38
-100,'Ms. Wangkhem Thoibi Devi' logged in,info,teacher_wangkhem,2026-03-31 14:08:51
-101,'Ms. Konthoujam Sanatombi Devi' logged in,info,teacher_konthoujam,2026-03-31 14:17:18
-102,'Ms. Wangkhem Thoibi Devi' logged in,info,teacher_wangkhem,2026-03-31 14:20:20
-103,'Ms. Wangkhem Thoibi Devi' logged out,info,system,2026-03-31 14:20:54
-104,'Dr. Laishram Ibohal Singh' logged in,info,admin_laishram,2026-03-31 14:21:08
-105,'Dr. Laishram Ibohal Singh' logged out,info,system,2026-03-31 14:21:31
-106,'Mr. Yumnam Sanjoy Singh' logged in,info,counselor_yumnam,2026-03-31 14:21:40
-107,'Ms. Pukhrambam Ibemhal Devi' logged in,info,counselor_pukhrambam,2026-03-31 14:26:47
-108,'Mr. Yumnam Sanjoy Singh' logged in,info,counselor_yumnam,2026-03-31 14:32:17
-109,'Mr. Yumnam Sanjoy Singh' logged in,info,counselor_yumnam,2026-03-31 14:35:49
-110,'Mr. Yumnam Sanjoy Singh' logged in,info,counselor_yumnam,2026-03-31 14:37:51
-111,'Mr. Yumnam Sanjoy Singh' logged in,info,counselor_yumnam,2026-03-31 14:44:32
-112,📧 Report for Ningthoujam Deven sent to parent + 8 staff,success,counselor_yumnam,2026-03-31 14:46:11
-113,'Mr. Ningthoujam Ranjit Singh' logged in,info,teacher_ningthoujam,2026-03-31 22:40:34
-114,'Mr. Ningthoujam Ranjit Singh' logged out,info,system,2026-03-31 22:41:19
-115,'Mr. Yumnam Sanjoy Singh' logged in,info,counselor_yumnam,2026-04-02 07:32:07
+1,'Dr. Laishram Ibohal Singh' logged out,info,system,2026-05-13 12:26:52
+2,'Mr. Oinam Tomba Meitei' logged in,info,teacher_oinam,2026-05-14 16:27:53
+3,'Mr. Oinam Tomba Meitei' logged out,info,system,2026-05-14 16:32:50
+4,'Mr. Oinam Tomba Meitei' logged in,info,teacher_oinam,2026-05-14 16:33:11
+5,'Mr. Oinam Tomba Meitei' logged out,info,system,2026-05-14 16:33:53
+6,'Mr. Oinam Tomba Meitei' logged in,info,teacher_oinam,2026-05-14 16:34:46
+7,'Mr. Oinam Tomba Meitei' logged in,info,teacher_oinam,2026-05-14 16:37:38
+8,'Mr. Oinam Tomba Meitei' logged in,info,teacher_oinam,2026-05-14 16:47:20
+9,'Mr. Oinam Tomba Meitei' logged in,info,teacher_oinam,2026-05-14 16:52:11
+10,'Mr. Oinam Tomba Meitei' logged out,info,system,2026-05-14 16:53:48
+11,'Mr. Oinam Tomba Meitei' logged in,info,teacher_oinam,2026-06-03 07:58:54
+12,Teacher added student #1007,success,teacher_oinam,2026-06-03 08:00:04
+13,Teacher added student #1008,success,teacher_oinam,2026-06-03 08:00:13
+14,'Mr. Oinam Tomba Meitei' logged out,info,system,2026-06-03 08:00:35
+15,'Mr. Yumnam Sanjoy Singh' logged in,info,counselor_yumnam,2026-06-03 08:01:13
+16,'Mr. Yumnam Sanjoy Singh' logged in,info,counselor_yumnam,2026-06-03 08:02:52
+17,'Mr. Oinam Tomba Meitei' logged in,info,teacher_oinam,2026-06-03 11:36:04
+18,Teacher added student #1009,success,teacher_oinam,2026-06-03 11:37:37

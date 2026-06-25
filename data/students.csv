@@ -307,7 +307,7 @@ student_id,student_name,parent_name,parent_email,address,gender,age,attendance_r
 306,Khomdram Tomba,,,,Male,16,94.33,2.0,37.8,95.1,7.9,Yes,1,11.5,Bachelor,High,Yes,Yes,No,6.9,9.8,102.45,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
 307,Meisnam Thoibi,,,,Female,22,86.36,7.9,69.93,62.11,4.2,Yes,2,5.8,High School,Low,Yes,No,Yes,2.4,1.8,91.01,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
 308,Koijam Tombi,,,,Female,22,55.89,5.2,70.71,42.71,3.5,Yes,1,8.0,High School,High,Yes,Yes,Yes,7.6,3.3,83.51,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
-309,Takhellambam Bembem,Parent of Takhellambam Bembem,parent309@example.com,Address for student 309,Female,21,78.72,4.6,80.03,51.17,8.2,No,2,15.3,High School,Medium,Yes,No,Yes,7.2,1.8,58.38,Below Average,Fail,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
+309,Takhellambam Bembem,Parent of Takhellambam Bembem,parent309@example.com,Address for student 309,Female,21,78.72,4.6,80.03,51.17,8.2,No,2,15.3,High School,Medium,Yes,No,Yes,7.2,1.8,58.38,Below Average,Fail,2026-05-12 21:10:33,CSL002,1,,2026-03-26 00:33:49,2026-03-26 00:33:49
 310,Shijagurumayum Sanatombi,,,,Female,22,75.75,5.0,46.82,33.56,4.4,Yes,5,4.9,Bachelor,Medium,Yes,Yes,Yes,5.9,3.5,71.1,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
 311,Sagolband Priyabala,,,,Female,17,64.07,8.0,61.06,62.78,9.1,No,6,16.8,Master,Low,Yes,Yes,No,6.1,1.8,88.46,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
 312,Laifungbam Deben,,,,Male,20,62.02,3.3,49.77,89.72,1.6,No,4,7.5,Bachelor,Medium,Yes,No,No,2.0,5.6,81.19,Average,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
@@ -1001,3 +1001,10 @@ student_id,student_name,parent_name,parent_email,address,gender,age,attendance_r
 1000,Laishram Bimol,,,,Male,20,68.18,2.2,78.97,93.13,7.6,Yes,1,14.9,Bachelor,Medium,Yes,Yes,No,3.3,2.8,105.73,Excellent,Pass,,,,,2026-03-26 00:33:49,2026-03-26 00:33:49
 1001,Angom Sanjoy,,,,Male,18,80,10,70,75,5,No,2,5,Bachelor,Medium,Yes,No,No,5,7,70,Average,Pass,,,,TCH001,2026-03-27 06:10:16,2026-03-27 06:10:16
 1002,ROshni Devi,,,,Female,18,80,10,70,75,5,No,2,5,Bachelor,Medium,Yes,No,No,5,7,70,Average,Pass,,,,TCH003,2026-03-30 07:27:19,2026-03-30 07:27:19
+1003,Thoudam Samananda,tomm,samathoudam@gmail.com,Ngakchroupokpi Mamang Leikai,Male,18,80,10,70,75,5,No,2,5,Bachelor,Medium,Yes,No,No,5,7,70,Average,Pass,,,,TCH002,2026-05-06 21:18:49,2026-05-06 21:18:49
+1004,Thoudam Samananda,tomm,samathoudam@gmail.com,Ngakchroupokpi Mamang Leikai,Male,18,80,10,70,75,5,No,2,5,Bachelor,Medium,Yes,No,No,5,7,70,Average,Pass,,,,TCH002,2026-05-06 21:18:59,2026-05-06 21:18:59
+1005,Mairenbam linalita,mairenbam tomchou,tomchou@gmail.com,tomomomom,Male,18,80,10,70,75,5,No,2,5,Bachelor,Medium,Yes,No,No,5,7,70,Average,Pass,,,,TCH004,2026-05-06 21:42:15,2026-05-06 21:42:15
+1006,Thangjam Bobo,Thangjam Tombi,tomchou@gmail.com,Ominitieaea,Male,18,80,10,70,75,5,No,2,5,Bachelor,Medium,Yes,No,No,5,7,70,Average,Pass,,,,TCH004,2026-05-06 21:57:57,2026-05-06 21:57:57
+1007,tomchou,tomthin tomchou,tomchou@gmail.com,kyxjgxkytdkytmhg,Male,52,80,10,70,75,5,No,2,5,Bachelor,Medium,Yes,No,No,5,7,70,Average,Pass,,,,TCH003,2026-06-03 08:00:03,2026-06-03 08:00:03
+1008,tomchou,tomthin tomchou,tomchou@gmail.com,kyxjgxkytdkytmhg,Male,52,80,10,70,75,5,No,2,5,Bachelor,Medium,Yes,No,No,5,7,70,Average,Pass,,,,TCH003,2026-06-03 08:00:13,2026-06-03 08:00:13
+1009,tomchou,tomchoubi,samathoudam@gmail.com,dok dok leikai,Male,18,80,10,70,75,5,No,2,5,Bachelor,Medium,Yes,No,No,5,7,70,Average,Pass,,,,TCH003,2026-06-03 11:37:37,2026-06-03 11:37:37

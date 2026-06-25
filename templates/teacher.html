@@ -194,7 +194,7 @@ tr:hover td{background:rgba(59,130,246,.03)}
   <a class="nb" href="/teacher"> UniPredict AI</a>
   <div class="nl">
     <a href="/teacher" class="active">My Dashboard</a>
-    <a href="#" onclick="showSection('students')">Student List</a>
+    
     <a href="#" onclick="showSection('add')">Add Student</a>
     <a href="#" onclick="showSection('predict')">Predict</a>
     <a href="/analytics">📊 Analytics</a>
@@ -237,7 +237,7 @@ tr:hover td{background:rgba(59,130,246,.03)}
   <!-- Students Section -->
   <div id="sec-students" class="sec">
     <div class="card">
-      <div class="ct">👥 Student List</div>
+      
       <div class="fl">
         <button class="fb active" onclick="setFilt('all',this)">All</button>
         <button class="fb" onclick="setFilt('at-risk',this)">⚠️ At-Risk</button>
@@ -283,8 +283,6 @@ tr:hover td{background:rgba(59,130,246,.03)}
         <div class="form-g"><label>Internet Access</label><select id="as_inet"><option>Yes</option><option>No</option></select></div>
         <div class="form-g"><label>Parent Education</label><select id="as_par"><option>High School</option><option selected>Bachelor</option><option>Master</option><option>PhD</option></select></div>
         <div class="form-g"><label>Family Income</label><select id="as_inc"><option>Low</option><option selected>Medium</option><option>High</option></select></div>
-        <div class="form-g"><label>Pass/Fail</label><select id="as_pf"><option>Pass</option><option>Fail</option></select></div>
-        <div class="form-g"><label>Performance Category</label><select id="as_cat"><option>At Risk</option><option>Below Average</option><option selected>Average</option><option>Excellent</option></select></div>
       </div>
       <button class="btn-pri" style="margin-top:18px;width:100%" onclick="addStudent()">➕ Add Student to Database</button>
     </div>
@@ -345,22 +343,69 @@ function setFilt(f,btn){
 let st;
 function debSearch(){ clearTimeout(st); st=setTimeout(searchStudent,400); }
 
-async function searchStudent(){
-  const id=parseInt(document.getElementById('searchId').value);
-  if(!id||isNaN(id)){ dispS=[...allS]; renderTbl(); return; }
-  document.getElementById('tblBody').innerHTML='<tr><td colspan="11" style="text-align:center;padding:24px;color:var(--m)">Searching…</td></tr>';
-  try{
-    const r=await(await fetch('/api/student/'+id)).json();
-    if(r.success){
-      const s=r.student;
-      dispS=[{student_id:s.student_id,student_name:s.student_name||'Unknown',gender:s.gender,age:s.age,final_grade:parseFloat(s.final_grade||0).toFixed(1),
-               attendance_rate:parseFloat(s.attendance_rate||0).toFixed(1),study_hours_weekly:parseFloat(s.study_hours_weekly||0).toFixed(1),
-               assignment_completion:parseFloat(s.assignment_completion||0).toFixed(1),risk_score:s.risk_score,pass_fail:s.pass_fail,performance_category:s.performance_category}];
-      renderTbl(); document.getElementById('pg').innerHTML=''; document.getElementById('passCount').textContent='1';
-    } else { dispS=[]; document.getElementById('tblBody').innerHTML=''; document.getElementById('emptyMsg').style.display='block'; document.getElementById('emptyMsg').textContent='Student #'+id+' not found.'; }
-  }catch(e){ document.getElementById('tblBody').innerHTML='<tr><td colspan="11" style="text-align:center;padding:24px;color:#f87171">⚠️ Search failed. Please try again.</td></tr>'; }
+async function searchStudent() {
+  const id = parseInt(document.getElementById('searchId').value);
+  if (!id || isNaN(id)) { 
+    dispS = [...allS]; 
+    renderTbl(); 
+    return; 
+  }
+  
+  document.getElementById('tblBody').innerHTML = '<tr><td colspan="11" style="text-align:center;padding:24px;color:var(--m)">Searching…</td></tr>';
+  
+  try {
+    const response = await fetch('/api/student/' + id);
+    
+    // Check if the server actually returned a 200 OK
+    if (!response.ok) {
+        throw new Error(`Server returned HTTP ${response.status}`);
+    }
+    
+    const r = await response.json();
+    
+    if (r.success) {
+      const s = r.student;
+      dispS = [{
+        student_id: s.student_id,
+        student_name: s.student_name || 'Unknown',
+        gender: s.gender,
+        age: s.age,
+        final_grade: parseFloat(s.final_grade || 0).toFixed(1),
+        attendance_rate: parseFloat(s.attendance_rate || 0).toFixed(1),
+        study_hours_weekly: parseFloat(s.study_hours_weekly || 0).toFixed(1),
+        assignment_completion: parseFloat(s.assignment_completion || 0).toFixed(1),
+        risk_score: s.risk_score,
+        pass_fail: s.pass_fail,
+        performance_category: s.performance_category,
+        is_reported: s.is_reported
+      }];
+      
+      renderTbl(); 
+      document.getElementById('pg').innerHTML = ''; 
+      
+      // Safely update the DOM using the correct IDs
+      const isPassing = s.pass_fail === 'Pass';
+      if (document.getElementById('passCountList')) {
+          document.getElementById('passCountList').textContent = isPassing ? '1' : '0';
+      }
+      if (document.getElementById('failCountList')) {
+          document.getElementById('failCountList').textContent = isPassing ? '0' : '1';
+      }
+      
+    } else { 
+      dispS = []; 
+      document.getElementById('tblBody').innerHTML = ''; 
+      document.getElementById('emptyMsg').style.display = 'block'; 
+      document.getElementById('emptyMsg').textContent = 'Student #' + id + ' not found.'; 
+    }
+  } catch (e) { 
+    // Log the EXACT error to the console to see what's actually breaking
+    console.error("Search Error Details:", e); 
+    
+    // Display the specific error message on the screen instead of the generic one
+    document.getElementById('tblBody').innerHTML = `<tr><td colspan="11" style="text-align:center;padding:24px;color:#f87171">⚠️ Error: ${e.message}. Check browser console.</td></tr>`; 
+  }
 }
-
 async function loadStudents(){
   document.getElementById('tblLoad').style.display='block';
   document.getElementById('tblWrap').style.display='none';
@@ -446,11 +491,8 @@ async function openEdit(sid){
         <div class="form-g"><label>${f.replace(/_/g,' ')}</label>
         <input type="number" id="ef_${f}" value="${parseFloat(s[f]||0).toFixed(1)}" step="0.1"></div>`).join('')}
       <div class="form-g"><label>Tutoring</label><select id="ef_tutoring"><option ${s.tutoring==='No'?'selected':''}>No</option><option ${s.tutoring==='Yes'?'selected':''}>Yes</option></select></div>
+      <div class="form-g"><label>Tutoring</label><select id="ef_tutoring"><option ${s.tutoring==='No'?'selected':''}>No</option><option ${s.tutoring==='Yes'?'selected':''}>Yes</option></select></div>
       <div class="form-g"><label>Mentor Support</label><select id="ef_mentor_support"><option ${s.mentor_support==='No'?'selected':''}>No</option><option ${s.mentor_support==='Yes'?'selected':''}>Yes</option></select></div>
-      <div class="form-g"><label>Pass/Fail</label><select id="ef_pass_fail"><option ${s.pass_fail==='Pass'?'selected':''}>Pass</option><option ${s.pass_fail==='Fail'?'selected':''}>Fail</option></select></div>
-      <div class="form-g"><label>Performance</label><select id="ef_performance_category">
-        ${['At Risk','Below Average','Average','Excellent'].map(c=>`<option ${s.performance_category===c?'selected':''}>${c}</option>`).join('')}
-      </select></div>
     </div>
     <button class="btn-pri" style="width:100%;margin-top:14px" onclick="saveEdit(${sid})">Save Changes</button>`;
   document.getElementById('editModal').classList.add('open');
@@ -458,7 +500,7 @@ async function openEdit(sid){
 
 async function saveEdit(sid){
   const fields=['attendance_rate','study_hours_weekly','assignment_completion','class_participation','stress_level','motivation_score','final_grade','previous_grades'];
-  const selects=['tutoring','mentor_support','pass_fail','performance_category'];
+  const selects=['tutoring','mentor_support'];
   const payload={};
   fields.forEach(f=>{ const v=document.getElementById('ef_'+f); if(v) payload[f]=parseFloat(v.value); });
   selects.forEach(f=>{ const v=document.getElementById('ef_'+f); if(v) payload[f]=v.value; });
@@ -510,7 +552,7 @@ async function addStudent(){
     stress_level:parseFloat(g('as_stress')),motivation_score:parseFloat(g('as_motiv')),
     final_grade:parseFloat(g('as_grade')),extra_curricular:g('as_ec'),tutoring:g('as_tut'),
     mentor_support:g('as_ment'),internet_access:g('as_inet'),parent_education:g('as_par'),
-    family_income:g('as_inc'),pass_fail:g('as_pf'),performance_category:g('as_cat'),
+    family_income:g('as_inc'),pass_fail:'Pass',performance_category:'Average',
     library_visits:2,online_resource_hours:5};
   const r=await fetch('/api/teacher/students/add',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
   const d=await r.json();

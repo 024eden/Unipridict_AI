@@ -857,17 +857,24 @@ def api_send_parent_passwords():
 @app.route('/api/teacher/students', methods=['GET'])
 @role_required('teacher')
 def api_teacher_students():
-    page     = int(request.args.get('page', 1))
-    per_page = int(request.args.get('per_page', 25))
-    filt     = request.args.get('filter', 'all')
-    students, total = db.get_students_paginated(page, per_page, filt)
-    pages = (total + per_page - 1) // per_page
-    reported_ids = db.get_reported_student_ids()
-    for s in students:
-        s['is_reported'] = str(s.get('student_id', '')) in reported_ids
-    return jsonify({'success': True, 'students': students,
-                    'total': total, 'page': page,
-                    'per_page': per_page, 'pages': pages})
+    try:
+        page     = int(request.args.get('page', 1))
+        per_page = int(request.args.get('per_page', 25))
+        filt     = request.args.get('filter', 'all')
+        students, total = db.get_students_paginated(page, per_page, filt)
+        pages = (total + per_page - 1) // per_page
+        reported_ids = db.get_reported_student_ids()
+        for s in students:
+            s['is_reported'] = str(s.get('student_id', '')) in reported_ids
+            # Ensure all values are JSON-serializable
+            s['counselor_reported'] = str(s.get('counselor_reported', '0') or '0')
+            s['risk_factors'] = s.get('risk_factors', []) or []
+        return jsonify({'success': True, 'students': students,
+                        'total': total, 'page': page,
+                        'per_page': per_page, 'pages': pages})
+    except Exception as e:
+        print(f"[ERROR] api_teacher_students: {e}")
+        return jsonify({'success': False, 'error': str(e)}), 500
 
 
 @app.route('/api/teacher/students/add', methods=['POST'])
@@ -947,13 +954,24 @@ def _is_student_reported(student_id):
 @app.route('/api/student/<int:sid>', methods=['GET'])
 @login_required
 def api_get_student(sid):
-    s = db.get_student_by_id(sid)
-    if not s:
-        return jsonify({'success': False, 'error': 'Student not found'}), 404
-    s['is_reported'] = _is_student_reported(sid)
-    s['last_reported_at'] = s.get('last_reported_at', '')
-    s['reported_by'] = s.get('reported_by', '')
-    return jsonify({'success': True, 'student': s})
+    try:
+        s = db.get_student_by_id(sid)
+        if not s:
+            return jsonify({'success': False, 'error': 'Student not found'}), 404
+        
+        # Ensure all values are JSON-serializable
+        s['is_reported'] = bool(_is_student_reported(sid))
+        s['last_reported_at'] = str(s.get('last_reported_at', '') or '')
+        s['reported_by'] = str(s.get('reported_by', '') or '')
+        s['counselor_reported'] = str(s.get('counselor_reported', '0') or '0')
+        s['added_by'] = str(s.get('added_by', '') or '')
+        s['created_at'] = str(s.get('created_at', '') or '')
+        s['updated_at'] = str(s.get('updated_at', '') or '')
+        
+        return jsonify({'success': True, 'student': s})
+    except Exception as e:
+        print(f"[ERROR] api_get_student({sid}): {e}")
+        return jsonify({'success': False, 'error': str(e)}), 500
 
 
 @app.route('/api/students', methods=['GET'])
@@ -1512,58 +1530,65 @@ def api_activity_stats():
 @utils.api_rate_limit(max_requests=100, window_seconds=3600)
 def api_search_students():
     """Advanced student search with filters"""
-    query = request.args.get('q', '').strip()
-    risk_level = request.args.get('risk_level', '')
-    status = request.args.get('status', '')
-    page = request.args.get('page', 1, type=int)
-    per_page = request.args.get('per_page', 20, type=int)
-    
-    # Get all students
-    all_students = db._read('students')
-    
-    # Apply filters
-    filtered_students = []
-    for student in all_students:
-        student_data = db._to_student(student)
+    try:
+        query = request.args.get('q', '').strip()
+        risk_level = request.args.get('risk_level', '')
+        status = request.args.get('status', '')
+        page = request.args.get('page', 1, type=int)
+        per_page = request.args.get('per_page', 20, type=int)
         
-        # Text search
-        if query:
-            searchable_text = f"{student_data.get('student_name', '')} {student_data.get('parent_name', '')} {student_data.get('parent_email', '')}".lower()
-            if query.lower() not in searchable_text:
-                continue
+        # Get all students
+        all_students = db._read('students')
         
-        # Risk level filter
-        if risk_level:
-            risk_score = student_data.get('risk_score', 0)
-            if risk_level == 'low' and risk_score >= 30:
+        # Apply filters
+        filtered_students = []
+        for student in all_students:
+            student_data = db._to_student(student)
+            
+            # Text search
+            if query:
+                searchable_text = f"{student_data.get('student_name', '')} {student_data.get('parent_name', '')} {student_data.get('parent_email', '')}".lower()
+                if query.lower() not in searchable_text:
+                    continue
+            
+            # Risk level filter
+            if risk_level:
+                risk_score = student_data.get('risk_score', 0)
+                if risk_level == 'low' and risk_score >= 30:
+                    continue
+                elif risk_level == 'medium' and (risk_score < 30 or risk_score >= 60):
+                    continue
+                elif risk_level == 'high' and risk_score < 60:
+                    continue
+            
+            # Status filter
+            if status and student_data.get('pass_fail') != status:
                 continue
-            elif risk_level == 'medium' and (risk_score < 30 or risk_score >= 60):
-                continue
-            elif risk_level == 'high' and risk_score < 60:
-                continue
+            
+            # Ensure all fields are JSON-serializable
+            student_data['risk_factors'] = student_data.get('risk_factors', []) or []
+            student_data['counselor_reported'] = str(student_data.get('counselor_reported', '0') or '0')
+            filtered_students.append(student_data)
         
-        # Status filter
-        if status and student_data.get('pass_fail') != status:
-            continue
+        # Pagination
+        total = len(filtered_students)
+        start = (page - 1) * per_page
+        end = start + per_page
+        paginated_students = filtered_students[start:end]
         
-        filtered_students.append(student_data)
-    
-    # Pagination
-    total = len(filtered_students)
-    start = (page - 1) * per_page
-    end = start + per_page
-    paginated_students = filtered_students[start:end]
-    
-    return jsonify({
-        'success': True,
-        'students': paginated_students,
-        'pagination': {
-            'page': page,
-            'per_page': per_page,
-            'total': total,
-            'pages': (total + per_page - 1) // per_page
-        }
-    })
+        return jsonify({
+            'success': True,
+            'students': paginated_students,
+            'pagination': {
+                'page': page,
+                'per_page': per_page,
+                'total': total,
+                'pages': (total + per_page - 1) // per_page
+            }
+        })
+    except Exception as e:
+        print(f"[ERROR] api_search_students: {e}")
+        return jsonify({'success': False, 'error': str(e)}), 500
 
 @app.route('/api/students/export', methods=['POST'])
 @login_required

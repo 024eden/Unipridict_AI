@@ -367,23 +367,54 @@ function setFilt(f,btn){
 let st;
 function debSearch(){ clearTimeout(st);st=setTimeout(searchStudent,400); }
 
-async function searchStudent(){
-  const id=parseInt(document.getElementById('cSearchId').value);
-  if(!id||isNaN(id)){dispS=[...allS];renderTbl();return;}
-  document.getElementById('cTblBody').innerHTML='<tr><td colspan="11" style="text-align:center;padding:24px;color:var(--m)">Searching…</td></tr>';
-  try{
-    const r=await(await fetch('/api/student/'+id)).json();
-    if(r.success){
-      const s=r.student;
-      dispS=[{student_id:s.student_id,student_name:s.student_name||'Unknown',gender:s.gender,age:s.age,final_grade:parseFloat(s.final_grade||0).toFixed(1),
-               attendance_rate:parseFloat(s.attendance_rate||0).toFixed(1),stress_level:parseFloat(s.stress_level||0).toFixed(1),
-               motivation_score:parseFloat(s.motivation_score||0).toFixed(1),risk_score:s.risk_score,pass_fail:s.pass_fail,performance_category:s.performance_category,
-               parent_email:s.parent_email||''}];
-      renderTbl();document.getElementById('cPg').innerHTML='';
-    }else{dispS=[];document.getElementById('cTblBody').innerHTML='';document.getElementById('cEmpty').textContent='Student #'+id+' not found.';document.getElementById('cEmpty').style.display='block';}
-  }catch(e){}
+async function searchStudent() {
+  const id = parseInt(document.getElementById('cSearchId').value);
+  if (!id || isNaN(id)) { 
+    dispS = [...allS]; 
+    renderTbl(); 
+    return; 
+  }
+  
+  document.getElementById('tblBody').innerHTML = '<tr><td colspan="11" style="text-align:center;padding:24px;color:var(--m)">Searching…</td></tr>';
+  
+  try {
+    const r = await (await fetch('/api/student/' + id)).json();
+    if (r.success) {
+      const s = r.student;
+      dispS = [{
+        student_id: s.student_id,
+        student_name: s.student_name || 'Unknown',
+        gender: s.gender,
+        age: s.age,
+        final_grade: parseFloat(s.final_grade || 0).toFixed(1),
+        attendance_rate: parseFloat(s.attendance_rate || 0).toFixed(1),
+        study_hours_weekly: parseFloat(s.study_hours_weekly || 0).toFixed(1),
+        assignment_completion: parseFloat(s.assignment_completion || 0).toFixed(1),
+        risk_score: s.risk_score,
+        pass_fail: s.pass_fail,
+        performance_category: s.performance_category,
+        is_reported: s.is_reported // Added to preserve the "Reported" badge logic
+      }];
+      
+      renderTbl(); 
+      document.getElementById('pg').innerHTML = ''; 
+      
+      // FIX: Use the correct HTML IDs and update both dynamically based on the student's status
+      const isPassing = s.pass_fail === 'Pass';
+      document.getElementById('passCountList').textContent = isPassing ? '1' : '0';
+      document.getElementById('failCountList').textContent = isPassing ? '0' : '1';
+      
+    } else { 
+      dispS = []; 
+      document.getElementById('tblBody').innerHTML = ''; 
+      document.getElementById('emptyMsg').style.display = 'block'; 
+      document.getElementById('emptyMsg').textContent = 'Student #' + id + ' not found.'; 
+    }
+  } catch (e) { 
+    console.error("Search Error:", e); // Helpful for debugging backend connection issues
+    document.getElementById('tblBody').innerHTML = '<tr><td colspan="11" style="text-align:center;padding:24px;color:#f87171">⚠️ Search failed. Please try again.</td></tr>'; 
+  }
 }
-
 async function loadStudents(){
   document.getElementById('cTblLoad').style.display='block';
   document.getElementById('cTblWrap').style.display='none';

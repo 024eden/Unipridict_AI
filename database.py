@@ -313,20 +313,40 @@ def _to_student(r: dict) -> dict:
     float_fields = {'attendance_rate','study_hours_weekly','previous_grades','assignment_completion',
                     'class_participation','online_resource_hours','stress_level','motivation_score','final_grade'}
     out = dict(r)
+    
+    # Convert int fields
     for k in int_fields:
-        try: out[k] = int(r[k])
-        except: pass
+        try: 
+            out[k] = int(r.get(k, 0) or 0)
+        except: 
+            out[k] = 0
+    
+    # Convert float fields
     for k in float_fields:
-        try: out[k] = float(r[k])
-        except: pass
+        try: 
+            out[k] = float(r.get(k, 0) or 0)
+        except: 
+            out[k] = 0.0
+    
     # Ensure student_name is never empty — fall back to Student #ID
-    if not out.get('student_name') or str(out.get('student_name','')).strip().lower() in ('', 'unknown student', 'unknown'):
+    student_name = str(out.get('student_name', '') or '').strip()
+    if not student_name or student_name.lower() in ('unknown student', 'unknown'):
         out['student_name'] = f"Student #{out.get('student_id', '?')}"
+    else:
+        out['student_name'] = student_name
+    
     # Pass through parent_name, parent_email and address safely
-    out['parent_name'] = out.get('parent_name', '') or ''
-    out['parent_email'] = out.get('parent_email', '') or ''
-    out['address'] = out.get('address', '') or ''
-    out['risk_score'], out['risk_factors'] = _calc_risk(out)
+    out['parent_name'] = str(out.get('parent_name', '') or '').strip()
+    out['parent_email'] = str(out.get('parent_email', '') or '').strip()
+    out['address'] = str(out.get('address', '') or '').strip()
+    
+    # Compute risk score and factors
+    try:
+        out['risk_score'], out['risk_factors'] = _calc_risk(out)
+    except:
+        out['risk_score'] = 0
+        out['risk_factors'] = []
+    
     return out
 
 
